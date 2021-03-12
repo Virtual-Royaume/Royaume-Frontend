@@ -1,0 +1,36 @@
+{
+  "name": "express-website-template",
+  "version": "1.0.0",
+  "main": "Server.js",
+  "contributors": [
+    {
+      "name": "Bluzzi",
+      "email": "camilledugas.pro@gmail.com"
+    }
+  ],
+  "scripts": {
+    "start": "nodemon -e js,scss,ejs,json ."
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "ejs": "^3.1.5",
+    "express": "~4.16.1",
+    "express-session": "^1.17.1",
+    "morgan": "~1.9.1",
+    "sass": "^1.26.10",
+    "sass-folder-converter": "^1.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "description": "Royaume website",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Virtual-Royaume/Website.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Virtual-Royaume/Website/issues"
+  },
+  "homepage": "https://github.com/Virtual-Royaume/Website#readme"
+}
