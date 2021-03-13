@@ -4,7 +4,7 @@
 Nom de domaine : ``royaume.world``
 
 ## Les pages
-**Accueil**
+**Accueil**  
 - Barre de navigation
     - Nos projets
     - Apprendre
