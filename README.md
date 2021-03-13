@@ -29,7 +29,7 @@ Nom de domaine : ``royaume.world``
 - Stream Twitch
 - Le footer "Créer avec :heart: par l'équipe du Royaume"
 
-**Panel d'un membre**
+**Panel d'un membre**  
 Ce panel permet est accèssible aux membres, ils doivent se connecter avec leur compte Discord. 
 
 Dessus ils peuvent :
@@ -40,10 +40,10 @@ Mais aussi, si ils ont l'autorisation :
 - Poster des nouveaux projets
 - Poster des nouveautés / informations
 
-**Liste des membres** 
+**Liste des membres**  
 Cette page liste la totalité des membres du serveur Discord avec leur pseudo et leur photo de profil, si on click sur un des membre on tombe sur sa page.
 
-**Page de membre**
+**Page de membre**  
 Une page qui contient les information d'un membre :
 - Photo de profil
 - Pseudo
@@ -52,11 +52,11 @@ Une page qui contient les information d'un membre :
 - Projets posté
 - Nouveautés / informations posté
 
-**Nos projets**
+**Nos projets**  
 Liste des projets posté par les membres, on peut cliquer dessus pour voir la page du projet.
 
-**Apprendre**
+**Apprendre**  
 Des tutoriels ou formation sur différents domaines que nous pratiquons, avec un potentiel objectif si nous avons du contenu propre et "rare" de faire payé ses formations. Cela pourrait financé le travail derrière le site internet.
 
-**Nous rejoindre**
+**Nous rejoindre**  
 Un formulaire pour rejoindre le serveur Discord.
