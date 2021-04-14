@@ -2,6 +2,7 @@
 
 ## Informations
 Nom de domaine : ``royaume.world``
+Couleur principal : ``#7E51DB``
 
 ## Les pages
 **Accueil**  
