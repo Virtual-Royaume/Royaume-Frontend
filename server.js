@@ -49,7 +49,7 @@ server.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
  * Example for add "ADMIN" permission : request.session.privileges.push("ADMIN");
  */
 
-let privileges = JSON.parse(fs.readFileSync("privileges.json", {encoding: "utf-8"}));
+let privileges = JSON.parse(fs.readFileSync(__dirname + "/privileges.json", {encoding: "utf-8"}));
 
 server.use((request, response, next) => {
     if(!request.session.privileges) request.session.privileges = [];
