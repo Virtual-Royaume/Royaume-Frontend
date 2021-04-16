@@ -6,4 +6,24 @@ body {
     justify-content: center;
 
     background-color: aqua;
+@keyframes background-color-change {
+    0% {
+        background-color: $color-magenta;
+    }
+
+    20% {
+        background-color: #51368b;
+    }
+
+    50% {
+        background-color: #3e384b;
+    }
+
+    80% {
+        background-color: #312f34;
+    }
+
+    100% {
+        background-color: $color-magenta;
+    }
 }
