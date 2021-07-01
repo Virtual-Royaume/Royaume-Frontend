@@ -1,8 +1,7 @@
 # Le site internet du Royaume
 
 ## Informations
-Nom de domaine : ``royaume.world``
-Couleur principal : ``#7E51DB``
+Nom de domaine : ``royaume.world``  
 
 ## Les pages
 **Accueil**  
