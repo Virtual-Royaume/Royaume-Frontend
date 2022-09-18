@@ -86,8 +86,13 @@
         const index = tableOfContent.findIndex((item) => item.id === id);
 
         tocBar.style.transform = `translateY(${step * (index)}px)`;
+    }
 
-        console.log(tocBar)
+    const scrollToElement = (id: string) => {
+        const heading = document.getElementById(id);
+        if (!heading) return;
+
+        heading.scrollIntoView({ block: 'start' });
     }
 </script>
 
@@ -126,7 +131,7 @@
 
                     <div>
                         {#each tableOfContent as tag}
-                            <a href={`#${tag.id}`} class={`block pl-3 mb-2 last:mb-0 ${tag.active ? 'text-primary' : 'text-neutral-400'}`}>{tag.name}</a>
+                            <li on:click={() => scrollToElement(tag.id)} class={`cursor-pointer block pl-3 mb-2 last:mb-0 ${tag.active ? 'text-primary' : 'text-neutral-400'}`}>{tag.name}</li>
                         {/each}
                     </div>
                 </div>
