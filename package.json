@@ -1,36 +1,31 @@
 {
-  "name": "express-website-template",
-  "version": "1.0.0",
-  "main": "Server.js",
-  "contributors": [
-    {
-      "name": "Bluzzi",
-      "email": "camilledugas.pro@gmail.com"
-    }
-  ],
-  "scripts": {
-    "start": "nodemon -e js,scss,ejs,json ."
-  },
-  "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "ejs": "^3.1.5",
-    "express": "~4.16.1",
-    "express-session": "^1.17.1",
-    "morgan": "~1.9.1",
-    "sass": "^1.26.10",
-    "sass-folder-converter": "^1.0.3"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
-  },
-  "description": "Royaume website",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Virtual-Royaume/Website.git"
-  },
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Virtual-Royaume/Website/issues"
-  },
-  "homepage": "https://github.com/Virtual-Royaume/Website#readme"
+	"name": "royaume-website",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/kit": "next",
+		"@typescript-eslint/eslint-plugin": "^5.27.0",
+		"@typescript-eslint/parser": "^5.27.0",
+		"autoprefixer": "^10.4.11",
+		"eslint": "^8.16.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"postcss": "^8.4.16",
+		"svelte": "^3.44.0",
+		"svelte-check": "^2.7.1",
+		"svelte-preprocess": "^4.10.7",
+		"tailwindcss": "^3.1.8",
+		"tslib": "^2.3.1",
+		"typescript": "^4.7.4",
+		"vite": "^3.1.0"
+	},
+	"type": "module"
 }
