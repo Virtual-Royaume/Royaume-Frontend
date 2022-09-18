@@ -11,7 +11,7 @@
     onMount(() => {
         const values = $page.url.searchParams.get(title.toLocaleLowerCase())?.split(' ');
 
-        tags?.forEach((tag) => {            
+        tags.forEach((tag) => {            
             if (!values?.includes(tag.name.toLowerCase().split(' ').join('_'))) return;
 
             selectedTags = [tag.id, ...selectedTags];;
@@ -35,12 +35,18 @@
         goto($page.url.pathname + '?' + searchParams.toString(), {
             noscroll: true
         });
+
     }
 
 </script>
 
 <div class="mb-4">
-    <h4 class="text-neutral-300 font-medium text-lg">{title}</h4>
+    <h4 class="text-neutral-300 font-medium text-lg flex items-start justify-between">
+        {title}
+        {#if selectedTags.length > 0}
+            <span class="text-xs">{selectedTags.length}</span>
+        {/if}
+    </h4>
     <div class="flex flex-wrap gap-2 mt-2">
         {#each tags as tag}
             <span on:click={() => toggleTag(tag.id)} class="bg-primary p-1 rounded-md whitespace-nowrap text-neutral-300 cursor-pointer border border-transparent" class:border-neutral-400={selectedTags.includes(tag.id)}>{tag.name}</span>
