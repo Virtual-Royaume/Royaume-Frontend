@@ -14,7 +14,7 @@
         <SubHeading>du Royaume</SubHeading>
     </div>
 
-    <div class="grid grid-cols-[3fr_1fr] gap-12">
+    <div class="grid grid-cols-[4fr_1fr] gap-12">
         <div class="grid grid-cols-3 gap-8">
             {#each posts as post}
                 <PostPreview {...post} />
