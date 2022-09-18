@@ -131,7 +131,7 @@
 
                     <div>
                         {#each tableOfContent as tag}
-                            <li on:click={() => scrollToElement(tag.id)} class={`cursor-pointer block pl-3 mb-2 last:mb-0 ${tag.active ? 'text-primary' : 'text-neutral-400'}`}>{tag.name}</li>
+                            <li on:click={() => scrollToElement(tag.id)} class={`cursor-pointer line-clamp-1 block pl-3 mb-2 last:mb-0 ${tag.active ? 'text-primary' : 'text-neutral-400'}`}>{tag.name}</li>
                         {/each}
                     </div>
                 </div>
