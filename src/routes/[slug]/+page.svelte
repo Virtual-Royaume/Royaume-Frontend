@@ -112,7 +112,7 @@
             </div>
     
             <div class="mt-16">
-                <article class="prose prose-invert max-w-none" bind:this={article}>
+                <article class="prose prose-invert max-w-none prose-img:max-h-96 prose-img:w-auto prose-img:max-w-[95%]" bind:this={article}>
                     {@html data.content}
                 </article>
             </div>
@@ -127,7 +127,7 @@
                 <h3 class="text-neutral-200 font-semibold text-xl">Table des matières</h3>
 
                 <div class="mt-4 relative" bind:this={toc}>
-                    <span class="absolute h-5 w-[3px] rounded-md bg-primary top-[1px] transition-transform" class:opacity-0={!tableOfContent.find((item) => item.active === true)} bind:this={tocBar}></span>
+                    <span class="absolute h-5 w-[3px] rounded-md bg-primary top-[2px] transition-transform" class:opacity-0={!tableOfContent.find((item) => item.active === true)} bind:this={tocBar}></span>
 
                     <div>
                         {#each tableOfContent as tag}
