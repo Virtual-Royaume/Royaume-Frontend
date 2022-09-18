@@ -39,7 +39,7 @@
 
 </script>
 
-<div class="mt-4">
+<div class="mb-4">
     <h4 class="text-neutral-300 font-medium text-lg">{title}</h4>
     <div class="flex flex-wrap gap-2 mt-2">
         {#each tags as tag}
