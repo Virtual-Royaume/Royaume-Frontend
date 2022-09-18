@@ -17,7 +17,8 @@ export const load = async ({ params }: ServerLoadEvent) => {
         throw error(404, 'Not found')
     }
 
-    const content = marked.parse((await fs.readFile(__dirname + '/../../../static/articles.md')).toString());
+    const article = await (await fetch('https://raw.githubusercontent.com/Virtual-Royaume/Royaume-Website/7ad95c52dbdaa2ef8ee66bc6a0bdbc2a181d12ae/static/articles.md')).text();
+    const content = marked.parse(article);
 
     return { post, content };
 }
