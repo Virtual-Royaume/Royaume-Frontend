@@ -1,16 +1,40 @@
 <script lang="ts">
+    import { goto } from '$app/navigation';
+    import { page } from '$app/stores';
+    import { onMount } from 'svelte';
+
     export let title: string;
     export let tags: { id: number, name: string }[] = [];
 
     let selectedTags: number[] = [];
 
+    onMount(() => {
+        const values = $page.url.searchParams.get(title.toLocaleLowerCase())?.split(' ');
+
+        tags?.forEach((tag) => {            
+            if (!values?.includes(tag.name.toLowerCase().split(' ').join('_'))) return;
+
+            selectedTags = [tag.id, ...selectedTags];;
+        });
+    });
+
     const toggleTag = (id: number) => {
         if (!selectedTags.includes(id)) {
             selectedTags = [id, ...selectedTags];
-            return;
+        } else {
+            selectedTags = selectedTags.filter((tagId) => tagId !== id);
         }
 
-        selectedTags = selectedTags.filter((tagId) => tagId !== id);
+        const searchParams = new URLSearchParams($page.url.searchParams);
+        if (selectedTags.length > 0) {
+            searchParams.set(title.toLowerCase(), tags.filter((tag) => selectedTags.includes(tag.id)).map((tag) => tag.name.toLowerCase().split(' ').join('_')).join(' '));
+        } else {
+            searchParams.delete(title.toLowerCase());
+        }
+
+        goto($page.url.pathname + '?' + searchParams.toString(), {
+            noscroll: true
+        });
     }
 
 </script>
