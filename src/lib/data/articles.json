@@ -1,0 +1,86 @@
+[
+    {
+      "id": 1,
+      "category": "Vie de développeur",
+      "title": "Les 7 meilleurs sites pour s'entrainer à programmer",
+      "description": "Envie de vous entrainer au code, à l'algorithmie, au css ou encore à la sécurité ? J'ai ce qu'il vous faut !",
+      "thumbnail": "https://code-garage.fr/content/images/2021/11/paul-esch-laurent-6MeMUw5KDss-unsplash.jpg",
+      "author": {
+        "username": "RomainSav",
+        "avatar": "https://cdn.discordapp.com/avatars/533306853317279773/6eac2d06855a52de73bc48343a00a2c1.webp"
+      },
+      "createdAt": "Thu Sep 08 2022 03:24:00 GMT+0200 (heure d’été d’Europe centrale)"
+    },
+    {
+      "id": 2,
+      "category": "Crypto",
+      "title": "Qu'est-ce qu'une blockchain ?",
+      "description": "Vous avez forcément entendu parler du bitcoin, le cas d'usage le plus connu de la blockchain, mais qu'est-ce qu'une blockchain en réalité ?",
+      "thumbnail": "https://cellar-c2.services.clever-cloud.com/content/2022/05/shubham-dhage-T9rKvI3N0NM-unsplash.jpg",
+      "author": {
+        "username": "Bluzzi",
+        "avatar": "https://cdn.discordapp.com/avatars/233351173665456129/a_cee03ee0f97ee3c550840d584bc55c21.gif"
+      },
+      "createdAt": "Thu Sep 01 2022 03:24:00 GMT+0200 (heure d’été d’Europe centrale)"
+    },
+    {
+      "id": 3,
+      "category": "HTTP",
+      "title": "Comprendre les méthodes des requêtes HTTP",
+      "description": "GET, POST, UPDATE, PATCH, quelles différences, pour quelles utilisations ?",
+      "thumbnail": "https://code-garage.fr/content/images/2022/01/jakob-soby-RjPG-_LVmiQ-unsplash.jpg",
+      "author": {
+        "username": "Gaëtan",
+        "avatar": "https://cdn.discordapp.com/avatars/504392983244832780/fb10ee8c4e3dc5b52b14dee1cf3cf6a1.webp"
+      },
+      "createdAt": "Thu Jul 28 2022 03:24:00 GMT+0200 (heure d’été d’Europe centrale)"
+    },
+    {
+      "id": 4,
+      "category": "Informatique",
+      "title": "Pourquoi l'aléatoire n'existe pas en informatique ?",
+      "description": "Si vous pensez que Math.random() renvoie un nombre aléatoire, alors on vous a menti !",
+      "thumbnail": "https://code-garage.fr/content/images/2021/05/vintage-648120_1920-1.jpg",
+      "author": {
+        "username": "Loupio",
+        "avatar": "https://cdn.discordapp.com/avatars/371298344921726978/2e12f0a06b95725bf492c1a22e43b4b6.webp"
+      },
+      "createdAt": "Thu Jun 02 2022 03:24:00 GMT+0200 (heure d’été d’Europe centrale)"
+    },
+    {
+      "id": 5,
+      "category": "Informatique",
+      "title": "Que signifient bas-niveau et haut-niveau ?",
+      "description": "Vous avez sûrement déjà entendu ces termes, alors voici leur signification détaillée !",
+      "thumbnail": "https://cellar-c2.services.clever-cloud.com/content/2022/09/vishnu-mohanan-pfR18JNEMv8-unsplash.jpg",
+      "author": {
+        "username": "Szeroki",
+        "avatar": "https://cdn.discordapp.com/avatars/810596177857871913/619001200050a611e69e4d8f89a32385.webp"
+      },
+      "createdAt": "Tue May 24 2022 03:24:00 GMT+0200 (heure d’été d’Europe centrale)"
+    },
+    {
+      "id": 6,
+      "category": "HTTP",
+      "title": "Qu'est-ce qu'une API REST ?",
+      "description": "Comment fonctionne une API REST ? Quelles sont les contraintes ? Est-ce compatible avec tous les projets ? C'est ce que nous allons découvrir ensemble !",
+      "thumbnail": "https://cellar-c2.services.clever-cloud.com/content/2022/06/douglas-lopes-ehyV_XOZ4iA-unsplash.jpg",
+      "author": {
+        "username": "Swourire",
+        "avatar": "https://cdn.discordapp.com/avatars/269804257937457153/ee021c0a6619c96e8d1bdb8c36fd42de.webp"
+      },
+      "createdAt": "Tue May 24 2022 03:24:00 GMT+0200 (heure d’été d’Europe centrale)"
+    },
+    {
+      "id": 7,
+      "category": "Javascript",
+      "title": "L'erreur à éviter avec la méthode parseInt",
+      "description": "Utilisez-vous vraiment les bonnes méthodes pour récupérer un nombre entier en Javascript ?",
+      "thumbnail": "https://code-garage.fr/content/images/2022/03/mick-haupt-3UbsiRcrFV4-unsplash.jpg",
+      "author": {
+        "username": "KingDeadKnight",
+        "avatar": "https://cdn.discordapp.com/avatars/162633729703936001/c68325b9d4509bcd7e4a56a32dd6ff30.webp"
+      },
+      "createdAt": "Sat Apr 16 2022 03:24:00 GMT+0200 (heure d’été d’Europe centrale)"
+    }
+  ]
