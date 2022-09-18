@@ -20,10 +20,9 @@ module.exports = {
         DEFAULT: {
           css: {
             img: {
-              width: '95%',
               marginLeft: 'auto',
               marginRight: 'auto',
-              borderRadius: '0.375rem'
+              borderRadius: '0.375rem',
             }
           }
         },
