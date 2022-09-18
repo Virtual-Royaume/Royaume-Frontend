@@ -14,7 +14,7 @@
     let tableOfContent: { id: string, name: string, active: boolean }[] = [];
     let activeHeading: string | null = null;
 
-    let lastScrollY = 0;
+    let lastScrollY = -1;
 
     onMount(() => {
         lastScrollY = window.pageYOffset;
@@ -29,6 +29,8 @@
                 }];
             }
         }
+
+        onScroll();
     });
 
     const onScroll = () => {
@@ -120,7 +122,8 @@
                 <h3 class="text-neutral-200 font-semibold text-xl">Table des matières</h3>
 
                 <div class="mt-4 relative" bind:this={toc}>
-                    <span class="absolute h-5 w-[3px] rounded-md bg-primary top-[1px] transition-transform" bind:this={tocBar}></span>
+                    <span class="absolute h-5 w-[3px] rounded-md bg-primary top-[1px] transition-transform" class:opacity-0={!tableOfContent.find((item) => item.active === true)} bind:this={tocBar}></span>
+
                     <div>
                         {#each tableOfContent as tag}
                             <a href={`#${tag.id}`} class={`block pl-3 mb-2 last:mb-0 ${tag.active ? 'text-primary' : 'text-neutral-400'}`}>{tag.name}</a>
