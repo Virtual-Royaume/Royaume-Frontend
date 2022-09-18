@@ -1,7 +1,8 @@
 <script>
     import '@css/global.css';
 
-    import Navbar from '@components/layouts/Navbar/Navbar.svelte';
+    import Navbar from '@components/layouts/navbar/Navbar.svelte';
+    import Footer from '@components/layouts/footer/Footer.svelte';
 </script>
 
 <svelte:head>
@@ -9,4 +10,7 @@
 </svelte:head>
 
 <Navbar />
-<slot></slot>
+<div class="mb-24">
+    <slot></slot>
+</div>
+<Footer />
