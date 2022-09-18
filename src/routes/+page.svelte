@@ -22,7 +22,9 @@
         </div>
 
         <div>
-            <PostFilter />
+            <div class="sticky top-12">
+                <PostFilter />
+            </div>
         </div>
     </div>
 </div>
