@@ -6,9 +6,9 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-          xl: '1360px',
-          '2xl': '1690px'
-      },
+        xl: '900px',
+        '2xl': '1420px'
+      }
     },
     extend: {
       colors: {
@@ -16,5 +16,7 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp')
+  ],
 }
