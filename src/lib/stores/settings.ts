@@ -1,13 +1,17 @@
 import { browser } from '$app/environment';
 import { writable } from 'svelte/store';
 
-const defaultValue = {
+interface ISettings {
+    isFilterOpened: boolean;
+}
+
+const defaultValue: ISettings = {
     isFilterOpened: true
 };
 
 const initialValue = browser ? window.localStorage.getItem('settings') ? JSON.parse(window.localStorage.getItem('settings') ?? '{}') : defaultValue : defaultValue;
 
-const settings = writable(initialValue);
+const settings = writable<ISettings>(initialValue);
 
 settings.subscribe((value) => {
     if (browser) {

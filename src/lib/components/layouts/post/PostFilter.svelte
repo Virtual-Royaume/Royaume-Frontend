@@ -6,26 +6,25 @@
     let dropdown: HTMLDivElement;
     let dropdownContainer: HTMLDivElement;
 
-    onMount(() => {        
+    onMount(() => updateDropdown());
+
+    const updateDropdown = () => {
         if ($settings.isFilterOpened) {
             dropdownContainer.style.height = dropdown.offsetHeight + 'px';
         } else {
             dropdownContainer.style.height = '0';
         }
-    });
+    }
 
     const toggleDropdown = () => {
-        if (!$settings.isFilterOpened) {
-            dropdownContainer.style.height = dropdown.offsetHeight + 'px';
-        } else {
-            dropdownContainer.style.height = '0';
-        }
-
         settings.update((value) => {
             value.isFilterOpened = !$settings.isFilterOpened;
             return value;
         });
+
+        updateDropdown()
     }
+
 </script>
 
 <div>
