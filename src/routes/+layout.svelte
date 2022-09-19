@@ -10,7 +10,7 @@
 </svelte:head>
 
 <Navbar />
-<div class="mb-24">
+<div class="mb-48">
     <slot></slot>
 </div>
 <Footer />

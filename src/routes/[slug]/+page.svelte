@@ -100,7 +100,7 @@
 
 <div class="container">
     <div class="mt-16">
-        <Button type="text" onClick={() => history.back()}>Retour</Button>
+        <Button variant="text" onClick={() => history.back()}>Retour</Button>
     </div>
     <div class="grid grid-cols-[3fr_1fr] gap-12 mt-4">
         <div>

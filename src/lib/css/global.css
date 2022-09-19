@@ -11,3 +11,11 @@ body {
 ::selection {
     background: #5339DD;
 }
+
+a {
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+}
