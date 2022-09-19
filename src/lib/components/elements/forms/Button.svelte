@@ -3,6 +3,9 @@
     export let variant: 'outlined' | 'contained' | 'text';
     export let onClick: () => void = () => {};
     export let extend: boolean = false;
+    export let align: 'left' | 'center' | 'right' = 'center';
+
+    const alignStyle = align === 'left' ? 'text-left' : align === 'center' ? 'text-center' : align == 'right' ? 'text-right' : '';
 
     const outlinedStyles = 'text-primary border-primary hover:border-neutral-400 hover:bg-lightprimary/10';
     const containedStyles = 'text-neutral-200 bg-primary border-transparent hover:bg-darkprimary';
@@ -10,13 +13,13 @@
 </script>
 
 {#if href}
-    <a href={href}>
-        <button class:w-full={extend} class={`select-none table-cell py-1 px-4 rounded-md font-semibold transition-all border-2 ${variant === 'outlined' ? outlinedStyles : ''} ${variant === 'contained' ? containedStyles : ''} ${variant === 'text' ? textStyles : ''}`}>
+    <a href={href} class="no-underline">
+        <button class:w-full={extend} class={`${alignStyle} select-none table-cell py-1 px-4 rounded-md font-semibold transition-all border-2 ${variant === 'outlined' ? outlinedStyles : ''} ${variant === 'contained' ? containedStyles : ''} ${variant === 'text' ? textStyles : ''}`}>
             <slot></slot>
         </button>
     </a>
 {:else}
-    <button class:w-full={extend} on:click={onClick} class={`select-none table-cell py-1 px-4 rounded-md font-semibold transition-all border-2 ${variant === 'outlined' ? outlinedStyles : ''} ${variant === 'contained' ? containedStyles : ''} ${variant === 'text' ? textStyles : ''}`}>
+    <button class:w-full={extend} on:click={onClick} class={`${alignStyle} select-none table-cell py-1 px-4 rounded-md font-semibold transition-all border-2 ${variant === 'outlined' ? outlinedStyles : ''} ${variant === 'contained' ? containedStyles : ''} ${variant === 'text' ? textStyles : ''}`}>
         <slot></slot>
     </button>
 {/if}

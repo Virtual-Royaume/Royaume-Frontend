@@ -3,10 +3,12 @@ import { writable } from 'svelte/store';
 
 interface ISettings {
     isFilterOpened: boolean;
+    isHamburgerOpened: boolean;
 }
 
 const defaultValue: ISettings = {
-    isFilterOpened: true
+    isFilterOpened: true,
+    isHamburgerOpened: true
 };
 
 const initialValue = browser ? window.localStorage.getItem('settings') ? JSON.parse(window.localStorage.getItem('settings') ?? '{}') : defaultValue : defaultValue;
