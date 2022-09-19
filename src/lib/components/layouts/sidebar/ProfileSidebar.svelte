@@ -7,7 +7,7 @@
 
 <div class="bg-primary w-[240px] fixed h-full flex flex-col justify-between">
     <div>
-        <a href="/" class="flex items-center justify-center no-underline py-2 m-4 rounded-md hover:bg-darkprimary">
+        <a href="/" class="flex items-center justify-center no-underline py-2 m-4 rounded-md transition-all hover:bg-darkprimary">
             <div class="mr-3">
                 <img src="/images/favicon.png" alt="Royaume Logo" class="rounded-2xl h-14 w-14">
             </div>
