@@ -1,3 +1,3 @@
-<footer class="h-20 bg-darkprimary">
+<footer class="h-40 border-t-2 border-primary bg-darkprimary">
 
 </footer>

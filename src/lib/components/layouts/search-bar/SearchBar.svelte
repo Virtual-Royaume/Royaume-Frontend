@@ -26,7 +26,7 @@
     }
 </script>
 
-<form class="flex items-center bg-white py-2 px-3 rounded-md shadow-md" on:submit|preventDefault={submitForm}>
+<form class="flex items-center bg-white py-2 px-3 rounded-md shadow-md w-full" on:submit|preventDefault={submitForm}>
     <button type="submit">
         <div class="mr-3">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="16" height="16" class="fill-primary">

@@ -9,7 +9,7 @@
 </script>
 
 <div class="flex flex-col items-center container">
-    <div class="my-32 text-center">
+    <div class="my-28 text-center">
         <Heading>Le blog</Heading>
         <SubHeading>du Royaume</SubHeading>
     </div>
