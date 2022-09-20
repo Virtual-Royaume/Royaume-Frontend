@@ -17,11 +17,11 @@
     </div>
 
     <form on:submit|preventDefault={onSubmitForm}>
-        <TextInput label="Nom d'utilisateur" name="username" />
-        <TextInput label="Email" name="email" />
-        <TextInput label="Mot de passe" type="password" name="password" />
+        <TextInput label="Nom d'utilisateur" name="username" autofocus required />
+        <TextInput label="Email" type="email" name="email" required />
+        <TextInput label="Mot de passe" type="password" name="password" required />
 
-        <Checkbox label="Se souvenir de moi" name="remindMe" />
+        <Checkbox label="Accepter les conditions d'utilisation" name="acceptConditions" />
 
         <div class="mt-12">
             <Button variant="contained" extend={true}>S'enregistrer</Button>
@@ -31,7 +31,7 @@
     <div>
         <p class="text-neutral-300 mt-10">
             Vous avez déjà un compte ?
-            <a href="/connection/login">Se connecter</a>
+            <a href="/connection/login" class="link">Se connecter</a>
         </p>
     </div>
 </div>

@@ -12,10 +12,10 @@ body {
     background: #5339DD;
 }
 
-a {
+.link {
     text-decoration: underline;
 }
 
-a:hover {
+.link:hover {
     text-decoration: none;
 }
