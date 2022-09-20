@@ -5,7 +5,7 @@
 
 </script>
 
-<div class="bg-primary w-[300px] fixed h-full flex flex-col justify-between">
+<div class="bg-primary w-[320px] fixed h-full flex flex-col justify-between">
     <div>
         <a href="/" class="flex items-center justify-center no-underline py-2 m-4 rounded-md transition-all hover:bg-darkprimary">
             <div class="mr-3">
