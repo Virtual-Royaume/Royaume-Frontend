@@ -35,5 +35,5 @@
         </div>
     </button>
     
-    <input type="text" placeholder="Rechercher un article" class="outline-none" name="query" value={baseValue}>
+    <input type="text" placeholder="Rechercher un article" class="outline-none w-full" name="query" value={baseValue}>
 </form>
