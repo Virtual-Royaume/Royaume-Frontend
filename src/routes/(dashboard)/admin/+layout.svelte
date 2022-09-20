@@ -1,7 +1,6 @@
 <script lang="ts">
     import '@css/global.css';
 
-    import AdminNavbar from '@components/layouts/navbar/AdminNavbar.svelte';
     import Footer from '@components/layouts/footer/Footer.svelte';
     import AdminSidebar from '@components/layouts/sidebar/AdminSidebar.svelte';
 
