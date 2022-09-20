@@ -17,8 +17,8 @@
     </div>
 
     <form on:submit|preventDefault={onSubmitForm}>
-        <TextInput label="Email" name="email" />
-        <TextInput label="Mot de passe" type="password" name="password" />
+        <TextInput label="Email" name="email" autofocus required />
+        <TextInput label="Mot de passe" type="password" name="password" required />
 
         <Checkbox label="Se souvenir de moi" name="remindMe" />
 
@@ -42,7 +42,7 @@
     <div>
         <p class="text-neutral-300 mt-10">
             Vous n'avez pas de compte ?
-            <a href="/connection/register">S'enregistrer</a>
+            <a href="/connection/register" class="link">S'enregistrer</a>
         </p>
     </div>
 </div>
