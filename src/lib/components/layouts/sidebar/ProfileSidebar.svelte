@@ -16,11 +16,11 @@
     
         <div class="px-4">
             <SidebarGroup title="Réglages" id="settings">
-                <SideLink href="/">Modifier le profil</SideLink>
-                <SideLink href="/">Changer le mot de passe</SideLink>
+                <SideLink href="/profile/settings/edit">Modifier le profil</SideLink>
+                <SideLink href="/profile/settings/password">Changer le mot de passe</SideLink>
             </SidebarGroup>
             <SidebarGroup title="Blog" id="blog">
-                <SideLink href="/">Vos posts</SideLink>
+                <SideLink href="/profile/blog/posts">Vos posts</SideLink>
             </SidebarGroup>
         </div>
     </div>

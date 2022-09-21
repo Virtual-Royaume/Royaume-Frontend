@@ -17,8 +17,12 @@
     </div>
 
     <form on:submit|preventDefault={onSubmitForm}>
-        <TextInput label="Email" name="email" autofocus required />
-        <TextInput label="Mot de passe" type="password" name="password" required />
+        <div class="mb-6">
+            <TextInput label="Email" name="email" autofocus required />
+        </div>
+        <div class="mb-6">
+            <TextInput label="Mot de passe" type="password" name="password" required />
+        </div>
 
         <Checkbox label="Se souvenir de moi" name="remindMe" />
 

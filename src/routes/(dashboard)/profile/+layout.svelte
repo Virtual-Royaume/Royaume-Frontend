@@ -10,10 +10,11 @@
     <title>Accueil - Royaume</title>
 </svelte:head>
 
-<!--<ProfileNavbar bind:isSidebarOpened={isSidebarOpened} />-->
 <div class="flex">
-    <ProfileSidebar />
-    <div class="mb-48">
+    <div class="min-w-[320px]">
+        <ProfileSidebar />
+    </div>
+    <div class="mb-48 p-8 m-16 w-full">
         <slot></slot>
     </div>
 </div>
