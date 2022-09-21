@@ -17,9 +17,15 @@
     </div>
 
     <form on:submit|preventDefault={onSubmitForm}>
-        <TextInput label="Nom d'utilisateur" name="username" autofocus required />
-        <TextInput label="Email" type="email" name="email" required />
-        <TextInput label="Mot de passe" type="password" name="password" required />
+        <div class="mb-6">
+            <TextInput label="Nom d'utilisateur" name="username" autofocus required />
+        </div>
+        <div class="mb-6">
+            <TextInput label="Email" type="email" name="email" required />
+        </div>
+        <div class="mb-6">
+            <TextInput label="Mot de passe" type="password" name="password" required />
+        </div>
 
         <Checkbox label="Accepter les conditions d'utilisation" name="acceptConditions" />
 

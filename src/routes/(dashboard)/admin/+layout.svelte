@@ -1,20 +1,18 @@
 <script lang="ts">
     import '@css/global.css';
 
-    import Footer from '@components/layouts/footer/Footer.svelte';
     import AdminSidebar from '@components/layouts/sidebar/AdminSidebar.svelte';
-
-    let isSidebarOpened: boolean;
 </script>
 
 <svelte:head>
     <title>Accueil - Royaume</title>
 </svelte:head>
 
-<!--<AdminNavbar bind:isSidebarOpened={isSidebarOpened} />-->
 <div class="flex">
-    <AdminSidebar />
-    <div class="mb-48">
+    <div class="w-[320px]">
+        <AdminSidebar />
+    </div>
+    <div class="mb-48 ml-[320px] p-8">
         <slot></slot>
     </div>
 </div>

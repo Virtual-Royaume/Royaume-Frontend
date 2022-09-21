@@ -24,7 +24,7 @@
             {#if false}
                 <Button variant="contained" href="/connection/login">Connexion</Button>
             {:else}
-                <Button variant="contained" href="/profile">
+                <Button variant="contained" href="/profile/settings/edit">
                     <div class="flex items-center">
                         <svg class="fill-neutral-200 h-6 w-6 mr-1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
                             <g>
