@@ -35,10 +35,10 @@
         <a href="/connection/login" class="bg-white rounded-md py-2 px-10 w-fit border-2 border-neutral-300">
             <img src="/images/login/google.png" alt="Google logo" class="h-5">
         </a>
-        <a href="/connection/login" class="bg-white rounded-md py-2 px-10 w-fit border-2 border-neutral-300 cursor-pointer">
+        <a href="/connection/login" class="bg-white rounded-md py-2 px-10 w-fit border-2 border-neutral-300">
             <img src="/images/login/apple.png" alt="Apple logo" class="h-5">
         </a>
-        <a href="/connection/login" class="bg-white rounded-md py-2 px-10 w-fit border-2 border-neutral-300 cursor-pointer">
+        <a href="/connection/login" class="bg-white rounded-md py-2 px-10 w-fit border-2 border-neutral-300">
             <img src="/images/login/github.png" alt="Github logo" class="h-5">
         </a>
     </div>
