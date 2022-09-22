@@ -5,11 +5,13 @@
     export let name: string;
     export let autofocus: boolean = false;
     export let required: boolean = false;
+    export let value: null | string = null;
+    export let disable: boolean = false;
 </script>
 
 <label class="flex flex-col">
     <span class="text-neutral-200 font-medium uppercase text-sm text-left mb-1">{label}</span>
 
     <!-- svelte-ignore a11y-autofocus -->
-    <input type={type} placeholder={placeholder} name={name} autofocus={autofocus} required={required} class="text-neutral-400 outline-none border border-neutral-600 focus:border-lightprimary rounded-md px-2 py-1 font-medium bg-neutral-800">
+    <input type={type} placeholder={placeholder} value={value} name={name} autofocus={autofocus} required={required} disabled={disable} class="text-neutral-400 outline-none border border-neutral-600 focus:border-lightprimary rounded-md px-2 py-1 font-medium bg-neutral-800 disabled:bg-neutral-700">
 </label>

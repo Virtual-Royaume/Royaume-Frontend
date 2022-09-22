@@ -1,7 +1,6 @@
 <script lang="ts">
     import Button from "@components/elements/forms/Button.svelte";
     import TextInput from "@components/elements/forms/input/TextInput.svelte";
-    import ToggleSwitch from "@components/elements/forms/ToggleSwitch.svelte";
     import Heading from "@components/layouts/typography/Heading.svelte";
 
     let avatarRef: HTMLImageElement;
@@ -21,6 +20,9 @@
 
         reader.readAsDataURL(avatar);
     }
+
+    export let data;
+    let user = data.user;
 </script>
 
 <div>
@@ -31,7 +33,7 @@
         <div>
             <div class="mb-16 flex justify-center">
                 <label class="cursor-pointer rounded-full group relative">
-                    <img bind:this={avatarRef} class="rounded-full w-32 h-32 group-hover:brightness-50 transition-all duration-300 object-cover" src="https://pickaface.net/gallery/avatar/unr_random_160817_0304_2mvqp69.png" alt="Your Avatar">
+                    <img bind:this={avatarRef} class="rounded-full w-32 h-32 transition-all duration-300 object-cover group-hover:brightness-50" src={user.avatar} alt="Your Avatar">
                     <input type="file" class="hidden" on:change={uploadAvatar}>
 
                     <svg class="fill-neutral-200 absolute w-12 h-12 top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"viewBox="0 0 490 490" style="enable-background:new 0 0 490 490;" xml:space="preserve">
@@ -54,8 +56,8 @@
                 <h2 class="text-neutral-200 font-bold text-2xl mb-4">Mes informations</h2>
                 <form>
                     <div class="bg-neutral-800 rounded-md border border-neutral-600 p-6 grid grid-cols-2 gap-6">
-                        <TextInput label="Nom d'utilisateur" name="username" />
-                        <TextInput label="Email" name="email" type="email" />
+                        <TextInput label="Nom d'utilisateur" name="username" value={user.username} />
+                        <TextInput label="Email" name="email" type="email" value={user.email} />
                     </div>
     
                     <div class="flex justify-end mt-3">
@@ -64,18 +66,6 @@
                 </form>
             </div>
 
-            <div>
-                <h2 class="text-neutral-200 font-bold text-2xl mb-4">Préférences</h2>
-                <form>
-                    <div class="bg-neutral-800 rounded-md border border-neutral-600 p-6 flex">
-                        <ToggleSwitch name="useDiscordData" label="Utiliser les données de mon compte discord" />
-                    </div>
-
-                    <div class="flex justify-end mt-3">
-                        <Button variant="contained">Modifier mes préférences</Button>
-                    </div>
-                </form>
-            </div>
         </div>
     
         <div>
