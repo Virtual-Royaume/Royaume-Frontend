@@ -2,8 +2,6 @@
     import '@css/global.css';
 
     import ProfileSidebar from '@components/layouts/sidebar/ProfileSidebar.svelte';
-
-    let isSidebarOpened: boolean;
 </script>
 
 <svelte:head>
