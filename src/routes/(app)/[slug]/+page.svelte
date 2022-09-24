@@ -1,11 +1,14 @@
 <script lang="ts">
     import Button from '@components/elements/forms/Button.svelte';
     import PostAuthor from '@components/layouts/post/PostAuthor.svelte';
+    import PostComments from '@components/layouts/post/PostComments.svelte';
     import Heading from '@components/layouts/typography/Heading.svelte';
     import { onMount } from 'svelte';
 
     export let data: any;
     const post = data.post;
+    const user = data.user;
+    const comments = data.comments;
 
     let article: HTMLElement;
     let toc: HTMLElement;
@@ -119,6 +122,10 @@
 
             <div class="mt-16">
                 <PostAuthor author={post.author} />
+            </div>
+
+            <div class="mt-28">
+                <PostComments user={user} comments={comments} />
             </div>
         </div>
     
