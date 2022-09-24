@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "author": {
+            "username": "Blabus",
+            "avatar": "https://pickaface.net/gallery/avatar/41485275_170424_0745_9o6ru7.png"
+        },
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus gravida quis blandit turpis cursus in hac. Ultrices gravida dictum fusce ut placerat orci nulla. Fringilla phasellus faucibus scelerisque eleifend donec pretium.",
+        "createdAt": "Thu Sep 08 2022 03:24:00 GMT+0200 (heure d’été d’Europe centrale)"
+    },
+    {
+        "id": 2,
+        "author": {
+            "username": "Wackyle",
+            "avatar": "https://pickaface.net/gallery/avatar/hayley020453d6e24a634b1.png"
+        },
+        "content": "Suscipit tellus mauris a. Massa sapien faucibus et molestie ac feugiat. Dictumst vestibulum",
+        "createdAt": "Thu Sep 08 2022 03:24:00 GMT+0200 (heure d’été d’Europe centrale)"
+    },
+    {
+        "id": 3,
+        "author": {
+            "username": "Stunnapt",
+            "avatar": "https://pickaface.net/gallery/avatar/20160215_004424_3652_fpuente.png"
+        },
+        "content": "Sit amet dictum sit amet justo. Magnis dis parturient montes nascetur. Neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing. In fermentum posuere urna nec tincidunt praesent semper. Amet dictum sit amet justo donec enim diam vulputate. Bibendum arcu vitae elementum curabitur vitae. Sed tempus urna et pharetra pharetra massa massa. Morbi tincidunt ornare massa eget egestas purus viverra accumsan. Nulla pharetra diam sit amet nisl suscipit. ",
+        "createdAt": "Thu Sep 08 2022 03:24:00 GMT+0200 (heure d’été d’Europe centrale)"
+    }
+]

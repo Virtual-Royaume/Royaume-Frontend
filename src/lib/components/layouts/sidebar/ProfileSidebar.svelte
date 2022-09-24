@@ -17,7 +17,6 @@
         <div class="px-4">
             <SidebarGroup title="Réglages" id="settings">
                 <SideLink href="/profile/settings/edit">Modifier le profil</SideLink>
-                <SideLink href="/profile/settings/password">Changer le mot de passe</SideLink>
             </SidebarGroup>
             <SidebarGroup title="Blog" id="blog">
                 <SideLink href="/profile/blog/posts">Vos posts</SideLink>

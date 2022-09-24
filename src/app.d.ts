@@ -10,6 +10,6 @@ declare namespace App {
 		}
 	}
 	// interface PageData {}
-	// interface PageError {}
+	// interface Error {}
 	// interface Platform {}
 }
