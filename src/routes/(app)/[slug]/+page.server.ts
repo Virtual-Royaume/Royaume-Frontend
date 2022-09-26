@@ -12,7 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export const load = async ({ params, locals }: ServerLoadEvent) => {
-    const post = posts.find((post) => post.id === slugToId(params.slug ?? '0'));
+    const post = posts.find((post) => post.id === slugToId(<string>params.slug));
     if (!post) {
         throw error(404, 'Not found')
     }

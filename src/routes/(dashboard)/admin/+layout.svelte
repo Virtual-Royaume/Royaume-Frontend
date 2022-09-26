@@ -12,7 +12,7 @@
     <div class="w-[320px]">
         <AdminSidebar />
     </div>
-    <div class="mb-48 ml-[320px] p-8">
+    <div class="p-8 m-16 w-full grid grid-cols-[3fr_350px]">
         <slot></slot>
     </div>
 </div>
