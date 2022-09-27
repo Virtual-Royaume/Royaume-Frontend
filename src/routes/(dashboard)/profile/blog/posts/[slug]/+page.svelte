@@ -2,6 +2,7 @@
     import Button from '@components/elements/forms/Button.svelte';
     import TextInput from '@components/elements/forms/input/TextInput.svelte';
     import TextArea from '@components/elements/forms/TextArea.svelte';
+    import MdEditor from '@components/elements/markdown/editor/MdEditor.svelte';
     import Heading from "@components/layouts/typography/Heading.svelte";
     import { marked } from 'marked';
 
@@ -10,7 +11,7 @@
     export let data: PageData;
     const post = data.post;
 
-    let source: string = '# Coucou';
+    let source: string = '';
     $: markdown = marked(source);
 </script>
 
@@ -58,6 +59,10 @@
                         <textarea class="w-full h-[275px] text-neutral-400 outline-none resize-none bg-neutral-800 p-2 rounded-md border border-neutral-600 focus:border-lightprimary" bind:value={source} name="content"></textarea>
                     </div>
                 </div>
+            </div>
+
+            <div class="mt-6">
+                <MdEditor />
             </div>
     
             <div class="flex justify-end mt-3">
