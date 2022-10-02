@@ -23,6 +23,8 @@
     "eslint": "^8.16.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "markdown-it": "^13.0.1",
+    "mdast": "^3.0.0",
+    "mdast-util-from-markdown": "^1.2.0",
     "postcss": "^8.4.16",
     "svelte": "^3.44.0",
     "svelte-check": "^2.7.1",
