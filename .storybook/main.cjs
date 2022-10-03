@@ -1,3 +1,5 @@
+const preprocess = require("svelte-preprocess");
+
 module.exports = {
   "stories": [
     "../src/**/*.stories.mdx",
@@ -6,16 +8,23 @@ module.exports = {
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-interactions"
+    "@storybook/addon-svelte-csf",
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+          postcssLoaderOptions: {
+              implementation: require('postcss'),
+          },
+      },
+    }
   ],
   "framework": "@storybook/svelte",
   "core": {
     "builder": "@storybook/builder-vite"
   },
-  "svelteOptions": {
-    "preprocess": import("../svelte.config.js").preprocess
-  },
-  "features": {
-    "storyStoreV7": true
+  svelteOptions: {
+    preprocess: preprocess({
+      postcss: true
+    })
   }
 }
