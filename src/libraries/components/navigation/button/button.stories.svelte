@@ -4,14 +4,15 @@
 </script>
 
 <Meta 
-  title="Button"
+  title="Navigation/Button"
   component={Button}
   argTypes={{
     variant: { control: "select", options: ["text", "contained", "outlined"] },
+    size: { control: "select", options: ["small", "medium", "large"] },
+    color: { control: "select", options: ["primary", "secondary", "error", "success", "warning"] },
     disabled: { control: "boolean" },
-    onClick:  { action: "onClick" },
     href: { control: "text" },
-    size: { control: "select", options: ["small", "medium", "large"] }
+    onClick:  { action: "onClick" }
   }}
 />
 

@@ -4,15 +4,42 @@ module.exports = {
   content: ["./src/**/*.{html,js,svelte,ts}"],
   theme: {
     colors: {
-      "primary": "#5339DD",
+      "primary": {
+        1: "#5339DD",
+        2: "#39279C"
+      },
+      "secondary": {
+        1: "#C6D116",
+        2: "#A5AF15"
+      },
+
+      "success": {
+        1: "#48C629",
+        2: "#3DA723"
+      },
+      "warning": {
+        1: "#FFB22B",
+        2: "#CD9024"
+      },
+      "error": {
+        1: "#FE5A5A",
+        2: "#CF4747"
+      },
 
       "white": "white",
       "black": "black",
 
-      "gray": "#F2F2F2",
+      "gray": {
+        1: "#F2F2F2",
+        2: "#D1D1D1",
+        3: "#BABABA",
+        4: "#A5A5A5"
+      },
 
       "red": "#FF5555",
-      "green": "#27ae60"
+      "green": "#27ae60",
+
+      "transparent": "transparent"
     },
 
     fontSize: { // TODO : use REM
