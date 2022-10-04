@@ -1,7 +1,7 @@
 <script lang="ts">
   import { clsx } from "clsx";
 
-  import type { Align, TypoVariant } from "./typography.type";
+  import type { Align, TypoVariant } from "./text.type";
 
   export let variant: TypoVariant;
 

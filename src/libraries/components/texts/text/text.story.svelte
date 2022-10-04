@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import Typography from './typography.svelte';
+  import Typography from './text.svelte';
 </script>
 
 <Meta 
