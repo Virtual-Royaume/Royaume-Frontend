@@ -13,11 +13,12 @@
     "sourceType": "module"
   },
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "svelte3"
   ],
   "rules": {
     // Layout & Formatting :
-    "indent": ["error", 4],
+    "indent": ["error", 2],
 
     "quotes": ["error", "double"],
 
