@@ -48,10 +48,11 @@
     // Size :
     "py-1 px-2": size === "small",
     "py-1 px-6": size === "medium",
-    "py-1 px-9": size === "large"
+    "py-1 px-9": size === "large",
+    "py-1 w-full": size === "full"
   });
 
-  const defaultStyle = "rounded-md select-none table-cell border-2 uppercase font-medium tracking-widest transition-colors duration-200";
+  const defaultStyle = "rounded-md select-none table-cell border-2 uppercase font-medium tracking-wider transition-colors duration-200";
 </script>
 
 {#if href}
