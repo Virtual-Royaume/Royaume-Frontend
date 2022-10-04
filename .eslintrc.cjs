@@ -1,7 +1,8 @@
-{
+module.exports = {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true
   },
   "extends": [
     "eslint:recommended",
@@ -16,6 +17,10 @@
     "@typescript-eslint",
     "svelte3"
   ],
+  "overrides": [{ "files": ["*.svelte"], "processor": "svelte3/svelte3" }],
+  "settings": {
+    "svelte3/typescript": () => require("typescript")
+  },
   "rules": {
     // Layout & Formatting :
     "indent": ["error", 2],
@@ -85,4 +90,4 @@
     "no-lonely-if": "error",
     "no-multi-assign": "error"
   }
-}
+};
