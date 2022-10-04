@@ -1,17 +1,9 @@
 <script lang="ts">
-  import type { Hst } from "@histoire/plugin-svelte";
-  import { Button } from ".";
-
-  export let H: Hst;
+  import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
+  import Button from './button.svelte';
 </script>
 
-<H.Story>
-  <H.Variant>
-    <Button>Test</Button>
-  </H.Variant>
-</H.Story>
-
-<!-- <Meta 
+<Meta 
   title="Button"
   component={Button}
   argTypes={{
@@ -21,9 +13,9 @@
     href: { control: "text" },
     size: { control: "select", options: ["small", "medium", "large"] }
   }}
-/> -->
+/>
 
-<!-- <Template let:args>
+<Template let:args>
   <Button {...args} onClick={args.onClick}>Text</Button>
 </Template>
 
@@ -31,4 +23,4 @@
 
 <Story name="Contained" args={{ variant: "contained" }}/>
 
-<Story name="Outlined" args={{ variant: "outlined" }}/> -->
+<Story name="Outlined" args={{ variant: "outlined" }}/>
