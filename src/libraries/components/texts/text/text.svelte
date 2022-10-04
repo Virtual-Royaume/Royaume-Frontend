@@ -1,39 +1,34 @@
 <script lang="ts">
+  import type { Type, Color, Size, FontWeight } from "./text.type";
   import { clsx } from "clsx";
 
-  import type { Align, TypoVariant } from "./text.type";
+  // Props :
+  export let type: Type = "p";
+  export let size: Size = "normal";
+  export let color: Color = "black";
+  export let fontWeight: FontWeight = "normal";
 
-  export let variant: TypoVariant;
+  // Style :
+  const style = clsx({
+    // Text color :
+    "text-black": color === "black",
+    "text-white": color === "white",
+    "text-gray": color === "gray",
+    "text-red": color === "red",
 
-  export let align: Align = "left";
+    // Font size :
+    "text-normal": size === "normal",
+    "text-lg": size === "large",
+    "text-xl": size === "xl",
+    "text-2xl": size === "2xl",
+    "text-3xl": size === "3xl",
 
-  export let noWrap: boolean = false;
-
-  const className = clsx({
-    "text-left": align === "left",
-    "text-center": align === "center",
-    "text-right": align === "right",
-    "text-justify": align === "justify",
-    "text-start": align === "start",
-    "text-end": align === "end",
-
-    "whitespace-normal": !noWrap,
-    "whitespace-nowrap": noWrap,
-
-    "text-[80px] font-medium": variant === "h1",
-    "text-[60px] font-medium": variant === "h2",
-    "text-[48px]": variant === "h3",
-    "text-[34px]": variant === "h4",
-    "text-[24px]": variant === "h5",
-    "text-[20px]": variant === "h6",
-    "text-[16px]": variant === "body1",
-    "text-[14px]": variant === "body2"
+    "font-thin": fontWeight === "thin",
+    "font-normal": fontWeight === "normal",
+    "font-bold": fontWeight === "bold"
   });
-
-  let tag: string = variant;
-  if (variant.startsWith("body")) tag = "p";
 </script>
 
-<svelte:element this={tag} class={className}>
+<svelte:element this={type} class={style}>
   <slot />
 </svelte:element>

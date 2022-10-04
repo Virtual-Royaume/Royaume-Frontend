@@ -1,3 +1,4 @@
-export type TypoVariant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "body1" | "body2";
-
-export type Align = "left" | "center" | "right" | "justify" | "start" | "end";
+export type Type = "p" | "h4" | "h3" | "h2" | "h1";
+export type Size = "small" | "normal" | "large" | "xl" | "2xl" | "3xl";
+export type Color = "black" | "white" | "gray" | "red" | "primary";
+export type FontWeight = "thin" | "normal" | "bold";
