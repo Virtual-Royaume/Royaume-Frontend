@@ -11,12 +11,14 @@
   // Style :
   const style = clsx({
     // Text color :
+    "text-primary": color === "primary",
     "text-black": color === "black",
     "text-white": color === "white",
     "text-gray": color === "gray",
     "text-red": color === "red",
 
     // Font size :
+    "text-small": size === "normal",
     "text-normal": size === "normal",
     "text-lg": size === "large",
     "text-xl": size === "xl",
