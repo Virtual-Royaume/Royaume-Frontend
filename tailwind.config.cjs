@@ -51,6 +51,10 @@ module.exports = {
       "3xl": ["80px", { lineHeight: 1 }]
     },
 
+    fontFamily: {
+      sans: "Poppins, sans-serif"
+    },
+
     extend: {}
   },
   plugins: []

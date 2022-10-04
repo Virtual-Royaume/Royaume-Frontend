@@ -8,7 +8,7 @@
   component={Button}
   argTypes={{
     variant: { control: "select", options: ["text", "contained", "outlined"] },
-    size: { control: "select", options: ["small", "medium", "large"] },
+    size: { control: "select", options: ["small", "medium", "large","full"] },
     color: { control: "select", options: ["primary", "secondary", "error", "success", "warning"] },
     disabled: { control: "boolean" },
     href: { control: "text" },
