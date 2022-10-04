@@ -1,11 +1,11 @@
 <script lang="ts">
-  import type { Type, Color, Size, FontWeight } from "./text.type";
   import { clsx } from "clsx";
+  import type { TextType, TextColor, TextSize, FontWeight } from "./text.type";
 
   // Props :
-  export let type: Type = "p";
-  export let size: Size = "normal";
-  export let color: Color = "black";
+  export let type: TextType = "p";
+  export let size: TextSize = "normal";
+  export let color: TextColor = "black";
   export let fontWeight: FontWeight = "normal";
 
   // Style :
