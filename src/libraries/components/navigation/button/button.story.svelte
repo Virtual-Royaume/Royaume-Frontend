@@ -2,14 +2,14 @@
   import type { Hst } from "@histoire/plugin-svelte";
   import { Button } from ".";
 
-  export let Hst: Hst;
+  export let H: Hst;
 </script>
 
-<Hst.Story>
-  <Hst.Variant>
+<H.Story>
+  <H.Variant>
     <Button>Test</Button>
-  </Hst.Variant>
-</Hst.Story>
+  </H.Variant>
+</H.Story>
 
 <!-- <Meta 
   title="Button"

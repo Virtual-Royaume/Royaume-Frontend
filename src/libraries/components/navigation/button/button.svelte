@@ -5,7 +5,7 @@
 
   export let variant: ButtonVariant = "text";
 
-  export let disabled: boolean = false;
+  export let disabled = false;
 
   export let onClick: (event: MouseEvent) => void = () => null;
 
@@ -14,7 +14,7 @@
   export let size: ButtonSize = "small";
 
   const className = clsx({
-      
+  
   });
 </script>
 
