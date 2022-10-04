@@ -1,29 +1,66 @@
 <script lang="ts">
-  import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import Typography from './text.svelte';
+  import type { Hst } from "@histoire/plugin-svelte";
+  import type { Type, Color, Size, FontWeight } from "./text.type";
+  import { Text } from ".";
+
+  export let Hst: Hst;
+
+  // Default props :
+  export let type: Type = "p";
+  export let size: Size = "normal";
+  export let color: Color = "black";
+  export let fontWeight: FontWeight = "normal";
+
+  // Default value :
+  const content: string = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae totam reprehenderit modi alias.";
+
+  // Controls :
+  const typeOptions: Record<Type, string> = {
+    "h1": "H1",
+    "h2": "H2",
+    "h3": "H3",
+    "h4": "H4",
+    "p": "Paragraph"
+  }
+  const sizeOptions: Record<Size, string> = {
+    "small": "Small",
+    "normal": "Normal",
+    "large": "Large",
+    "xl": "XL",
+    "2xl": "2XL",
+    "3xl": "3XL"
+  }
+  const colorOptions: Record<Color, string> = {
+    "black": "Black",
+    "white": "White",
+    "gray": "Gray",
+    "red": "Red",
+    "primary": "Primary"
+  }
+  const fontWeightOptions: Record<FontWeight, string> = {
+    "thin": "Thin",
+    "normal": "Normal",
+    "bold": "Bold"
+  }
 </script>
 
-<Meta 
-  title="Typography" 
-  component={Typography}
-  argTypes={{
-    variant: { control: "select", options: ["h1", "h2", "h3", "h4", "h5", "h6", "body1", "body2"] },
-    align: { control: "select", options: ["left", "center", "right", "justify", "start", "end"] }
-  }}
-/>
+<Hst.Story title="Texts/Text">
+  <svelte:fragment slot="controls">
+    <Hst.Select title="Type" bind:value={type} options={typeOptions} />
+    <Hst.Select title="Size" bind:value={size} options={sizeOptions} />
+    <Hst.Select title="Color" bind:value={color} options={colorOptions} />
+    <Hst.Select title="Font Weight" bind:value={fontWeight} options={fontWeightOptions} />
+  </svelte:fragment>
 
-<Template let:args>
-  <Typography {...args}>Text</Typography>
-</Template>
+  <Hst.Variant title="Default">
+    <Text {type} {size} {color} {fontWeight}>{content}</Text>
+  </Hst.Variant>
 
-<Story name="H1" args={{ variant: "h1" }}/>
+  <Hst.Variant title="Title">
+    <Text type="h1" size="2xl">{content}</Text>
+  </Hst.Variant>
 
-<Story name="H2" args={{ variant: "h2" }}/>
-
-<Story name="H3" args={{ variant: "h3" }}/>
-
-<Story name="H4" args={{ variant: "h4" }}/>
-
-<Story name="H5" args={{ variant: "h5" }}/>
-
-<Story name="H6" args={{ variant: "h6" }}/>
+  <Hst.Variant title="Error">
+    <Text color="red" size="small">{content}</Text>
+  </Hst.Variant>
+</Hst.Story>
