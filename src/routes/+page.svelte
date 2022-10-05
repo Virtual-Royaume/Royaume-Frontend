@@ -1,4 +1,5 @@
 <script>
+  import { Checkbox } from "$lib/components/form/checkbox";
   import { Button } from "$lib/components/navigation/button";
   import { Text } from "$lib/components/texts/text";
 </script>
@@ -10,3 +11,5 @@
 
 <Text color="primary">Test</Text>
 <p class="text-red text-3xl">Test</p>
+
+<Checkbox />
