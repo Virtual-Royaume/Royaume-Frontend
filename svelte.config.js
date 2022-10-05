@@ -12,6 +12,10 @@ const config = {
     files: {
       lib: "src/libraries",
       assets: "src/assets"
+    },
+    alias: {
+      "@components/*": "src/libraries/components/*",
+      "@icons/*": "src/libraries/icons/*"
     }
   }
 };

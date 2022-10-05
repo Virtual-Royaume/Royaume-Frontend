@@ -1,4 +1,5 @@
 const preprocess = require("svelte-preprocess");
+const path = require("path");
 
 module.exports = {
   "stories": ["../src/**/*.stories.@(js|jsx|ts|tsx|svelte)"],
@@ -19,9 +20,9 @@ module.exports = {
   "core": {
     "builder": "@storybook/builder-vite"
   },
-  svelteOptions: {
-    preprocess: preprocess({
-      postcss: true
-    })
-  }
+  svelteOptions: import("../svelte.config.js").preprocess
+}
+
+function resolve(dir) {
+  return path.join(__dirname, dir);
 }
