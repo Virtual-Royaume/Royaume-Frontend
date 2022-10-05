@@ -43,9 +43,9 @@ module.exports = {
     },
 
     fontSize: { // TODO : use REM
-      small: "14px",
+      small: ".8rem",
       normal: "1rem",
-      large: "48px",
+      large: ["1.2rem", { lineHeight: 1 }],
       xl: "34px",
       "2xl": "60px",
       "3xl": ["80px", { lineHeight: 1 }]
@@ -57,5 +57,7 @@ module.exports = {
 
     extend: {}
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/line-clamp')
+  ]
 };

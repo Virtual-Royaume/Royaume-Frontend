@@ -10,7 +10,7 @@
     type: { control: "select", options: ["p", "h1", "h2", "h3", "h4"] },
     size: { control: "select", options: ["small", "normal", "large", "xl", "2xl", "3xl"] },
     color: { control: "select", options: ["black", "white", "gray", "red", "primary"] },
-    fontWeight: { control: "select", options: ["thin", "normal", "bold"] }
+    fontWeight: { control: "select", options: ["thin", "light", "normal", "medium", "bold"] }
   }}
 />
 
