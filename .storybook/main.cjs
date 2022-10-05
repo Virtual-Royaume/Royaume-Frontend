@@ -22,7 +22,3 @@ module.exports = {
   },
   svelteOptions: import("../svelte.config.js").preprocess
 }
-
-function resolve(dir) {
-  return path.join(__dirname, dir);
-}
