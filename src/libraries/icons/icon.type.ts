@@ -1,0 +1,1 @@
+export type IconColor = "primary" | "secondary" | "error" | "success" | "warning" | "black" | "white";
