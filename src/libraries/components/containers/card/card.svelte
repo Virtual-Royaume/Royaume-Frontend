@@ -27,14 +27,14 @@
     
         {#if description}
           <div class="mt-3 text-justify">
-            <Text type="p" size="small">{description}</Text>
+            <Text type="p" size="small" lineClamp={3}>{description}</Text>
           </div>
         {/if}
-      </div>  
+      </div> 
     </div>
   </a>
 {:else}
-  <div class="shadow-md w-80 rounded-md" on:click={onClick}>
+  <div class="shadow-md w-80 rounded-md cursor-pointer" on:click={onClick}>
     {#if image}
       <img src={image} alt="Card Thumbnail" class="rounded-t-md w-full aspect-video object-cover h-44">    
     {/if}  
@@ -49,7 +49,7 @@
   
       {#if description}
         <div class="mt-3 text-justify">
-          <Text type="p" size="small">{description}</Text>
+          <Text type="p" size="small" lineClamp={3}>{description}</Text>
         </div>
       {/if}
     </div>  

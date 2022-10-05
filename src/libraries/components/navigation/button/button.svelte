@@ -11,7 +11,7 @@
   export let onClick: (event: MouseEvent) => void = () => null;
 
   // Style :
-  const style = clsx({
+  const style = clsx("rounded-md select-none table-cell border-2 uppercase font-medium tracking-wider transition-colors duration-200", {
     // Contained :
     "bg-primary-1 text-white": color === "primary" && variant === "contained",
     "bg-secondary-1 text-black": color === "secondary" && variant === "contained",
@@ -52,17 +52,16 @@
     "py-1 w-full": size === "full"
   });
 
-  const defaultStyle = "rounded-md select-none table-cell border-2 uppercase font-medium tracking-wider transition-colors duration-200";
 </script>
 
 {#if href}
 <a href={href} class="no-underline">
-  <button class={defaultStyle + " " + style} disabled={disabled}>
+  <button class={style} disabled={disabled}>
     <slot />
   </button>
 </a>
 {:else}
-<button class={defaultStyle + " " + style} disabled={disabled} on:click={onClick}>
+<button class={style} disabled={disabled} on:click={onClick}>
   <slot />
 </button>
 {/if}
