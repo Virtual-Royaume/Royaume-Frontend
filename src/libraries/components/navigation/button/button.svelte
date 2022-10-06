@@ -11,7 +11,7 @@
   export let onClick: (event: MouseEvent) => void = () => null;
 
   // Style :
-  const style = clsx("rounded-md select-none table-cell border-2 uppercase font-medium tracking-wider transition-colors duration-200", {
+  $: style = clsx("focus:ring rounded-md select-none table-cell border-2 uppercase font-medium tracking-wider transition-colors duration-200", {
     // Contained :
     "bg-primary-1 text-white": color === "primary" && variant === "contained",
     "bg-secondary-1 text-black": color === "secondary" && variant === "contained",
@@ -49,7 +49,14 @@
     "py-1 px-2": size === "small",
     "py-1 px-6": size === "medium",
     "py-1 px-9": size === "large",
-    "py-1 w-full": size === "full"
+    "py-1 w-full": size === "full",
+
+    // Ring :
+    "focus:ring-primary-1/50": color === "primary",
+    "focus:ring-secondary-1/50": color === "secondary",
+    "focus:ring-success-1/50": color === "success",
+    "focus:ring-warning-1/50": color === "warning",
+    "focus:ring-error-1/50": color === "error"
   });
 
 </script>
