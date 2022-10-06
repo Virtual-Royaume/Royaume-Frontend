@@ -1,7 +1,7 @@
 <script>
-  import { Checkbox } from "$lib/components/form/checkbox";
-  import { Button } from "$lib/components/navigation/button";
-  import { Text } from "$lib/components/texts/text";
+  import { Checkbox } from "@components/form/checkbox";
+  import { Button } from "@components/navigation/button";
+  import { Text } from "@components/texts/text";
 </script>
 
 <h1>Welcome to SvelteKit</h1>
