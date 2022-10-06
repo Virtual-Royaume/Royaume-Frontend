@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-    import { Switch } from ".";
+  import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
+  import { Switch } from ".";
 </script>
 
 <Meta 
@@ -13,7 +13,7 @@
 />
 
 <Template let:args>
-    <Switch {...args}/>
+  <Switch {...args}/>
 </Template>
 
 <Story name="Default"/>

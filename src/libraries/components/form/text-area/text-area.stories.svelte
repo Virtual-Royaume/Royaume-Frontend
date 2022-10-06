@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-    import { TextArea } from ".";
-  </script>
+  import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
+  import { TextArea } from ".";
+</script>
   
 <Meta 
   title="Form/TextArea"
@@ -27,7 +27,7 @@
 />
   
 <Template let:args>
-    <TextArea {...args}/>
+  <TextArea {...args}/>
 </Template>
 
 <Story name="Default"/>

@@ -14,6 +14,7 @@
 
   let isHover: boolean = false;
 
+  // Style :
   $: style = clsx("flex flex-col hover:bg-gray-2 transition-colors cursor-pointer border border-gray-2 justify-center items-center p-2 rounded-md shadow", {
     // Size :
     "h-28": size === "small",

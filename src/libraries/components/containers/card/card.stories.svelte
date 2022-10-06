@@ -23,7 +23,7 @@
 />
 
 <Template let:args>
-    <Card {...args} onClick={args.onClick} />
+  <Card {...args} onClick={args.onClick} />
 </Template>
 
 <Story name="Default" />
