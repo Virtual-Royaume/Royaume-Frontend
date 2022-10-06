@@ -1,10 +1,10 @@
 <script lang="ts">
-    import type { IconColor } from "./icon.type";
-    import { colorOptions } from "./icon.util";
+  import type { IconColor } from "./icon.type";
+  import { colorOptions } from "./icon.util";
 
-    // Props :
-    export let size: number;
-    export let color: IconColor = "white";
+  // Props :
+  export let size: number;
+  export let color: IconColor = "white";
 </script>
 
 <svg xmlns="http://www.w3.org/2000/svg" height={size} width={size} viewBox="0 0 24 24" fill={colorOptions[color]}>

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { clsx } from "clsx";
-  import type { TextType, TextColor, TextSize, FontWeight, Range } from "./text.type";
+  import type { TextType, TextColor, TextSize, FontWeight } from "./text.type";
+  import type { Range } from "../../../utils/types";
 
   // Props :
   export let type: TextType = "p";

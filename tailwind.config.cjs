@@ -31,7 +31,7 @@ module.exports = {
 
       "gray": {
         1: "#F2F2F2",
-        2: "#D1D1D1",
+        2: "#EAEAEA",
         3: "#BABABA",
         4: "#A5A5A5"
       },
@@ -43,11 +43,11 @@ module.exports = {
     },
 
     fontSize: { // TODO : use REM
-      small: ".8rem",
-      normal: ".9rem",
-      large: ["1.2rem", { lineHeight: 1 }],
-      xl: "34px",
-      "2xl": "60px",
+      small: [".8rem", { lineHeight: 1 }],
+      normal: [".9rem", { lineHeight: 1 }],
+      large: ["1.1rem", { lineHeight: 1 }],
+      xl: ["34px", { lineHeight: 1 }],
+      "2xl": ["60px", { lineHeight: 1 }],
       "3xl": ["80px", { lineHeight: 1 }]
     },
 
