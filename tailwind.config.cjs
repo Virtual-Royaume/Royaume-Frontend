@@ -44,7 +44,7 @@ module.exports = {
 
     fontSize: { // TODO : use REM
       small: ".8rem",
-      normal: "1rem",
+      normal: ".9rem",
       large: ["1.2rem", { lineHeight: 1 }],
       xl: "34px",
       "2xl": "60px",
