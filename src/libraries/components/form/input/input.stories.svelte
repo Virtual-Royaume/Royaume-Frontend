@@ -24,7 +24,7 @@
 />
 
 <Template let:args>
-    <Input {...args}/>
+  <Input {...args}/>
 </Template>
 
 <Story name="Default"/>

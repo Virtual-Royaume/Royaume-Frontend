@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-    import { ImageDropzone } from ".";
+  import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
+  import { ImageDropzone } from ".";
 </script>
 
 <Meta 
@@ -16,7 +16,7 @@
 />
 
 <Template let:args>
-    <ImageDropzone {...args}/>
+  <ImageDropzone {...args}/>
 </Template>
 
 <Story name="Default"/>

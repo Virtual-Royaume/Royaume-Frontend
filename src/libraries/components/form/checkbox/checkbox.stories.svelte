@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-    import { Checkbox } from ".";
+  import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
+  import { Checkbox } from ".";
 </script>
 
 <Meta 
@@ -16,7 +16,7 @@
 />
 
 <Template let:args>
-    <Checkbox {...args}/>
+  <Checkbox {...args}/>
 </Template>
 
 <Story name="Default"/>
