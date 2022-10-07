@@ -30,7 +30,7 @@ module.exports = {
       "black": "black",
 
       "gray": {
-        1: "#F2F2F2",
+        1: "#F9F9F9",
         2: "#EAEAEA",
         3: "#BABABA",
         4: "#A5A5A5"

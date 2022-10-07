@@ -2,7 +2,6 @@
   import { clsx } from "clsx";
   import { FileUploadIcon } from "../../../icons";
   import type { ImageDropzoneColor, ImageDropzoneSize } from "./image-dropzone.type";
-  import ImageDropzonePreview from "./image.dropzone.preview.svelte";
   import Text from "../../texts/text/text.svelte";
   import type { FileType } from "../../../utils/types";
 
@@ -11,13 +10,15 @@
   export let color: ImageDropzoneColor = "primary";
   export let preview: boolean = true;
   export let size: ImageDropzoneSize = "normal";
-  export let accepted: FileType[] = ["image/png"];
+  export let accepted: FileType[] = ["image/png", "image/jpeg"];
 
   let isHover: boolean = false;
   let files: File[] = [];
 
+  $: datas = files.map((file) => URL.createObjectURL(file));
+
   // Style :
-  $: style = clsx("flex flex-col hover:bg-gray-2 transition-colors cursor-pointer border border-gray-2 justify-center items-center p-2 rounded-md shadow", {
+  $: style = clsx("flex hover:bg-gray-2 transition-colors cursor-pointer border border-gray-2 p-2 rounded-md shadow", {
     // Size :
     "h-28": size === "small",
     "h-40": size === "normal",
@@ -35,13 +36,27 @@
     "bg-gray-2": isHover
   });
 
-  const upload = (event: DragEvent) => {
-    if (event.dataTransfer?.files) {
-      [...event.dataTransfer.files].forEach((file, i) => {
-        if (accepted.length > 0 && (!file.type || !accepted.includes(<FileType>file.type))) return;
-        files = [...files, file];
-      });
-    }
+  const dropFiles = (event: DragEvent) => {
+    if (event.dataTransfer?.files) upload([...event.dataTransfer.files]);
+    isHover = false;
+  }
+
+  const clickFiles = (event: Event) => {
+    console.log("coucuo")
+    if ((event.target as HTMLInputElement).files) upload([...files]);
+    isHover = false;
+  }
+
+  const upload = (dropFiles: File[]) => {
+    files = [];
+
+    if (dropFiles.length === 0) return;
+
+    if (!multiple) dropFiles = [dropFiles[0]];
+    dropFiles.forEach((file, i) => {
+      if (accepted.length > 0 && (!file.type || !accepted.includes(<FileType>file.type))) return;
+      files = [...files, file];
+    });
   }
 </script>
 
@@ -49,17 +64,24 @@
   <label class={style}
   on:dragover|preventDefault={() => isHover = true}
   on:dragleave={() => isHover = false}
-  on:drop|preventDefault={upload}
+  on:drop|preventDefault={dropFiles}
   >
-    <input type="file"class="hidden">
+    {#if files.length === 0}
+      <div class="flex flex-col justify-center items-center w-full">
+        <input type="file"class="hidden" on:change={clickFiles}>
 
-    <FileUploadIcon size={40} color="black" />
-    <div class="text-center mt-4">
-      <Text size="normal">Cliquer ou gilsser et déposer pour télécharger</Text>
-    </div>
+        <FileUploadIcon size={40} color="black" />
+        <div class="text-center mt-4">
+          <Text size="normal">Cliquer ou gilsser et déposer pour télécharger</Text>
+        </div>
+      </div>
+    {:else}
+      <div class="flex items-center gap-2">
+        {#each datas as data, i}
+          <img src={data} alt={i + " Preview"} class="h-20 rounded-md shadow" />
+        {/each}
+      </div>
+    {/if}
+    
   </label>
-
-  {#if preview}
-    <ImageDropzonePreview {files} />
-  {/if}
 </div>
