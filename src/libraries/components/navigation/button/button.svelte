@@ -3,27 +3,29 @@
   import type { ButtonVariant, ButtonSize, ButtonColor } from "./button.type";
 
   // Props :
-  export let variant: ButtonVariant = "text";
+  export let variant: ButtonVariant = "contained";
   export let size: ButtonSize = "small";
-  export let color: ButtonColor = "primary";
+  export let color: ButtonColor = "normal";
   export let disabled = false;
   export let href: string | null = null;
   export let onClick: (event: MouseEvent) => void = () => null;
 
   // Style :
-  $: style = clsx("focus:ring rounded-md select-none table-cell border-2 uppercase font-medium tracking-wider transition-colors duration-200", {
+  $: style = clsx("focus:ring rounded-md select-none table-cell border-2 transition-colors duration-200 text-normal", {
     // Contained :
     "bg-primary-1 text-white": color === "primary" && variant === "contained",
     "bg-secondary-1 text-black": color === "secondary" && variant === "contained",
     "bg-error-1": color === "error" && variant === "contained",
     "bg-warning-1": color === "warning" && variant === "contained",
     "bg-success-1": color === "success" && variant === "contained",
+    "bg-gray-1": color === "normal" && variant === "contained",
 
     "hover:bg-primary-2 hover:border-primary-2":  color === "primary" && variant === "contained" && !disabled,
     "hover:bg-secondary-2 hover:border-secondary-2":  color === "secondary" && variant === "contained" && !disabled,
     "hover:bg-error-2 hover:border-error-2":  color === "error" && variant === "contained" && !disabled,
     "hover:bg-warning-2 hover:border-warning-2":  color === "warning" && variant === "contained" && !disabled,
     "hover:bg-success-2 hover:border-success-2":  color === "success" && variant === "contained" && !disabled,
+    "hover:bg-gray-2 hover:border-gray-2":  color === "normal" && variant === "contained" && !disabled,
 
     // Outlined & Text :
     "text-primary-1 hover:bg-primary-1/10": (variant === "outlined" || variant === "text") && color === "primary" && !disabled,
@@ -38,6 +40,7 @@
     "border-error-1": (variant === "outlined" || variant === "contained") && color === "error" && !disabled,
     "border-warning-1": (variant === "outlined" || variant === "contained") && color === "warning" && !disabled,
     "border-success-1": (variant === "outlined" || variant === "contained") && color === "success" && !disabled,
+    "border-gray-2": (variant === "outlined" || variant === "contained") && color === "normal" && !disabled,
 
     // Disable :
     "cursor-normal opacity-50": disabled,
@@ -46,10 +49,10 @@
     "border-transparent": variant === "text",
 
     // Size :
-    "py-1 px-2": size === "small",
-    "py-1 px-6": size === "medium",
-    "py-1 px-9": size === "large",
-    "py-1 w-full": size === "full",
+    "p-3": size === "small",
+    "py-3 px-6": size === "medium",
+    "py-3 px-9": size === "large",
+    "py-3 w-full": size === "full",
 
     // Ring :
     "focus:ring-primary-1/50": color === "primary",
@@ -68,7 +71,7 @@
   </button>
 </a>
 {:else}
-<button class={style} disabled={disabled} on:click={onClick}>
+<button class={style} disabled={disabled} type="menu" on:click={onClick}>
   <slot />
 </button>
 {/if}
