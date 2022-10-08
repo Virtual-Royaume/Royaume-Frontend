@@ -4,11 +4,11 @@
   import type { ImageDropzoneColor, ImageDropzoneSize } from "./image-dropzone.type";
   import Text from "../../texts/text/text.svelte";
   import type { FileType } from "../../../utils/types";
+    import { Button } from "../../navigation/button";
 
   // Props :
-  export let multiple: boolean = false;
+  export let multiple: boolean = true;
   export let color: ImageDropzoneColor = "primary";
-  export let preview: boolean = true;
   export let size: ImageDropzoneSize = "normal";
   export let accepted: FileType[] = ["image/png", "image/jpeg"];
 
@@ -42,8 +42,8 @@
   }
 
   const clickFiles = (event: Event) => {
-    console.log("coucuo")
-    if ((event.target as HTMLInputElement).files) upload([...files]);
+    const target = event.target as HTMLInputElement;
+    if (target.files) upload([...target.files]);
     isHover = false;
   }
 
@@ -61,14 +61,14 @@
 </script>
 
 <div>
-  <label class={style}
+  <input type="file"class="hidden" id="dropzone" on:change={clickFiles} {multiple}>
+  <label class={style} for="dropzone"
   on:dragover|preventDefault={() => isHover = true}
   on:dragleave={() => isHover = false}
   on:drop|preventDefault={dropFiles}
   >
     {#if files.length === 0}
       <div class="flex flex-col justify-center items-center w-full">
-        <input type="file"class="hidden" on:change={clickFiles}>
 
         <FileUploadIcon size={40} color="black" />
         <div class="text-center mt-4">
@@ -82,6 +82,5 @@
         {/each}
       </div>
     {/if}
-    
   </label>
 </div>
