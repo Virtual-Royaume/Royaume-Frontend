@@ -5,8 +5,16 @@
   // Props :
   export let size: number;
   export let color: IconColor = "white";
+  export let fill: boolean = false;
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" height={size} width={size} fill={colorOptions[color]}>
-  <path d="M11 40q-1.2 0-2.1-.9Q8 38.2 8 37v-7.15h3V37h26v-7.15h3V37q0 1.2-.9 2.1-.9.9-2.1.9Zm11.5-7.65V13.8l-6 6-2.15-2.15L24 8l9.65 9.65-2.15 2.15-6-6v18.55Z"/>
-</svg>
+
+{#if fill}
+<svg xmlns="http://www.w3.org/2000/svg" height={size} width={size} viewBox="0 0 24 24" fill={colorOptions[color]}>
+  <path d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
+{:else}
+<svg xmlns="http://www.w3.org/2000/svg" height={size} width={size} viewBox="0 0 24 24" fill={colorOptions[color]}>
+  <path d="M0 0h24v24H0V0z" fill="none"/>
+  <path d="M9 16h6v-6h4l-7-7-7 7h4v6zm3-10.17L14.17 8H13v6h-2V8H9.83L12 5.83zM5 18h14v2H5z"/></svg>
+{/if}
