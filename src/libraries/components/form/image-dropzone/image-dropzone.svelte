@@ -61,7 +61,7 @@
 </script>
 
 <div>
-  <input type="file"class="hidden" id="dropzone" on:change={clickFiles} {multiple}>
+  <input type="file"class="hidden" id="dropzone" accept={accepted.join(",")} on:change={clickFiles} {multiple}>
   <label class={style} for="dropzone"
   on:dragover|preventDefault={() => isHover = true}
   on:dragleave={() => isHover = false}
