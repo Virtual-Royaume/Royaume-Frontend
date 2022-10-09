@@ -11,11 +11,11 @@
 
   $: selectedOption = typeof selectedIndex === "number" ? options.at(selectedIndex) : null;
 
-  let opened = false;
+  let opened = true;
   const toggle = () => opened = !opened;
 </script>
 
-<div class="w-72">
+<div class="w-full relative">
   <div>
     {#if label}
       <div>
@@ -42,7 +42,7 @@
     </button>
   </div>
 
-  <ul class="shadow bg-gray-1 border border-gray-2 rounded-md mt-2 max-h-48 overflow-y-auto" class:hidden={!opened}>
+  <ul class="shadow bg-gray-1 border border-gray-2 rounded-md mt-2 max-h-48 overflow-y-auto absolute w-full" class:hidden={!opened}>
     {#each options as option, i}
       <li class="p-2 hover:bg-primary-1 cursor-pointer group" on:click={() => selectedIndex = i}>
         <div class="flex items-center justify-between text-black group-hover:text-white">
