@@ -1,10 +1,15 @@
 <script lang="ts">
   import { Text } from "../../texts/text";
-  import type { SelectOption } from "./select.type";
+  import type { SelectOption, SelectColor, SelectSize } from "./select.type";
   import { UnfoldIcon, DoneIcon } from "../../../icons";
 
   // Props :
   export let label: string | null = null;
+  export let color: SelectColor = "primary";
+  export let required: boolean = false;
+  export let value: string | null = null;
+  export let disabled: boolean = false;
+  export let size: SelectSize = "normal";
   export let options: SelectOption[] = [];
 
   let selectedIndex: number | null = 0;
@@ -23,7 +28,7 @@
       </div>
     {/if}
 
-    <button class="shadow focus:ring rounded-md select-none table-cell transition-colors duration-200 text-normal outline-none p-2 border border-gray-2 bg-gray-1 w-full" on:click={toggle}>
+    <button {disabled} class="shadow focus:ring rounded-md select-none table-cell transition-colors duration-200 text-normal outline-none p-2 border border-gray-2 bg-gray-1 w-full" on:click={toggle}>
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-1">
           {#if selectedOption}
