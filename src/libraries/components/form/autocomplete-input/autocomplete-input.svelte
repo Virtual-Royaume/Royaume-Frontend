@@ -9,9 +9,10 @@
   export let label: string | null = null;
   export let placeholder: string | null;
   export let autofocus: boolean = false;
+  export let value: string | null = null;
   export let required: boolean = false;
   export let size: AutocompleteSize = "normal";
-  export let options: string[] = ["RomainSav"];
+  export let options: string[] = ["Alex1s", "Ascarde", "Aurélienvt", "Azalee", "Bastien", "beginnertoad", "Bluzzi", "Bluzzo", "Bourdon", "Cara", "Dannly", "Dylan L.", "Eliott", "Enely", "Ethan", "Galaad14", "Gaëtan", "Gislaine", "Glaski", "Hola", "Hugo", "Jed", "Julos", "Juuu", "King", "Loupio"];
 
   // Refs :
   let inputRef: HTMLInputElement;
@@ -25,7 +26,55 @@
     "p-2": size === "normal",
     "px-2 py-4": size === "large",
   });
+
+  let highlightedIndex: number | null = null;
+
+  let filteredOptions: string[] = [];
+
+  const filter = (): void => {
+    if (!value) {
+      reset();
+      filteredOptions = []
+    };
+    filteredOptions = options.filter((v) => v.toLowerCase().startsWith((<string>value).toLowerCase()));
+  }
+
+  const navigate = (e: KeyboardEvent) => {
+    if (e.key === "ArrowDown") {
+      highlightedIndex === null ? highlightedIndex = 0 : (highlightedIndex + 1 === filteredOptions.length ? null : highlightedIndex++);
+      scrollIntoView(filteredOptions[highlightedIndex]);
+    }
+
+    if (e.key === "ArrowUp" && highlightedIndex) {
+      highlightedIndex === 0 ? highlightedIndex = filteredOptions.length - 1 : highlightedIndex--;
+      scrollIntoView(filteredOptions[highlightedIndex]);
+    }
+
+    if (e.key === "Enter" && highlightedIndex !== null) {
+      value = filteredOptions[highlightedIndex];
+      reset();
+    }
+  }
+
+  const click = (index: number) => {
+    value = filteredOptions[index];
+    reset();
+  }
+
+  const reset = () => {
+    filteredOptions = [];
+    highlightedIndex = null;
+  }
+
+  const scrollIntoView = (id: string) => {
+    const element = document.getElementById(id.toLowerCase());
+    if (!element) return;
+
+    element.scrollIntoView();
+  }
 </script>
+
+<svelte:window on:keydown={navigate}/>
 
 <div class="relative w-full">
   <label>
@@ -35,15 +84,17 @@
       </div>
     {/if}
     <div>
-      <input type="text" class={style}>
+      <input type="text" class={style} bind:value on:input={filter}>
     </div>
   </label>
 
-  <ul class="shadow bg-gray-1 border border-gray-2 rounded-md mt-2 max-h-48 overflow-y-auto absolute w-full">
-    {#each options as option}
-      <li class="p-2 hover:bg-primary-1 hover:text-white cursor-pointer group">
-        <Text color="inherit">{option}</Text>
-      </li>
-    {/each}
-  </ul>
+  {#if filteredOptions.length > 0}
+    <ul class="shadow bg-gray-1 border border-gray-2 rounded-md mt-2 max-h-48 overflow-y-auto absolute w-full">
+      {#each filteredOptions as option, i}
+        <li class={"p-2 hover:bg-primary-1 hover:text-white cursor-pointer group " + (highlightedIndex === i ? "bg-primary-1 text-white" : "")} id={option.toLowerCase()} on:click={() => click(i)}>
+          <Text color="inherit">{option}</Text>
+        </li>
+      {/each}
+    </ul>
+  {/if}
 </div>
