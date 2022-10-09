@@ -4,7 +4,7 @@
   import { Text } from "../../texts/text";
   import type { InputType, InputColor, InputSize } from "./input.type";
 
-  // Props
+  // Props :
   export let color: InputColor = "primary";
   export let label: string | null = null;
   export let placeholder: string | null;
