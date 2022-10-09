@@ -12,7 +12,8 @@
   export let value: string | null = null;
   export let required: boolean = false;
   export let size: AutocompleteSize = "normal";
-  export let options: string[] = ["Alex1s", "Ascarde", "Aurélienvt", "Azalee", "Bastien", "beginnertoad", "Bluzzi", "Bluzzo", "Bourdon", "Cara", "Dannly", "Dylan L.", "Eliott", "Enely", "Ethan", "Galaad14", "Gaëtan", "Gislaine", "Glaski", "Hola", "Hugo", "Jed", "Julos", "Juuu", "King", "Loupio"];
+  export let options: string[] = [];
+  export let disabled: boolean = false;
 
   // Refs :
   let inputRef: HTMLInputElement;
@@ -21,6 +22,13 @@
 
   // Style :
   $: style = clsx("shadow outline-none focus:ring bg-gray-1 border border-gray-2 rounded-md text-normal w-full", {
+    // Ring :
+    "focus:ring-primary-1/50": color === "primary",
+    "focus:ring-secondary-1/50": color === "secondary",
+    "focus:ring-success-1/50": color === "success",
+    "focus:ring-warning-1/50": color === "warning",
+    "focus:ring-error-1/50": color === "error",
+
     // Size :
     "px-2 py-1": size === "small",
     "p-2": size === "normal",
@@ -28,7 +36,6 @@
   });
 
   let highlightedIndex: number | null = null;
-
   let filteredOptions: string[] = [];
 
   const filter = (): void => {
@@ -39,7 +46,10 @@
     filteredOptions = options.filter((v) => v.toLowerCase().startsWith((<string>value).toLowerCase()));
   }
 
+  // Keyboard navigation
   const navigate = (e: KeyboardEvent) => {
+    if (filteredOptions.length === 0) return;
+
     if (e.key === "ArrowDown") {
       highlightedIndex === null ? highlightedIndex = 0 : (highlightedIndex + 1 === filteredOptions.length ? null : highlightedIndex++);
       scrollIntoView(filteredOptions[highlightedIndex]);
@@ -84,7 +94,7 @@
       </div>
     {/if}
     <div>
-      <input type="text" class={style} bind:value on:input={filter}>
+      <input type="text" class={style} bind:this={inputRef} bind:value on:input={filter} {placeholder} {required} {disabled}>
     </div>
   </label>
 

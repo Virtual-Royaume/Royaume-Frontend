@@ -10,7 +10,6 @@
     color: { control: "select", options: ["primary", "secondary", "success", "warning", "error"] },
     label: { control: "text" },
     placeholder: { control: "text" },
-    type: { control: "select", options: ["text", "password", "email"] },
     autofocus: { control: "boolean" },
     required: { control: "boolean" },
     value: { control: "text" },

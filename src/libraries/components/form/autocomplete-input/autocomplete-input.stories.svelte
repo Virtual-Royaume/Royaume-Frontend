@@ -17,6 +17,9 @@
       disabled: { control: "boolean" },
       size: { control: "select", options: ["small", "normal", "large"] }
     }}
+    args={{
+      options: ["Alex1s", "Ascarde", "Aurélienvt", "Azalee", "Bastien", "beginnertoad", "Bluzzi", "Bluzzo", "Bourdon", "Cara", "Dannly", "Dylan L.", "Eliott", "Enely", "Ethan", "Galaad14", "Gaëtan", "Gislaine", "Glaski", "Hola", "Hugo", "Jed", "Julos", "Juuu", "King", "Loupio"]
+    }}
 />
   
 <Template let:args>
