@@ -11,7 +11,7 @@
   export let onClick: (event: MouseEvent) => void = () => null;
 
   // Style :
-  $: style = clsx("focus:ring rounded-md select-none table-cell border-2 transition-colors duration-200 text-normal", {
+  $: style = clsx("focus:ring rounded-md select-none table-cell border-2 transition-colors duration-200 text-normal outline-none", {
     // Contained :
     "bg-primary-1 text-white": color === "primary" && variant === "contained",
     "bg-secondary-1 text-black": color === "secondary" && variant === "contained",
