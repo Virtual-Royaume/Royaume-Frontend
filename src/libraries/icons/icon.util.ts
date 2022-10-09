@@ -7,5 +7,6 @@ export const colorOptions: Record<IconColor, string> = {
   "warning": "#FFB22B",
   "error": "#FE5A5A",
   "black": "#000000",
-  "white": "#FFFFFF"
+  "white": "#FFFFFF",
+  "inherit": "currentColor"
 }
