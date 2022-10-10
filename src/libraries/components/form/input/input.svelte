@@ -7,13 +7,14 @@
   // Props :
   export let color: InputColor = "primary";
   export let label: string | null = null;
-  export let placeholder: string | null;
+  export let placeholder: string | null = null;
   export let type: InputType = "text";
   export let autofocus = false;
   export let required = false;
   export let value: string | null = null;
   export let disabled = false;
   export let size: InputSize = "normal";
+  export let name: string | null = null;
 
   // Refs :
   let inputRef: HTMLInputElement;
@@ -42,5 +43,5 @@
       <Text type="p" size="normal" fontWeight="medium">{label}</Text>
     </div>
   {/if}
-  <input bind:this={inputRef} {placeholder} {type} {required} {value} {disabled} class={style}>
+  <input bind:this={inputRef} {placeholder} {type} {required} {value} {disabled} {name} class={style}>
 </label>
