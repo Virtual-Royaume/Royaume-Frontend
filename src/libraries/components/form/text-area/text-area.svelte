@@ -9,13 +9,13 @@
   export let label: string | null = null;
   export let placeholder: string | null;
   export let type: TextAreaType = "text";
-  export let autofocus: boolean = false;
-  export let required: boolean = false;
+  export let autofocus = false;
+  export let required = false;
   export let value: string | null = null;
-  export let disabled: boolean = false;
+  export let disabled = false;
   export let size: TextAreaSize = "normal";
-  export let autoResize: boolean = true;
-  export let rows: number = 1;
+  export let autoResize = true;
+  export let rows = 1;
   
   // Refs :
   let textAreaRef: HTMLTextAreaElement;
@@ -24,7 +24,7 @@
 
   const resize = (): void => {
     value = textAreaRef.value;
-  }
+  };
 
   $: rows = autoResize ? (value?.match(/\n/g) || []).length + 1 || 1 : rows;
   

@@ -6,9 +6,9 @@
   // Props :
   export let label: string | null = null;
   export let color: SelectColor = "primary";
-  export let required: boolean = false;
+  export let required = false;
   export let value: string | null = null;
-  export let disabled: boolean = false;
+  export let disabled = false;
   export let size: SelectSize = "normal";
   export let options: SelectOption[] = [];
 

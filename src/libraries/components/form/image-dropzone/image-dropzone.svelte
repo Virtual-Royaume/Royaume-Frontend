@@ -4,15 +4,15 @@
   import type { ImageDropzoneColor, ImageDropzoneSize } from "./image-dropzone.type";
   import Text from "../../texts/text/text.svelte";
   import type { FileType } from "../../../utils/types";
-    import { Button } from "../../navigation/button";
+  import { Button } from "../../navigation/button";
 
   // Props :
-  export let multiple: boolean = true;
+  export let multiple = true;
   export let color: ImageDropzoneColor = "primary";
   export let size: ImageDropzoneSize = "normal";
   export let accepted: FileType[] = ["image/png", "image/jpeg"];
 
-  let isHover: boolean = false;
+  let isHover = false;
   let files: File[] = [];
 
   $: datas = files.map((file) => URL.createObjectURL(file));
@@ -39,13 +39,13 @@
   const dropFiles = (event: DragEvent) => {
     if (event.dataTransfer?.files) upload([...event.dataTransfer.files]);
     isHover = false;
-  }
+  };
 
   const clickFiles = (event: Event) => {
     const target = event.target as HTMLInputElement;
     if (target.files) upload([...target.files]);
     isHover = false;
-  }
+  };
 
   const upload = (dropFiles: File[]) => {
     files = [];
@@ -57,7 +57,7 @@
       if (accepted.length > 0 && (!file.type || !accepted.includes(<FileType>file.type))) return;
       files = [...files, file];
     });
-  }
+  };
 </script>
 
 <div>

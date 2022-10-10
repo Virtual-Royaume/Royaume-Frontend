@@ -5,7 +5,7 @@
   // Props :
   export let size: number;
   export let color: IconColor = "white";
-  export let fill: boolean = false;
+  export let fill = false;
 </script>
 
 {#if fill}
