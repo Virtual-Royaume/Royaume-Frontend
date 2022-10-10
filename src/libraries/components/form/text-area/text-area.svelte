@@ -7,7 +7,7 @@
   // Props
   export let color: TextAreaColor = "primary";
   export let label: string | null = null;
-  export let placeholder: string | null;
+  export let placeholder: string | null = null;
   export let type: TextAreaType = "text";
   export let autofocus = false;
   export let required = false;
