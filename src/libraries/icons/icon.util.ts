@@ -9,4 +9,4 @@ export const colorOptions: Record<IconColor, string> = {
   "black": "#000000",
   "white": "#FFFFFF",
   "inherit": "currentColor"
-}
+};

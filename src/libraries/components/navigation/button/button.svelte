@@ -20,12 +20,12 @@
     "bg-success-1": color === "success" && variant === "contained",
     "bg-gray-1": color === "normal" && variant === "contained",
 
-    "hover:bg-primary-2 hover:border-primary-2":  color === "primary" && variant === "contained" && !disabled,
-    "hover:bg-secondary-2 hover:border-secondary-2":  color === "secondary" && variant === "contained" && !disabled,
-    "hover:bg-error-2 hover:border-error-2":  color === "error" && variant === "contained" && !disabled,
-    "hover:bg-warning-2 hover:border-warning-2":  color === "warning" && variant === "contained" && !disabled,
-    "hover:bg-success-2 hover:border-success-2":  color === "success" && variant === "contained" && !disabled,
-    "hover:bg-gray-2 hover:border-gray-2":  color === "normal" && variant === "contained" && !disabled,
+    "hover:bg-primary-2 hover:border-primary-2": color === "primary" && variant === "contained" && !disabled,
+    "hover:bg-secondary-2 hover:border-secondary-2": color === "secondary" && variant === "contained" && !disabled,
+    "hover:bg-error-2 hover:border-error-2": color === "error" && variant === "contained" && !disabled,
+    "hover:bg-warning-2 hover:border-warning-2": color === "warning" && variant === "contained" && !disabled,
+    "hover:bg-success-2 hover:border-success-2": color === "success" && variant === "contained" && !disabled,
+    "hover:bg-gray-2 hover:border-gray-2": color === "normal" && variant === "contained" && !disabled,
 
     // Outlined & Text :
     "text-primary-1 hover:bg-primary-1/10": (variant === "outlined" || variant === "text") && color === "primary" && !disabled,

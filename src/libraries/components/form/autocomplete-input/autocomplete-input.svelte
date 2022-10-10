@@ -8,12 +8,12 @@
   export let color: AutocompleteInputColor = "primary";
   export let label: string | null = null;
   export let placeholder: string | null;
-  export let autofocus: boolean = false;
+  export let autofocus = false;
   export let value: string | null = null;
-  export let required: boolean = false;
+  export let required = false;
   export let size: AutocompleteSize = "normal";
   export let options: string[] = [];
-  export let disabled: boolean = false;
+  export let disabled = false;
 
   // Refs :
   let inputRef: HTMLInputElement;
@@ -32,7 +32,7 @@
     // Size :
     "px-2 py-1": size === "small",
     "p-2": size === "normal",
-    "px-2 py-4": size === "large",
+    "px-2 py-4": size === "large"
   });
 
   let highlightedIndex: number | null = null;
@@ -41,17 +41,17 @@
   const filter = (): void => {
     if (!value) {
       reset();
-      filteredOptions = []
-    };
-    filteredOptions = options.filter((v) => v.toLowerCase().startsWith((<string>value).toLowerCase()));
-  }
+      filteredOptions = [];
+    }
+    filteredOptions = options.filter((v) => v.toLowerCase().startsWith(<string>value.toLowerCase()));
+  };
 
   // Keyboard navigation
   const navigate = (e: KeyboardEvent) => {
     if (filteredOptions.length === 0) return;
 
     if (e.key === "ArrowDown") {
-      highlightedIndex === null ? highlightedIndex = 0 : (highlightedIndex + 1 === filteredOptions.length ? null : highlightedIndex++);
+      highlightedIndex === null ? highlightedIndex = 0 : highlightedIndex + 1 === filteredOptions.length ? null : highlightedIndex++;
       scrollIntoView(filteredOptions[highlightedIndex]);
     }
 
@@ -64,24 +64,24 @@
       value = filteredOptions[highlightedIndex];
       reset();
     }
-  }
+  };
 
   const click = (index: number) => {
     value = filteredOptions[index];
     reset();
-  }
+  };
 
   const reset = () => {
     filteredOptions = [];
     highlightedIndex = null;
-  }
+  };
 
   const scrollIntoView = (id: string) => {
     const element = document.getElementById(id.toLowerCase());
     if (!element) return;
 
     element.scrollIntoView();
-  }
+  };
 </script>
 
 <svelte:window on:keydown={navigate}/>

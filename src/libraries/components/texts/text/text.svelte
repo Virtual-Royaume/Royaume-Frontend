@@ -38,7 +38,7 @@
     "line-clamp-2": lineClamp === 2,
     "line-clamp-3": lineClamp === 3,
     "line-clamp-4": lineClamp === 4,
-    "line-clamp-5": lineClamp === 5,
+    "line-clamp-5": lineClamp === 5
   });
 </script>
 

@@ -1,0 +1,24 @@
+# Packages :
+node_modules
+package.json
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Build :
+/build
+/.svelte-kit
+
+# Environment variables :
+.env
+.env.*
+!.env.example
+
+# MacOS :
+.DS_Store
+
+# Storybook :
+storybook-static
+
+# JetBrains
+.idea
