@@ -1,5 +1,2 @@
-# Website
-Royaume website made with SvelteKit and TailwindCSS.
-
-![SvelteKit](https://img.shields.io/badge/sveltekit-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+# Royaume Website
+This is the website of our community, where you can find information about our community, its members and a blog. This site is written in TypeScript with Svelte, SvelteKit, Tailwind, Storybook and Testing Library.
