@@ -9,10 +9,10 @@
   export let label: string | null = null;
   export let placeholder: string | null;
   export let type: InputType = "text";
-  export let autofocus: boolean = false;
-  export let required: boolean = false;
+  export let autofocus = false;
+  export let required = false;
   export let value: string | null = null;
-  export let disabled: boolean = false;
+  export let disabled = false;
   export let size: InputSize = "normal";
 
   // Refs :
@@ -32,7 +32,7 @@
     // Size :
     "px-2 py-1": size === "small",
     "p-2": size === "normal",
-    "px-2 py-4": size === "large",
+    "px-2 py-4": size === "large"
   });
 </script>
 

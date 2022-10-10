@@ -8,7 +8,7 @@
   export let color: CheckboxColor = "primary";
   export let label: string | null = null;
 
-  let checked: boolean = false;
+  let checked = false;
 
   // Style :
   $: style = clsx("relative border-2 rounded-md w-5 h-5 peer-focus:ring", {

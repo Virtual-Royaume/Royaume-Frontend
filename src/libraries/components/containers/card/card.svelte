@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Text } from "../../texts/text";  
+  import { Text } from "../../texts/text";
 
   // Props :
   export let title: string;

@@ -14,7 +14,7 @@
     "bg-primary-1/20": type === "info",
     "bg-success-1/20": type === "success",
     "bg-warning-1/20": type === "warning",
-    "bg-error-1/20": type === "error",
+    "bg-error-1/20": type === "error"
   });
 </script>
 
