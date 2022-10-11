@@ -4,7 +4,7 @@
   import { Button } from "@components/navigation/button";
   import { Text } from "@components/texts/text";
   import { Form } from "@components/form/form";
-  import { isString, isEmail } from "../libraries/utils/validator";
+  import { isString, isEmail, isNumber } from "../libraries/utils/validator";
 
   const onSubmit = async () => {
     console.log("COUCOU");
@@ -17,7 +17,7 @@
       <Text type="h1" size="xl" fontWeight="medium">Nous envoyer un message</Text>
     </div>
     <div class="grid grid-cols-2 gap-4">
-      <Input label="Prénom" name="firstName" validators={[isString]} required/>
+      <Input label="Prénom" name="firstName" validators={[isNumber]} required/>
       <Input label="Nom" name="lastName" validators={[isString]} required/>
     </div>
     <div class="grid grid-cols-2 gap-4 mt-6">

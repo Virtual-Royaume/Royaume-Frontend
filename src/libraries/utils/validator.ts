@@ -5,7 +5,7 @@ export const isString = (value: string | number | null, required: boolean): stri
   if (!value && !required) return "";
 
   const parse = z.string().safeParse(value);
-  return parse.success ? "" : parse.error.message;
+  return parse.success ? "" : parse.error.errors[0]["message"];
 }
 
 export const isNumber = (value: string | number | null, required: boolean): string => {
@@ -13,7 +13,7 @@ export const isNumber = (value: string | number | null, required: boolean): stri
   if (!value && !required) return "";
 
   const parse = z.number().safeParse(value);
-  return parse.success ? "" : parse.error.message;
+  return parse.success ? "" : parse.error.errors[0]["message"];;
 }
 
 export const isEmail = (value: string | number | null, required: boolean): string => {
@@ -21,5 +21,5 @@ export const isEmail = (value: string | number | null, required: boolean): strin
   if (!value && !required) return "";
 
   const parse = z.string().email().safeParse(value);
-  return parse.success ? "" : parse.error.message;
+  return parse.success ? "" : parse.error.errors[0]["message"];
 }
