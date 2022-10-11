@@ -15,6 +15,7 @@
   export let disabled = false;
   export let size: TextAreaSize = "normal";
   export let autoResize = true;
+  export let name: string | null = null;
   export let rows = 1;
   
   // Refs :
@@ -53,5 +54,5 @@
       <Text type="p" size="normal" fontWeight="medium">{label}</Text>
     </div>
   {/if}
-  <textarea bind:this={textAreaRef} on:input={resize} {placeholder} {type} {rows} {required} {disabled} class={style}></textarea>
+  <textarea bind:this={textAreaRef} on:input={resize} {placeholder} {type} {rows} {required} {disabled} {name} class={style}></textarea>
 </label>
