@@ -13,7 +13,7 @@
     register: (fn: () => string | null) => validators.push(fn),
     unregister: (fn: () => string | null) => validators.splice(validators.indexOf(fn), 1),
     validate: (): boolean => {
-        valid = validators.filter((fn) => !fn()?.length).length === 0;
+        valid = validators.filter((fn) => fn()?.length !== 0).length === 0;
         return valid;
     }
   };
