@@ -69,8 +69,11 @@
 
 <label>
   {#if label}
-    <div class={`mb-1 ${error.length > 0 ? "text-error-1" : "text-black"}`}>
+    <div class={`mb-1 flex justify-between items-center ${error.length > 0 ? "text-error-1" : "text-black"}`}>
       <Text type="p" size="normal" fontWeight="medium" color="inherit">{label}</Text>
+      {#if error.length > 0}
+        <Text type="p" size="small" fontWeight="medium" color="inherit">{error}</Text>
+      {/if}
     </div>
   {/if}
   <input bind:this={inputRef} {placeholder} bind:value {disabled} {name} class={style}>
