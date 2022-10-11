@@ -1,8 +1,9 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { getContext, onMount } from "svelte";
   import { clsx } from "clsx";
   import { Text } from "../../texts/text";
   import type { InputType, InputColor, InputSize } from "./input.type";
+  import type { FormContext } from "../form/form.type";
 
   // Props :
   export let color: InputColor = "primary";
@@ -15,6 +16,7 @@
   export let disabled = false;
   export let size: InputSize = "normal";
   export let name: string | null = null;
+  export let validators: {(): boolean}[] = [];
 
   // Refs :
   let inputRef: HTMLInputElement;
@@ -35,6 +37,18 @@
     "p-2": size === "normal",
     "px-2 py-4": size === "large"
   });
+
+  // Validation :
+  const validate = (): string | null => {
+    return "";
+  }
+
+  const context = getContext<FormContext>("validator");
+  onMount(() => {
+    if (!context) return;
+    context.register(validate);
+    return () => context.unregister(validate);
+});
 </script>
 
 <label>
