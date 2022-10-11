@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { z } from "zod";
   import { Input } from "@components/form/input";
   import { TextArea } from "@components/form/text-area";
   import { Button } from "@components/navigation/button";
   import { Text } from "@components/texts/text";
   import { Form } from "@components/form/form";
+  import { isString, isEmail } from "../libraries/utils/validator";
 
   const onSubmit = async () => {
     console.log("COUCOU");
@@ -17,16 +17,16 @@
       <Text type="h1" size="xl" fontWeight="medium">Nous envoyer un message</Text>
     </div>
     <div class="grid grid-cols-2 gap-4">
-      <Input label="Prénom" name="firstName"/>
-      <Input label="Nom" name="lastName"/>
+      <Input label="Prénom" name="firstName" validators={[isString]} required/>
+      <Input label="Nom" name="lastName" validators={[isString]} required/>
     </div>
     <div class="grid grid-cols-2 gap-4 mt-6">
-      <Input label="Adresse email" name="email"/>
-      <Input label="Téléphone" name="phone"/>
+      <Input label="Adresse email" name="email" validators={[isEmail]} required/>
+      <Input label="Téléphone" name="phone"  validators={[isString]} required/>
     </div>
   
     <div class="mt-6">
-      <Input label="Sujet" name="subject"/>
+      <Input label="Sujet" name="subject" validators={[isEmail]} required/>
     </div>
     <div class="mt-6">
       <TextArea label="Message" name="message" autoResize rows={4}/>
