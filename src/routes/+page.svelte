@@ -6,6 +6,9 @@
   import { Form } from "@components/form/form";
   import { isString, isEmail, isNumber } from "../libraries/utils/validator";
 
+  export let data: any;
+  let members = data.members.members;
+
   const onSubmit = async () => {
     console.log("COUCOU");
   }
@@ -37,3 +40,12 @@
     </div>
   </div>
 </Form>
+
+<div class="grid grid-cols-5 gap-4">
+  {#each members as member}
+    <div class="flex items-center gap-4 p-4 rounded-md bg-gray-1 shadow-md border border-gray-2">
+      <img src={member.profilePicture} alt="" class="w-12 h-12 rounded-full object-cover">
+      <p>{member.username}</p>
+    </div>
+  {/each}
+</div>
