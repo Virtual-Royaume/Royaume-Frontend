@@ -3,9 +3,7 @@ import type { Config } from "@sveltejs/kit";
 import { vitePreprocess } from "@sveltejs/kit/vite";
 
 const config: Config = {
-  preprocess: vitePreprocess({
-    postcss: true
-  }),
+  preprocess: vitePreprocess(),
 
   kit: {
     adapter: adapter(),
