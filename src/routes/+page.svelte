@@ -9,9 +9,9 @@
   export let data: any;
   let members = data.members.members;
 
-  const onSubmit = async () => {
+  const onSubmit = async() => {
     console.log("COUCOU");
-  }
+  };
 </script>
 
 <Form on:submit={onSubmit}>

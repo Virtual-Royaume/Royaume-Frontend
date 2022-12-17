@@ -6,7 +6,7 @@ export const getStringEnv = (name: string): string => {
   if (!env) throw new Error(`Missing environment variable : ${name}`);
 
   return env;
-}
+};
 
 export const getNumberEnv = (name: string) => {
   try {
@@ -14,12 +14,12 @@ export const getNumberEnv = (name: string) => {
   } catch {
     throw new Error(`Unable to parse environment variable "${name}" as a number`);
   }
-}
+};
 
 export const getBooleanEnv = (name: string) => {
-    try {
-      return Boolean(getStringEnv(name));
-    } catch {
-      throw new Error(`Unable to parse environment variable "${name}" as a boolean`);
-    }
+  try {
+    return Boolean(getStringEnv(name));
+  } catch {
+    throw new Error(`Unable to parse environment variable "${name}" as a boolean`);
   }
+};
