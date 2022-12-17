@@ -57,7 +57,7 @@
       }
     }
     return error;
-  }
+  };
 
   const context = getContext<FormContext>("validator");
   onMount(() => {

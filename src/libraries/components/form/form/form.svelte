@@ -13,8 +13,8 @@
     register: (fn: () => string | null) => validators.push(fn),
     unregister: (fn: () => string | null) => validators.splice(validators.indexOf(fn), 1),
     validate: (): boolean => {
-        valid = validators.filter((fn) => fn()?.length !== 0).length === 0;
-        return valid;
+      valid = validators.filter((fn) => fn()?.length !== 0).length === 0;
+      return valid;
     }
   };
 
@@ -22,7 +22,7 @@
 
   const onSubmit = () => {
     if (context.validate()) dispatch("submit");
-  }
+  };
 </script>
 
 <form on:submit|preventDefault={onSubmit}>
