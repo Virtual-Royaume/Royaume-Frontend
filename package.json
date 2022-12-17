@@ -12,6 +12,7 @@
     "gqlgen": "graphql-codegen --config gql-codegen.ts"
   },
   "devDependencies": {
+    "@bluzzi/eslint-config": "^0.8.2",
     "@graphql-codegen/cli": "2.16.1",
     "@graphql-codegen/client-preset": "1.2.3",
     "@graphql-typed-document-node/core": "^3.1.1",
@@ -23,7 +24,6 @@
     "@storybook/addon-svelte-csf": "^2.0.10",
     "@storybook/builder-vite": "^0.2.6",
     "@storybook/svelte": "^6.5.14",
-    "@storybook/testing-library": "^0.0.13",
     "@sveltejs/adapter-node": "^1.0.0",
     "@sveltejs/kit": "next",
     "@tailwindcss/line-clamp": "^0.4.2",
