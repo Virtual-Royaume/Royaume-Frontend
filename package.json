@@ -5,10 +5,13 @@
     "start": "node build",
     "dev": "vite dev",
     "build": "vite build",
+    "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "storybook:start": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
+    "test:unit": "vitest",
+    "test:e2e": "playwright test",
     "gqlgen": "graphql-codegen --config gql-codegen.ts"
   },
   "devDependencies": {
@@ -18,6 +21,7 @@
     "@graphql-codegen/client-preset": "1.2.3",
     "@graphql-typed-document-node/core": "^3.1.1",
     "@kitql/graphql-codegen": "^0.5.4",
+    "@playwright/test": "^1.29.0",
     "@storybook/addon-actions": "^6.5.14",
     "@storybook/addon-essentials": "^6.5.14",
     "@storybook/addon-interactions": "^6.5.14",
