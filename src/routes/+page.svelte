@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { Input } from "@components/form/input";
-  import { TextArea } from "@components/form/text-area";
-  import { Button } from "@components/navigation/button";
-  import { Text } from "@components/texts/text";
-  import { Form } from "@components/form/form";
+  import { Input } from "#components/form/input";
+  import { TextArea } from "#components/form/text-area";
+  import { Button } from "#components/navigation/button";
+  import { Text } from "#components/texts/text";
+  import { Form } from "#components/form/form";
   // import { isString, isEmail, isNumber } from "../libraries/utils/validator";
 
   export let data: any;
