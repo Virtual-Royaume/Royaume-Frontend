@@ -1,7 +1,7 @@
 /** @type {import("tailwindcss").Config} */
 module.exports = {
-  purge: false,
   content: ["./src/**/*.{html,js,svelte,ts}"],
+
   theme: {
     colors: {
       "primary": {
@@ -42,17 +42,17 @@ module.exports = {
       "transparent": "transparent"
     },
 
-    fontSize: { // TODO : use REM
-      small: [".8rem", { lineHeight: 1 }],
-      normal: [".9rem", { lineHeight: 1 }],
-      large: ["1.1rem", { lineHeight: 1 }],
-      xl: ["34px", { lineHeight: 1 }],
-      "2xl": ["60px", { lineHeight: 1 }],
-      "3xl": ["80px", { lineHeight: 1 }]
+    fontSize: {
+      "small": ["0.8rem", { lineHeight: 1 }],
+      "normal": ["0.9rem", { lineHeight: 1 }],
+      "large": ["1.1rem", { lineHeight: 1 }],
+      "xl": ["2rem", { lineHeight: 1 }],
+      "2xl": ["3.75rem", { lineHeight: 1 }],
+      "3xl": ["5rem", { lineHeight: 1 }]
     },
 
     fontFamily: {
-      sans: "Poppins, sans-serif"
+      sans: ["Poppins", "sans-serif"]
     },
 
     extend: {
