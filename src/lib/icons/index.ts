@@ -7,3 +7,4 @@ export { default as InfoIcon } from "./info.svelte";
 export { default as ReportIcon } from "./report.svelte";
 export { default as UnfoldIcon } from "./unfold.svelte";
 export { default as WarningIcon } from "./warning.svelte";
+export { default as ExternalIcon } from "./external.svelte";
