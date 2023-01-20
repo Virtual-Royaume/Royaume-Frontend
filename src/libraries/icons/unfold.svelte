@@ -2,7 +2,7 @@
   import type { IconColor } from "./icon.type";
   import { colorOptions } from "./icon.util";
   
-  // Props :
+  // Props:
   export let size: number;
   export let color: IconColor = "white";
 </script>

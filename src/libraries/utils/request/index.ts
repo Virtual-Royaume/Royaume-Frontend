@@ -1,1 +1,0 @@
-export { gqlRequest } from "./request";
