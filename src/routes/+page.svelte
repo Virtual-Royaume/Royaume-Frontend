@@ -1,1 +1,1 @@
-<p>Hello world !</p>
+<p class="text-warning-1">Hello world !</p>
