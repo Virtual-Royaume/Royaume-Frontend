@@ -7,10 +7,6 @@ const config: Config = {
 
   kit: {
     adapter: adapter(),
-    files: {
-      lib: "./src/libraries",
-      assets: "./src/assets"
-    },
     alias: {
       "#components/*": "./src/libraries/components/*",
       "#icons/*": "./src/libraries/icons/*"
