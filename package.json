@@ -2,56 +2,33 @@
   "version": "0.5.0",
   "type": "module",
   "scripts": {
-    "start": "node build",
     "dev": "vite dev",
     "build": "vite build",
+    "start": "node build",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "storybook:start": "start-storybook -p 6006",
-    "storybook:build": "build-storybook",
-    "test:unit": "vitest",
     "test:e2e": "playwright test",
-    "gqlgen": "graphql-codegen --config gql-codegen.ts"
+    "test:unit": "vitest --ui"
+  },
+  "dependencies": {
+    "@sveltejs/kit": "1.0.0",
+    "clsx": "^1.2.1",
+    "svelte": "^3.55.0",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.5",
     "@bluzzi/eslint-config": "^0.8.2",
-    "@graphql-codegen/cli": "2.16.1",
-    "@graphql-codegen/client-preset": "1.2.3",
-    "@graphql-typed-document-node/core": "^3.1.1",
-    "@kitql/graphql-codegen": "^0.5.4",
     "@playwright/test": "^1.29.0",
-    "@storybook/addon-actions": "^6.5.14",
-    "@storybook/addon-essentials": "^6.5.14",
-    "@storybook/addon-interactions": "^6.5.14",
-    "@storybook/addon-links": "^6.5.14",
-    "@storybook/builder-vite": "^0.2.6",
-    "@storybook/svelte": "^6.5.14",
-    "@storybook/testing-library": "^0.0.13",
     "@sveltejs/adapter-node": "^1.0.0",
-    "@sveltejs/kit": "next",
-    "@tailwindcss/line-clamp": "^0.4.2",
     "autoprefixer": "^10.4.13",
-    "babel-loader": "^8.3.0",
     "eslint": "^8.30.0",
-    "eslint-plugin-storybook": "^0.6.8",
     "eslint-plugin-svelte3": "^4.0.0",
     "postcss": "^8.4.20",
-    "svelte": "^3.55.0",
-    "svelte-loader": "^3.1.4",
     "tailwindcss": "^3.2.4",
     "tslib": "^2.4.1",
     "typescript": "^4.9.4",
     "vite": "^4.0.1",
-    "vitest": "^0.25.8",
-    "zod": "^3.20.2"
-  },
-  "dependencies": {
-    "@kitql/client": "^0.5.12",
-    "axios": "^1.2.1",
-    "clsx": "^1.2.1",
-    "dotenv": "^16.0.3",
-    "graphql": "^16.6.0"
+    "vitest": "^0.25.8"
   }
 }
