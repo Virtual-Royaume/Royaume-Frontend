@@ -8,11 +8,6 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
-		"strict": true,
-		"baseUrl": "./src",
-		"paths": {
-			"@components/*": ["libraries/components/*"],
-			"@icons/*": ["libraries/icons/*"]
-		}
+		"strict": true
 	}
 }
