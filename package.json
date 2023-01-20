@@ -6,8 +6,8 @@
     "build": "vite build",
     "start": "node build",
     "preview": "vite preview",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . --ignore-path .gitignore",
+    "lint:fix": "eslint . --fix --ignore-path .gitignore",
     "test:e2e": "playwright test",
     "test:unit": "vitest --ui"
   },
