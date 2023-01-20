@@ -1,6 +1,6 @@
-import adapter from "@sveltejs/adapter-node";
 import type { Config } from "@sveltejs/kit";
 import { vitePreprocess } from "@sveltejs/kit/vite";
+import adapter from "@sveltejs/adapter-node";
 
 const config: Config = {
   preprocess: vitePreprocess(),
@@ -8,12 +8,12 @@ const config: Config = {
   kit: {
     adapter: adapter(),
     files: {
-      lib: "src/libraries",
-      assets: "src/assets"
+      lib: "./src/libraries",
+      assets: "./src/assets"
     },
     alias: {
-      "@components/*": "src/libraries/components/*",
-      "@icons/*": "src/libraries/icons/*"
+      "#components/*": "./src/libraries/components/*",
+      "#icons/*": "./src/libraries/icons/*"
     }
   }
 };
