@@ -1,15 +1,12 @@
 <script lang="ts">
-  import { clsx } from "clsx";
   import type { TextType, TextColor, TextSize, FontWeight } from "./text.type";
-  import type { Range } from "../../../utils/types";
+  import { clsx } from "clsx";
 
-  // Props :
   export let type: TextType = "p";
   export let size: TextSize = "normal";
   export let color: TextColor = "black";
   export let fontWeight: FontWeight = "normal";
 
-  // Style :
   const style = clsx({
     // Text color :
     "text-primary-1": color === "primary",
