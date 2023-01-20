@@ -8,7 +8,6 @@
   export let size: TextSize = "normal";
   export let color: TextColor = "black";
   export let fontWeight: FontWeight = "normal";
-  export let lineClamp: Range<1, 6> | null = null;
 
   // Style :
   const style = clsx({
@@ -32,13 +31,7 @@
     "font-light": fontWeight === "light",
     "font-normal": fontWeight === "normal",
     "font-medium": fontWeight === "medium",
-    "font-bold": fontWeight === "bold",
-
-    "line-clamp-1": lineClamp === 1,
-    "line-clamp-2": lineClamp === 2,
-    "line-clamp-3": lineClamp === 3,
-    "line-clamp-4": lineClamp === 4,
-    "line-clamp-5": lineClamp === 5
+    "font-bold": fontWeight === "bold"
   });
 </script>
 

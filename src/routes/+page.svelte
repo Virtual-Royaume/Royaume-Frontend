@@ -4,7 +4,7 @@
   import { Button } from "@components/navigation/button";
   import { Text } from "@components/texts/text";
   import { Form } from "@components/form/form";
-  import { isString, isEmail, isNumber } from "../libraries/utils/validator";
+  // import { isString, isEmail, isNumber } from "../libraries/utils/validator";
 
   export let data: any;
   let members = data.members.members;
@@ -20,16 +20,16 @@
       <Text type="h1" size="xl" fontWeight="medium">Nous envoyer un message</Text>
     </div>
     <div class="grid grid-cols-2 gap-4">
-      <Input label="Prénom" name="firstName" validators={[isNumber]} required/>
-      <Input label="Nom" name="lastName" validators={[isString]} required/>
+      <Input label="Prénom" name="firstName" validators={[]} required/>
+      <Input label="Nom" name="lastName" validators={[]} required/>
     </div>
     <div class="grid grid-cols-2 gap-4 mt-6">
-      <Input label="Adresse email" name="email" validators={[isEmail]} required/>
-      <Input label="Téléphone" name="phone"  validators={[isString]} required/>
+      <Input label="Adresse email" name="email" validators={[]} required/>
+      <Input label="Téléphone" name="phone"  validators={[]} required/>
     </div>
   
     <div class="mt-6">
-      <Input label="Sujet" name="subject" validators={[isEmail]} required/>
+      <Input label="Sujet" name="subject" validators={[]} required/>
     </div>
     <div class="mt-6">
       <TextArea label="Message" name="message" autoResize rows={4}/>
