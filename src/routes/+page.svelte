@@ -1,1 +1,7 @@
-<p class="text-warning-1">Hello world !</p>
+<script>
+  import { Text } from "$lib/components/texts/text";
+</script>
+
+<img src="/favicon.png" alt="Royaume logo">
+
+<Text>Le Royaume</Text>
