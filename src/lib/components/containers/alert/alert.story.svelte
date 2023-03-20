@@ -11,7 +11,7 @@
 
 <Hst.Story title="Containers/Alert">
   <svelte:fragment slot="controls">
-    <Hst.Text title="Texte" bind:value={message} />
+    <Hst.Text title="Text" bind:value={message} />
     <Hst.Select title="Type" bind:value={type} options={['info', 'success', 'warning', 'error']} />
   </svelte:fragment>
 
