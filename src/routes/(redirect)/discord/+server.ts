@@ -1,5 +1,5 @@
 import { redirect } from "@sveltejs/kit";
 
-export function GET(): Response {
+export const GET = (): Response => {
   throw redirect(302, "https://discord.gg/RxTN8tFUQH");
-}
+};
