@@ -65,14 +65,14 @@
 </script>
 
 {#if href}
-<a href={href} class="no-underline">
-  <button class={style} disabled={disabled}>
+  <a href={href} class="no-underline">
+    <button class={style} disabled={disabled}>
+      <slot />
+    </button>
+  </a>
+{:else}
+  <button class={style} disabled={disabled} type="menu" on:click={onClick}>
     <slot />
   </button>
-</a>
-{:else}
-<button class={style} disabled={disabled} type="menu" on:click={onClick}>
-  <slot />
-</button>
 {/if}
 
