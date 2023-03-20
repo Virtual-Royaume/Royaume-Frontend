@@ -13,7 +13,7 @@
     "text-black": color === "black",
     "text-white": color === "white",
     "text-gray-4": color === "gray",
-    "text-red-1": color === "red",
+    "text-red": color === "red",
     "text-inherit": color === "inherit",
 
     // Font size :
