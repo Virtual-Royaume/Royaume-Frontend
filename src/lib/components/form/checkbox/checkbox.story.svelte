@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Hst } from "@histoire/plugin-svelte";
+  import type { Hst as Histoire } from "@histoire/plugin-svelte";
   import { Checkbox } from ".";
   import type { CheckboxColor } from "./checkbox.type";
   
