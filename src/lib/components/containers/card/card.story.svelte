@@ -1,14 +1,14 @@
 <script lang="ts">
-  import type { Hst } from '@histoire/plugin-svelte'
+  import type { Hst } from "@histoire/plugin-svelte";
   import { Card } from ".";
   
   export let Hst: Hst;
 
-  export let title: string = "Title";
-  export let subTitle: string = "Subtitle";
-  export let description: string = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur voluptas quasi explicabo dolore voluptatum! Illum?";
-  export let image: string = "https://e2c-paris.fr/wp-content/uploads/2021/04/placeholder.jpg";
-  export let href: string = "https://e2c-paris.fr";
+  export let title = "Title";
+  export let subTitle = "Subtitle";
+  export let description = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur voluptas quasi explicabo dolore voluptatum! Illum?";
+  export let image = "https://e2c-paris.fr/wp-content/uploads/2021/04/placeholder.jpg";
+  export let href = "https://e2c-paris.fr";
 </script>
 
 <Hst.Story title="Containers/Card">

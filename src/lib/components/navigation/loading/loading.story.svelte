@@ -1,11 +1,11 @@
 <script lang="ts">
-  import type { Hst } from '@histoire/plugin-svelte'
+  import type { Hst } from "@histoire/plugin-svelte";
   import { Loading } from ".";
-  import type { LoadingType } from './loading.type';
+  import type { LoadingType } from "./loading.type";
   
   export let Hst: Hst;
 
-  export let type: LoadingType = 'primary';
+  export let type: LoadingType = "primary";
 </script>
 
 <Hst.Story title="Navigation/Loading">
