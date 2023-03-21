@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Hst } from "@histoire/plugin-svelte";
+  import type { Hst as Histoire } from "@histoire/plugin-svelte";
   import { Alert } from ".";
   import type { AlertType } from "./alert.type";
   
-  export let Hst: Hst;
+  export let Hst: Histoire;
 
   export let type: AlertType = "info";
   export let message = "This is an alert message";

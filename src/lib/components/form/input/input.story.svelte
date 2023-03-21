@@ -3,7 +3,7 @@
   import { Input } from ".";
   import type { InputColor, InputSize, InputType } from './input.type';
   
-  export let Hst: Hst;
+  export let Hst: Histoire;
 
   export let color: InputColor = "primary";
   export let size: InputSize = "normal";

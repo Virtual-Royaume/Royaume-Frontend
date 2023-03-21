@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Hst } from "@histoire/plugin-svelte";
+  import type { Hst as Histoire } from "@histoire/plugin-svelte";
   import { Loading } from ".";
   import type { LoadingType } from "./loading.type";
   
-  export let Hst: Hst;
+  export let Hst: Histoire;
 
   export let type: LoadingType = "primary";
 </script>

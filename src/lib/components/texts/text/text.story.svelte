@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Hst } from "@histoire/plugin-svelte";
+  import type { Hst as Histoire } from "@histoire/plugin-svelte";
   import { Text } from ".";
   import type { TextType, FontWeight, TextColor, TextSize } from "./text.type";
   
-  export let Hst: Hst;
+  export let Hst: Histoire;
 
   export let message = "Message";
   export let type: TextType = "p";
