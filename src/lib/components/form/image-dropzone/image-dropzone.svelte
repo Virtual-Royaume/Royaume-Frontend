@@ -4,7 +4,6 @@
   import type { ImageDropzoneColor, ImageDropzoneSize } from "./image-dropzone.type";
   import Text from "../../texts/text/text.svelte";
   import type { FileType } from "../../../utils/types";
-  import { Button } from "../../navigation/button";
 
   // Props :
   export let multiple = true;

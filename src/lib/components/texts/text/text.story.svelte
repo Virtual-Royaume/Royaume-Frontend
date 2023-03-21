@@ -1,11 +1,11 @@
 <script lang="ts">
-  import type { Hst } from '@histoire/plugin-svelte'
+  import type { Hst } from "@histoire/plugin-svelte";
   import { Text } from ".";
-  import type { TextType, FontWeight, TextColor, TextSize } from './text.type';
+  import type { TextType, FontWeight, TextColor, TextSize } from "./text.type";
   
   export let Hst: Hst;
 
-  export let message: string = "Message";
+  export let message = "Message";
   export let type: TextType = "p";
   export let size: TextSize = "normal";
   export let color: TextColor = "white";

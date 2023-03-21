@@ -6,7 +6,7 @@
   const copy = () => {
     navigator.clipboard.writeText(textElement.textContent || "");
     pushNotification("Vous avez bien copié la commande !");
-  }
+  };
 </script>
 
 <div class="h-screen w-screen flex items-center justify-center">
