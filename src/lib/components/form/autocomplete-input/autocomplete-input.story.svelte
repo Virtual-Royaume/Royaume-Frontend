@@ -7,8 +7,8 @@
 
   export let color: AutocompleteInputColor = "primary";
   export let size: AutocompleteSize = "normal";
-  export let label: string = "Label";
-  export let placeholder: string = "Placeholder";
+  export let label = "Label";
+  export let placeholder = "Placeholder";
 </script>
 
 <Hst.Story title="Form/ImageDropzone">

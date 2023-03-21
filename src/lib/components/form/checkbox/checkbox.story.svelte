@@ -1,18 +1,18 @@
 <script lang="ts">
-  import type { Hst } from '@histoire/plugin-svelte'
+  import type { Hst } from "@histoire/plugin-svelte";
   import { Checkbox } from ".";
-  import type { CheckboxColor } from './checkbox.type';
+  import type { CheckboxColor } from "./checkbox.type";
   
   export let Hst: Histoire;
 
   export let color: CheckboxColor = "primary";
-  export let label: string = "Label";
+  export let label = "Label";
 </script>
 
 <Hst.Story title="Form/Checkbox">
   <svelte:fragment slot="controls">
     <Hst.Text title="Label" bind:value={label} />
-    <Hst.Select title="Color" bind:value={color} options={['primary', 'secondary', 'error', 'success', 'warning']} />
+    <Hst.Select title="Color" bind:value={color} options={["primary", "secondary", "error", "success", "warning"]} />
   </svelte:fragment>
 
   <Hst.Variant title="Default">
