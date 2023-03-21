@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { Hst } from "@histoire/plugin-svelte";
+  import type { Hst as Histoire } from "@histoire/plugin-svelte";
   import { Card } from ".";
   
-  export let Hst: Hst;
+  export let Hst: Histoire;
 
   export let title = "Title";
   export let subTitle = "Subtitle";

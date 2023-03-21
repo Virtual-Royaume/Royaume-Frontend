@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Hst } from "@histoire/plugin-svelte";
+  import type { Hst as Histoire } from "@histoire/plugin-svelte";
   import { AutocompleteInput } from ".";
   import type { AutocompleteInputColor, AutocompleteSize } from "./autocomplete-input.type";
   
-  export let Hst: Hst;
+  export let Hst: Histoire;
 
   export let color: AutocompleteInputColor = "primary";
   export let size: AutocompleteSize = "normal";

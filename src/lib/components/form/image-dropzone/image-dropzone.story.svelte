@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Hst } from "@histoire/plugin-svelte";
+  import type { Hst as Histoire } from "@histoire/plugin-svelte";
   import { ImageDropzone } from ".";
   import type { ImageDropzoneColor, ImageDropzoneSize } from "./image-dropzone.type";
   
-  export let Hst: Hst;
+  export let Hst: Histoire;
 
   export let color: ImageDropzoneColor = "primary";
   export let size: ImageDropzoneSize = "normal";

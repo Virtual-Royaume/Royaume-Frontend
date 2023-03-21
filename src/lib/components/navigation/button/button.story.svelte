@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Hst } from "@histoire/plugin-svelte";
+  import type { Hst as Histoire } from "@histoire/plugin-svelte";
   import { Button } from ".";
   import type { ButtonColor, ButtonSize, ButtonVariant } from "./button.type";
   
-  export let Hst: Hst;
+  export let Hst: Histoire;
 
   export let label = "Button";
   export let color: ButtonColor = "primary";

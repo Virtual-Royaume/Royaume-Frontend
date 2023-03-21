@@ -3,7 +3,7 @@
   import { Checkbox } from ".";
   import type { CheckboxColor } from './checkbox.type';
   
-  export let Hst: Hst;
+  export let Hst: Histoire;
 
   export let color: CheckboxColor = "primary";
   export let label: string = "Label";
