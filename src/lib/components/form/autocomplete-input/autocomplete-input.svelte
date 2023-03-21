@@ -43,7 +43,7 @@
       reset();
       filteredOptions = [];
     }
-    filteredOptions = options.filter((v) => v.toLowerCase().startsWith(<string>value.toLowerCase()));
+    filteredOptions = options.filter((v) => v.toLowerCase().startsWith(<string>value?.toLowerCase()));
   };
 
   // Keyboard navigation
