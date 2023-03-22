@@ -8,7 +8,7 @@
   export let type: LoadingType = "primary";
 </script>
 
-<Hst.Story title="Navigation/Loading">
+<Hst.Story title="Atoms/Navigation/Loading">
   <svelte:fragment slot="controls">
     <Hst.Select title="Type" bind:value={type} options={["primary", "secondary", "success", "warning", "error", "normal"]} />
   </svelte:fragment>
