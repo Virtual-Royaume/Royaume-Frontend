@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Text } from "../../texts/text";
+  import { Text } from "$lib/components/atoms/text";
   import { clsx } from "clsx";
   import type { AlertType } from "./alert.type";
-  import { InfoIcon, CheckIcon, WarningIcon, ReportIcon } from "../../../icons";
+  import { InfoIcon, CheckIcon, WarningIcon, ReportIcon } from "$lib/components/icons";
 
   // Props :
   export let type: AlertType = "info";
