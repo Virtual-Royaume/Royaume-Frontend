@@ -12,7 +12,7 @@
   export let fontWeight: FontWeight = "normal";
 </script>
 
-<Hst.Story title="Texts/Text">
+<Hst.Story title="Atoms/Text">
   <svelte:fragment slot="controls">
     <Hst.Text title="Text" bind:value={message} />
     <Hst.Select title="Type" bind:value={type} options={["p", "h4", "h3", "h2", "h1"]} />
