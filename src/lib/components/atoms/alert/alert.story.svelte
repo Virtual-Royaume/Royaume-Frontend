@@ -9,7 +9,7 @@
   export let message = "This is an alert message";
 </script>
 
-<Hst.Story title="Containers/Alert">
+<Hst.Story title="Atoms/Alert">
   <svelte:fragment slot="controls">
     <Hst.Text title="Text" bind:value={message} />
     <Hst.Select title="Type" bind:value={type} options={["info", "success", "warning", "error"]} />
