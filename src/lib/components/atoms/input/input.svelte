@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext, onMount } from "svelte";
   import { clsx } from "clsx";
-  import { Text } from "../../texts/text";
+  import { Text } from "$lib/components/atoms/text";
   import type { InputType, InputColor, InputSize } from "./input.type";
   import type { FormContext } from "../form/form.type";
 
