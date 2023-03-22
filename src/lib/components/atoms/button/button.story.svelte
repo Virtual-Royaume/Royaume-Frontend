@@ -13,7 +13,7 @@
   export let disabled = false;
 </script>
 
-<Hst.Story title="Navigation/Button">
+<Hst.Story title="Atoms/Navigation/Button">
   <svelte:fragment slot="controls">
     <Hst.Text title="Text" bind:value={label} />
     <Hst.Select title="Color" bind:value={color} options={["primary", "secondary", "error", "success", "warning", "normal"]} />
