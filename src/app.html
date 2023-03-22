@@ -10,16 +10,15 @@
 
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 
-		<style>
-			* {
-				padding: 0;
-				margin: 0;
-			}
+		<style>			
+			#main {
+				display: contents;
+			} 
 		</style>
 	</head>
 	<body>
 		<body data-sveltekit-preload-data="hover">
-			<div style="display: contents">%sveltekit.body%</div>
+			<div id="main">%sveltekit.body%</div>
 		</body>
 	</body>
 </html>
