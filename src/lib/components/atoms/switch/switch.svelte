@@ -1,7 +1,7 @@
 <script lang="ts">
   import { clsx } from "clsx";
   import type { SwitchColor } from "./switch.type";
-  import { Text } from "../../texts/text";
+  import { Text } from "$lib/components/atoms/text";
 
   // Props :
   export let color: SwitchColor = "primary";
