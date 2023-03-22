@@ -1,8 +1,8 @@
 <script lang="ts">
   import { clsx } from "clsx";
-  import { DoneIcon } from "../../../icons";
+  import { DoneIcon } from "$lib/components/icons";
   import type { CheckboxColor } from "./checkbox.type";
-  import { Text } from "../../texts/text";
+  import { Text } from "$lib/components/atoms/text";
 
   // Props :
   export let color: CheckboxColor = "primary";

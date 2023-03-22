@@ -9,7 +9,7 @@
   export let label = "Label";
 </script>
 
-<Hst.Story title="Form/Checkbox">
+<Hst.Story title="Atoms/Form/Checkbox">
   <svelte:fragment slot="controls">
     <Hst.Text title="Label" bind:value={label} />
     <Hst.Select title="Color" bind:value={color} options={["primary", "secondary", "error", "success", "warning"]} />
