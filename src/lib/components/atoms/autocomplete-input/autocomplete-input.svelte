@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { clsx } from "clsx";
-  import { Text } from "../../texts/text";
+  import { Text } from "$lib/components/atoms/text";
   import type { AutocompleteInputColor, AutocompleteSize } from "./autocomplete-input.type";
 
   // Props :
