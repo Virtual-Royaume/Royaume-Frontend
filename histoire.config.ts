@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [
     HstSvelte()
   ],
-  setupFile: "./histoire-setup.ts",
+  setupFile: "./histoire.setup.ts",
   viteNodeInlineDeps: [
     /clsx/
   ]
