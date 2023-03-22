@@ -12,7 +12,7 @@
   export let placeholder = "Placeholder";
 </script>
 
-<Hst.Story title="Form/TextArea">
+<Hst.Story title="Atoms/Form/TextArea">
   <svelte:fragment slot="controls">
     <Hst.Text title="Label" bind:value={label} />
     <Hst.Text title="Placeholder" bind:value={placeholder} />
