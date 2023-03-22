@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Text } from "../../texts/text";
+  import { Text } from "$lib/components/atoms/text";
 
   // Props :
   export let title: string;
@@ -27,7 +27,7 @@
     
         {#if description}
           <div class="mt-3 text-justify">
-            <Text type="p" size="small" lineClamp={3}>{description}</Text>
+            <Text type="p" size="small">{description}</Text>
           </div>
         {/if}
       </div> 
@@ -37,8 +37,8 @@
   <div class="shadow-md w-full sm:w-80 rounded-md cursor-pointer" on:click={onClick}>
     {#if image}
       <img src={image} alt="Card Thumbnail" class="rounded-t-md w-full aspect-video object-cover h-44">    
-    {/if}  
-  
+    {/if}
+
     <div class="p-4">
       <div>
         <Text type="h2" size="large" fontWeight="medium">{title}</Text>
@@ -49,9 +49,9 @@
   
       {#if description}
         <div class="mt-3 text-justify">
-          <Text type="p" size="small" lineClamp={3}>{description}</Text>
+          <Text type="p" size="small">{description}</Text>
         </div>
       {/if}
-    </div>  
+    </div>
   </div>
 {/if}

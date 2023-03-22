@@ -11,7 +11,7 @@
   export let href = "https://e2c-paris.fr";
 </script>
 
-<Hst.Story title="Containers/Card">
+<Hst.Story title="Atoms/Form/Card">
   <svelte:fragment slot="controls">
     <Hst.Text title="Text" bind:value={title} />
     <Hst.Text title="Subtitle" bind:value={subTitle} />
