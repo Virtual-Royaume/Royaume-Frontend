@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Text } from "$lib/components/texts/text";
+  import { Text } from "$lib/components/atoms/text";
   import { fly } from "svelte/transition";
   import { notifications } from "./notification.util";
 </script>
