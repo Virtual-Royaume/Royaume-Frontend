@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ExternalIcon from "$lib/icons/external.svelte";
+  import { ExternalIcon } from "$lib/components/icons";
 </script>
 
 <div class="h-full flex items-center justify-center flex-col">

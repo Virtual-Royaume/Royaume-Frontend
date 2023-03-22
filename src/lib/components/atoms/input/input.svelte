@@ -3,7 +3,7 @@
   import { clsx } from "clsx";
   import { Text } from "$lib/components/atoms/text";
   import type { InputType, InputColor, InputSize } from "./input.type";
-  import type { FormContext } from "../form/form.type";
+  import type { FormContext } from "$lib/components/providers/form/form.type";
 
   // Props :
   export let color: InputColor = "primary";

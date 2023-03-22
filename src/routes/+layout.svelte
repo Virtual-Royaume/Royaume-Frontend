@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Notification } from "$lib/components/molecules/notification";
+  import { Notification } from "$lib/components/providers/notification";
   import "$lib/styles/reset.css";
   import "$lib/styles/font.css";
   import "$lib/styles/tailwind.css";
