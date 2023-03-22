@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Text } from "../../texts/text";
+  import { Text } from "$lib/components/atoms/text";
   import type { SelectOption, SelectColor, SelectSize } from "./select.type";
-  import { UnfoldIcon, DoneIcon } from "../../../icons";
+  import { UnfoldIcon, DoneIcon } from "$lib/components/icons";
 
   // Props :
   export let label: string | null = null;
