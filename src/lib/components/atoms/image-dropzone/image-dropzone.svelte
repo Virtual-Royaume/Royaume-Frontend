@@ -1,9 +1,9 @@
 <script lang="ts">
   import { clsx } from "clsx";
-  import { FileUploadIcon } from "../../../icons";
+  import { FileUploadIcon } from "$lib/components/icons";
   import type { ImageDropzoneColor, ImageDropzoneSize } from "./image-dropzone.type";
-  import Text from "../../texts/text/text.svelte";
-  import type { FileType } from "../../../utils/types";
+  import { Text } from "$lib/components/atoms/text";
+  import type { FileType } from "../../../utils/typing/file";
 
   // Props :
   export let multiple = true;
