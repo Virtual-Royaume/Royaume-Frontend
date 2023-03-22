@@ -9,7 +9,7 @@
   export let message: string;
 
   // Style :
-  const style = clsx("flex items-center gap-2 p-4 shadow rounded-md", {
+  $: style = clsx("flex items-center gap-2 p-4 shadow rounded-md", {
     // Background Color :
     "bg-primary-1/20": type === "info",
     "bg-success-1/20": type === "success",
