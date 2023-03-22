@@ -6,5 +6,10 @@ export default defineConfig({
   test: {
     include: ["./src/**/*.test.ts"],
     environment: "happy-dom"
+  },
+  resolve: {
+    alias: [
+      { find: /\$(.*)/, replacement: "./$1" }
+    ]
   }
 });
