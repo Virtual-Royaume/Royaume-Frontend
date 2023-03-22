@@ -11,7 +11,7 @@
   export let placeholder = "Placeholder";
 </script>
 
-<Hst.Story title="Form/Autocomplete Input">
+<Hst.Story title="Atoms/Form/Autocomplete Input">
   <svelte:fragment slot="controls">
     <Hst.Text title="Label" bind:value={label} />
     <Hst.Text title="Placeholder" bind:value={placeholder} />
