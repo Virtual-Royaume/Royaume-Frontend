@@ -6,7 +6,7 @@
   export let color: LoadingType = "primary";
 
   // Style :
-  const outStyle = clsx("absolute h-14 w-14 border-4 border-t-transparent border-b-transparent animate-spin rounded-full", {
+  $: outStyle = clsx("absolute h-14 w-14 border-4 border-t-transparent border-b-transparent animate-spin rounded-full", {
     // Border :
     "border-primary-1": color === "primary",
     "border-secondary-1": color === "secondary",
@@ -15,7 +15,7 @@
     "border-error-1": color === "error",
     "border-gray-1": color === "normal"
   });
-  const inStyle = clsx("absolute h-9 w-9 border-2 border-primary-1 border-t-transparent border-b-transparent animate-reverse-spin rounded-full", {
+  $: inStyle = clsx("absolute h-9 w-9 border-2 border-primary-1 border-t-transparent border-b-transparent animate-reverse-spin rounded-full", {
     // Border :
     "border-primary-1": color === "primary",
     "border-secondary-1": color === "secondary",

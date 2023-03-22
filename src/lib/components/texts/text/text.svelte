@@ -7,7 +7,7 @@
   export let color: TextColor = "black";
   export let fontWeight: FontWeight = "normal";
 
-  const style = clsx({
+  $: style = clsx({
     // Text color :
     "text-primary-1": color === "primary",
     "text-black": color === "black",
