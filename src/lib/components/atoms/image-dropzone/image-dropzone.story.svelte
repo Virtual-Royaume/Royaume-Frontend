@@ -9,7 +9,7 @@
   export let size: ImageDropzoneSize = "normal";
 </script>
 
-<Hst.Story title="Form/ImageDropzone">
+<Hst.Story title="Atoms/Form/ImageDropzone">
   <svelte:fragment slot="controls">
     <Hst.Select title="Color" bind:value={color} options={["primary", "secondary", "error", "success", "warning"]} />
     <Hst.Select title="Size" bind:value={size} options={["small", "normal", "large"]} />
