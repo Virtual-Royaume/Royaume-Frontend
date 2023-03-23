@@ -1,13 +1,20 @@
 <script lang="ts">
+  import { Button } from "$lib/components/atoms/button";
   import { ExternalIcon } from "$lib/components/icons";
+  import { pushNotification } from "$lib/components/providers/notification";
 </script>
 
 <div class="h-full flex items-center justify-center flex-col">
   <img src="/favicon.png" alt="Royaume logo" class="h-64 animate-pulse" />
 
-  <a class="flex items-center gap-2 text-white text-xl hover:brightness-90" href="./discord">
+  <a class="flex items-center gap-2 text-white text-xl hover:brightness-90" href="./discord/pro">
     <span>LE ROYAUME</span>
 
-    <ExternalIcon />
+    <ExternalIcon color="white" size={24} />
   </a>
+
+  <div class="flex gap-2 mt-2">
+    <Button color="success" onClick={() => pushNotification("C'est une bonne notification", "success")}>Bonne notification</Button>
+    <Button color="error" onClick={() => pushNotification("C'est une mauvaise notification", "error")}>Mauvaise notification</Button>
+  </div>
 </div>
