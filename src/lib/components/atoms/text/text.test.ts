@@ -1,10 +1,10 @@
+import { test, expect } from "vitest";
 import { render, screen } from "@testing-library/svelte";
 import { Text } from ".";
+import html from "svelte-htm";
 
 test("test", () => {
-  render(Text);
+  render(html`<${Text}>Hello world!<//>`);
 
-  const heading = screen.getByText("Hello World!");
-
-  expect(heading).toBeInTheDocument();
+  expect(screen.getByText("Hello world!")).toBeDefined();
 });
