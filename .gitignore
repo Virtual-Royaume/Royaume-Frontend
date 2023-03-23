@@ -22,3 +22,6 @@ yarn.lock
 
 # JetBrains:
 .idea
+
+# Playwright:
+playwright-report
