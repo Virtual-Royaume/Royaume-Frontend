@@ -5,6 +5,9 @@ export default defineConfig({
   plugins: [sveltekit()],
   test: {
     include: ["./src/**/*.test.ts"],
-    environment: "happy-dom"
+    environment: "happy-dom",
+    deps: {
+      inline: ["clsx"]
+    }
   }
 });
