@@ -7,7 +7,7 @@
 </script>
 
 <div class="fixed top-3 right-7">
-  {#each $notifications as [type, message]}
+  {#each $notifications as { id, message, type }}
     <div class="w-80 my-3" transition:fly={{ x: 200, duration: 500 }}>
       <div class="w-full px-3 rounded shadow border border-transparent py-4 flex items-center justify-center gap-4 bg-gradient-to-tr {clsx({
         "from-success to-success-2": type === "success",

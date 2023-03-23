@@ -1,9 +1,38 @@
 import { get, writable } from "svelte/store";
 
-export const notifications = writable<string[][]>([]);
+export type NotificationType = "success" | "error" | "info";
 
-export const pushNotification = (message: string, type: "success" | "error" | "info"): void => {
-  notifications.set([...get(notifications), [type, message]]);
+export interface Notification {
+  message: string;
+  type: NotificationType;
+  id: number;
+}
 
-  setTimeout(() => notifications.set(get(notifications).slice(1)), 5000);
+export const notifications = writable<Notification[]>([]);
+
+export const pushNotification = (message: string, type: NotificationType): void => {
+  const currentNotifications = get(notifications);
+  const currentCount = currentNotifications.length;
+
+  const newNotification: Notification = { message, type, id: currentCount };
+
+  const updatedNotifications = [newNotification, ...currentNotifications.slice(0, 5)];
+  notifications.set(updatedNotifications);
+
+  setTimeout(() => {
+    const updatedNotifications = get(notifications).filter((notification) => notification.id !== newNotification.id);
+    notifications.set(updatedNotifications);
+  }, 5000);
+};
+
+export const success = (message: string): void => {
+  pushNotification(message, "success");
+};
+
+export const error = (message: string): void => {
+  pushNotification(message, "error");
+};
+
+export const info = (message: string): void => {
+  pushNotification(message, "info");
 };

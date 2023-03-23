@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Button } from "$lib/components/atoms/button";
   import { ExternalIcon } from "$lib/components/icons";
-  import { pushNotification } from "$lib/components/providers/notification";
+  import { error, info, success } from "$lib/components/providers/notification/notification.util";
 </script>
 
 <div class="h-full flex items-center justify-center flex-col">
@@ -14,7 +14,8 @@
   </a>
 
   <div class="flex gap-2 mt-2">
-    <Button color="success" onClick={() => pushNotification("C'est une bonne notification", "success")}>Bonne notification</Button>
-    <Button color="error" onClick={() => pushNotification("C'est une mauvaise notification", "error")}>Mauvaise notification</Button>
+    <Button color="success" onClick={() => success("C'est une bonne notification")}>Bonne notification</Button>
+    <Button color="error" onClick={() => error("C'est une mauvaise notification")}>Mauvaise notification</Button>
+    <Button color="primary" onClick={() => info("C'est une notification d'information")}>Notification</Button>
   </div>
 </div>
