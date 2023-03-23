@@ -30,13 +30,13 @@
   $: rows = autoResize ? (value?.match(/\n/g) || []).length + 1 || 1 : rows;
   
   // Style :
-  $: style = clsx("shadow outline-none focus:ring bg-gray-1 border border-gray-2 rounded-md text-normal w-full", {
+  $: style = clsx("shadow outline-none focus:ring bg-gray border border-gray-2 rounded-md text-normal w-full", {
     // Ring :
-    "focus:ring-primary-1/50": color === "primary",
-    "focus:ring-secondary-1/50": color === "secondary",
-    "focus:ring-success-1/50": color === "success",
-    "focus:ring-warning-1/50": color === "warning",
-    "focus:ring-error-1/50": color === "error",
+    "focus:ring-primary/50": color === "primary",
+    "focus:ring-secondary/50": color === "secondary",
+    "focus:ring-success/50": color === "success",
+    "focus:ring-warning/50": color === "warning",
+    "focus:ring-error/50": color === "error",
   
     // Size :
     "px-2 py-1": size === "small",

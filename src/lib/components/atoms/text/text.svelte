@@ -9,7 +9,7 @@
 
   $: style = clsx({
     // Text color :
-    "text-primary-1": color === "primary",
+    "text-primary": color === "primary",
     "text-black": color === "black",
     "text-white": color === "white",
     "text-gray-4": color === "gray",

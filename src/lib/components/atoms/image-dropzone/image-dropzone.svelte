@@ -24,14 +24,14 @@
     "h-60": size === "large",
 
     // Ring :
-    "hover:ring-primary-1/50": color === "primary",
-    "hover:ring-secondary-1/50": color === "secondary",
-    "hover:ring-success-1/50": color === "success",
-    "hover:ring-warning-1/50": color === "warning",
-    "hover:ring-error-1/50": color === "error",
+    "hover:ring-primary/50": color === "primary",
+    "hover:ring-secondary/50": color === "secondary",
+    "hover:ring-success/50": color === "success",
+    "hover:ring-warning/50": color === "warning",
+    "hover:ring-error/50": color === "error",
 
     // Hover :
-    "bg-gray-1": !isHover,
+    "bg-gray": !isHover,
     "bg-gray-2": isHover
   });
 

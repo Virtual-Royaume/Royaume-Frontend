@@ -1,6 +1,6 @@
 <script lang="ts">
   import { clsx } from "clsx";
-  import { DoneIcon } from "$lib/components/icons";
+  import { CheckIcon } from "$lib/components/icons";
   import type { CheckboxColor } from "./checkbox.type";
   import { Text } from "$lib/components/atoms/text";
 
@@ -14,17 +14,17 @@
   $: style = clsx("relative border-2 rounded-md w-5 h-5 peer-focus:ring", {
     // Color
     "border-gray-4": !checked,
-    "border-primary-1 bg-primary-1": color === "primary" && checked,
-    "border-secondary-1 bg-secondary-1": color === "secondary" && checked,
-    "border-success-1 bg-success-1": color === "success" && checked,
-    "border-warning-1 bg-warning-1": color === "warning" && checked,
-    "border-error-1 bg-error-1": color === "error" && checked,
+    "border-primary bg-primary": color === "primary" && checked,
+    "border-secondary bg-secondary": color === "secondary" && checked,
+    "border-success bg-success": color === "success" && checked,
+    "border-warning bg-warning": color === "warning" && checked,
+    "border-error bg-error": color === "error" && checked,
 
-    "peer-focus:ring-primary-1/50": color === "primary",
-    "peer-focus:ring-secondary-1/50": color === "secondary",
-    "peer-focus:ring-success-1/50": color === "success",
-    "peer-focus:ring-warning-1/50": color === "warning",
-    "peer-focus:ring-error-1/50": color === "error"
+    "peer-focus:ring-primary/50": color === "primary",
+    "peer-focus:ring-secondary/50": color === "secondary",
+    "peer-focus:ring-success/50": color === "success",
+    "peer-focus:ring-warning/50": color === "warning",
+    "peer-focus:ring-error/50": color === "error"
   });
 </script>
 
@@ -34,7 +34,7 @@
     <div class={style}>
       {#if checked}
           <div class="flex items-center justify-center h-full w-full">
-            <DoneIcon size={18} color="white" />
+            <CheckIcon size={18} color="white" />
           </div>
         {/if}
     </div>

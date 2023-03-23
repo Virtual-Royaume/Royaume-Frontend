@@ -11,10 +11,10 @@
   // Style :
   $: style = clsx("flex items-center gap-2 p-4 shadow rounded-md", {
     // Background Color :
-    "bg-primary-1/20": type === "info",
-    "bg-success-1/20": type === "success",
-    "bg-warning-1/20": type === "warning",
-    "bg-error-1/20": type === "error"
+    "bg-primary/20": type === "info",
+    "bg-success/20": type === "success",
+    "bg-warning/20": type === "warning",
+    "bg-error/20": type === "error"
   });
 </script>
 

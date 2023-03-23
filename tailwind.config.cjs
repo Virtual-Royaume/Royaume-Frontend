@@ -5,24 +5,24 @@ module.exports = {
   theme: {
     colors: {
       "primary": {
-        1: "#5339DD",
+        DEFAULT: "#5339DD",
         2: "#39279C"
       },
       "secondary": {
-        1: "#C6D116",
+        DEFAULT: "#C6D116",
         2: "#A5AF15"
       },
 
       "success": {
-        1: "#48C629",
+        DEFAULT: "#48C629",
         2: "#3DA723"
       },
       "warning": {
-        1: "#FFB22B",
+        DEFAULT: "#FFB22B",
         2: "#CD9024"
       },
       "error": {
-        1: "#FE5A5A",
+        DEFAULT: "#FE5A5A",
         2: "#CF4747"
       },
 
@@ -30,10 +30,15 @@ module.exports = {
       "black": "black",
 
       "gray": {
-        1: "#F9F9F9",
+        DEFAULT: "#F9F9F9",
         2: "#EAEAEA",
         3: "#BABABA",
         4: "#A5A5A5"
+      },
+
+      "info": {
+        DEFAULT: "#27A6AE",
+        2: "#1B7076"
       },
 
       "red": "#FF5555",
@@ -52,7 +57,7 @@ module.exports = {
     },
 
     fontFamily: {
-      sans: ["Poppins", "sans-serif"]
+      sans: ["Inter", "sans-serif"]
     },
 
     extend: {

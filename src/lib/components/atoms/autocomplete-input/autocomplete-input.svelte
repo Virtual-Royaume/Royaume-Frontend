@@ -21,13 +21,13 @@
   onMount(() => autofocus && inputRef.focus());
 
   // Style :
-  $: style = clsx("shadow outline-none focus:ring bg-gray-1 border border-gray-2 rounded-md text-normal w-full", {
+  $: style = clsx("shadow outline-none focus:ring bg-gray border border-gray-2 rounded-md text-normal w-full", {
     // Ring :
-    "focus:ring-primary-1/50": color === "primary",
-    "focus:ring-secondary-1/50": color === "secondary",
-    "focus:ring-success-1/50": color === "success",
-    "focus:ring-warning-1/50": color === "warning",
-    "focus:ring-error-1/50": color === "error",
+    "focus:ring-primary/50": color === "primary",
+    "focus:ring-secondary/50": color === "secondary",
+    "focus:ring-success/50": color === "success",
+    "focus:ring-warning/50": color === "warning",
+    "focus:ring-error/50": color === "error",
 
     // Size :
     "px-2 py-1": size === "small",
@@ -99,9 +99,9 @@
   </label>
 
   {#if filteredOptions.length > 0}
-    <ul class="shadow bg-gray-1 border border-gray-2 rounded-md mt-2 max-h-48 overflow-y-auto absolute w-full">
+    <ul class="shadow bg-gray border border-gray-2 rounded-md mt-2 max-h-48 overflow-y-auto absolute w-full">
       {#each filteredOptions as option, i}
-        <li class={"p-2 hover:bg-primary-1 hover:text-white cursor-pointer group " + (highlightedIndex === i ? "bg-primary-1 text-white" : "")} id={option.toLowerCase()} on:click={() => click(i)}>
+        <li class={"p-2 hover:bg-primary hover:text-white cursor-pointer group " + (highlightedIndex === i ? "bg-primary text-white" : "")} id={option.toLowerCase()} on:click={() => click(i)}>
           <Text color="inherit">{option}</Text>
         </li>
       {/each}

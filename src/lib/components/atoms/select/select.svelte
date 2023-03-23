@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Text } from "$lib/components/atoms/text";
   import type { SelectOption, SelectColor, SelectSize } from "./select.type";
-  import { UnfoldIcon, DoneIcon } from "$lib/components/icons";
+  import { UnfoldIcon, CheckIcon } from "$lib/components/icons";
 
   // Props :
   export let label: string | null = null;
@@ -28,7 +28,7 @@
       </div>
     {/if}
 
-    <button {disabled} class="shadow focus:ring rounded-md select-none table-cell transition-colors duration-200 text-normal outline-none p-2 border border-gray-2 bg-gray-1 w-full" on:click={toggle}>
+    <button {disabled} class="shadow focus:ring rounded-md select-none table-cell transition-colors duration-200 text-normal outline-none p-2 border border-gray-2 bg-gray w-full" on:click={toggle}>
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-1">
           {#if selectedOption}
@@ -47,9 +47,9 @@
     </button>
   </div>
 
-  <ul class="shadow bg-gray-1 border border-gray-2 rounded-md mt-2 max-h-48 overflow-y-auto absolute w-full" class:hidden={!opened}>
+  <ul class="shadow bg-gray border border-gray-2 rounded-md mt-2 max-h-48 overflow-y-auto absolute w-full" class:hidden={!opened}>
     {#each options as option, i}
-      <li class="p-2 hover:bg-primary-1 cursor-pointer group" on:click={() => selectedIndex = i}>
+      <li class="p-2 hover:bg-primary cursor-pointer group" on:click={() => selectedIndex = i}>
         <div class="flex items-center justify-between text-black group-hover:text-white">
             <div class="flex items-center gap-1">
               {#if option.img}
@@ -59,7 +59,7 @@
             </div>
             <div>
               {#if selectedIndex === i}
-                <DoneIcon color="inherit" size={15}/>
+                <CheckIcon color="inherit" size={15}/>
               {/if}
             </div>
           </div>

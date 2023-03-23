@@ -27,20 +27,20 @@
   });
 
   // Style :
-  $: style = clsx("shadow outline-none focus:ring bg-gray-1 border rounded-md text-normal w-full", {
+  $: style = clsx("shadow outline-none focus:ring bg-gray border rounded-md text-normal w-full", {
     // Ring :
-    "focus:ring-primary-1/50": color === "primary",
-    "focus:ring-secondary-1/50": color === "secondary",
-    "focus:ring-success-1/50": color === "success",
-    "focus:ring-warning-1/50": color === "warning",
-    "focus:ring-error-1/50": color === "error",
+    "focus:ring-primary/50": color === "primary",
+    "focus:ring-secondary/50": color === "secondary",
+    "focus:ring-success/50": color === "success",
+    "focus:ring-warning/50": color === "warning",
+    "focus:ring-error/50": color === "error",
 
     // Size :
     "px-2 py-1": size === "small",
     "p-2": size === "normal",
     "px-2 py-4": size === "large",
 
-    "border-error-1": error.length > 0,
+    "border-error": error.length > 0,
     "border-gray-2": error.length === 0
   });
 
@@ -69,7 +69,7 @@
 
 <label>
   {#if label}
-    <div class={`mb-1 flex justify-between items-center ${error.length > 0 ? "text-error-1" : "text-black"}`}>
+    <div class={`mb-1 flex justify-between items-center ${error.length > 0 ? "text-error" : "text-black"}`}>
       <Text type="p" size="normal" fontWeight="medium" color="inherit">{label}</Text>
       {#if error.length > 0}
         <Text type="p" size="small" fontWeight="medium" color="inherit">{error}</Text>
