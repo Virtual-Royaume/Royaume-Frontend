@@ -12,16 +12,13 @@ export const notifications = writable<Notification[]>([]);
 
 export const pushNotification = (message: string, type: NotificationType): void => {
   const currentNotifications = get(notifications);
-  const currentCount = currentNotifications.length;
 
-  const newNotification: Notification = { message, type, id: currentCount };
+  const newNotification: Notification = { message, type, id: currentNotifications.length };
 
-  const updatedNotifications = [newNotification, ...currentNotifications.slice(0, 5)];
-  notifications.set(updatedNotifications);
+  notifications.set([newNotification, ...currentNotifications.slice(0, 5)]);
 
   setTimeout(() => {
-    const updatedNotifications = get(notifications).filter((notification) => notification.id !== newNotification.id);
-    notifications.set(updatedNotifications);
+    notifications.set(get(notifications).filter((notification) => notification.id !== newNotification.id));
   }, 5000);
 };
 
