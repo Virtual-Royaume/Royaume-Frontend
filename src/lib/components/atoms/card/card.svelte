@@ -34,7 +34,7 @@
     </div>
   </a>
 {:else}
-  <div class="shadow-md w-full sm:w-80 rounded-md cursor-pointer" on:click={onClick}>
+  <div class="shadow-md w-full sm:w-80 rounded-md cursor-pointer" on:click={onClick} on:keypress={onClick}>
     {#if image}
       <img src={image} alt="Card Thumbnail" class="rounded-t-md w-full aspect-video object-cover h-44">    
     {/if}

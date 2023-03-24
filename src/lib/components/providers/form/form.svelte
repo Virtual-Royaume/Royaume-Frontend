@@ -20,7 +20,7 @@
 
   setContext("validator", context);
 
-  const onSubmit = () => {
+  const onSubmit = (): void => {
     if (context.validate()) dispatch("submit");
   };
 </script>

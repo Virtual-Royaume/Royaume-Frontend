@@ -1,15 +1,11 @@
 <script lang="ts">
   import { Text } from "$lib/components/atoms/text";
-  import type { SelectOption, SelectColor, SelectSize } from "./select.type";
+  import type { SelectOption } from "./select.type";
   import { UnfoldIcon, CheckIcon } from "$lib/components/icons";
 
   // Props :
   export let label: string | null = null;
-  export let color: SelectColor = "primary";
-  export let required = false;
-  export let value: string | null = null;
   export let disabled = false;
-  export let size: SelectSize = "normal";
   export let options: SelectOption[] = [];
 
   let selectedIndex: number | null = 0;
@@ -17,7 +13,7 @@
   $: selectedOption = typeof selectedIndex === "number" ? options.at(selectedIndex) : null;
 
   let opened = true;
-  const toggle = () => opened = !opened;
+  const toggle = (): boolean => opened = !opened;
 </script>
 
 <div class="w-full relative">
@@ -49,7 +45,7 @@
 
   <ul class="shadow bg-gray border border-gray-2 rounded-md mt-2 max-h-48 overflow-y-auto absolute w-full" class:hidden={!opened}>
     {#each options as option, i}
-      <li class="p-2 hover:bg-primary cursor-pointer group" on:click={() => selectedIndex = i}>
+      <li class="p-2 hover:bg-primary cursor-pointer group" on:click={() => selectedIndex = i} on:keyup={toggle}>
         <div class="flex items-center justify-between text-black group-hover:text-white">
             <div class="flex items-center gap-1">
               {#if option.img}

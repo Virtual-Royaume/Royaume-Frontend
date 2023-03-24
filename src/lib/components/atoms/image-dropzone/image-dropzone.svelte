@@ -35,24 +35,24 @@
     "bg-gray-2": isHover
   });
 
-  const dropFiles = (event: DragEvent) => {
+  const dropFiles = (event: DragEvent): void => {
     if (event.dataTransfer?.files) upload([...event.dataTransfer.files]);
     isHover = false;
   };
 
-  const clickFiles = (event: Event) => {
+  const clickFiles = (event: Event): void => {
     const target = event.target as HTMLInputElement;
     if (target.files) upload([...target.files]);
     isHover = false;
   };
 
-  const upload = (dropFiles: File[]) => {
+  const upload = (dropFiles: File[]): void => {
     files = [];
 
     if (dropFiles.length === 0) return;
 
     if (!multiple) dropFiles = [dropFiles[0]];
-    dropFiles.forEach((file, i) => {
+    dropFiles.forEach((file) => {
       if (accepted.length > 0 && (!file.type || !accepted.includes(<FileType>file.type))) return;
       files = [...files, file];
     });

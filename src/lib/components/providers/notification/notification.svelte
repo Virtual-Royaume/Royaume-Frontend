@@ -12,7 +12,7 @@
       <div class="w-full px-3 rounded shadow border border-transparent py-4 flex items-center justify-center gap-4 bg-gradient-to-tr {clsx({
         "from-success to-success-2": type === "success",
         "from-error to-error-2": type === "error",
-        "from-info to-info-2": type === "info",
+        "from-info to-info-2": type === "info"
       })}">
         {#if type === "error"}
           <WarningIcon color="black" size={24} />

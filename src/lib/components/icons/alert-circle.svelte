@@ -5,7 +5,7 @@
   // Props:
   export let size: number;
   export let color: IconColor = "white";
-  export let fill: boolean = false;
+  export let fill = false;
 </script>
 
 <svg xmlns="http://www.w3.org/2000/svg" height={size} width={size} viewBox="0 0 24 24" stroke-width="2" stroke={colorOptions[color]} fill="none" stroke-linecap="round" stroke-linejoin="round">

@@ -47,7 +47,7 @@
   };
 
   // Keyboard navigation
-  const navigate = (e: KeyboardEvent) => {
+  const navigate = (e: KeyboardEvent): void => {
     if (filteredOptions.length === 0) return;
 
     if (e.key === "ArrowDown") {
@@ -66,17 +66,17 @@
     }
   };
 
-  const click = (index: number) => {
+  const click = (index: number): void => {
     value = filteredOptions[index];
     reset();
   };
 
-  const reset = () => {
+  const reset = (): void => {
     filteredOptions = [];
     highlightedIndex = null;
   };
 
-  const scrollIntoView = (id: string) => {
+  const scrollIntoView = (id: string): void => {
     const element = document.getElementById(id.toLowerCase());
     if (!element) return;
 
@@ -101,7 +101,7 @@
   {#if filteredOptions.length > 0}
     <ul class="shadow bg-gray border border-gray-2 rounded-md mt-2 max-h-48 overflow-y-auto absolute w-full">
       {#each filteredOptions as option, i}
-        <li class={"p-2 hover:bg-primary hover:text-white cursor-pointer group " + (highlightedIndex === i ? "bg-primary text-white" : "")} id={option.toLowerCase()} on:click={() => click(i)}>
+        <li class={"p-2 hover:bg-primary hover:text-white cursor-pointer group " + (highlightedIndex === i ? "bg-primary text-white" : "")} id={option.toLowerCase()} on:click={() => click(i)} on:keyup={navigate}>
           <Text color="inherit">{option}</Text>
         </li>
       {/each}
