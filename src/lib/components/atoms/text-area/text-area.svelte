@@ -2,13 +2,12 @@
   import { onMount } from "svelte";
   import { clsx } from "clsx";
   import { Text } from "$lib/components/atoms/text";
-  import type { TextAreaType, TextAreaColor, TextAreaSize } from "./text-area.type";
+  import type { TextAreaColor, TextAreaSize } from "./text-area.type";
   
   // Props
   export let color: TextAreaColor = "primary";
   export let label: string | null = null;
   export let placeholder: string | null = null;
-  export let type: TextAreaType = "text";
   export let autofocus = false;
   export let required = false;
   export let value: string | null = null;
@@ -54,5 +53,5 @@
       <Text type="p" size="normal" fontWeight="medium">{label}</Text>
     </div>
   {/if}
-  <textarea bind:this={textAreaRef} on:input={resize} {placeholder} {type} {rows} {required} {disabled} {name} class={style}></textarea>
+  <textarea bind:this={textAreaRef} on:input={resize} {placeholder} {rows} {required} {disabled} {name} class={style}></textarea>
 </label>

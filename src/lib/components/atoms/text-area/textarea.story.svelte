@@ -1,13 +1,12 @@
 <script lang="ts">
   import type { Hst as Histoire } from "@histoire/plugin-svelte";
   import { TextArea } from ".";
-  import type { TextAreaColor, TextAreaSize, TextAreaType } from "./text-area.type";
+  import type { TextAreaColor, TextAreaSize } from "./text-area.type";
   
   export let Hst: Histoire;
 
   export let color: TextAreaColor = "primary";
   export let size: TextAreaSize = "normal";
-  export let type: TextAreaType = "text";
   export let label = "Label";
   export let placeholder = "Placeholder";
 </script>
@@ -18,10 +17,9 @@
     <Hst.Text title="Placeholder" bind:value={placeholder} />
     <Hst.Select title="Color" bind:value={color} options={["primary", "secondary", "error", "success", "warning"]} />
     <Hst.Select title="Size" bind:value={size} options={["small", "normal", "large"]} />
-    <Hst.Select title="Type" bind:value={type} options={["text", "password", "email"]} />
   </svelte:fragment>
 
   <Hst.Variant title="Default">
-    <TextArea color={color} size={size} type={type} label={label} placeholder={placeholder} />
+    <TextArea color={color} size={size} label={label} placeholder={placeholder} />
   </Hst.Variant>
 </Hst.Story>

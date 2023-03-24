@@ -71,7 +71,7 @@
     </button>
   </a>
 {:else}
-  <button class={style} disabled={disabled} type="menu" on:click={onClick}>
+  <button class={style} disabled={disabled} type="button" on:click={onClick}>
     <slot />
   </button>
 {/if}
