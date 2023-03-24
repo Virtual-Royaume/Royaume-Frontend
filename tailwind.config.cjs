@@ -9,21 +9,21 @@ module.exports = {
         2: "#39279C"
       },
       "secondary": {
-        DEFAULT: "#C6D116",
-        2: "#A5AF15"
+        DEFAULT: "#C5CC5C",
+        2: "#9CA13F"
       },
 
       "success": {
         DEFAULT: "#48C629",
-        2: "#3DA723"
+        2: "#3BA021"
       },
       "warning": {
         DEFAULT: "#FFB22B",
-        2: "#CD9024"
+        2: "#DEA136"
       },
       "error": {
-        DEFAULT: "#FE5A5A",
-        2: "#CF4747"
+        DEFAULT: "#F34D4D",
+        2: "#C33F3F"
       },
 
       "white": "white",
@@ -41,8 +41,8 @@ module.exports = {
         2: "#1B7076"
       },
 
-      "red": "#FF5555",
-      "green": "#27ae60",
+      "red": "#E13131",
+      "green": "#27AE60",
 
       "transparent": "transparent"
     },

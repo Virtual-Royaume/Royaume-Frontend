@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Button } from "$lib/components/atoms/button";
   import { ExternalIcon } from "$lib/components/icons";
-  import { error, info, success } from "$lib/components/providers/notification/notification.util";
+  import { error, info, success } from "$lib/components/providers/notification";
 </script>
 
 <div class="h-full flex items-center justify-center flex-col">
