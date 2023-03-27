@@ -15,8 +15,8 @@ export default defineConfig({
   theme: {
     logo: {
       dark: "./static/images/royaume-logo-text-white.png",
-      light: "./static/images/histoire-logo.svg",
-      square: "./static/images/histoire-logo.svg"
+      light: "./static/images/royaume-logo-text-black.png",
+      square: "./static/images/royaume-logo-text-white.png"
     },
     colors: {
       primary: defaultColors.green
