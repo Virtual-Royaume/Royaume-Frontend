@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { IconColor } from "./icon.type";
-  import { colorOptions } from "./icon.util";
+  import type { IconColor } from "../icon.type";
+  import { colorOptions } from "../icon.util";
   
   // Props:
   export let size: number;

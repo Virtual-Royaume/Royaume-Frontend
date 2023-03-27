@@ -10,14 +10,14 @@
     ReportIcon,
     UnfoldIcon,
     WarningIcon
-  } from "$lib/components/icons";
+  } from ".";
 
   export let Hst: Histoire;
 </script>
 
 <Hst.Story title="Icons">
   <Hst.Variant>
-    <div class="flex gap-2">
+    <div class="flex gap-2 flex-wrap">
       <AlertCircle size={24} />
       <CheckIcon size={24} />
       <Clipboard size={24} />
