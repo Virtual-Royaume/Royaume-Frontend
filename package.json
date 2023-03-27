@@ -12,7 +12,7 @@
     "lint": "eslint . --ignore-path .gitignore",
     "lint:fix": "eslint . --fix --ignore-path .gitignore",
     "story:build": "histoire build",
-    "story:start": "serve .histoire",
+    "story:start": "serve ./.histoire/dist",
     "story:dev": "histoire dev",
     "story:preview": "histoire preview",
     "test:e2e": "playwright test",
