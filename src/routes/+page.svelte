@@ -5,7 +5,7 @@
 </script>
 
 <div class="h-full flex items-center justify-center flex-col">
-  <img src="/favicon.png" alt="Royaume logo" class="h-64 animate-pulse" />
+  <img src="/images/royaume-logo.png" alt="Royaume logo" class="h-64 animate-pulse" />
 
   <a class="flex items-center gap-2 text-white text-xl hover:brightness-90" href="./discord/pro">
     <span>LE ROYAUME</span>
