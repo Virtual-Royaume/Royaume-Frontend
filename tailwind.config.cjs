@@ -44,7 +44,15 @@ module.exports = {
       "red": "#E13131",
       "green": "#27AE60",
 
-      "transparent": "transparent"
+      "transparent": "transparent",
+
+      "discord": {
+        "primary": {
+          DEFAULT: "#5865F2",
+          2: "#4f5ce3"
+        }
+        // https://discord.com/branding if you want to add more
+      }
     },
 
     fontSize: {
