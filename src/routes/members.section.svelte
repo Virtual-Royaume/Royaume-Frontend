@@ -3,6 +3,7 @@
   interface Member {
     profilePicture: string;
     username: string;
+    id: string;
   }
 
   export let members: Member[] = [];
@@ -15,7 +16,8 @@
 
     members.push({
       profilePicture: data.data.members[i].profilePicture,
-      username: data.data.members[i].username
+      username: data.data.members[i].username,
+      id: data.data.members[i].id
     });
   }
 </script>
@@ -25,7 +27,9 @@
     <div class="[grid-area:stack] grid grid-cols-[repeat(4,1fr)] md:grid-cols-[repeat(20,1fr)] z-10">
       {#each members as member, i}
         <div class="odd:translate-y-4 even:-translate-y-4 flex flex-col justify-center gap-1">
-          <img src="{member.profilePicture}" class="w-16 h-16 rounded-full hover:border-[2px] hover:border-[#39279C]" alt="{member.username}">
+          <a href="/member/{member.id}" class="hover:underline">
+            <img src="{member.profilePicture}" class="w-16 h-16 rounded-full hover:border-[2px] hover:border-[#39279C]" alt="{member.username}">
+          </a>
         </div>
       {/each}
     </div>
