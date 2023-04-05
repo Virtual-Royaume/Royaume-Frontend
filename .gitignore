@@ -17,8 +17,8 @@ yarn.lock
 # MacOS:
 .DS_Store
 
-# Histoire:
-.histoire
+# Story:
+storybook-static
 
 # JetBrains:
 .idea
