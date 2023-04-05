@@ -5,7 +5,7 @@
   import "$lib/styles/tailwind.css";
 </script>
 
-<Navbar />
+<Navbar pages={[]} />
 
 <main class="h-screen flex flex-col">
   <slot />
