@@ -14,7 +14,7 @@
     }
 
     members.push({
-      profilePicture: data.data.members[i].profilePicture,
+      profilePicture: data.data.members[i].profilePicture
     });
   }
 </script>
@@ -46,7 +46,7 @@
   </div>
 
   <div class="mt-10 bg-blue-500 rounded-full w-64 h-64 flex justify-center items-center">
-    <img src="https://cdn.discordapp.com/attachments/1064617747008471180/1091085620400631908/crownn_1-removebg-preview.png">
+    <img src="https://cdn.discordapp.com/attachments/1064617747008471180/1091085620400631908/crownn_1-removebg-preview.png" alt="tgm">
   </div>
 </div>
 
@@ -108,7 +108,7 @@
     <div class="[grid-area:stack] grid grid-cols-[repeat(20,1fr)] z-10">
       {#each members as member, i}
         <div class="odd:translate-y-4 even:-translate-y-4 flex flex-col justify-center gap-1">
-          <img src="{member.profilePicture}" class="w-16 h-16 rounded-full">
+          <img src="{member.profilePicture}" class="w-16 h-16 rounded-full" alt="tgm">
         </div>
       {/each}
     </div>
