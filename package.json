@@ -29,6 +29,7 @@
     "@storybook/addon-essentials": "7.0.2",
     "@storybook/addon-interactions": "7.0.2",
     "@storybook/addon-links": "7.0.2",
+    "@storybook/addon-svelte-csf": "^3.0.0",
     "@storybook/blocks": "7.0.2",
     "@storybook/manager-api": "^7.0.2",
     "@storybook/svelte": "7.0.2",
