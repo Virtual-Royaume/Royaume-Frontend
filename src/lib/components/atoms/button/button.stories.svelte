@@ -3,7 +3,7 @@
   import { Button } from ".";
 </script>
 
-<Meta title="Button" component={Button} />
+<Meta title="Atoms/Button" component={Button} />
 
 <Template let:args>
   <Button {...args}>
