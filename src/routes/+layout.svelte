@@ -7,7 +7,7 @@
 </script>
 
 <Navbar />
-<main class="h-screen bg-[#0C0C0D]">
+<main class="h-screen flex flex-col">
   <slot />
 </main>
 
