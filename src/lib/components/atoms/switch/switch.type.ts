@@ -1,1 +1,0 @@
-export type SwitchColor = "primary" | "secondary" | "error" | "success" | "warning";

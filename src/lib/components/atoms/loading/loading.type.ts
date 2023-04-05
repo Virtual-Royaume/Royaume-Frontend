@@ -1,1 +1,0 @@
-export type LoadingType = "primary" | "secondary" | "success" | "warning" | "error" | "normal";
