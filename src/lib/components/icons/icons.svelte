@@ -12,7 +12,7 @@
     WarningIcon
   } from ".";
 
-  export let size: number = 24;
+  export let size = 24;
   export let color: IconColor = "black";
 </script>
 
