@@ -1,1 +1,0 @@
-export type CheckboxColor = "primary" | "secondary" | "error" | "success" | "warning";
