@@ -1,3 +1,24 @@
+<script lang="ts">
+  import data from "../temp/members.json";
+
+  interface Member {
+    profilePicture: string;
+  }
+
+  export let members: Member[] = [];
+
+  for (let i = 0; i < data.data.members.length; i++) {
+
+    if (data.data.members[i].profilePicture == "https://i.ytimg.com/vi/Ug9Xh-xNecM/maxresdefault.jpg") {
+      continue;
+    }
+
+    members.push({
+      profilePicture: data.data.members[i].profilePicture,
+    });
+  }
+</script>
+
 <div class="flex sm:flex-row flex-col mx-auto w-full justify-center items-center">
   <div class="mt-10 basis-1/2 flex flex-col justify-center mr-5">
     <h3 class="font-black text-white md:text-2xl">LE ROYAUME</h3>
@@ -40,7 +61,7 @@
     <div class="flex flex-row justify-center items-center">
       <div class="flex flex-col justify-center items-center mr-5 bg-[#151517] rounded-lg w-64 h-64 p-5 border-t-[3px] border-[#39279C]">
         <div class="bg-blue-500 rounded-full w-52 flex justify-center items-center">
-          <img src="/images/presentation/SvelteKit.png" alt="SvelteKit" class="w-32">
+          <img src="/images/presentation/SvelteKit.png" alt="SvelteKit" class="w-16 mt-4 md:mt-0">
         </div>
         <h3 class="font-normal text-[#999999] md:text-large mt-5">SvelteKit</h3>
         <p class="font-normal text-center text-[#626262] w-4/3 mt-1 md:text-normal">Nous avons des spécialistes qui adorent travailler avec cette technologie du futur !</p>
@@ -54,7 +75,7 @@
     <div class="flex flex-row justify-center items-center">
       <div class="flex flex-col justify-center items-center mr-5 bg-[#151517] rounded-lg w-64 h-64 p-5 border-t-[3px] border-[#39279C]">
         <div class="bg-blue-500 rounded-full w-52 flex justify-center items-center">
-          <img src="/images/presentation/React.png" alt="React" class="w-16">
+          <img src="/images/presentation/React.png" alt="React" class="w-16 mt-4 md:-mt-6">
         </div>
         <h3 class="font-normal text-[#999999] md:text-large mt-5">React</h3>
         <p class="font-normal text-center text-[#626262] w-4/3 mt-1 md:text-normal">On a des professionnels du domaine qui sauront vous aider dans n’importe quel contexte</p>
@@ -68,15 +89,33 @@
     <div class="flex flex-row justify-center items-center">
       <div class="flex flex-col justify-center items-center mr-5 bg-[#151517] rounded-lg w-64 h-64 p-5 border-t-[3px] border-[#39279C]">
         <div class="bg-blue-500 rounded-full w-52 flex justify-center items-center">
-          <img src="/images/presentation/Supabase.png" alt="Supabase" class="w-16">
+          <img src="/images/presentation/Supabase.png" alt="Supabase" class="w-16 mt-6 md:-mt-6">
         </div>
         <h3 class="font-normal text-[#999999] md:text-large mt-5">Supabase</h3>
         <p class="font-normal text-center text-[#626262] w-4/3 mt-1 md:text-normal">Ce n’est pas qu’une base de données, c’est une plateforme qui révolutionne ce qu’on connais</p>
 
+        <!-- Fixed to the top of card -->
         <a href="/projects?type=supabase" class="bg-[#1D1D1F] text-[#626262] text-normal py-2 w-36 text-center rounded-lg mt-5">
           Décrouvrir
         </a>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-10">
+  <div class="grid [grid-template-areas:'stack']">
+    <div class="[grid-area:stack] grid grid-cols-[repeat(20,1fr)] z-10">
+      {#each members as member, i}
+        <div class="odd:translate-y-4 even:-translate-y-4 flex flex-col justify-center gap-1">
+          <img src="{member.profilePicture}" class="w-16 h-16 rounded-full">
+        </div>
+      {/each}
+    </div>
+    <div class="[grid-area:stack z-40"></div>
+    <div class="[grid-area:stack] grid place-content-center z-50 text-center">
+      <h2 class="text-white text-4xl font-bold">Lorem ipsum dolor sit.</h2>
+      <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, omnis!</p>
     </div>
   </div>
 </div>

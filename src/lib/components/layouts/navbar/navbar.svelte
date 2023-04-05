@@ -1,4 +1,4 @@
-<div class="p-2 bg-[#000000]/50 fixed h-16 w-full">
+<div class="p-2 bg-[#000000]/50 fixed h-16 w-full backdrop-blur-md">
   <div class="flex mt-2 items-center justify-between mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="icon">
       <a href="/">
@@ -10,7 +10,7 @@
         <a href="/" class="flex -mt-1 focus:outline-none">Blog</a>
       </li>
       <li>
-        <a href="/" class="flex -mt-1 focus:outline-none">Members</a>
+        <a href="/" class="flex -mt-1 focus:outline-none">Membres</a>
       </li>
     </ul>
   </div>
