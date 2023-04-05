@@ -19,7 +19,7 @@ jobs:
         run: npm run build
         env: ${{ secrets }}
   storybook:
-    name: Histoire
+    name: Storybook
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3
