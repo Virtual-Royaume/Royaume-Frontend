@@ -12,12 +12,11 @@
       </a>
     </div>
     <ul class="flex items-center gap-4 text-white">
-      <li>
-        <a href="/" class="flex -mt-1 focus:outline-none">Blog</a>
-      </li>
-      <li>
-        <a href="/" class="flex -mt-1 focus:outline-none">Membres</a>
-      </li>
+      {#each pages as page}
+        <li>
+          <a href="/{page.link}" target={page.target} class="flex -mt-1 focus:outline-none">{page.name}</a>
+        </li>
+      {/each}
     </ul>
   </div>
 </div>
