@@ -5,19 +5,11 @@
 
 <div class="flex justify-center gap-3">
   <div class="flex flex-col items-center w-96 group">
-    <img
-      src="https://linkfy.fr/jgtr"
-      alt="Rust, une bombe à retardement"
-      class="rounded-xl shadow-lg"
-    >
+    <img src="https://linkfy.fr/jgtr" alt="Rust, une bombe à retardement" class="rounded-xl shadow-lg">
     <p class="text-white">Rust, une bombe à retardement</p>
   </div>
   <div class="flex flex-col items-center w-96 group">
-    <img
-      src="https://linkfy.fr/lkfz"
-      alt="Rust, une bombe à retardement"
-      class="rounded-xl shadow-lg"
-    >
+    <img src="https://linkfy.fr/lkfz" alt="Rust, une bombe à retardement" class="rounded-xl shadow-lg">
     <p class="text-white">React, une expérience utilisateur optimale</p>
   </div>
 </div>
