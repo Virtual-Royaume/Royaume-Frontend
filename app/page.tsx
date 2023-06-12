@@ -1,10 +1,9 @@
 import { ReactElement } from "react";
+import { HeaderSection } from "./sections/header.section";
 
 const HomePage = (): ReactElement => {
   return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
+    <HeaderSection />
   )
 }
 
