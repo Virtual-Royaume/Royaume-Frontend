@@ -18,13 +18,13 @@ jobs:
       - name: Build SvelteKit
         run: npm run build
         env: ${{ secrets }}
-  histoire:
-    name: Histoire
+  storybook:
+    name: Storybook
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3
       - uses: actions/checkout@v3
       - name: Install dependencies
         run: npm install
-      - name: Build Histoire
+      - name: Build Storybook
         run: npm run story:build

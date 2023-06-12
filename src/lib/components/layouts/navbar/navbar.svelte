@@ -2,6 +2,8 @@
   import type { Page } from "./navbar.type";
 
   export let pages: Page[];
+
+  console.log(pages);
 </script>
 
 <div class="p-2 bg-[#000000]/50 fixed h-16 w-full backdrop-blur-md">
