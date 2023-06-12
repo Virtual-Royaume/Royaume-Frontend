@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@tw-classed/react':
+    specifier: ^1.5.0
+    version: 1.5.0(react@18.2.0)
   '@types/node':
     specifier: 20.3.0
     version: 20.3.0
@@ -32,6 +35,9 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
+  react-icons:
+    specifier: ^4.9.0
+    version: 4.9.0(react@18.2.0)
   sharp:
     specifier: ^0.32.1
     version: 0.32.1
@@ -291,6 +297,19 @@ packages:
     resolution: {integrity: sha512-sJ902EfIzn1Fa+qYmjdQqh8tPsoxyBz+8yBKC2HKUxyezKJFwPGOn7pv4WY6QuQW//ySQi5lJjA/ZT9sNWWNTg==}
     dependencies:
       tslib: 2.5.3
+    dev: false
+
+  /@tw-classed/core@1.5.0:
+    resolution: {integrity: sha512-j4QdsVkJuUt4xR/4aRLsEB3kFuDkyjxiD0azTbuOSh7zJj3BliDpR4reKV+nYbIj1md90rvuJsHPJ/n/Iv55Lw==}
+    dev: false
+
+  /@tw-classed/react@1.5.0(react@18.2.0):
+    resolution: {integrity: sha512-QxN6Vfb58Lr6dcE5VaMyzJievCo4Fydog9zyGWAGd0raglR6vYIQamFkSM2qVZMWdsVQKpALqiwgjNEfaIGdww==}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      '@tw-classed/core': 1.5.0
+      react: 18.2.0
     dev: false
 
   /@types/json-schema@7.0.12:
@@ -2436,6 +2455,14 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-icons@4.9.0(react@18.2.0):
+    resolution: {integrity: sha512-ijUnFr//ycebOqujtqtV9PFS7JjhWg0QU6ykURVHuL4cbofvRCf3f6GMn9+fBktEFQOIVZnuAYLZdiyadRQRFg==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is@16.13.1:
