@@ -1,4 +1,6 @@
-import "@/lib/styles/tailwind.css"
+import "@lib/styles/tailwind.css";
+import "@lib/styles/font.css";
+
 import { Component } from "@/lib/utils/component";
 import { Footer } from "@lib/components/molecules/footer";
 import { Navbar } from "@lib/components/molecules/navbar";

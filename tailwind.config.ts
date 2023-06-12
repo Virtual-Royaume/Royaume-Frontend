@@ -27,6 +27,9 @@ export default {
         glow: "rgba(83, 57, 221, .52)"
       }
     },
+    fontFamily: {
+      "sans": ["Inter", "sans-serif"]
+    },
     boxShadow: {
       glow: "0 0 200px 100px #5339DD"
     },
