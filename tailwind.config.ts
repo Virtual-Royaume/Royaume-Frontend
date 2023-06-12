@@ -12,8 +12,23 @@ export default {
       padding: "2rem"
     },
     colors: {
-      background: "#0c0c0d",
-      white: "#ffffff"
+      background: {
+        DEFAULT: "#0c0c0d",
+        header: "rgba(12, 12, 13, .5)",
+        card: "#131314"
+      },
+      white: {
+        DEFAULT: "#FFFFFF",
+        desc: "#AFAFAF"
+      },
+      discord: "#5865F2",
+      purple: {
+        DEFAULT: "#5339DD",
+        glow: "rgba(83, 57, 221, .52)"
+      }
+    },
+    boxShadow: {
+      glow: "0 0 200px 100px #5339DD"
     },
     extend: {
       backgroundImage: {
