@@ -8,7 +8,8 @@ export const Hamburger: Component<HamburgerProps> = ({ open, setOpen }) => {
   const styles = clsx(
     "w-10 h-10 text-white",
     "absolute right-0 top-0 bottom-0 my-auto",
-    "transition-opacity duration-300"
+    "transition-opacity duration-300",
+    "cursor-pointer"
   );
 
   return (
