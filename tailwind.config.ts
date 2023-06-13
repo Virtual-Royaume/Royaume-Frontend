@@ -40,7 +40,8 @@ export default {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       gridTemplateColumns: {
-        members: "repeat(auto-fill, minmax(5rem, 1fr))"
+        members: "repeat(auto-fill, minmax(5rem, 1fr))",
+        "members-cards": "repeat(auto-fit, minmax(18rem, 1fr))"
       }
     },
   },

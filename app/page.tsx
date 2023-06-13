@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { HeaderSection } from "./sections/header.section";
 import { SpecialitiesSection } from "./sections/specialities.section";
 import { MembersSection } from "./sections/members.section";
