@@ -8,8 +8,8 @@ const MembersPage = (): ReactElement => {
   return (
     <>
       <div className="flex flex-col items-center justify-center mt-20">
-        <Heading type="h2" className="px-2 text-center font-bold">Découvrez nos membres</Heading>
-        <Text about="p" className="px-2 text-center">Nos membres sont des personnes qui ont contribué au projets, ou juste des membres de la communauté.</Text>
+        <Heading type="h1" className="px-2 text-center font-bold">Découvrez nos membres</Heading>
+        <Text className="px-2 text-center">Nos membres sont des personnes qui ont contribué au projets, ou juste des membres de la communauté.</Text>
       </div>
 
       <div className="flex flex-wrap justify-center mt-10 gap-5">
