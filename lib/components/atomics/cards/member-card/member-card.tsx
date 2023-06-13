@@ -7,7 +7,7 @@ import { CiLocationOn } from "react-icons/ci";
 export const MemberCard: Component<MemberCardProps> = ({ username, profilePicture, birthday }) => {
   return (
     <div className="bg-background-card p-3 rounded-md w-full flex gap-5">
-      <div className="relative h-28 lg:h-32 aspect-square flex items-center gap-2">
+      <div className="relative h-24 aspect-square flex items-center gap-2">
         <Image src={profilePicture} alt="crown" fill className="rounded-md" />
       </div>
 
@@ -27,11 +27,8 @@ export const MemberCard: Component<MemberCardProps> = ({ username, profilePictur
           <p className="text-sm">France</p>
         </div>
 
-        <div className="absolute bottom-0 w-full">
-          <p className="text-sm text-white-desc mb-1">Technologies utilisées</p>
-          <div className="h-6 w-full rounded-md bg-background-info">
+        <div className="absolute bottom-0 w-full h-6 w-full rounded-md bg-background-info">
 
-          </div>
         </div>
       </div>
     </div>
