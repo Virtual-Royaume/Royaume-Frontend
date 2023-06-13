@@ -20,7 +20,7 @@ export const MembersSection = (): ReactElement => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 overflow-x-auto">
         <MembersGalery members={members} orientation="left" />
         <MembersGalery members={members} orientation="right" />
         <MembersGalery members={members} orientation="left" />

@@ -6,7 +6,7 @@ import { ReactElement } from "react";
 
 export const SpecialitiesSection = (): ReactElement => {
   return (
-    <section className="container mt-44">
+    <section className="container mt-44 overflow-x-hidden">
       <div className="flex flex-col items-center">
         <Heading type="h2" className="uppercase font-bold text-center">Découvrez nos spécialités</Heading>
         <Text className="mt-2 max-w-3xl text-center">
