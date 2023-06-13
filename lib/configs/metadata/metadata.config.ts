@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 const data = {
   title: "Le Royaume - Discord communautaire pour les développeurs",

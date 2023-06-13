@@ -1,5 +1,5 @@
-import { Component } from "@lib/utils/component";
-import { StatsCardProps } from "./stats-card.type";
+import type { Component } from "@lib/utils/component";
+import type { StatsCardProps } from "./stats-card.type";
 
 export const StatsCard: Component<StatsCardProps> = ({ title, description }) => {
   return (

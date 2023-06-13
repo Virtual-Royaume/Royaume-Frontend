@@ -1,7 +1,7 @@
 "use client";
 
-import { Component } from "@lib/utils/component";
-import { MembersGaleryProps } from "./members-galery.type";
+import type { Component } from "@lib/utils/component";
+import type { MembersGaleryProps } from "./members-galery.type";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 

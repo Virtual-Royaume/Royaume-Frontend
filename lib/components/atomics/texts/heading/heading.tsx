@@ -1,5 +1,5 @@
-import { Component } from "@lib/utils/component";
-import { HeadingProps } from "./heading.type";
+import type { Component } from "@lib/utils/component";
+import type { HeadingProps } from "./heading.type";
 import clsx from "clsx";
 
 export const Heading: Component<HeadingProps> = ({ type, className, children }) => {

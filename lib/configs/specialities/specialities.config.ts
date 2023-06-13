@@ -1,4 +1,4 @@
-import { Speciality } from "./specialities.type";
+import type { Speciality } from "./specialities.type";
 
 export const specialities: Speciality[] = [
   {
