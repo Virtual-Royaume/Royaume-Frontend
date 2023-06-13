@@ -3,13 +3,61 @@
 import { Component } from "@lib/utils/component";
 import { MembersGaleryProps } from "./members-galery.type";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 export const MembersGalery: Component<MembersGaleryProps> = ({ members, orientation }) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const scrollIntervalRef = useRef<NodeJS.Timer | null>(null);
+  let scrollForward = false;
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    if (orientation === "right") container.scrollLeft = container.scrollWidth;
+    if (orientation === "left") container.scrollLeft = 0;
+
+    const startScrolling = () => {
+      if (scrollForward) {
+        if (orientation === "left") {
+          decreaseScroll();
+        } else {
+          increaseScroll();
+        }
+      } else {
+        if (orientation === "left") {
+          increaseScroll();
+        } else {
+          decreaseScroll();
+        }
+      }
+    };
+
+    const increaseScroll = () => {
+      container.scrollLeft += 1;
+
+      if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+        scrollForward = orientation === "left";
+      }
+    };
+
+    const decreaseScroll = () => {
+      container.scrollLeft -= 1;
+
+      if (container.scrollLeft === 0) scrollForward = orientation === "right";
+    };
+
+    scrollIntervalRef.current = setInterval(startScrolling, 10);
+
+    return () => {
+      if (scrollIntervalRef.current) clearInterval(scrollIntervalRef.current);
+    };
+  }, []);
 
   return (
-    <div className="flex overflow-x-hidden gap-4 opacity-10">
-      {members.map((member) => (
-        <div key={member.profilePicture} className="relative min-w-[3.5rem] min-h-[3.5rem] justify-center gap-1">
+    <div className={`flex overflow-x-hidden gap-4 opacity-10`} ref={containerRef}>
+      {members.map((member, i) => (
+        <div key={i} className="relative min-w-[3.5rem] min-h-[3.5rem] justify-center gap-1 profile-photo">
           <Image src={member.profilePicture} alt="Member Profile Picture" fill className="rounded-full object-cover rounded-full" />
         </div>
       ))}
