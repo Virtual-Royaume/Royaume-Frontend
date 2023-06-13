@@ -42,7 +42,7 @@ export default {
       },
       gridTemplateColumns: {
         members: "repeat(auto-fill, minmax(5rem, 1fr))",
-        "members-cards": "repeat(auto-fit, minmax(24rem, 1fr))"
+        "members-cards": "repeat(auto-fit, minmax(20rem, 1fr))"
       }
     },
   },
