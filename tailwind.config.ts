@@ -15,7 +15,8 @@ export default {
       background: {
         DEFAULT: "#0c0c0d",
         header: "rgba(12, 12, 13, .5)",
-        card: "#131314"
+        card: "#131314",
+        info: "#1E1E1F"
       },
       white: {
         DEFAULT: "#FFFFFF",
@@ -41,7 +42,7 @@ export default {
       },
       gridTemplateColumns: {
         members: "repeat(auto-fill, minmax(5rem, 1fr))",
-        "members-cards": "repeat(auto-fit, minmax(18rem, 1fr))"
+        "members-cards": "repeat(auto-fit, minmax(24rem, 1fr))"
       }
     },
   },
