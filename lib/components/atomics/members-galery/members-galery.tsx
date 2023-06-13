@@ -47,7 +47,7 @@ export const MembersGalery: Component<MembersGaleryProps> = ({ members, orientat
       if (container.scrollLeft === 0) scrollForward = orientation === "right";
     };
 
-    scrollIntervalRef.current = setInterval(startScrolling, 10);
+    scrollIntervalRef.current = setInterval(startScrolling, 50);
 
     return () => {
       if (scrollIntervalRef.current) clearInterval(scrollIntervalRef.current);

@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
-import { HeaderSection } from "./sections/header.section";
-import { SpecialitiesSection } from "./sections/specialities.section";
-import { MembersSection } from "./sections/members.section";
+import { HeaderSection } from "./_sections/header.section";
+import { SpecialitiesSection } from "./_sections/specialities.section";
+import { MembersSection } from "./_sections/members.section";
 
 const HomePage = (): ReactElement => {
   return (
