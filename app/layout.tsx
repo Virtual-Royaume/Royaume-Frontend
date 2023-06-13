@@ -9,7 +9,7 @@ import { PropsWithChildren } from "react";
 const RootLayout: Component<PropsWithChildren> = ({ children }) => {
   return (
     <html>
-      <body className="bg-background">
+      <body className="bg-background overflow-x-hidden">
         <Navbar />
         {children}
         <Footer />
