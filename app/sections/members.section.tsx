@@ -28,6 +28,7 @@ export const MembersSection = (): ReactElement => {
         <MembersGalery members={members} orientation="left" />
         <MembersGalery members={members} orientation="right" />
         <MembersGalery members={members} orientation="left" />
+        <MembersGalery members={members} orientation="right" />
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ import { ReactElement } from "react";
 
 export const SpecialitiesSection = (): ReactElement => {
   return (
-    <section className="container mt-44 overflow-x-hidden">
+    <section className="container mt-44">
       <div className="flex flex-col items-center">
         <Heading type="h2" className="uppercase font-bold text-center">Découvrez nos spécialités</Heading>
         <Text className="mt-2 max-w-3xl text-center">
@@ -21,7 +21,7 @@ export const SpecialitiesSection = (): ReactElement => {
         ))}
         </div>
 
-        <span className="absolute left-20 top-0 h-96 w-96 rounded-full blur-3xl opacity-30 bg-purple rounded-full" />
+        <span className="absolute left-0 top-0 h-96 w-96 max-w-full rounded-full blur-3xl opacity-30 bg-purple rounded-full" />
       </div>
     </section>
   );
