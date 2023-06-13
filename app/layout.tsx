@@ -6,6 +6,8 @@ import { Footer } from "@lib/components/molecules/footer";
 import { Navbar } from "@lib/components/molecules/navbar";
 import { PropsWithChildren } from "react";
 
+export { metadata } from "@lib/configs/metadata";
+
 const RootLayout: Component<PropsWithChildren> = ({ children }) => {
   return (
     <html>
