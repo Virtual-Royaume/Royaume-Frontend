@@ -8,14 +8,14 @@ export const SpecialitiesSection = (): ReactElement => {
   return (
     <section className="container mt-44">
       <div className="flex flex-col items-center">
-        <Heading type="h2" className="uppercase font-bold">Découvrez nos spécialités</Heading>
+        <Heading type="h2" className="uppercase font-bold text-center">Découvrez nos spécialités</Heading>
         <Text className="mt-2 max-w-3xl text-center">
           Voici ce que nous savons faire de mieux chez nous. Vous ne connaissez pas ces technologies ? Ce n'est pas un soucis, nous sommes la pour vous apprendre !
         </Text>
       </div>
 
       <div className="relative">
-        <div className="relative z-10 flex gap-12 justify-center mt-16">
+        <div className="relative z-10 flex flex-wrap gap-12 justify-center mt-16">
         {specialities.map((speciality) => (
           <SpaceCard key={speciality.title} {...speciality} />
         ))}
