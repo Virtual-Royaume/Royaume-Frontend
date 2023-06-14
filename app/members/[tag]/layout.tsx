@@ -36,7 +36,13 @@ const MemberLayout: AsyncComponent<MemberLayoutProps> = async ({ params, childre
 
   return (
     <div className="container mt-28">
-      <div className="flex flex-col lg:flex-row gap-10">
+      {DayJS(member.birthday).day() === DayJS().day() && DayJS(member.birthday).month() === DayJS().month() && (
+        <div className="absolute left-0 right-0 -top-64 h-[100rem] w-screen opacity-10">
+          <Image src="/images/garlands.png" alt="Birthday garlands" fill className="object-contain" />
+        </div>
+      )}
+
+      <div className="relative z-20 flex flex-col lg:flex-row gap-10">
         <div className="relative aspect-square w-fit h-44 mx-auto lg:mx-0">
           <Image src={member.profilePicture} alt={`${member.tag} profile picture`} className="rounded-md" fill />
         </div>
