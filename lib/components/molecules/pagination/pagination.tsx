@@ -1,12 +1,11 @@
 import type { Component } from "@lib/utils/component";
-import type { PaginationProps } from "./pagination.type";
+import type { DefaultPaginationButtonProps, PaginationProps } from "./pagination.type";
 import clsx from "clsx";
 import { ReactElement } from "react";
 
-export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
-  // Default Button Style :
-  const styles = "flex items-center justify-center rounded-md bg border border-background-info h-10 w-10";
+const styles = "flex items-center justify-center rounded-md bg border border-background-info h-10 w-10";
 
+export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
   const handlePageChange = (page: number) => {
     if (page !== currentPage) onPageChange(page);
   };
@@ -25,43 +24,33 @@ export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages
     // Afficher les boutons pour les pages précédentes
     for (let i = currentPage - 1; i >= Math.max(currentPage - 2, 1); i--) {
       pageNumbers.unshift(
-        <div onClick={() => handlePageChange(i)} className={clsx(styles, "text-white-desc hover:bg-purple cursor-pointer")}>
-          {i}
-        </div>
+        <DefaultPaginationButton page={i} handlePageChange={handlePageChange} />
       );
     }
 
     // Afficher le bouton pour la page active
     pageNumbers.push(
-      <div onClick={() => handlePageChange(currentPage)} className={clsx(styles, "bg-purple text-white")}>
-        {currentPage}
-      </div>
+      <DefaultPaginationButton page={currentPage} handlePageChange={handlePageChange} active />
     );
 
     // Afficher les boutons pour les pages suivantes
     for (let i = currentPage + 1; i <= Math.min(currentPage + 2, totalPages); i++) {
       pageNumbers.push(
-        <div onClick={() => handlePageChange(i)} className={clsx(styles, "text-white-desc hover:bg-purple cursor-pointer")}>
-          {i}
-        </div>
+        <DefaultPaginationButton page={i} handlePageChange={handlePageChange} />
       );
     }
 
     // Afficher les boutons pour les pages suivantes s'il reste de la place
     for (let i = currentPage + 3; i <= totalPages && pageNumbers.length < 5; i++) {
       pageNumbers.push(
-        <div onClick={() => handlePageChange(i)} className={clsx(styles, "text-white-desc hover:bg-purple cursor-pointer")}>
-          {i}
-        </div>
+        <DefaultPaginationButton page={i} handlePageChange={handlePageChange} />
       );
     }
 
     // Ajouter des boutons pour les pages précédentes s'il reste de la place
     for (let i = currentPage - 3; i >= 1 && pageNumbers.length < 5; i--) {
       pageNumbers.unshift(
-        <div onClick={() => handlePageChange(i)} className={clsx(styles, "text-white-desc hover:bg-purple cursor-pointer")}>
-          {i}
-        </div>
+        <DefaultPaginationButton page={i} handlePageChange={handlePageChange} />
       );
     }
     return pageNumbers;
@@ -70,18 +59,29 @@ export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages
   return (
     <div className="flex items-center gap-3">
       <div onClick={handlePreviousPage} className={clsx(styles, "text-white-desc", {
-        "cursor-default": currentPage === 1,
+        "cursor-default bg-background-info": currentPage === 1,
         "hover:bg-purple cursor-pointer": currentPage !== 1
       })}>
         {'<'}
       </div>
       {renderPageNumbers()}
       <div onClick={handleNextPage} className={clsx(styles, "text-white-desc", {
-        "cursor-default": currentPage === totalPages,
+        "cursor-default bg-background-info": currentPage === totalPages,
         "hover:bg-purple cursor-pointer": currentPage !== totalPages
       })}>
         {'>'}
       </div>
+    </div>
+  );
+};
+
+const DefaultPaginationButton: Component<DefaultPaginationButtonProps> = ({ page, handlePageChange, active = false }) => {
+  return (
+    <div onClick={() => handlePageChange(page)} className={clsx(styles, "cursor-pointer", {
+      "bg-purple text-white": active,
+      "text-white-desc hover:bg-purple": !active
+    })}>
+      {page}
     </div>
   );
 };
