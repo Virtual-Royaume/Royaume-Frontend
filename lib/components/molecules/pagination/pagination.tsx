@@ -3,7 +3,7 @@
 import type { Component } from "@lib/utils/component";
 import type { DefaultPaginationButtonProps, PaginationProps } from "./pagination.type";
 import clsx from "clsx";
-import { ReactElement, useEffect } from "react";
+import { useEffect } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 
 const styles = "flex items-center justify-center rounded-md bg border border-background-info h-10 w-10";

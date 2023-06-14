@@ -1,13 +1,13 @@
 import type { Component } from "@lib/utils/component";
 import type { MemberCardProps } from "./member-card.type";
 import Image from "next/image";
-import { DayJS } from "@lib/utils/day-js";
+import Link from "next/link";
 import { CiLocationOn } from "react-icons/ci";
-import { members } from "@lib/configs/members";
+import { DayJS } from "@lib/utils/day-js";
 
-export const MemberCard: Component<MemberCardProps> = ({ username, profilePicture, birthday, technologies }) => {
+export const MemberCard: Component<MemberCardProps> = ({ tag, username, profilePicture, birthday, technologies }) => {
   return (
-    <div className="bg-background-card p-3 rounded-md w-full flex gap-5">
+    <Link href={`/members/${tag}`} className="bg-background-card p-3 rounded-md w-full flex gap-5">
       <div className="relative h-24 aspect-square flex items-center gap-2">
         <Image src={profilePicture} alt="crown" fill className="rounded-md" />
       </div>
@@ -38,6 +38,6 @@ export const MemberCard: Component<MemberCardProps> = ({ username, profilePictur
           </div>
         )}
       </div>
-    </div>
+    </Link>
   );
 };
