@@ -21,7 +21,7 @@ export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages
     if (isNaN(parsedPage)) return;
 
     onPageChange(parsedPage);
-  },[])
+  }, [])
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -44,43 +44,34 @@ export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages
     if (currentPage < totalPages) handlePageChange(currentPage + 1);
   };
 
-  const renderPageNumbers = (): ReactElement[] => {
-    const pageNumbers: ReactElement[] = [];
+  const getPageNumbers = (): number[] => {
+    const pageNumbers: number[] = [];
 
     // Afficher les boutons pour les pages précédentes
     for (let i = currentPage - 1; i >= Math.max(currentPage - 2, 1); i--) {
-      pageNumbers.unshift(
-        <DefaultPaginationButton page={i} handlePageChange={changePage} />
-      );
+      pageNumbers.unshift(i);
     }
 
     // Afficher le bouton pour la page active
-    pageNumbers.push(
-      <DefaultPaginationButton page={currentPage} handlePageChange={changePage} active />
-    );
+    pageNumbers.push(currentPage);
 
     // Afficher les boutons pour les pages suivantes
     for (let i = currentPage + 1; i <= Math.min(currentPage + 2, totalPages); i++) {
-      pageNumbers.push(
-        <DefaultPaginationButton page={i} handlePageChange={changePage} />
-      );
+      pageNumbers.push(i);
     }
 
     // Afficher les boutons pour les pages suivantes s'il reste de la place
     for (let i = currentPage + 3; i <= totalPages && pageNumbers.length < 5; i++) {
-      pageNumbers.push(
-        <DefaultPaginationButton page={i} handlePageChange={changePage} />
-      );
+      pageNumbers.push(i);
     }
 
     // Ajouter des boutons pour les pages précédentes s'il reste de la place
     for (let i = currentPage - 3; i >= 1 && pageNumbers.length < 5; i--) {
-      pageNumbers.unshift(
-        <DefaultPaginationButton page={i} handlePageChange={changePage} />
-      );
+      pageNumbers.unshift(i);
     }
+
     return pageNumbers;
-  }
+  };
 
   return (
     <div className="flex items-center gap-3">
@@ -90,7 +81,9 @@ export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages
       })}>
         {'<'}
       </div>
-      {renderPageNumbers()}
+      {getPageNumbers().map((pageNumber) => (
+        <DefaultPaginationButton  key={pageNumber} page={pageNumber} handlePageChange={changePage} active={currentPage === pageNumber} />
+      ))}
       <div onClick={handleNextPage} className={clsx(styles, "text-white-desc", {
         "cursor-default bg-background-info": currentPage === totalPages,
         "hover:bg-purple cursor-pointer": currentPage !== totalPages
@@ -103,7 +96,7 @@ export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages
 
 const DefaultPaginationButton: Component<DefaultPaginationButtonProps> = ({ page, handlePageChange, active = false }) => {
   return (
-    <div key={page} onClick={() => handlePageChange(page)} className={clsx(styles, "cursor-pointer", {
+    <div onClick={() => handlePageChange(page)} className={clsx(styles, "cursor-pointer", {
       "bg-purple text-white": active,
       "text-white-desc hover:bg-purple": !active
     })}>
