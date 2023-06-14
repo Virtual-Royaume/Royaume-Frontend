@@ -519,7 +519,7 @@ export const members: Member[] = [
   {
     tag: "gotlub",
     username: "Gotlub",
-    profilePicture: "https://cdn.discordapp.com/avatars/351475138967109632/48c5e9902de4802fda754e993b4d7d9e.webp",
+    profilePicture: "https://cdn.discordapp.com/attachments/927843710669062204/1118575005744246975/3MfzEAA.png",
     technologies: [],
     birthday: null
   },
