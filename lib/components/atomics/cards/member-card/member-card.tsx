@@ -3,8 +3,9 @@ import type { MemberCardProps } from "./member-card.type";
 import Image from "next/image";
 import { DayJS } from "@lib/utils/day-js";
 import { CiLocationOn } from "react-icons/ci";
+import { members } from "@lib/configs/members";
 
-export const MemberCard: Component<MemberCardProps> = ({ username, profilePicture, birthday }) => {
+export const MemberCard: Component<MemberCardProps> = ({ username, profilePicture, birthday, technologies }) => {
   return (
     <div className="bg-background-card p-3 rounded-md w-full flex gap-5">
       <div className="relative h-24 aspect-square flex items-center gap-2">
@@ -27,9 +28,15 @@ export const MemberCard: Component<MemberCardProps> = ({ username, profilePictur
           <p className="text-sm">France</p>
         </div>
 
-        <div className="absolute bottom-0 w-full h-6 w-full rounded-md bg-background-info">
-
-        </div>
+        {technologies.length > 0 && (
+          <div className="absolute bottom-0 h-6 w-full rounded-md flex items-center justify-end gap-2">
+            {technologies.map((techno) => (
+              <div className="relative aspect-square h-5">
+                <Image src={`/images/icons/${techno.icon}`} alt={`${techno.name} Icon`} fill className="object-contain" />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
