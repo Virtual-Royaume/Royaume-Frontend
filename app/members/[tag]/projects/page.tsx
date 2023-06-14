@@ -1,7 +1,6 @@
 "use client";
 
 import { useContext, type ReactElement } from "react";
-import { AiOutlineGithub, AiOutlineLinkedin, AiOutlineTwitter } from "react-icons/ai";
 import { notFound } from "next/navigation";
 import { MemberContext } from "../member-provider";
 import { Heading } from "@lib/components/atomics/texts/heading";
@@ -62,30 +61,6 @@ const MemberPage = (): ReactElement => {
             <p>L'utilisateur n'a pas encore réalisé de projet ou n'a pas encore publié ses projets.</p>
           </div>
         )}
-      </div>
-
-      <div>
-        <div className="bg-background-card p-4 rounded-md">
-          <p className="text-white font-medium text-lg">Me contacter</p>
-          <div className="h-1 w-8 bg-purple rounded-md" />
-
-          <div className="mt-3 grid gap-1">
-            <div className="text-white-desc flex items-center gap-2">
-              <AiOutlineGithub className="h-5 w-5" />
-              <p>{member.tag}</p>
-            </div>
-
-            <div className="text-white-desc flex items-center gap-2">
-              <AiOutlineLinkedin className="h-5 w-5" />
-              <p>{member.tag}</p>
-            </div>
-
-            <div className="text-white-desc flex items-center gap-2">
-              <AiOutlineTwitter className="h-5 w-5" />
-              <p>{member.tag}</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
