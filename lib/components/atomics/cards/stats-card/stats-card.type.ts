@@ -1,4 +1,4 @@
 export type StatsCardProps = {
-  title: string;
+  title: string | number;
   description: string;
 };

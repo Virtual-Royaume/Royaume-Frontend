@@ -15,7 +15,7 @@ export const MembersSection = (): ReactElement => {
         </Text>
 
         <div className="flex flex-wrap gap-8 mt-12 justify-center">
-          <StatsCard title="300" description="Membres" />
+          <StatsCard title={members.length} description="Membres" />
           <StatsCard title="1,31 M" description="Messages" />
         </div>
       </div>
