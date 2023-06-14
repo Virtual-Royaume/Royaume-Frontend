@@ -23,7 +23,7 @@ const MembersPage = (): ReactElement => {
       </div>
 
 
-      <div className="grid grid-cols-members-cards mt-10 gap-5">
+      <div className="grid md:grid-cols-members-cards mt-10 gap-5">
         {members.sort((a, b) => a.username < b.username ? -1 : 1).map((member) => (
           <MemberCard key={member.username} {...member} />
         ))}
