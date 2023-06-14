@@ -26,7 +26,8 @@ export default {
       purple: {
         DEFAULT: "#5339DD",
         glow: "rgba(83, 57, 221, .52)"
-      }
+      },
+      danger: "#DD4439",
     },
     fontFamily: {
       "sans": ["Inter", "sans-serif"]
