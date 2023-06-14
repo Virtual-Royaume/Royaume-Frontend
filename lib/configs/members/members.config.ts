@@ -55,13 +55,6 @@ export const members: Member[] = [
     birthday: null
   },
   {
-    tag: "bluzzo",
-    username: "Bluzzo",
-    profilePicture: "https://cdn.discordapp.com/avatars/260014563712434176/6bc3e466a4b91471b521cfd996581af5.webp",
-    technologies: [],
-    birthday: null
-  },
-  {
     tag: "swourire",
     username: "greg",
     profilePicture: "https://cdn.discordapp.com/embed/avatars/4.png",
