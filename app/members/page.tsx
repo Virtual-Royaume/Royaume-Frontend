@@ -1,9 +1,8 @@
 import type { ReactElement } from "react";
-import { MemberCard } from "@lib/components/atomics/cards/member-card";
 import { Text } from "@lib/components/atomics/texts";
 import { Heading } from "@lib/components/atomics/texts/heading";
-import { members } from "@lib/configs/members";
 import Image from "next/image";
+import { MembersGrid } from "./members-grid";
 
 const MembersPage = (): ReactElement => {
   return (
@@ -23,11 +22,7 @@ const MembersPage = (): ReactElement => {
       </div>
 
 
-      <div className="grid md:grid-cols-members-cards mt-10 gap-5">
-        {members.sort((a, b) => a.username < b.username ? -1 : 1).map((member) => (
-          <MemberCard key={member.username} {...member} />
-        ))}
-      </div>
+      <MembersGrid />
     </div>
   )
 };
