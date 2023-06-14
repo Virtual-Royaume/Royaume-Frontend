@@ -11,7 +11,7 @@ export { metadata } from "@lib/configs/metadata";
 const RootLayout: Component<PropsWithChildren> = ({ children }) => {
   return (
     <html>
-      <body className="bg-background overflow-x-hidden">
+      <body className="bg-background overflow-x-hidden scroll-smooth">
         <Navbar />
         {children}
         <Footer />
