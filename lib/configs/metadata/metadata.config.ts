@@ -7,6 +7,8 @@ const data = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://royaume.world/"),
+
   title: data.title,
   description: data.description,
   applicationName: data.siteName,
