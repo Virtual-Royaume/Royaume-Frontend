@@ -4,6 +4,7 @@ export type Member = {
   birthday: number | null;
   profilePicture: string;
   technologies: Techno[];
+  location?: string;
 };
 
 export type Techno = {
