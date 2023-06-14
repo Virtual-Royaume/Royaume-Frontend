@@ -64,7 +64,7 @@ const MemberLayout: AsyncComponent<MemberLayoutProps> = async ({ params, childre
       <div className="mt-16">
         <LittleNavbar links={links} />
 
-        <div className="bg-background-card mt-4 rounded-md p-4">
+        <div className="mt-4">
           <MemberProvider member={member}>
             {children}
           </MemberProvider>
