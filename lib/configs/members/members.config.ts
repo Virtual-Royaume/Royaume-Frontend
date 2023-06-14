@@ -313,14 +313,6 @@ export const members: Member[] = [
     location: "France"    
   },
   {
-    tag: "lanearchi",
-    username: "lanearchi",
-    profilePicture: "https://cdn.discordapp.com/avatars/202408239562883073/aae3579c1872accdb68496b46772f34f.webp",
-    technologies: [],
-    birthday: null,
-    location: "Autriche"
-  },
-  {
     tag: "sarcraft",
     username: "SarCraft",
     profilePicture: "https://cdn.discordapp.com/avatars/417628102831767566/41873c6600061512043e266571176b3f.webp",
