@@ -7,6 +7,9 @@ import { Member } from "@lib/configs/members/members.type";
 import { Heading } from "@lib/components/atomics/texts/heading";
 import { Text } from "@lib/components/atomics/texts";
 import { members } from "@lib/configs/members";
+import { MemberProvider } from "./member-provider";
+import { LittleNavbar } from "@lib/components/atomics/little-navbar";
+import { Link } from "@lib/components/atomics/little-navbar/little-navbar.type";
 
 const getMember = async (tag: string): Promise<Member | null> => {
   return members.find((member) => member.tag === tag) ?? null;
@@ -15,6 +18,21 @@ const getMember = async (tag: string): Promise<Member | null> => {
 const MemberLayout: AsyncComponent<MemberLayoutProps> = async ({ params, children }) => {
   const member = await getMember(params.tag);
   if (!member) notFound();
+
+  const links: Link[] = [
+    {
+      name: "A propos",
+      href: `/members/${member.tag}`
+    },
+    {
+      name: "Mes projets",
+      href: `/members/${member.tag}/projects`
+    },
+    {
+      name: "Activité",
+      href: `/members/${member.tag}/activities`
+    }
+  ];
 
   return (
     <div className="container mt-28">
@@ -41,8 +59,14 @@ const MemberLayout: AsyncComponent<MemberLayoutProps> = async ({ params, childre
         </div>
       </div>
 
-      <div>
-        {children}
+      <div className="mt-16">
+        <LittleNavbar links={links} />
+
+        <div className="bg-background-card mt-4 rounded-md p-4">
+          <MemberProvider member={member}>
+            {children}
+          </MemberProvider>
+        </div>
       </div>
     </div>
   );
