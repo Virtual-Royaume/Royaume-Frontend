@@ -44,7 +44,9 @@ const MemberLayout: AsyncComponent<MemberLayoutProps> = async ({ params, childre
         <div className="flex flex-col gap-2">
           <div>
             <Heading type="h1" className="font-bold">{member.username}</Heading>
-            <Text>{DayJS().diff(member.birthday, "year", false)} ans</Text>
+            {member.birthday && (
+              <Text>{DayJS().diff(member.birthday, "year", false)} ans</Text>
+            )}
           </div>
 
           {member.technologies.length > 0 && (
