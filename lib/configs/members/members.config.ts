@@ -45,7 +45,17 @@ export const members: Member[] = [
     profilePicture: "https://cdn.discordapp.com/avatars/233351173665456129/a_cee03ee0f97ee3c550840d584bc55c21.gif",
     technologies: [React, Svelte, TypeScript],
     birthday: 965260800000,
-    location: "France"
+    location: "France",
+    projects: [
+      {
+        name: "Symphonia",
+        description: "Serveur Minecraft avec une expérience de jeu immersive créée à l'aide de React",
+        technologies: [React, TypeScript, Supabase, Svelte],
+        images: [
+          "https://cdn.discordapp.com/attachments/927843710669062204/1118594253807943690/image_34_1.png"
+        ]
+      }
+    ]
   },
   {
     tag: "julien.cng",
@@ -263,7 +273,7 @@ export const members: Member[] = [
     location: "France"
   },
   {
-    tag: "steelgold",
+    tag: "steellgold",
     username: "Gaëtan 🐈",
     profilePicture: "https://cdn.discordapp.com/avatars/504392983244832780/555d2435b8837ecb8d331a7dd049759a.webp",
     technologies: [Svelte, Supabase, TypeScript],
