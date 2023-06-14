@@ -10,6 +10,7 @@ import { members } from "@lib/configs/members";
 import { MemberProvider } from "./member-provider";
 import { LittleNavbar } from "@lib/components/atomics/little-navbar";
 import { Link } from "@lib/components/atomics/little-navbar/little-navbar.type";
+import { AiOutlineGithub, AiOutlineLinkedin, AiOutlineTwitter } from "react-icons/ai";
 
 const getMember = async (tag: string): Promise<Member | null> => {
   return members.find((member) => member.tag === tag) ?? null;
@@ -74,10 +75,34 @@ const MemberLayout: AsyncComponent<MemberLayoutProps> = async ({ params, childre
       <div className="mt-16">
         <LittleNavbar links={links} />
 
-        <div className="mt-4">
+        <div className="grid lg:grid-cols-[1fr_20rem] gap-10 mt-4">
           <MemberProvider member={member}>
             {children}
           </MemberProvider>
+
+          <div>
+            <div className="bg-background-card p-4 rounded-md">
+              <p className="text-white font-medium text-lg">Me contacter</p>
+              <div className="h-1 w-8 bg-purple rounded-md" />
+
+              <div className="mt-3 grid gap-1">
+                <div className="text-white-desc flex items-center gap-2">
+                  <AiOutlineGithub className="h-5 w-5" />
+                  <p>{member.tag}</p>
+                </div>
+
+                <div className="text-white-desc flex items-center gap-2">
+                  <AiOutlineLinkedin className="h-5 w-5" />
+                  <p>{member.tag}</p>
+                </div>
+
+                <div className="text-white-desc flex items-center gap-2">
+                  <AiOutlineTwitter className="h-5 w-5" />
+                  <p>{member.tag}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

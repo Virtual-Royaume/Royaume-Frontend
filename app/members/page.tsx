@@ -1,8 +1,8 @@
 import type { ReactElement } from "react";
 import { Text } from "@lib/components/atomics/texts";
 import { Heading } from "@lib/components/atomics/texts/heading";
-import Image from "next/image";
 import { MembersGrid } from "./members-grid";
+import Image from "next/image";
 
 const MembersPage = (): ReactElement => {
   return (
