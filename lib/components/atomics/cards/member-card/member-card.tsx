@@ -14,10 +14,10 @@ export const MemberCard: Component<MemberCardProps> = ({ username, profilePictur
 
       <div className="relative w-full">
         <div className="flex items-center gap-2 items-baseline mb-1">
-          <p className="text-white text-lg">{username}</p>
+          <p className="text-white text-lg text-ellipsis overflow-hidden whitespace-nowrap max-w-[70%]">{username}</p>
 
           {birthday && (
-            <p className="text-white-desc text-xs">
+            <p className="text-white-desc text-xs whitespace-nowrap">
               {DayJS().diff(birthday, "year", false)} ans
             </p>
           )}
