@@ -36,8 +36,8 @@ const MemberLayout: AsyncComponent<MemberLayoutProps> = async ({ params, childre
 
   return (
     <div className="container mt-28">
-      <div className="flex gap-10">
-        <div className="relative aspect-square h-44">
+      <div className="flex flex-col lg:flex-row gap-10">
+        <div className="relative aspect-square w-fit h-44 mx-auto lg:mx-0">
           <Image src={member.profilePicture} alt={`${member.tag} profile picture`} className="rounded-md" fill />
         </div>
 

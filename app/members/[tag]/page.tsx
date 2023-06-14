@@ -11,7 +11,7 @@ const MemberPage = (): ReactElement => {
   if (!member) notFound();
 
   return (
-    <div className="grid grid-cols-[1fr_20rem] gap-10">
+    <div className="grid lg:grid-cols-[1fr_20rem] gap-10">
       <div>
         <div className="bg-background-card p-4 rounded-md">
           <Text>
