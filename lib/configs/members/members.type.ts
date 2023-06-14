@@ -1,4 +1,5 @@
 export type Member = {
+  tag: string;
   username: string;
   birthday: number | null;
   profilePicture: string;

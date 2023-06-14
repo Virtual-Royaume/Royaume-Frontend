@@ -13,8 +13,10 @@ const RootLayout: Component<PropsWithChildren> = ({ children }) => {
     <html>
       <body className="bg-background overflow-x-hidden scroll-smooth">
         <Navbar />
-        {children}
-        <Footer />
+        <div className="mt-16">
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   )
