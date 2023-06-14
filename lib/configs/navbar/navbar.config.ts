@@ -6,7 +6,7 @@ export const links: Link[] = [
     href: "/blog",
   },
   {
-    name: "Members",
+    name: "Membres",
     href: "/members",
   }
 ];

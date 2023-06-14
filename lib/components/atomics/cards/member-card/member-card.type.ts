@@ -1,5 +1,3 @@
-export type MemberCardProps = {
-  username: string;
-  birthday: number | null;
-  profilePicture: string;
-};
+import type { Member } from "@lib/configs/members/members.type";
+
+export type MemberCardProps = Member;
