@@ -12,13 +12,24 @@ export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const page = searchParams.get("page") ?? 0;
+  const queryPage = searchParams.get("page");
 
-  useEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), [page])
+  // Set page based on url
+  useEffect(() => {
+    if (!queryPage) return;
+    const parsedPage = parseInt(queryPage);
+    if (isNaN(parsedPage)) return;
+
+    onPageChange(parsedPage);
+  },[])
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [queryPage])
 
   const handlePageChange = (page: number) => {
     onPageChange(page);
-    router.replace(pathname + "?" + (new URLSearchParams({ page: String(page) }).toString()))
+    router.replace(pathname + "?" + (new URLSearchParams({ page: String(page) }).toString()));
   }
 
   const changePage = (page: number) => {
