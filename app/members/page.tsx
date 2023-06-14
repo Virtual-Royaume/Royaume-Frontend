@@ -21,7 +21,6 @@ const MembersPage = (): ReactElement => {
         </div>
       </div>
 
-
       <MembersGrid />
     </div>
   )

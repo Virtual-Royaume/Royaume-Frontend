@@ -5,7 +5,7 @@ import Link from "next/link";
 import { CiLocationOn } from "react-icons/ci";
 import { DayJS } from "@lib/utils/day-js";
 
-export const MemberCard: Component<MemberCardProps> = ({ tag, username, profilePicture, birthday, technologies }) => {
+export const MemberCard: Component<MemberCardProps> = ({ tag, username, profilePicture, birthday, technologies, location }) => {
   return (
     <Link href={`/members/${tag}`} className="bg-background-card p-3 rounded-md w-full flex gap-5">
       <div className="relative h-24 aspect-square flex items-center gap-2">
@@ -23,10 +23,12 @@ export const MemberCard: Component<MemberCardProps> = ({ tag, username, profileP
           )}
         </div>
 
-        <div className="text-white-desc flex items-center gap-1">
-          <CiLocationOn />
-          <p className="text-sm">France</p>
-        </div>
+        {location && (
+          <div className="text-white-desc flex items-center gap-1">
+            <CiLocationOn />
+            <p className="text-sm">{location}</p>
+          </div>
+        )}
 
         {technologies.length > 0 && (
           <div className="absolute bottom-0 h-6 w-full rounded-md flex items-center justify-end gap-2">
