@@ -24,8 +24,8 @@ const MembersPage = (): ReactElement => {
       </div>
 
       <div className="flex flex-col items-center mt-12">
-        <div className="px-1 py-6 rounded-md flex flex-col items-center w-80">
-          <button className="bg-discord rounded-md px-4 py-2 flex items-center space-x-2 text-white gap-3">
+        <div className="px-1 py-6 rounded flex flex-col items-center w-80">
+          <button className="bg-discord rounded px-4 py-2 flex items-center space-x-2 text-white gap-3">
             <BsDiscord />
             Se connecter avec Discord
           </button>

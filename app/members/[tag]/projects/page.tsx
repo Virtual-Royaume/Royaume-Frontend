@@ -13,13 +13,13 @@ const MemberPage = (): ReactElement => {
   return (
     <div>
       {member.projects && member.projects.length > 0 ? (
-        <div className="bg-background-card p-4 rounded-md">
+        <div className="bg-background-card p-4 rounded">
           <div className="grid gap-1">
             {member.projects.map((project) => (
               <div className="text-white-desc items-center gap-2">
                 <div className="flex items-center gap-2">
                   <Heading type="h4" className="text-white text-lg">{project.name}</Heading>
-                  <div className="px-2 pb-2 rounded-md bg-[#0c0c0d]">
+                  <div className="px-2 pb-2 rounded bg-[#0c0c0d]">
                     {project.technologies && (
                       <div className="flex gap-2">
                         {project.technologies.map((technology) => (
@@ -31,7 +31,7 @@ const MemberPage = (): ReactElement => {
                     )}
                   </div>
                 </div>
-                <div className="h-1 w-8 bg-purple rounded-md mb-2" />
+                <div className="h-1 w-8 bg-purple rounded mb-2" />
                 <p className="text-white-desc">{project.description}</p>
 
                 {project.images && (
@@ -41,7 +41,7 @@ const MemberPage = (): ReactElement => {
                         <Image
                           src={`${image}`}
                           alt={`${project.name} Image`}
-                          className="rounded-md w-full"
+                          className="rounded w-full"
                           height={10}
                           width={1000} />
                       </div>

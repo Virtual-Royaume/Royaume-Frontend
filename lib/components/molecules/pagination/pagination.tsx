@@ -7,7 +7,7 @@ import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { clsx } from "clsx";
 
-const styles = "flex items-center justify-center rounded-md bg border border-background-info h-10 w-10 selection:select-none";
+const styles = "flex items-center justify-center rounded bg border border-background-info h-10 w-10 selection:select-none";
 
 export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
   const router = useRouter();

@@ -12,11 +12,11 @@ export const LastPostSection = (): ReactElement => {
   return (
     <div className="grid lg:grid-cols-2 gap-6 lg:gap-14">
       <div className="relative aspect-video">
-        <Image src={post.thumbnail} alt="Post Thumbnail" fill className="rounded-md object-cover" />
+        <Image src={post.thumbnail} alt="Post Thumbnail" fill className="rounded object-cover" />
       </div>
 
       <div className="relative">
-        <div className="bg-purple w-fit py-1 px-2 rounded-md mb-4">
+        <div className="bg-purple w-fit py-1 px-2 rounded mb-4">
           <p className="text-white-desc text-sm">Dernière publication</p>
         </div>
 
@@ -36,7 +36,7 @@ export const LastPostSection = (): ReactElement => {
 
         <div className="h-20">
           <div className="absolute bottom-0 left-0 flex items-center gap-4">
-            <Image src={post.author.profilePicture} alt="Author Profile Picture" width={48} height={448} className="rounded-md" />
+            <Image src={post.author.profilePicture} alt="Author Profile Picture" width={48} height={448} className="rounded" />
 
             <div>
               <p className="text-white font-medium">{post.author.username}</p>

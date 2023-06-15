@@ -3,7 +3,7 @@ import { clsx } from "clsx";
 import Link from "next/link";
 
 const styles = clsx(
-  "flex items-center gap-2 bg-discord text-white rounded-md",
+  "flex items-center gap-2 bg-discord text-white rounded",
   "py-2 px-6 w-fit"
 );
 

@@ -42,7 +42,7 @@ export const MembersGrid = (): ReactElement => {
         <input
           type="text"
           placeholder="Rechercher un membre"
-          className="w-96 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          className="w-96 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
           value={search}
           onChange={handleSearch}
         />

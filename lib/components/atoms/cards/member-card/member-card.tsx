@@ -8,9 +8,9 @@ import Link from "next/link";
 export const MemberCard: Component<MemberCardProps> = ({ tag, username, profilePicture, birthday, technologies, location }) => {
   return (
     <Link href={`/members/${tag}`}
-      className="bg-background-card hover:bg-background-card-hover p-3 rounded-md w-full flex gap-5 transition-all duration-200">
+      className="bg-background-card hover:bg-background-card-hover p-3 rounded w-full flex gap-5 transition-all duration-200">
       <div className="relative h-24 aspect-square flex items-center gap-2">
-        <Image src={profilePicture} alt="crown" fill className="rounded-md" />
+        <Image src={profilePicture} alt="crown" fill className="rounded" />
       </div>
 
       <div className="relative w-full">
@@ -32,7 +32,7 @@ export const MemberCard: Component<MemberCardProps> = ({ tag, username, profileP
         )}
 
         {technologies.length > 0 && (
-          <div className="absolute bottom-0 h-6 w-full rounded-md flex items-center justify-end gap-2">
+          <div className="absolute bottom-0 h-6 w-full rounded flex items-center justify-end gap-2">
             {technologies.map((techno) => (
               <div className="relative aspect-square h-5">
                 <Image src={`/images/icons/${techno.icon}`} alt={`${techno.name} Icon`} fill className="object-contain" />

@@ -71,7 +71,7 @@ const MemberLayout: Component<MemberLayoutProps> = ({ params, children }) => {
 
       <div className="relative z-20 flex flex-col lg:flex-row gap-10">
         <div className="relative aspect-square w-fit h-44 mx-auto lg:mx-0">
-          <Image src={member.profilePicture} alt={`${member.tag} profile picture`} className="rounded-md" fill />
+          <Image src={member.profilePicture} alt={`${member.tag} profile picture`} className="rounded" fill />
         </div>
 
         <div className="flex flex-col gap-2">
@@ -87,7 +87,7 @@ const MemberLayout: Component<MemberLayoutProps> = ({ params, children }) => {
           </div>
 
           {member.technologies.length > 0 && (
-            <div className="bottom-0 h-6 w-full rounded-md flex items-center gap-2">
+            <div className="bottom-0 h-6 w-full rounded flex items-center gap-2">
               {member.technologies.map((techno) => (
                 <div className="relative aspect-square h-5">
                   <Image src={`/images/icons/${techno.icon}`} alt={`${techno.name} Icon`} fill className="object-contain" />
@@ -107,9 +107,9 @@ const MemberLayout: Component<MemberLayoutProps> = ({ params, children }) => {
           </MemberProvider>
 
           <div>
-            <div className="bg-background-card p-4 rounded-md">
+            <div className="bg-background-card p-4 rounded">
               <p className="text-white font-medium text-lg">Me contacter</p>
-              <div className="h-1 w-8 bg-purple rounded-md" />
+              <div className="h-1 w-8 bg-purple rounded" />
 
               <div className="mt-3 grid gap-1">
                 {member.socials && member.socials.map((social) => (

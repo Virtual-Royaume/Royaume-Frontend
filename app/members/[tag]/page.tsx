@@ -11,7 +11,7 @@ const MemberPage = (): ReactElement => {
 
   return (
     <div>
-      <div className="bg-background-card p-4 rounded-md">
+      <div className="bg-background-card p-4 rounded">
         {member.description ? (
           <Text className="text-justify">{member.description}</Text>
         ) : (

@@ -9,7 +9,7 @@ export const BlogPostCard: Component<BlogPostCardProps> = ({ post }) => {
   return (
     <div className="relative">
       <div className="relative w-full aspect-video">
-        <Image src={post.thumbnail} alt="Blog Post Thumbnail" fill className="object-cover rounded-md" />
+        <Image src={post.thumbnail} alt="Blog Post Thumbnail" fill className="object-cover rounded" />
       </div>
 
       <div className="mt-6">
@@ -24,7 +24,7 @@ export const BlogPostCard: Component<BlogPostCardProps> = ({ post }) => {
 
       <div className="h-20">
         <div className="absolute bottom-0 left-0 flex items-center gap-4">
-          <Image src={post.author.profilePicture} alt="Author Profile Picture" width={48} height={448} className="rounded-md" />
+          <Image src={post.author.profilePicture} alt="Author Profile Picture" width={48} height={448} className="rounded" />
 
           <div>
             <p className="text-white font-medium">{post.author.username}</p>

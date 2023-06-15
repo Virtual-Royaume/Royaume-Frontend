@@ -48,7 +48,7 @@ export const Navbar = (): ReactElement => {
         <ul className="container pb-4 grid gap-2">
           {links.map((link) => (
             <Link key={link.name} href={link.href} className={clsx(
-              "text-white py-1 px-2 rounded-md w-full",
+              "text-white py-1 px-2 rounded w-full",
               "transition-colors duration-200",
               {
                 "bg-purple": pathname === link.href
