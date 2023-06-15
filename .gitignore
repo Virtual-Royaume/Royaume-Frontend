@@ -34,7 +34,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-pnpm-lock.yaml
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+# lock
+package-lock.json
+pnpm-lock.yaml
+lock.yarn
