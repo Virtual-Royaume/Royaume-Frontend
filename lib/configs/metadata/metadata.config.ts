@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 
 const data = {
   title: "Le Royaume - Discord communautaire pour les développeurs",
-  description: "Le Royaume est une communauté où règne la bonne humeur ! Composée principalement de développeurs, nous sommes la pour vous aider à évoluer dans les domaines qui vous intéressent.",
+  description: [
+    "Le Royaume est une communauté où règne la bonne humeur !",
+    "Composée principalement de développeurs, nous sommes la pour vous aider à évoluer dans les domaines qui vous intéressent."
+  ].join(" "),
   siteName: "Le Royaume"
 };
 
@@ -18,7 +21,7 @@ export const metadata: Metadata = {
   applicationName: data.siteName,
 
   themeColor: "#5339DD",
-  
+
   openGraph: {
     title: {
       template: "%s - Le Royaume",

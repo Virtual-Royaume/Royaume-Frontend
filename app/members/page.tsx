@@ -23,7 +23,7 @@ const MembersPage = (): ReactElement => {
 
       <MembersGrid />
     </div>
-  )
+  );
 };
 
 export default MembersPage;

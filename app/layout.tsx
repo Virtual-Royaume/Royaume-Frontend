@@ -19,7 +19,7 @@ const RootLayout: Component<PropsWithChildren> = ({ children }) => {
         </div>
       </body>
     </html>
-  )
-}
+  );
+};
 
 export default RootLayout;

@@ -1,5 +1,6 @@
-import { ReactElement } from "react";
-import { IconProps } from "./icons.type";
+/* eslint-disable max-len */
+import type { ReactElement } from "react";
+import type { IconProps } from "./icons.type";
 
 export const MaltIcon = (props: IconProps): ReactElement => {
   return (

@@ -1,10 +1,10 @@
 "use client";
 
+import type { Member } from "@lib/configs/members/members.type";
 import { useState, type ReactElement } from "react";
 import { MemberCard } from "@lib/components/atoms/cards/member-card";
 import { members } from "@lib/configs/members";
 import { Pagination } from "@lib/components/molecules/pagination/pagination";
-import { Member } from "@lib/configs/members/members.type";
 
 export const MembersGrid = (): ReactElement => {
   const itemPerPages = 12;
@@ -12,14 +12,14 @@ export const MembersGrid = (): ReactElement => {
   const [membersData, setMembersData] = useState<Member[]>(members.slice(0, itemPerPages));
   const [currentPage, setCurrentPage] = useState(1);
 
-  const onPageChange = (page: number) => {
+  const onPageChange = (page: number): void => {
     setCurrentPage(page);
     setMembersData(members.slice((page - 1) * itemPerPages, itemPerPages * page));
-  }
+  };
 
   const [search, setSearch] = useState("");
-  
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setSearch(e.target.value);
 
     if (e.target.value === "") {
@@ -27,14 +27,14 @@ export const MembersGrid = (): ReactElement => {
       setCurrentPage(1);
     }
 
-    const filteredMembers = members.filter((member) => 
-      member.username.toLowerCase().includes(e.target.value.toLowerCase()) ||
-      member.tag.toLowerCase().includes(e.target.value.toLowerCase())
-    );
+    const filteredMembers = members.filter((member) => {
+      return member.username.toLowerCase().includes(e.target.value.toLowerCase())
+        || member.tag.toLowerCase().includes(e.target.value.toLowerCase());
+    });
 
     setMembersData(filteredMembers.slice(0, itemPerPages));
     setCurrentPage(1);
-  }
+  };
 
   return (
     <div className="mt-10">
@@ -53,7 +53,7 @@ export const MembersGrid = (): ReactElement => {
           </span>
         )}
       </div>
-      
+
       <div className="grid md:grid-cols-members-cards gap-5 mb-14">
         {membersData.sort((a, b) => a.username < b.username ? -1 : 1).map((member) => (
           <MemberCard key={member.username} {...member} />

@@ -14,5 +14,5 @@ export const Heading: Component<HeadingProps> = ({ type, className, children }) 
     }
   );
 
-  return <Tag className={styles}>{children}</Tag>
+  return <Tag className={styles}>{children}</Tag>;
 };
