@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps
+        run: pnpx playwright install --with-deps
       - name: Run Playwright
         run: pnpm run test:e2e
         env: ${{ secrets }}
