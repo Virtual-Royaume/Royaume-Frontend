@@ -4,7 +4,7 @@ import type { Component } from "#/lib/utils/component";
 import type { LittleNavbarProps } from "./little-navbar.type";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import clsx from "clsx";
+import { clsx } from "clsx";
 
 export const LittleNavbar: Component<LittleNavbarProps> = ({ links }) => {
   const pathname = usePathname();

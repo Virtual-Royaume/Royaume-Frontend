@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import { BsPlus } from "react-icons/bs";
-import clsx from "clsx";
+import { clsx } from "clsx";
 
 export const NewProjectCard = (): ReactElement => {
   return (

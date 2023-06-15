@@ -1,6 +1,6 @@
 import type { Component } from "#/lib/utils/component";
 import type { HamburgerProps } from "./hamburger.type";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { FiMenu, FiX } from "react-icons/fi";
 
 export const Hamburger: Component<HamburgerProps> = ({ open, setOpen }) => {

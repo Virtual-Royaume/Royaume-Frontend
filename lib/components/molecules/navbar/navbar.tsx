@@ -2,15 +2,15 @@
 
 import type { ReactElement } from "react";
 import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { useIsDomLoaded } from "#/lib/hooks/is-dom-loaded";
 import { useMediaQuery } from "usehooks-ts";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { Hamburger } from "#/lib/components/atoms/hamburger";
 import { links } from "#/lib/configs/navbar";
+import Image from "next/image";
+import Link from "next/link";
 
 export const Navbar = (): ReactElement => {
   const [isOpen, setIsOpen] = useState(true);

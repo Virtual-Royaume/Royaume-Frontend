@@ -1,5 +1,5 @@
 import { classed } from "@tw-classed/react";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import Link from "next/link";
 
 const styles = clsx(
