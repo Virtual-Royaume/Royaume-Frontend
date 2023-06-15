@@ -314,11 +314,11 @@ export const members: Member[] = [
     location: "France"
   },
   {
-    tag: "kimi",
+    tag: "qkimi",
     username: "KiMi",
     profilePicture: "https://cdn.discordapp.com/avatars/558793081663782913/271551e6168f6b274035fca4b48daca7.webp",
     technologies: [],
-    birthday: null,
+    birthday: 992332800000,
     location: "France"    
   },
   {
