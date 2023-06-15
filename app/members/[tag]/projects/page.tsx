@@ -18,7 +18,7 @@ const MemberPage = (): ReactElement => {
             {member.projects.map((project) => (
               <div className="text-white-desc items-center gap-2">
                 <div className="flex items-center gap-2">
-                  <Heading type="h4" className="text-white">{project.name}</Heading>
+                  <Heading type="h4" className="text-white text-lg">{project.name}</Heading>
                   <div className="px-2 pb-2 rounded-md bg-[#0c0c0d]">
                     {project.technologies && (
                       <div className="flex gap-2">
