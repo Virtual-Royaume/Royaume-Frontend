@@ -1,6 +1,5 @@
 import type { AsyncComponent } from "@lib/utils/component";
 import type { MemberLayoutProps } from "./layout.type";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { DayJS } from "@lib/utils/day-js";
 import { Member } from "@lib/configs/members/members.type";
@@ -10,7 +9,10 @@ import { members } from "@lib/configs/members";
 import { MemberProvider } from "./member-provider";
 import { LittleNavbar } from "@lib/components/atomics/little-navbar";
 import { Link } from "@lib/components/atomics/little-navbar/little-navbar.type";
-import { AiOutlineGithub, AiOutlineLinkedin, AiOutlineTwitter } from "react-icons/ai";
+import { Button } from "@lib/components/atomics/button/cta";
+import { FaPaperPlane } from "react-icons/fa";
+import Image from "next/image";
+import { BsDiscord, BsGithub, BsLinkedin, BsTwitter } from "react-icons/bs";
 
 const getMember = async (tag: string): Promise<Member | null> => {
   return members.find((member) => member.tag === tag) ?? null;
@@ -86,20 +88,25 @@ const MemberLayout: AsyncComponent<MemberLayoutProps> = async ({ params, childre
               <div className="h-1 w-8 bg-purple rounded-md" />
 
               <div className="mt-3 grid gap-1">
-                <div className="text-white-desc flex items-center gap-2">
-                  <AiOutlineGithub className="h-5 w-5" />
-                  <p>{member.tag}</p>
-                </div>
-
-                <div className="text-white-desc flex items-center gap-2">
-                  <AiOutlineLinkedin className="h-5 w-5" />
-                  <p>{member.tag}</p>
-                </div>
-
-                <div className="text-white-desc flex items-center gap-2">
-                  <AiOutlineTwitter className="h-5 w-5" />
-                  <p>{member.tag}</p>
-                </div>
+                {member.socials && member.socials.map((social) => (
+                  <div>
+                    <p className="text-white-desc flex items-center gap-2">
+                      {social.type == "discord" && (
+                        <BsDiscord />
+                      ) || social.type == "twitter" && (
+                        <BsTwitter />
+                      ) || social.type == "linkedin" && (
+                        <BsLinkedin />
+                      ) || social.type == "github" && (
+                        <BsGithub /> 
+                      )}
+                      
+                      <a href={social.url} target="_blank" rel="noopener noreferrer">{social.username}</a>
+                    </p>
+                  </div>
+                )) || (
+                  <p className="text-white-desc">{member.username} n'a renseigné aucun de ses réseaux sociaux</p>
+                )}
               </div>
             </div>
           </div>
