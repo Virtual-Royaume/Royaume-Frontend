@@ -26,6 +26,7 @@ export const generateMetadata = async ({ params }: MemberLayoutProps): Promise<M
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora enim alias at minus sint dignissimos quo maxime praesentium nesciunt, hic quod nobis quia quaerat culpa magni, ex animi libero quam? Itaque pariatur soluta ea, quod illo sit, omnis iusto consectetur ipsa sequi ipsum fugit totam doloribus ab quos magni facilis repudiandae eos?",
     openGraph: {
       title: member.username,
+      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora enim alias at minus sint dignissimos quo maxime praesentium nesciunt, hic quod nobis quia quaerat culpa magni, ex animi libero quam? Itaque pariatur soluta ea, quod illo sit, omnis iusto consectetur ipsa sequi ipsum fugit totam doloribus ab quos magni facilis repudiandae eos?",
       images: [member.profilePicture]
     }
   };
