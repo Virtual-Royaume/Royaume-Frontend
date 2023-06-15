@@ -4,6 +4,12 @@ import Image from "next/image";
 import type { ReactElement } from "react";
 import { LastPostSection } from "./_sections/last-post.section";
 import { AllPostsSection } from "./_sections/all-posts.section";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Découvrez de nuvelles technologies ou apprenez en sur l'actualité. Vous trouverez des posts réguliers rédigés par les soins de nos membres."
+};
 
 const HomePage = (): ReactElement => {
   return (
@@ -11,7 +17,7 @@ const HomePage = (): ReactElement => {
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center mt-28">
         <div className="flex flex-col justify-center order-last lg:order-first">
           <Heading type="h1" className="font-bold uppercase">Blog</Heading>
-          <Text>Découvrez de nouvelles technologies ou apprenez-en sur l'actualité. Vous trouverez des potes réguliers rédigés par les soins de nos membres.</Text>
+          <Text>Découvrez de nuvelles technologies ou apprenez en sur l'actualité. Vous trouverez des posts réguliers rédigés par les soins de nos membres.</Text>
         </div>
 
         <div className="justify-self-start lg:justify-self-end relative">
