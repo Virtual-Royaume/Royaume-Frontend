@@ -1,17 +1,17 @@
-import type { Component } from "@lib/utils/component";
+import type { Component } from "#/lib/utils/component";
 import type { MemberLayoutProps } from "./layout.type";
-import type { Member } from "@lib/configs/members/members.type";
-import type { Link } from "@lib/components/atoms/little-navbar/little-navbar.type";
+import type { Member } from "#/lib/configs/members/members.type";
+import type { Link } from "#/lib/components/atoms/little-navbar/little-navbar.type";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { FaPaperPlane } from "react-icons/fa";
 import { BsDiscord, BsGithub, BsLink45Deg, BsLinkedin, BsTwitter } from "react-icons/bs";
-import { DayJS } from "@lib/utils/day-js";
-import { Heading } from "@lib/components/atoms/texts/heading";
-import { Text } from "@lib/components/atoms/texts";
-import { members } from "@lib/configs/members";
-import { LittleNavbar } from "@lib/components/atoms/little-navbar";
-import { Button } from "@lib/components/atoms/button/cta";
+import { DayJS } from "#/lib/utils/day-js";
+import { Heading } from "#/lib/components/atoms/texts/heading";
+import { Text } from "#/lib/components/atoms/texts";
+import { members } from "#/lib/configs/members";
+import { LittleNavbar } from "#/lib/components/atoms/little-navbar";
+import { Button } from "#/lib/components/atoms/button/cta";
 import { MemberProvider } from "./member-provider";
 import Image from "next/image";
 

@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import type { Metadata } from "next";
-import { Text } from "@lib/components/atoms/texts";
-import { Heading } from "@lib/components/atoms/texts/heading";
+import { Text } from "#/lib/components/atoms/texts";
+import { Heading } from "#/lib/components/atoms/texts/heading";
 import { LastPostSection } from "./_sections/last-post.section";
 import { AllPostsSection } from "./_sections/all-posts.section";
 import Image from "next/image";

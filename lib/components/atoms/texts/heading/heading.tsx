@@ -1,4 +1,4 @@
-import type { Component } from "@lib/utils/component";
+import type { Component } from "#/lib/utils/component";
 import type { HeadingProps } from "./heading.type";
 import clsx from "clsx";
 

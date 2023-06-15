@@ -1,12 +1,12 @@
-import "@lib/styles/tailwind.css";
-import "@lib/styles/font.css";
+import "#/lib/styles/tailwind.css";
+import "#/lib/styles/font.css";
 
 import type { Component } from "@/lib/utils/component";
 import type { PropsWithChildren } from "react";
-import { Footer } from "@lib/components/molecules/footer";
-import { Navbar } from "@lib/components/molecules/navbar";
+import { Footer } from "#/lib/components/molecules/footer";
+import { Navbar } from "#/lib/components/molecules/navbar";
 
-export { metadata } from "@lib/configs/metadata";
+export { metadata } from "#/lib/configs/metadata";
 
 const RootLayout: Component<PropsWithChildren> = ({ children }) => {
   return (

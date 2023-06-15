@@ -1,9 +1,9 @@
-import type { Component } from "@lib/utils/component";
+import type { Component } from "#/lib/utils/component";
 import type { MemberCardProps } from "./member-card.type";
 import Image from "next/image";
 import Link from "next/link";
 import { CiLocationOn } from "react-icons/ci";
-import { DayJS } from "@lib/utils/day-js";
+import { DayJS } from "#/lib/utils/day-js";
 
 export const MemberCard: Component<MemberCardProps> = ({ tag, username, profilePicture, birthday, technologies, location }) => {
   return (

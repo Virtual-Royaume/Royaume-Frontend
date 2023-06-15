@@ -1,9 +1,9 @@
-import type { Component } from "@lib/utils/component";
+import type { Component } from "#/lib/utils/component";
 import type { BlogPostCardProps } from "./blog-post-card.type";
 import Image from "next/image";
 import Link from "next/link";
 import { Text } from "../../texts";
-import { DayJS } from "@lib/utils/day-js";
+import { DayJS } from "#/lib/utils/day-js";
 
 export const BlogPostCard: Component<BlogPostCardProps> = ({ post }) => {
   return (

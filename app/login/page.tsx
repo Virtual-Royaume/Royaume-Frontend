@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
-import { Text } from "@lib/components/atoms/texts";
-import { Heading } from "@lib/components/atoms/texts/heading";
+import { Text } from "#/lib/components/atoms/texts";
+import { Heading } from "#/lib/components/atoms/texts/heading";
 import { BsDiscord } from "react-icons/bs";
 import Image from "next/image";
 

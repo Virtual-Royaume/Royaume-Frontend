@@ -1,9 +1,9 @@
 "use client";
 
-import type { Component } from "@lib/utils/component";
+import type { Component } from "#/lib/utils/component";
 import type { MembersGaleryProps } from "./members-galery.type";
 import { useEffect, useRef } from "react";
-import { shuffleArray } from "@lib/utils/array";
+import { shuffleArray } from "#/lib/utils/array";
 import Image from "next/image";
 
 export const MembersGalery: Component<MembersGaleryProps> = ({ members, orientation }) => {

@@ -1,6 +1,6 @@
 "use client";
 
-import type { Component } from "@lib/utils/component";
+import type { Component } from "#/lib/utils/component";
 import type { LittleNavbarProps } from "./little-navbar.type";
 import { usePathname } from "next/navigation";
 import Link from "next/link";

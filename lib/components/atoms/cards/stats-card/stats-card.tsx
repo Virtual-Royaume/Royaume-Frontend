@@ -1,4 +1,4 @@
-import type { Component } from "@lib/utils/component";
+import type { Component } from "#/lib/utils/component";
 import type { StatsCardProps } from "./stats-card.type";
 
 export const StatsCard: Component<StatsCardProps> = ({ title, description }) => {

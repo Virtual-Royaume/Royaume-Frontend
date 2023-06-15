@@ -5,12 +5,12 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
-import { useIsDomLoaded } from "@lib/hooks/is-dom-loaded";
+import { useIsDomLoaded } from "#/lib/hooks/is-dom-loaded";
 import { useMediaQuery } from "usehooks-ts";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import { Hamburger } from "@lib/components/atoms/hamburger";
-import { links } from "@lib/configs/navbar";
+import { Hamburger } from "#/lib/components/atoms/hamburger";
+import { links } from "#/lib/configs/navbar";
 
 export const Navbar = (): ReactElement => {
   const [isOpen, setIsOpen] = useState(true);

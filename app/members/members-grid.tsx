@@ -1,10 +1,10 @@
 "use client";
 
-import type { Member } from "@lib/configs/members/members.type";
+import type { Member } from "#/lib/configs/members/members.type";
 import { useState, type ReactElement } from "react";
-import { MemberCard } from "@lib/components/atoms/cards/member-card";
-import { members } from "@lib/configs/members";
-import { Pagination } from "@lib/components/molecules/pagination/pagination";
+import { MemberCard } from "#/lib/components/atoms/cards/member-card";
+import { members } from "#/lib/configs/members";
+import { Pagination } from "#/lib/components/molecules/pagination/pagination";
 
 export const MembersGrid = (): ReactElement => {
   const itemPerPages = 12;

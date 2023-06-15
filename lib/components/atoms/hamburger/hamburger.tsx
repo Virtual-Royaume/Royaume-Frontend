@@ -1,4 +1,4 @@
-import type { Component } from "@lib/utils/component";
+import type { Component } from "#/lib/utils/component";
 import type { HamburgerProps } from "./hamburger.type";
 import clsx from "clsx";
 import { FiMenu, FiX } from "react-icons/fi";

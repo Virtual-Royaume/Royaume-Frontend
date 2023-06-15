@@ -1,8 +1,8 @@
 import type { ReactElement } from "react";
-import { getLastPost } from "@lib/configs/blog";
-import { Text } from "@lib/components/atoms/texts";
+import { getLastPost } from "#/lib/configs/blog";
+import { Text } from "#/lib/components/atoms/texts";
 import { BsArrowRight } from "react-icons/bs";
-import { DayJS } from "@lib/utils/day-js";
+import { DayJS } from "#/lib/utils/day-js";
 import Image from "next/image";
 import Link from "next/link";
 

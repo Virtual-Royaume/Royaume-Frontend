@@ -1,4 +1,4 @@
-import type { Component } from "@lib/utils/component";
+import type { Component } from "#/lib/utils/component";
 import type { SpaceCardProps } from "./space-card.type";
 import Image from "next/image";
 
