@@ -5,8 +5,9 @@ import type { DefaultPaginationButtonProps, PaginationProps } from "./pagination
 import clsx from "clsx";
 import { useEffect } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
-const styles = "flex items-center justify-center rounded-md bg border border-background-info h-10 w-10";
+const styles = "flex items-center justify-center rounded-md bg border border-background-info h-10 w-10 selection:select-none";
 
 export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
   const router = useRouter();
@@ -79,7 +80,11 @@ export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages
         "cursor-default bg-background-info": currentPage === 1,
         "hover:bg-purple cursor-pointer": currentPage !== 1
       })}>
-        {'<'}
+        {
+          <>
+            <BsArrowLeft />
+          </>
+        }
       </div>
       {getPageNumbers().map((pageNumber) => (
         <DefaultPaginationButton  key={pageNumber} page={pageNumber} handlePageChange={changePage} active={currentPage === pageNumber} />
@@ -88,7 +93,11 @@ export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages
         "cursor-default bg-background-info": currentPage === totalPages,
         "hover:bg-purple cursor-pointer": currentPage !== totalPages
       })}>
-        {'>'}
+        {
+          <>
+            <BsArrowRight />
+          </>
+        }
       </div>
     </div>
   );

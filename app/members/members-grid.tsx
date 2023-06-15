@@ -38,8 +38,20 @@ export const MembersGrid = (): ReactElement => {
 
   return (
     <div className="mt-10">
-      <div className="flex justify-start mb-5">
-        <input type="text" placeholder="Rechercher un membre" className="w-96 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" value={search} onChange={handleSearch} />
+      <div className="flex items-center justify-start mb-5">
+        <input
+          type="text"
+          placeholder="Rechercher un membre"
+          className="w-96 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          value={search}
+          onChange={handleSearch}
+        />
+
+        {search !== "" && (
+          <span className="ml-4 text-white-desc">
+            {membersData.length} résultats
+          </span>
+        )}
       </div>
       
       <div className="grid md:grid-cols-members-cards gap-5 mb-14">
