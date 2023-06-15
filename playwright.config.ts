@@ -9,6 +9,7 @@ const baseURL = `http://localhost:${port}`;
 // Playwright config:
 const config: PlaywrightTestConfig = {
   testMatch: "*.spec.ts",
+  testDir: "src",
 
   reporter: [["html", { open: "always" }]],
 
