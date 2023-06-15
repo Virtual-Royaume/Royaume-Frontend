@@ -20,7 +20,11 @@ export const metadata: Metadata = {
   themeColor: "#5339DD",
   
   openGraph: {
-    title: data.title,
+    title: {
+      template: "%s - Le Royaume",
+      default: "Le Royaume",
+      absolute: data.title
+    },
     description: data.description,
     siteName: data.siteName,
     url: "https://www.royaume.world",
@@ -29,7 +33,11 @@ export const metadata: Metadata = {
   },
 
   twitter: {
-    title: data.title,
+    title: {
+      template: "%s - Le Royaume",
+      default: "Le Royaume",
+      absolute: data.title
+    },
     description: data.description
   }
 };
