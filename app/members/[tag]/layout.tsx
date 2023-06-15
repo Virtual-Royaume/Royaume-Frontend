@@ -17,8 +17,6 @@ const getMember = async (tag: string): Promise<Member | null> => {
   return members.find((member) => member.tag === tag) ?? null;
 };
 
-export { metadata } from "@lib/configs/metadata";
-
 export const generateMetatada = async ({ params }: MemberLayoutProps): Promise<Metadata> => {
   const member = await getMember(params.tag);
   if (!member) notFound();
