@@ -10,8 +10,7 @@ const config: PlaywrightTestConfig = {
     baseURL: "http://localhost:3000"
   },
 
-  testDir: "./tests",
-  testMatch: "*.ts",
+  testMatch: "*.test.ts",
 
   reporter: [["html", { open: "always" }]]
 };
