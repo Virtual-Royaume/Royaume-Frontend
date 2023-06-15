@@ -11,11 +11,6 @@ const MemberPage = (): ReactElement => {
   const member = useContext(MemberContext);
   if (!member) notFound();
 
-  let connected: boolean = false;
-  if (member.username == "RomainSav") {
-    connected = true;
-  }
-
   return (
     <div>
       {member.projects && member.projects.length > 0 ? (
@@ -63,12 +58,6 @@ const MemberPage = (): ReactElement => {
       ) : (
         <div className="text-white-desc flex items-center gap-2 border-l-4 border-l-danger pl-2">
           <p>L'utilisateur n'a pas encore réalisé de projet ou n'a pas encore publié ses projets.</p>
-        </div>
-      )}
-
-      {connected && (
-        <div className="mt-4">
-          <NewProjectCard />
         </div>
       )}
     </div>
