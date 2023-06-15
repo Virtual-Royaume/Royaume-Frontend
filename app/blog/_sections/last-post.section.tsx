@@ -11,7 +11,7 @@ export const LastPostSection = (): ReactElement => {
   const post = getLastPost();
 
   return (
-    <div className="container grid lg:grid-cols-2 gap-6 lg:gap-14">
+    <div className="grid lg:grid-cols-2 gap-6 lg:gap-14">
       <div className="relative aspect-video">
         <Image src={post.thumbnail} alt="Post Thumbnail" fill className="rounded-md object-cover" />
       </div>

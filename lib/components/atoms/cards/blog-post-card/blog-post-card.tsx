@@ -8,7 +8,7 @@ import { DayJS } from "@lib/utils/day-js";
 export const BlogPostCard: Component<BlogPostCardProps> = ({ post }) => {
   return (
     <div className="relative">
-      <div className="relative w-full h-52">
+      <div className="relative w-full aspect-video">
         <Image src={post.thumbnail} alt="Blog Post Thumbnail" fill className="object-cover rounded-md" />
       </div>
 

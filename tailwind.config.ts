@@ -46,7 +46,8 @@ export default {
       },
       gridTemplateColumns: {
         members: "repeat(auto-fill, minmax(5rem, 1fr))",
-        "members-cards": "repeat(auto-fill, minmax(20rem, 1fr))"
+        "members-cards": "repeat(auto-fill, minmax(20rem, 1fr))",
+        "posts-cards": "repeat(auto-fill, minmax(25rem, 1fr))"
       }
     },
   },
