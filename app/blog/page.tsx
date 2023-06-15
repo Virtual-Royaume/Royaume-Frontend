@@ -9,7 +9,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Blog",
   description: "Découvrez de nuvelles technologies ou apprenez en sur l'actualité. Vous trouverez des posts réguliers rédigés par les soins de nos membres.",
-  
+
   openGraph: {
     title: "Blog",
     description: "Découvrez de nuvelles technologies ou apprenez en sur l'actualité. Vous trouverez des posts réguliers rédigés par les soins de nos membres.",
@@ -35,7 +35,7 @@ const HomePage = (): ReactElement => {
 
       <div className="mt-28">
         <LastPostSection />
-        <div className="w-full border-b my-20 border-background-info" />
+        <div className="w-full border-b my-14 lg:my-20 border-background-info" />
         <AllPostsSection />
       </div>
     </div>
