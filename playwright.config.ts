@@ -1,4 +1,5 @@
 import type { PlaywrightTestConfig } from "@playwright/test";
+import { devices } from "@playwright/test";
 import "dotenv/config";
 
 // Server base URL and port:
@@ -20,7 +21,28 @@ const config: PlaywrightTestConfig = {
   use: {
     baseURL: baseURL,
     trace: "on"
-  }
+  },
+
+  projects: [
+    {
+      name: "chromium",
+      use: {
+        ...devices["Desktop Chrome"]
+      }
+    },
+    {
+      name: "firefox",
+      use: {
+        ...devices["Desktop Firefox"]
+      }
+    },
+    {
+      name: "mobile chrome",
+      use: {
+        ...devices["Pixel 5"]
+      }
+    }
+  ]
 };
 
 export default config;
