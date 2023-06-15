@@ -1,8 +1,8 @@
 import type { ReactElement } from "react";
-import { StatsCard } from "@lib/components/atomics/cards/stats-card";
-import { MembersGalery } from "@lib/components/atomics/members-galery";
-import { Text } from "@lib/components/atomics/texts";
-import { Heading } from "@lib/components/atomics/texts/heading";
+import { StatsCard } from "@lib/components/atoms/cards/stats-card";
+import { MembersGalery } from "@lib/components/atoms/members-galery";
+import { Text } from "@lib/components/atoms/texts";
+import { Heading } from "@lib/components/atoms/texts/heading";
 import { members } from "@lib/configs/members";
 
 export const MembersSection = (): ReactElement => {

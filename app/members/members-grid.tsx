@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type ReactElement } from "react";
-import { MemberCard } from "@lib/components/atomics/cards/member-card";
+import { MemberCard } from "@lib/components/atoms/cards/member-card";
 import { members } from "@lib/configs/members";
 import { Pagination } from "@lib/components/molecules/pagination/pagination";
 import { Member } from "@lib/configs/members/members.type";

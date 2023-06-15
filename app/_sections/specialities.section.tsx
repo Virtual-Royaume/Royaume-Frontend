@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
-import { SpaceCard } from "@lib/components/atomics/cards/space-card";
-import { Text } from "@lib/components/atomics/texts";
-import { Heading } from "@lib/components/atomics/texts/heading";
+import { SpaceCard } from "@lib/components/atoms/cards/space-card";
+import { Text } from "@lib/components/atoms/texts";
+import { Heading } from "@lib/components/atoms/texts/heading";
 import { specialities } from "@lib/configs/specialities";
 
 export const SpecialitiesSection = (): ReactElement => {

@@ -1,8 +1,8 @@
 import type { ReactElement } from "react";
 import { BsDiscord } from "react-icons/bs";
-import { LinkButton } from "@lib/components/atomics/button/link/link";
-import { Text } from "@lib/components/atomics/texts";
-import { Heading } from "@lib/components/atomics/texts/heading";
+import { LinkButton } from "@lib/components/atoms/button/link/link";
+import { Text } from "@lib/components/atoms/texts";
+import { Heading } from "@lib/components/atoms/texts/heading";
 import Image from "next/image";
 
 export const HeaderSection = (): ReactElement => {

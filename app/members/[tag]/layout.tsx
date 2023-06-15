@@ -3,16 +3,16 @@ import type { MemberLayoutProps } from "./layout.type";
 import { notFound } from "next/navigation";
 import { DayJS } from "@lib/utils/day-js";
 import { Member } from "@lib/configs/members/members.type";
-import { Heading } from "@lib/components/atomics/texts/heading";
-import { Text } from "@lib/components/atomics/texts";
+import { Heading } from "@lib/components/atoms/texts/heading";
+import { Text } from "@lib/components/atoms/texts";
 import { members } from "@lib/configs/members";
 import { MemberProvider } from "./member-provider";
-import { LittleNavbar } from "@lib/components/atomics/little-navbar";
-import { Link } from "@lib/components/atomics/little-navbar/little-navbar.type";
+import { LittleNavbar } from "@lib/components/atoms/little-navbar";
+import { Link } from "@lib/components/atoms/little-navbar/little-navbar.type";
 import { BsDiscord, BsGithub, BsLink45Deg, BsLinkedin, BsTwitter } from "react-icons/bs";
 import { FaPaperPlane } from "react-icons/fa";
 import { Metadata } from "next";
-import { Button } from "@lib/components/atomics/button/cta";
+import { Button } from "@lib/components/atoms/button/cta";
 import Image from "next/image";
 
 const getMember = async (tag: string): Promise<Member | null> => {
