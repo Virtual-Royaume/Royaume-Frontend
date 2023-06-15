@@ -4,11 +4,17 @@ import { useContext, type ReactElement } from "react";
 import { notFound } from "next/navigation";
 import { MemberContext } from "../member-provider";
 import { Heading } from "@lib/components/atomics/texts/heading";
+import { NewProjectCard } from "@lib/components/atomics/cards/project-cards/new-project-card";
 import Image from "next/image";
 
 const MemberPage = (): ReactElement => {
   const member = useContext(MemberContext);
   if (!member) notFound();
+
+  let connected: boolean = false;
+  if (member.username == "RomainSav") {
+    connected = true;
+  }
 
   return (
     <div className="grid lg:grid-cols-[1fr_20rem] gap-10">
@@ -54,11 +60,17 @@ const MemberPage = (): ReactElement => {
                     </div>
                   ))}
                 </div>
-              </>
+              </>S
           </div>
         ) : (
           <div className="text-white-desc flex items-center gap-2 border-l-4 border-l-danger pl-2">
             <p>L'utilisateur n'a pas encore réalisé de projet ou n'a pas encore publié ses projets.</p>
+          </div>
+        )}
+
+        {connected && (
+          <div className="mt-4">
+            <NewProjectCard />
           </div>
         )}
       </div>
