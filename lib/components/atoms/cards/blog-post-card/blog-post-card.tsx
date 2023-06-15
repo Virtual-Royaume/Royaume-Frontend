@@ -1,0 +1,37 @@
+import { Component } from "@lib/utils/component";
+import { BlogPostCardProps } from "./blog-post-card.type";
+import Image from "next/image";
+import Link from "next/link";
+import { Text } from "../../texts";
+import { DayJS } from "@lib/utils/day-js";
+
+export const BlogPostCard: Component<BlogPostCardProps> = ({ post }) => {
+  return (
+    <div className="relative">
+      <div className="relative w-full h-52">
+        <Image src={post.thumbnail} alt="Blog Post Thumbnail" fill className="object-cover rounded-md" />
+      </div>
+
+      <div className="mt-6">
+        <div className="mb-2">
+          <Link href={`/blog/${post.slug}`} className="text-white font-medium text-xl">
+            {post.title}
+          </Link>
+        </div>
+
+        <Text className="line-clamp-2 2xl:line-clamp-4">{post.description}</Text>
+      </div>
+
+      <div className="h-20">
+          <div className="absolute bottom-0 left-0 flex items-center gap-4">
+            <Image src={post.author.profilePicture} alt="Author Profile Picture" width={48} height={448} className="rounded-md" />
+
+            <div>
+              <p className="text-white font-medium">{post.author.username}</p>
+              <p className="text-white-desc text-sm">{DayJS(post.createdAt).format("D MMMM YYYY")}</p>
+            </div>
+          </div>
+        </div>
+    </div>
+  );
+};

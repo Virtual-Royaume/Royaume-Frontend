@@ -2,6 +2,8 @@ import { Text } from "@lib/components/atoms/texts";
 import { Heading } from "@lib/components/atoms/texts/heading";
 import Image from "next/image";
 import type { ReactElement } from "react";
+import { LastPostSection } from "./_sections/last-post.section";
+import { AllPostsSection } from "./_sections/all-posts.section";
 
 const HomePage = (): ReactElement => {
   return (
@@ -18,6 +20,12 @@ const HomePage = (): ReactElement => {
           </div>
           <span className="absolute -top-32 right-0 h-[35rem] w-[35rem] rounded-full blur-3xl opacity-30 right-0 bg-purple rounded-full" />
         </div>
+      </div>
+
+      <div className="mt-28">
+        <LastPostSection />
+        <div className="w-full border-b my-20 border-background-info" />
+        <AllPostsSection />
       </div>
     </div>
   )
