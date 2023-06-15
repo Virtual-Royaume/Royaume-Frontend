@@ -8,7 +8,8 @@
     "start": "next start",
     "next-lint": "next lint",
     "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@tw-classed/react": "^1.5.0",
