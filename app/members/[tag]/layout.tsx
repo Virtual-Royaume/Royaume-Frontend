@@ -1,41 +1,49 @@
-import type { AsyncComponent } from "@lib/utils/component";
+import type { Component } from "@lib/utils/component";
 import type { MemberLayoutProps } from "./layout.type";
+import type { Member } from "@lib/configs/members/members.type";
+import type { Link } from "@lib/components/atoms/little-navbar/little-navbar.type";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { FaPaperPlane } from "react-icons/fa";
+import { BsDiscord, BsGithub, BsLink45Deg, BsLinkedin, BsTwitter } from "react-icons/bs";
 import { DayJS } from "@lib/utils/day-js";
-import { Member } from "@lib/configs/members/members.type";
 import { Heading } from "@lib/components/atoms/texts/heading";
 import { Text } from "@lib/components/atoms/texts";
 import { members } from "@lib/configs/members";
-import { MemberProvider } from "./member-provider";
 import { LittleNavbar } from "@lib/components/atoms/little-navbar";
-import { Link } from "@lib/components/atoms/little-navbar/little-navbar.type";
-import { BsDiscord, BsGithub, BsLink45Deg, BsLinkedin, BsTwitter } from "react-icons/bs";
-import { FaPaperPlane } from "react-icons/fa";
-import { Metadata } from "next";
 import { Button } from "@lib/components/atoms/button/cta";
+import { MemberProvider } from "./member-provider";
 import Image from "next/image";
 
-const getMember = async (tag: string): Promise<Member | null> => {
+const getMember = (tag: string): Member | null => {
   return members.find((member) => member.tag === tag) ?? null;
 };
 
-export const generateMetadata = async ({ params }: MemberLayoutProps): Promise<Metadata> => {
-  const member = await getMember(params.tag);
+export const generateMetadata = ({ params }: MemberLayoutProps): Metadata => {
+  const member = getMember(params.tag);
   if (!member) notFound();
 
   return {
     title: member.username,
-    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora enim alias at minus sint dignissimos quo maxime praesentium nesciunt, hic quod nobis quia quaerat culpa magni, ex animi libero quam? Itaque pariatur soluta ea, quod illo sit, omnis iusto consectetur ipsa sequi ipsum fugit totam doloribus ab quos magni facilis repudiandae eos?",
+    description: [
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora enim alias at minus sint dignissimos quo",
+      "maxime praesentium nesciunt, hic quod nobis quia quaerat culpa magni, ex animi libero quam? Itaque pariatur",
+      "soluta ea, quod illo sit, omnis iusto consectetur ipsa sequi ipsum fugit totam doloribus ab quos magni facilis repudiandae eos?"
+    ].join(" "),
     openGraph: {
       title: member.username,
-      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora enim alias at minus sint dignissimos quo maxime praesentium nesciunt, hic quod nobis quia quaerat culpa magni, ex animi libero quam? Itaque pariatur soluta ea, quod illo sit, omnis iusto consectetur ipsa sequi ipsum fugit totam doloribus ab quos magni facilis repudiandae eos?",
+      description: [
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora enim alias at minus sint dignissimos quo",
+        "maxime praesentium nesciunt, hic quod nobis quia quaerat culpa magni, ex animi libero quam? Itaque pariatur",
+        "soluta ea, quod illo sit, omnis iusto consectetur ipsa sequi ipsum fugit totam doloribus ab quos magni facilis repudiandae eos?"
+      ].join(" "),
       images: [member.profilePicture]
     }
   };
 };
 
-const MemberLayout: AsyncComponent<MemberLayoutProps> = async ({ params, children }) => {
-  const member = await getMember(params.tag);
+const MemberLayout: Component<MemberLayoutProps> = ({ params, children }) => {
+  const member = getMember(params.tag);
   if (!member) notFound();
 
   const links: Link[] = [

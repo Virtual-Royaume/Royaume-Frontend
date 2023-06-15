@@ -1,4 +1,4 @@
-import { Member } from "../members/members.type";
+import type { Member } from "../members/members.type";
 
 export type BlogPost = {
   title: string;

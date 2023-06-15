@@ -1,9 +1,9 @@
 "use client";
 
-import { Member } from "@lib/configs/members/members.type";
-import type { Component } from "@lib/utils/component";
+import type { Member } from "@lib/configs/members/members.type";
+import type { MemberProviderProps } from "./member-provider.type";
 import { createContext } from "react";
-import { MemberProviderProps } from "./member-provider.type";
+import type { Component } from "@lib/utils/component";
 
 export const MemberContext = createContext<Member | null>(null);
 

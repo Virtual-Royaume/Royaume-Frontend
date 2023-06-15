@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -30,7 +30,7 @@ export default {
         DEFAULT: "#5339DD",
         glow: "rgba(83, 57, 221, .52)"
       },
-      danger: "#DD4439",
+      danger: "#DD4439"
     },
     fontFamily: {
       "sans": ["Inter", "sans-serif"]
@@ -40,16 +40,16 @@ export default {
     },
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))"
       },
       gridTemplateColumns: {
         members: "repeat(auto-fill, minmax(5rem, 1fr))",
         "members-cards": "repeat(auto-fill, minmax(20rem, 1fr))",
         "posts-cards": "repeat(auto-fill, minmax(18rem, 1fr))"
       }
-    },
+    }
   },
-  plugins: [],
+  plugins: []
 } satisfies Config;

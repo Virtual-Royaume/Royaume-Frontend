@@ -321,7 +321,7 @@ export const members: Member[] = [
     profilePicture: "https://cdn.discordapp.com/avatars/558793081663782913/271551e6168f6b274035fca4b48daca7.webp",
     technologies: [],
     birthday: 992332800000,
-    location: "France"    
+    location: "France"
   },
   {
     tag: "sarcraft",

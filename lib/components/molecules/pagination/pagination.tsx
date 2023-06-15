@@ -22,26 +22,26 @@ export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages
     if (isNaN(parsedPage)) return;
 
     onPageChange(parsedPage);
-  }, [])
+  }, []);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [queryPage])
+  }, [queryPage]);
 
-  const handlePageChange = (page: number) => {
+  const handlePageChange = (page: number): void => {
     onPageChange(page);
     router.replace(pathname + "?" + (new URLSearchParams({ page: String(page) }).toString()));
-  }
+  };
 
-  const changePage = (page: number) => {
+  const changePage = (page: number): void => {
     if (page !== currentPage) handlePageChange(page);
   };
 
-  const handlePreviousPage = () => {
+  const handlePreviousPage = (): void => {
     if (currentPage > 1) handlePageChange(currentPage - 1);
   };
 
-  const handleNextPage = () => {
+  const handleNextPage = (): void => {
     if (currentPage < totalPages) handlePageChange(currentPage + 1);
   };
 

@@ -18,7 +18,7 @@ export const MembersGalery: Component<MembersGaleryProps> = ({ members, orientat
     if (orientation === "right") container.scrollLeft = container.scrollWidth;
     if (orientation === "left") container.scrollLeft = 0;
 
-    const startScrolling = () => {
+    const startScrolling = (): void => {
       if (scrollForward) {
         if (orientation === "left") {
           decreaseScroll();
@@ -34,7 +34,7 @@ export const MembersGalery: Component<MembersGaleryProps> = ({ members, orientat
       }
     };
 
-    const increaseScroll = () => {
+    const increaseScroll = (): void => {
       container.scrollLeft += 1;
 
       if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
@@ -42,7 +42,7 @@ export const MembersGalery: Component<MembersGaleryProps> = ({ members, orientat
       }
     };
 
-    const decreaseScroll = () => {
+    const decreaseScroll = (): void => {
       container.scrollLeft -= 1;
 
       if (container.scrollLeft === 0) scrollForward = orientation === "right";
@@ -56,7 +56,7 @@ export const MembersGalery: Component<MembersGaleryProps> = ({ members, orientat
   }, []);
 
   return (
-    <div className={`flex overflow-x-hidden gap-4 opacity-10`} ref={containerRef}>
+    <div className={"flex overflow-x-hidden gap-4 opacity-10"} ref={containerRef}>
       {shuffleArray(members).map((member, i) => (
         <div key={i} className="relative min-w-[3.5rem] min-h-[3.5rem] justify-center gap-1 profile-photo">
           <Image src={member.profilePicture} alt="Member Profile Picture" fill className="rounded-full object-cover rounded-full" />

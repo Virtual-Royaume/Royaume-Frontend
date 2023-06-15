@@ -10,7 +10,7 @@ const HomePage = (): ReactElement => {
       <SpecialitiesSection />
       <MembersSection />
     </>
-  )
+  );
 };
 
 export default HomePage;

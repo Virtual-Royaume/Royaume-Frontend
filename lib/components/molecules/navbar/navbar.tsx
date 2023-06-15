@@ -73,7 +73,7 @@ export const Navbar = (): ReactElement => {
         </ul>
       </div>
     </nav>
-  )
-}
+  );
+};
 
 export default Navbar;

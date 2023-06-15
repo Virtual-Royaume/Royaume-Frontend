@@ -1,10 +1,9 @@
 import type { ReactElement } from "react";
 import { getLastPost } from "@lib/configs/blog";
-import Image from "next/image";
-import { Heading } from "@lib/components/atoms/texts/heading";
 import { Text } from "@lib/components/atoms/texts";
 import { BsArrowRight } from "react-icons/bs";
 import { DayJS } from "@lib/utils/day-js";
+import Image from "next/image";
 import Link from "next/link";
 
 export const LastPostSection = (): ReactElement => {

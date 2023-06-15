@@ -1,12 +1,12 @@
-import { Link } from "./navbar.type";
+import type { Link } from "./navbar.type";
 
 export const links: Link[] = [
   {
     name: "Blog",
-    href: "/blog",
+    href: "/blog"
   },
   {
     name: "Membres",
-    href: "/members",
+    href: "/members"
   }
 ];
