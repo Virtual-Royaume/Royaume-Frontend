@@ -1,6 +1,6 @@
 "use client";
 
-import { Text } from "@lib/components/atomics/texts";
+import { Text } from "@lib/components/atoms/texts";
 import { useContext, type ReactElement } from "react";
 import { notFound } from "next/navigation";
 import { MemberContext } from "./member-provider";

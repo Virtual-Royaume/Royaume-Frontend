@@ -9,7 +9,7 @@ import { useIsDomLoaded } from "@lib/hooks/is-dom-loaded";
 import { useMediaQuery } from "usehooks-ts";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import { Hamburger } from "@lib/components/atomics/hamburger";
+import { Hamburger } from "@lib/components/atoms/hamburger";
 import { links } from "@lib/configs/navbar";
 
 export const Navbar = (): ReactElement => {

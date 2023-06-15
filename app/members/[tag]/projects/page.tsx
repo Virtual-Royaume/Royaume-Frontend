@@ -3,7 +3,7 @@
 import { useContext, type ReactElement } from "react";
 import { notFound } from "next/navigation";
 import { MemberContext } from "../member-provider";
-import { Heading } from "@lib/components/atomics/texts/heading";
+import { Heading } from "@lib/components/atoms/texts/heading";
 import Image from "next/image";
 
 const MemberPage = (): ReactElement => {
