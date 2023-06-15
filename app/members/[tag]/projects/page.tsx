@@ -32,7 +32,7 @@ const MemberPage = (): ReactElement => {
                   </div>
                 </div>
                 <div className="h-1 w-8 bg-purple rounded-md mb-2" />
-                <p className="text-white-desc text-opacity-50">{project.description}</p>
+                <p className="text-white-desc">{project.description}</p>
 
                 {project.images && (
                   <div className="flex gap-2">
