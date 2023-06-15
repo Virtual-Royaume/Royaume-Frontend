@@ -1,4 +1,4 @@
-name: Code check
+name: Build
 
 on:
   push:
@@ -7,8 +7,23 @@ on:
     types: ["opened", "synchronize"]
 
 jobs:
-  lint:
-    name: ESLint
+  nextjs:
+    name: NextJS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.2
+      - uses: actions/setup-node@v3
+      - name: Create .env file from GitHub secrets
+        run: echo "$ENV_VARIABLES" > .env
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build NextJS
+        run: pnpm run build
+  storybook:
+    name: Storybook
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,18 +33,5 @@ jobs:
       - uses: actions/setup-node@v3
       - name: Install dependencies
         run: pnpm install
-      - name: Run ESLint
-        run: pnpm run lint
-  typecheck:
-    name: TS Typecheck
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8.6.2
-      - uses: actions/setup-node@v3
-      - name: Install dependencies
-        run: pnpm install
-      - name: Run typecheck
-        run: npx tsc --noEmit
+      - name: Build Storybook
+        run: pnpm run sb:build
