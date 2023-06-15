@@ -35,5 +35,8 @@
     "@bluzzi/eslint-config": "^1.1.0",
     "@playwright/test": "^1.35.1",
     "eslint": "8.42.0"
+  },
+  "eslintConfig": {
+    "extends": "@bluzzi"
   }
 }
