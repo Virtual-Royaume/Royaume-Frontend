@@ -15,7 +15,10 @@ export default {
       background: {
         DEFAULT: "#0c0c0d",
         header: "rgba(12, 12, 13, .5)",
-        card: "#131314",
+        card: {
+          DEFAULT: "#131314",
+          hover: "#1E1E1F"
+        },
         info: "#1E1E1F"
       },
       white: {
