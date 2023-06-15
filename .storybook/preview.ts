@@ -13,20 +13,6 @@ const preview: Preview = {
       },
     },
 
-    backgrounds: {
-      default: "gray",
-      values: [
-        {
-          name: "gray",
-          value: "#FBFBFE",
-        },
-        {
-          name: "white",
-          value: "#FFFFFF",
-        }
-      ],
-    },
-
     /**
      * @see https://storybook.js.org/blog/integrate-nextjs-and-storybook-automatically/#routing
      */
