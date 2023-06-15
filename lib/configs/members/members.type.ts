@@ -7,6 +7,7 @@ export type Member = {
   location?: string;
   projects?: Projects[];
   socials?: Social[];
+  canBeContacted?: boolean;
 };
 
 export type Techno = {
@@ -15,7 +16,7 @@ export type Techno = {
 };
 
 export type Social = {
-  type: "discord" | "github" | "linkedin" | "twitter";
+  type: "discord" | "github" | "linkedin" | "twitter" | "website";  
   username: string;
   url: string;
 };
