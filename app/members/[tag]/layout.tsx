@@ -91,13 +91,13 @@ const MemberLayout: AsyncComponent<MemberLayoutProps> = async ({ params, childre
                 {member.socials && member.socials.map((social) => (
                   <div>
                     <p className="text-white-desc flex items-center gap-2">
-                      {social.type == "discord" && (
+                      {social.type === "discord" && (
                         <BsDiscord />
-                      ) || social.type == "twitter" && (
+                      ) || social.type === "twitter" && (
                         <BsTwitter />
-                      ) || social.type == "linkedin" && (
+                      ) || social.type === "linkedin" && (
                         <BsLinkedin />
-                      ) || social.type == "github" && (
+                      ) || social.type === "github" && (
                         <BsGithub /> 
                       )}
                       
