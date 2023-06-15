@@ -17,12 +17,16 @@ const getMember = async (tag: string): Promise<Member | null> => {
   return members.find((member) => member.tag === tag) ?? null;
 };
 
-export const generateMetatada = async ({ params }: MemberLayoutProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: MemberLayoutProps): Promise<Metadata> => {
   const member = await getMember(params.tag);
   if (!member) notFound();
 
   return {
-    title: member.username
+    title: member.username,
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora enim alias at minus sint dignissimos quo maxime praesentium nesciunt, hic quod nobis quia quaerat culpa magni, ex animi libero quam? Itaque pariatur soluta ea, quod illo sit, omnis iusto consectetur ipsa sequi ipsum fugit totam doloribus ab quos magni facilis repudiandae eos?",
+    openGraph: {
+      images: [member.profilePicture]
+    }
   };
 };
 
