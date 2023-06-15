@@ -1,6 +1,7 @@
 export type Member = {
   tag: string;
   username: string;
+  description?: string;
   birthday: number | null;
   profilePicture: string;
   technologies: Techno[];

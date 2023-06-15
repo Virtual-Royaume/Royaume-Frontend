@@ -42,6 +42,9 @@ export const members: Member[] = [
   {
     tag: "bluzzi",
     username: "Bluzzi",
+    description: [
+      "Développeur frontend depuis 2016. Spécialisé dans l'écosystème JavaScript, je travaille principalement avec les frameworks React et Next."
+    ].join(" "),
     profilePicture: "https://cdn.discordapp.com/avatars/233351173665456129/a_cee03ee0f97ee3c550840d584bc55c21.gif",
     technologies: [React, Svelte, TypeScript],
     birthday: 965260800000,
@@ -280,6 +283,7 @@ export const members: Member[] = [
   {
     tag: "steellgold",
     username: "Gaëtan 🐈",
+    description: "Je suis développeur back-end sur TypeScript, ainsi que sur PHP.",
     profilePicture: "https://cdn.discordapp.com/avatars/504392983244832780/555d2435b8837ecb8d331a7dd049759a.webp",
     technologies: [Svelte, Supabase, TypeScript],
     birthday: 1097712000000,
@@ -622,10 +626,19 @@ export const members: Member[] = [
   {
     tag: "dmlsurmc",
     username: "dml",
+    description: [
+      "Je m'appelle Djamel, j'ai 16 ans, je vie en région Parisienne, depuis tout petit je suis passionné par l'informatique,",
+      "depuis un petit moment je me suis mis au Développement Web, j'utilise exclusivement le Framework Svelte.",
+      "Mon rêve est de créer mon propre jeu vidéo un jour."
+    ].join(" "),
     profilePicture: "https://cdn.discordapp.com/avatars/1111963529440931970/c8cde5f7f1bdbf5d5956a06f0de1c0ba.webp",
-    technologies: [],
+    technologies: [Svelte],
     birthday: 1154476800000,
-    location: "France"
+    socials: [
+      { type: "github", url: "https://github.com/DMLSurGithub/", "username": "DMLSurGithub" },
+      { type: "website", url: "https://dml-portfolio.me//", "username": "Portfolio" }
+    ],
+    location: "Paris, France"
   },
   {
     tag: "chaika",
