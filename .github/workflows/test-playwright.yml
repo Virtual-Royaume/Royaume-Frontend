@@ -1,0 +1,17 @@
+name: Playwright Test
+
+on:
+  push:
+    branches: ["main", "env/prod", "env/dev"]
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Run test:e2e
+        run: npm run test:e2e
