@@ -24,4 +24,4 @@ export const HeaderSection = (): ReactElement => {
       </div>
     </header>
   );
-}
+};

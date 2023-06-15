@@ -16,7 +16,7 @@ export type Techno = {
 };
 
 export type Social = {
-  type: "discord" | "github" | "linkedin" | "twitter" | "website";  
+  type: "discord" | "github" | "linkedin" | "twitter" | "website";
   username: string;
   url: string;
 };
