@@ -7,11 +7,15 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  test:
+  tests_e2e:
+    name: Run end-to-end tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
       - name: Install dependencies
-        run: npm install
-      - name: Run test:e2e
-        run: npm run test:e2e
+        run: npm ci
+      - name: Install playwright browsers
+        run: npx playwright install --with-deps
+      - name: Run tests
+        run: npx playwright test
