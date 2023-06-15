@@ -49,7 +49,7 @@ export const MembersGrid = (): ReactElement => {
 
         {search !== "" && (
           <span className="ml-4 text-white-desc">
-            {membersData.length} résultat(s)
+            {membersData.length} {membersData.length > 1 ? "résultats" : "résultat"}
           </span>
         )}
       </div>
