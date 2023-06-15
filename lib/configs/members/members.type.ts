@@ -6,11 +6,19 @@ export type Member = {
   technologies: Techno[];
   location?: string;
   projects?: Projects[];
+  socials?: Social[];
+  canContactedDirectly?: boolean;
 };
 
 export type Techno = {
   name: string;
   icon: string;
+};
+
+export type Social = {
+  type: "discord" | "github" | "linkedin" | "twitter";
+  username: string;
+  url: string;
 };
 
 export type Projects = {

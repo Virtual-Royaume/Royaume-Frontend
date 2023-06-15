@@ -215,7 +215,12 @@ export const members: Member[] = [
     profilePicture: "https://cdn.discordapp.com/avatars/533306853317279773/59ba1df9f55667877a145b9eceb89a2e.webp",
     technologies: [React, Svelte],
     birthday: 1098230400000,
-    location: "France"
+    location: "France",
+    socials: [
+      { type: "github", username: "RomainSav", url: "https://github.com/RomainSav" },
+      { type: "twitter", username: "RomainSav", url: "https://twitter.com/RomainSav" }
+    ],
+    canContactedDirectly: true
   },
   {
     tag: "standlly",
@@ -278,7 +283,13 @@ export const members: Member[] = [
     profilePicture: "https://cdn.discordapp.com/avatars/504392983244832780/555d2435b8837ecb8d331a7dd049759a.webp",
     technologies: [Svelte, Supabase, TypeScript],
     birthday: 1097712000000,
-    location: "Kingersheim, France"
+    location: "Kingersheim, France",
+    socials: [
+      { type: "github", username: "Steellgold", url: "https://github.com/Steellgold" },
+      { type: "twitter", username: "Steellgold", url: "https://twitter.com/Steellgold" },
+      { type: "linkedin", username: "Gaëtan Huszovits", url: "https://www.linkedin.com/in/gaetanhus" }
+    ],
+    canContactedDirectly: false
   },
   {
     tag: "azalee",
