@@ -9,9 +9,11 @@ import { members } from "@lib/configs/members";
 import { MemberProvider } from "./member-provider";
 import { LittleNavbar } from "@lib/components/atomics/little-navbar";
 import { Link } from "@lib/components/atomics/little-navbar/little-navbar.type";
-import Image from "next/image";
-import { BsDiscord, BsGithub, BsLinkedin, BsTwitter } from "react-icons/bs";
+import { BsDiscord, BsGithub, BsLink45Deg, BsLinkedin, BsTwitter } from "react-icons/bs";
+import { FaPaperPlane } from "react-icons/fa";
 import { Metadata } from "next";
+import { Button } from "@lib/components/atomics/button/cta";
+import Image from "next/image";
 
 const getMember = async (tag: string): Promise<Member | null> => {
   return members.find((member) => member.tag === tag) ?? null;
@@ -113,14 +115,28 @@ const MemberLayout: AsyncComponent<MemberLayoutProps> = async ({ params, childre
                         <BsLinkedin />
                       ) || social.type === "github" && (
                         <BsGithub />
+                      ) || social.type === "website" && (
+                        <BsLink45Deg />
                       )}
 
                       <a href={social.url} target="_blank" rel="noopener noreferrer">{social.username}</a>
                     </p>
                   </div>
                 )) || (
-                    <p className="text-white-desc">{member.username} n'a renseigné aucun de ses réseaux sociaux</p>
-                  )}
+                  <p className="text-white-desc">{member.username} n'a renseigné aucun de ses réseaux sociaux</p>
+                )}
+
+                {member.canBeContacted && (
+                  <div>
+                    <hr className="border-white border-opacity-10 border-t-1" />
+                    <div className="mt-3 grid gap-1">
+                      <Button className="w-full justify-center">
+                        <FaPaperPlane />
+                        Envoyer un message
+                      </Button>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

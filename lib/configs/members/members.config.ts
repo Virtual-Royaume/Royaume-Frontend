@@ -219,7 +219,8 @@ export const members: Member[] = [
     socials: [
       { type: "github", username: "RomainSav", url: "https://github.com/RomainSav" },
       { type: "twitter", username: "RomainSav", url: "https://twitter.com/RomainSav" }
-    ]
+    ],
+    canBeContacted: true
   },
   {
     tag: "standlly",
@@ -286,7 +287,8 @@ export const members: Member[] = [
     socials: [
       { type: "github", username: "Steellgold", url: "https://github.com/Steellgold" },
       { type: "twitter", username: "Steellgold", url: "https://twitter.com/Steellgold" },
-      { type: "linkedin", username: "Gaëtan Huszovits", url: "https://www.linkedin.com/in/gaetanhus" }
+      { type: "linkedin", username: "Gaëtan Huszovits", url: "https://www.linkedin.com/in/gaetanhus" },
+      { type: "website", username: "steellgold.fr", url: "https://steellgold.fr" }
     ]
   },
   {
