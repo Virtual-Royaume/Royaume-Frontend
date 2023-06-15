@@ -8,7 +8,12 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Découvrez de nuvelles technologies ou apprenez en sur l'actualité. Vous trouverez des posts réguliers rédigés par les soins de nos membres."
+  description: "Découvrez de nuvelles technologies ou apprenez en sur l'actualité. Vous trouverez des posts réguliers rédigés par les soins de nos membres.",
+  
+  openGraph: {
+    title: "Blog",
+    description: "Découvrez de nuvelles technologies ou apprenez en sur l'actualité. Vous trouverez des posts réguliers rédigés par les soins de nos membres.",
+  }
 };
 
 const HomePage = (): ReactElement => {
