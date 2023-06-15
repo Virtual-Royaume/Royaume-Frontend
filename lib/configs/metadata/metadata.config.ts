@@ -9,7 +9,11 @@ const data = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://royaume.world/"),
 
-  title: data.title,
+  title: {
+    template: "%s - Le Royaume",
+    default: "Le Royaume",
+    absolute: data.title
+  },
   description: data.description,
   applicationName: data.siteName,
 
@@ -20,7 +24,8 @@ export const metadata: Metadata = {
     description: data.description,
     siteName: data.siteName,
     url: "https://www.royaume.world",
-    type: "website"
+    type: "website",
+    images: ["/images/royaume-logo.png"]
   },
 
   twitter: {
