@@ -9,13 +9,23 @@ import { members } from "@lib/configs/members";
 import { MemberProvider } from "./member-provider";
 import { LittleNavbar } from "@lib/components/atomics/little-navbar";
 import { Link } from "@lib/components/atomics/little-navbar/little-navbar.type";
-import { Button } from "@lib/components/atomics/button/cta";
-import { FaPaperPlane } from "react-icons/fa";
 import Image from "next/image";
 import { BsDiscord, BsGithub, BsLinkedin, BsTwitter } from "react-icons/bs";
+import { Metadata } from "next";
 
 const getMember = async (tag: string): Promise<Member | null> => {
   return members.find((member) => member.tag === tag) ?? null;
+};
+
+export { metadata } from "@lib/configs/metadata";
+
+export const generateMetatada = async ({ params }: MemberLayoutProps): Promise<Metadata> => {
+  const member = await getMember(params.tag);
+  if (!member) notFound();
+
+  return {
+    title: member.username
+  };
 };
 
 const MemberLayout: AsyncComponent<MemberLayoutProps> = async ({ params, children }) => {
@@ -98,15 +108,15 @@ const MemberLayout: AsyncComponent<MemberLayoutProps> = async ({ params, childre
                       ) || social.type === "linkedin" && (
                         <BsLinkedin />
                       ) || social.type === "github" && (
-                        <BsGithub /> 
+                        <BsGithub />
                       )}
-                      
+
                       <a href={social.url} target="_blank" rel="noopener noreferrer">{social.username}</a>
                     </p>
                   </div>
                 )) || (
-                  <p className="text-white-desc">{member.username} n'a renseigné aucun de ses réseaux sociaux</p>
-                )}
+                    <p className="text-white-desc">{member.username} n'a renseigné aucun de ses réseaux sociaux</p>
+                  )}
               </div>
             </div>
           </div>
