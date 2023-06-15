@@ -7,7 +7,6 @@ export type Member = {
   location?: string;
   projects?: Projects[];
   socials?: Social[];
-  canContactedDirectly?: boolean;
 };
 
 export type Techno = {

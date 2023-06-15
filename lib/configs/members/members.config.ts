@@ -219,8 +219,7 @@ export const members: Member[] = [
     socials: [
       { type: "github", username: "RomainSav", url: "https://github.com/RomainSav" },
       { type: "twitter", username: "RomainSav", url: "https://twitter.com/RomainSav" }
-    ],
-    canContactedDirectly: true
+    ]
   },
   {
     tag: "standlly",
@@ -288,8 +287,7 @@ export const members: Member[] = [
       { type: "github", username: "Steellgold", url: "https://github.com/Steellgold" },
       { type: "twitter", username: "Steellgold", url: "https://twitter.com/Steellgold" },
       { type: "linkedin", username: "Gaëtan Huszovits", url: "https://www.linkedin.com/in/gaetanhus" }
-    ],
-    canContactedDirectly: false
+    ]
   },
   {
     tag: "azalee",
