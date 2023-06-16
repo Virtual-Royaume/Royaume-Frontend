@@ -29,7 +29,7 @@ const HomePage = (): ReactElement => {
         <div className="flex flex-col justify-center order-last lg:order-first">
           <Heading type="h1" className="font-bold uppercase">Blog</Heading>
           <Text>
-            Découvrez de nuvelles technologies ou apprenez en sur l'actualité. Vous trouverez des posts réguliers rédigés par les
+            Découvrez de nuvelles technologies ou apprenez en sur l&apos;actualité. Vous trouverez des posts réguliers rédigés par les
             soins de nos membres.
           </Text>
         </div>
