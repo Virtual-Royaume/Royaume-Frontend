@@ -13,7 +13,11 @@ export const Hamburger: Component<HamburgerProps> = ({ open, setOpen }) => {
   );
 
   return (
-    <button className="relative appearance-none" onClick={() => setOpen((state) => !state)} aria-label="hamburger">
+    <button
+      className="h-fit w-fit relative appearance-none"
+      onClick={() => setOpen((state) => !state)}
+      aria-label="hamburger"
+    >
       <FiX className={clsx(
         styles,
         {
@@ -21,6 +25,7 @@ export const Hamburger: Component<HamburgerProps> = ({ open, setOpen }) => {
           "opacity-0": !open
         }
       )} />
+
       <FiMenu className={clsx(
         styles,
         {
