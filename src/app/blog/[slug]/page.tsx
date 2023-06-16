@@ -34,15 +34,22 @@ const BlogPostPage: Component<BlogPostPageProps> = ({ params }) => {
   if (!post) notFound();
 
   return (
-    <div className="mt-28 container">
-      <div className="relative mx-auto lg:w-4/6 aspect-video">
-        <Image src={post.thumbnail} alt="Post Thumbnail" fill className="object-cover rounded" />
+    <div className="mt-28 container grid grid-cols-[1fr_20rem] gap-10">
+      <div>
+        <div className="relative mx-auto lg:w-4/6 aspect-video">
+          <Image src={post.thumbnail} alt="Post Thumbnail" fill className="object-cover rounded" />
+        </div>
+
+        <Heading type="h1" className="uppercase font-medium text-center mt-10 text-3xl lg:text-5xl">{post.title}</Heading>
+
+        <div className="mt-24">
+          <Markdown source={markdown} />
+        </div>
       </div>
-
-      <Heading type="h1" className="uppercase font-medium text-center mt-10 text-3xl lg:text-5xl">{post.title}</Heading>
-
-      <div className="mt-28">
-        <Markdown source={markdown} />
+      <div>
+        <div className="h-40 bg-background-card rounded p-4 sticky top-20">
+          <p className="text-white font-medium">Table des matières</p>
+        </div>
       </div>
     </div>
   );
