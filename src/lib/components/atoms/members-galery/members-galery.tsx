@@ -56,7 +56,7 @@ export const MembersGalery: Component<MembersGaleryProps> = ({ members, orientat
   }, []);
 
   return (
-    <div className={"flex overflow-x-hidden gap-4 opacity-10"} ref={containerRef}>
+    <div className="flex overflow-x-hidden gap-4 opacity-10" ref={containerRef}>
       {shuffleArray(members).map((member, i) => (
         <div key={i} className="relative min-w-[3.5rem] min-h-[3.5rem] justify-center gap-1 profile-photo">
           <Image src={member.profilePicture} alt="Member Profile Picture" fill className="rounded-full object-cover rounded-full" />
