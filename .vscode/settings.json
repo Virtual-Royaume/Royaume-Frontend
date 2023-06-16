@@ -24,5 +24,10 @@
   "tailwindCSS.experimental.classRegex": [
     ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
-  "tailwindCSS.lint.cssConflict" : "ignore"
+  "tailwindCSS.lint.cssConflict" : "ignore",
+
+  // Vitest:
+  "vitest.include": [
+    "**/*.test.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"
+  ]
 }
