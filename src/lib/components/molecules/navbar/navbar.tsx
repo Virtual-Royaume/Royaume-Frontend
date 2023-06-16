@@ -9,14 +9,19 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { Hamburger } from "#/lib/components/atoms/hamburger";
 import { links } from "#/lib/configs/navbar";
+import { BsDiscord } from "react-icons/bs";
+import { members } from "#/lib/configs/members";
 import Image from "next/image";
 import Link from "next/link";
+import { Dropdown } from "#/lib/components/atoms/dropdown/profile";
 
 export const Navbar = (): ReactElement => {
   const [isOpen, setIsOpen] = useState(true);
   const isDomLoaded = useIsDomLoaded();
   const matches = useMediaQuery("(max-width: 1029px)");
   const pathname = usePathname();
+
+  const [connected, setConnected] = useState(false);
 
   // Close mobile navbar on navigation
   useEffect(() => setIsOpen(false), [pathname]);
@@ -66,10 +71,25 @@ export const Navbar = (): ReactElement => {
         <Link href="/">
           <Image src="/images/royaume-logo.png" alt="logo" width={50} height={50} />
         </Link>
-        <ul className="flex gap-10">
+
+        <ul className="flex gap-10 items-center">
           {links.map((link) => (
             <Link key={link.name} href={link.href} className="text-white">{link.name}</Link>
           ))}
+
+          {connected ? (
+            <Dropdown items={[
+              { name: "Profil", href: "/profile" }
+            ]}>
+              <Image src={members[0].profilePicture} alt="avatar" width={32} height={32} className="rounded-full" />
+              <span className="text-white">{members[0].username}</span>
+            </Dropdown>
+          ) : (
+            <button className="bg-discord rounded px-4 py-2 flex items-center space-x-2 text-white gap-3" onClick={() => setConnected(true)}>
+              <BsDiscord />
+              Se connecter
+            </button>
+          )}
         </ul>
       </div>
     </nav>
