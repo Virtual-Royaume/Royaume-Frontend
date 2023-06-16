@@ -21,8 +21,7 @@ const config: PlaywrightTestConfig = {
 
   use: {
     baseURL: baseURL,
-    trace: "on",
-    headless: false
+    trace: "on"
   },
 
   projects: [
