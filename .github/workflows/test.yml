@@ -31,6 +31,11 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+      - uses: actions/configure-pages@v2
+      - uses: actions/upload-pages-artifact@v1
+        with: playwright-report/
+      - uses: actions/deploy-pages@v1
+        id: deployment
   unit-test:
     name: Unit tests
     runs-on: ubuntu-latest
