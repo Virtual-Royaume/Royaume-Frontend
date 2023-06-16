@@ -5,12 +5,12 @@ export default defineConfig({
   plugins: [react()],
   test: {
     setupFiles: ["dotenv/config", "./vitest.setup.ts"],
-    environment: "happy-dom",
-    include: ["./**/*.test.?(c|m)[jt]s?(x)"]
+    include: ["./src/**/*.test.{ts,tsx}"],
+    environment: "happy-dom"
   },
   resolve: {
     alias: {
-      "#/": "./"
+      "#/": "./src/"
     }
   }
 });
