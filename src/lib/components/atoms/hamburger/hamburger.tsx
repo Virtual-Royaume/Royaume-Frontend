@@ -6,7 +6,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 export const Hamburger: Component<HamburgerProps> = ({ open, setOpen }) => {
   // Common styles :
   const styles = clsx(
-    "w-10 h-10 text-white",
+    "w-full h-full text-white",
     "absolute right-0 top-0 bottom-0 my-auto",
     "transition-opacity duration-300",
     "cursor-pointer"
@@ -14,7 +14,7 @@ export const Hamburger: Component<HamburgerProps> = ({ open, setOpen }) => {
 
   return (
     <button
-      className="h-fit w-fit relative appearance-none"
+      className="h-12 w-12 relative appearance-none"
       onClick={() => setOpen((state) => !state)}
       aria-label="hamburger"
     >
