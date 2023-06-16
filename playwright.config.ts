@@ -15,7 +15,7 @@ const config: PlaywrightTestConfig = {
 
   webServer: {
     url: baseURL,
-    command: "pnpm run dev",
+    command: "pnpm run build && pnpm run start",
     reuseExistingServer: !process.env.CI
   },
 
