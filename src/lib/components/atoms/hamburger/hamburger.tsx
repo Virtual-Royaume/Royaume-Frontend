@@ -13,7 +13,7 @@ export const Hamburger: Component<HamburgerProps> = ({ open, setOpen }) => {
   );
 
   return (
-    <span className="relative" onClick={() => setOpen((state) => !state)} id="hamburger">
+    <button className="relative appearance-none" onClick={() => setOpen((state) => !state)} aria-label="hamburger">
       <FiX className={clsx(
         styles,
         {
@@ -28,6 +28,6 @@ export const Hamburger: Component<HamburgerProps> = ({ open, setOpen }) => {
           "opacity-100": !open
         }
       )} />
-    </span>
+    </button>
   );
 };
