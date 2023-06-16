@@ -80,11 +80,9 @@ export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages
         "cursor-default bg-background-info": currentPage === 1,
         "hover:bg-purple cursor-pointer": currentPage !== 1
       })}>
-        {
-          <>
-            <BsArrowLeft />
-          </>
-        }
+        <>
+          <BsArrowLeft />
+        </>
       </div>
       {getPageNumbers().map((pageNumber) => (
         <DefaultPaginationButton  key={pageNumber} page={pageNumber} handlePageChange={changePage} active={currentPage === pageNumber} />
@@ -93,11 +91,9 @@ export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages
         "cursor-default bg-background-info": currentPage === totalPages,
         "hover:bg-purple cursor-pointer": currentPage !== totalPages
       })}>
-        {
-          <>
-            <BsArrowRight />
-          </>
-        }
+        <>
+          <BsArrowRight />
+        </>
       </div>
     </div>
   );

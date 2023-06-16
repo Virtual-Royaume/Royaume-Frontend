@@ -16,14 +16,14 @@ const MemberPage = (): ReactElement => {
         <div className="bg-background-card p-4 rounded">
           <div className="grid gap-1">
             {member.projects.map((project) => (
-              <div className="text-white-desc items-center gap-2">
+              <div key={project.name} className="text-white-desc items-center gap-2">
                 <div className="flex items-center gap-2">
                   <Heading type="h4" className="text-white text-lg">{project.name}</Heading>
                   <div className="px-2 pb-2 rounded bg-[#0c0c0d]">
                     {project.technologies && (
                       <div className="flex gap-2">
                         {project.technologies.map((technology) => (
-                          <div className="flex items-center gap-1 mt-2">
+                          <div key={technology.name} className="flex items-center gap-1 mt-2">
                             <Image src={`/images/icons/${technology.icon}`} alt={`${technology.name} Icon`} height={15} width={15} />
                           </div>
                         ))}
@@ -37,7 +37,7 @@ const MemberPage = (): ReactElement => {
                 {project.images && (
                   <div className="flex gap-2">
                     {project.images.map((image) => (
-                      <div className="flex items-center gap-1 mt-2">
+                      <div key={project.name} className="flex items-center gap-1 mt-2">
                         <Image
                           src={`${image}`}
                           alt={`${project.name} Image`}
@@ -54,7 +54,7 @@ const MemberPage = (): ReactElement => {
         </div>
       ) : (
         <div className="text-white-desc flex items-center gap-2 border-l-4 border-l-danger pl-2">
-          <p>L'utilisateur n'a pas encore réalisé de projet ou n'a pas encore publié ses projets.</p>
+          <p>L&apos;utilisateur n&apos;a pas encore réalisé de projet ou n&apos;a pas encore publié ses projets.</p>
         </div>
       )}
     </div>

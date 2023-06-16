@@ -10,7 +10,7 @@ export const SpecialitiesSection = (): ReactElement => {
       <div className="flex flex-col items-center">
         <Heading type="h2" className="uppercase font-bold text-center">Découvrez nos spécialités</Heading>
         <Text className="mt-2 max-w-3xl text-center">
-          Voici ce que nous savons faire de mieux chez nous. Vous ne connaissez pas ces technologies ? Ce n'est pas un soucis,
+          Voici ce que nous savons faire de mieux chez nous. Vous ne connaissez pas ces technologies ? Ce n&apos;est pas un soucis,
           nous sommes la pour vous apprendre !
         </Text>
       </div>

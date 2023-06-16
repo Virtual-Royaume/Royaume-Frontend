@@ -34,7 +34,7 @@ export const MemberCard: Component<MemberCardProps> = ({ tag, username, profileP
         {technologies.length > 0 && (
           <div className="absolute bottom-0 h-6 w-full rounded flex items-center justify-end gap-2">
             {technologies.map((techno) => (
-              <div className="relative aspect-square h-5">
+              <div key={techno.name} className="relative aspect-square h-5">
                 <Image src={`/images/icons/${techno.icon}`} alt={`${techno.name} Icon`} fill className="object-contain" />
               </div>
             ))}

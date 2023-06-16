@@ -89,7 +89,7 @@ const MemberLayout: Component<MemberLayoutProps> = ({ params, children }) => {
           {member.technologies.length > 0 && (
             <div className="bottom-0 h-6 w-full rounded flex items-center gap-2">
               {member.technologies.map((techno) => (
-                <div className="relative aspect-square h-5">
+                <div key={techno.name} className="relative aspect-square h-5">
                   <Image src={`/images/icons/${techno.icon}`} alt={`${techno.name} Icon`} fill className="object-contain" />
                 </div>
               ))}
@@ -113,7 +113,7 @@ const MemberLayout: Component<MemberLayoutProps> = ({ params, children }) => {
 
               <div className="mt-3 grid gap-1">
                 {member.socials && member.socials.map((social) => (
-                  <div>
+                  <div key={social.type}>
                     <p className="text-white-desc flex items-center gap-2">
                       {social.type === "discord" && (
                         <BsDiscord />
@@ -131,7 +131,7 @@ const MemberLayout: Component<MemberLayoutProps> = ({ params, children }) => {
                     </p>
                   </div>
                 )) || (
-                  <p className="text-white-desc">{member.username} n'a renseigné aucun de ses réseaux sociaux</p>
+                  <p className="text-white-desc">{member.username} n&apos;a renseigné aucun de ses réseaux sociaux</p>
                 )}
 
                 {member.canBeContacted && (
