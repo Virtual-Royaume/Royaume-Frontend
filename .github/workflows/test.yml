@@ -33,7 +33,8 @@ jobs:
           retention-days: 30
       - uses: actions/configure-pages@v2
       - uses: actions/upload-pages-artifact@v1
-        with: playwright-report/
+        with: 
+          path: playwright-report/
       - uses: actions/deploy-pages@v1
         id: deployment
   unit-test:
