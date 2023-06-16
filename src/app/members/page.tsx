@@ -1,3 +1,5 @@
+"use client";
+
 import type { ReactElement } from "react";
 import { Text } from "#/lib/components/atoms/texts";
 import { Heading } from "#/lib/components/atoms/texts/heading";
