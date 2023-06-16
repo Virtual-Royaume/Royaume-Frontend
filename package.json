@@ -12,8 +12,7 @@
     "sb:dev": "storybook dev -p 6006",
     "sb:build": "storybook build",
     "sb:start": "serve storybook-static",
-    "ts:check": "tsc --noEmit",
-    "preinstall": "npx only-allow pnpm"
+    "ts:check": "tsc --noEmit"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.1.1",
