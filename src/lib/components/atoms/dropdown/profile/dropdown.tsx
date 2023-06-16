@@ -1,7 +1,7 @@
 import type { Component } from "#/lib/utils/component";
 import { clsx } from "clsx";
 import { useState } from "react";
-import type { DropdownProps } from "./dropdown.types";
+import type { DropdownProps } from "./dropdown.type";
 
 export const Dropdown: Component<DropdownProps> = ({ children, items }) => {
   const [toggled, setToggled] = useState(false);
@@ -29,7 +29,7 @@ export const Dropdown: Component<DropdownProps> = ({ children, items }) => {
           {items.map((item) => (
             <a
               key={item.name}
-              href={item.href}
+              href="https://google.com"
               className="block px-4 py-2 text-sm text-white-desc hover:bg-background-card-hover hover:text-gray-900"
               role="menuitem"
             >
