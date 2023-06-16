@@ -13,15 +13,15 @@ export const Hamburger: Component<HamburgerProps> = ({ open, setOpen }) => {
   );
 
   return (
-    <span className="relative">
-      <FiX onClick={() => setOpen((state) => !state)} className={clsx(
+    <span className="relative" onClick={() => setOpen((state) => !state)} id="hamburger">
+      <FiX className={clsx(
         styles,
         {
           "opacity-100": open,
           "opacity-0": !open
         }
       )} />
-      <FiMenu onClick={() => setOpen((state) => !state)} className={clsx(
+      <FiMenu className={clsx(
         styles,
         {
           "opacity-0": open,
