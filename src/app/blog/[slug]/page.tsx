@@ -6,6 +6,8 @@ import { Heading } from "#/lib/components/atoms/texts/heading";
 import { posts } from "#/lib/configs/blog";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { Markdown } from "#/lib/components/molecules/markdown";
+import { markdown } from "./page.util";
 
 const getPost = (slug: string): BlogPost | null => {
   return posts.find((post) => post.slug === slug) ?? null;
@@ -37,7 +39,11 @@ const BlogPostPage: Component<BlogPostPageProps> = ({ params }) => {
         <Image src={post.thumbnail} alt="Post Thumbnail" fill className="object-cover rounded" />
       </div>
 
-      <Heading type="h1" className="uppercase text-center mt-10 text-3xl lg:text-5xl">{post.title}</Heading>
+      <Heading type="h1" className="uppercase font-medium text-center mt-10 text-3xl lg:text-5xl">{post.title}</Heading>
+
+      <div className="mt-28">
+        <Markdown source={markdown} />
+      </div>
     </div>
   );
 };

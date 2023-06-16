@@ -1,0 +1,79 @@
+import { Text } from "#/lib/components/atoms/texts";
+import type { Component } from "#/lib/utils/component";
+import Link from "next/link";
+import type { MarkdownElementProps } from "./markdown-element.type";
+import { MDHeading } from "../elements/md-heading/md-heading";
+
+export const MarkdownElement: Component<MarkdownElementProps> = ({ element, parent = null }) => {
+  if (parent) {
+    if (parent.type === "heading" && element.type === "text") {
+      return <MDHeading depth={parent.depth} text={element.value} />;
+    }
+
+    if (parent.type === "blockquote" && element.type === "paragraph" && element.children[0].type === "text") {
+      return <p>{element.children[0].value}</p>;
+    }
+
+    if (parent.type === "paragraph") {
+      if (element.type === "strong" && element.children[0].type === "text") {
+        return <strong>{element.children[0].value}</strong>;
+      }
+
+      if (element.type === "emphasis" && element.children[0].type === "text") {
+        return <em>{element.children[0].value}</em>;
+      }
+
+      if (element.type === "link" && element.children[0].type === "text") {
+        return <Link href={element.url} target="_blank">{element.children[0].value}</Link>;
+      }
+
+      if (element.type === "text") {
+        return <>{element.value}</>;
+      }
+
+      return <Text>ERROR : Unsupported element</Text>;
+    }
+
+    if (element.type === "listItem") {
+      return (
+        <>
+          {element.children.map((child, i) => {
+            if (child.type === "paragraph") {
+              return (
+                <div key={i}>
+                  <MarkdownElement element={child} />
+                </div>
+              );
+            }
+
+            if (child.type === "list") {
+              return <MarkdownElement key={i} element={child} />;
+            }
+          })}
+        </>
+      );
+    }
+
+    return <Text>ERROR : Unsupported element</Text>;
+  } else {
+    if (element.type === "thematicBreak") {
+      return <hr />;
+    }
+
+    if (element.type === "heading" || element.type === "blockquote") {
+      return <MarkdownElement parent={element} element={element.children[0]} />;
+    }
+
+    if (element.type === "paragraph") {
+      return (
+        <p className="text-white-desc">
+          {element.children.map((child, i) => (
+            <MarkdownElement key={i} parent={element} element={child} />
+          ))}
+        </p>
+      );
+    }
+
+    return <Text>ERROR : Unsupported element</Text>;
+  }
+};
