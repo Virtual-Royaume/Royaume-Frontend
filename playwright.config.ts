@@ -9,19 +9,20 @@ const baseURL = `http://localhost:${port}`;
 // Playwright config:
 const config: PlaywrightTestConfig = {
   testMatch: "*.spec.ts",
-  testDir: "src",
+  testDir: "test",
 
   reporter: [["html", { open: "always" }]],
 
   webServer: {
     url: baseURL,
-    command: "npm run build && npm run dev",
+    command: "pnpm run dev",
     reuseExistingServer: !process.env.CI
   },
 
   use: {
     baseURL: baseURL,
-    trace: "on"
+    trace: "on",
+    headless: false
   },
 
   projects: [
