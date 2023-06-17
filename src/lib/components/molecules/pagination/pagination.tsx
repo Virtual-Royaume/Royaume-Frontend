@@ -75,37 +75,51 @@ export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages
   };
 
   return (
-    <div className="flex items-center gap-3">
-      <div onClick={handlePreviousPage} className={clsx(styles, "text-white-desc", {
-        "cursor-default bg-background-info": currentPage === 1,
-        "hover:bg-purple cursor-pointer": currentPage !== 1
-      })}>
-        <>
-          <BsArrowLeft />
-        </>
-      </div>
+    <nav aria-label="pagination" className="flex items-center gap-3">
+      <button
+        aria-label="previous page"
+        disabled={currentPage === 1}
+        onClick={handlePreviousPage}
+        className={clsx(styles, "text-white-desc", {
+          "cursor-default bg-background-info": currentPage === 1,
+          "hover:bg-purple cursor-pointer": currentPage !== 1
+        })}
+      >
+        <BsArrowLeft />
+      </button>
+
       {getPageNumbers().map((pageNumber) => (
-        <DefaultPaginationButton  key={pageNumber} page={pageNumber} handlePageChange={changePage} active={currentPage === pageNumber} />
+        <DefaultPaginationButton key={pageNumber} page={pageNumber} handlePageChange={changePage} active={currentPage === pageNumber} />
       ))}
-      <div onClick={handleNextPage} className={clsx(styles, "text-white-desc", {
-        "cursor-default bg-background-info": currentPage === totalPages,
-        "hover:bg-purple cursor-pointer": currentPage !== totalPages
-      })}>
-        <>
-          <BsArrowRight />
-        </>
-      </div>
-    </div>
+
+      <button
+        aria-label="next page"
+        disabled={currentPage === totalPages}
+        onClick={handleNextPage}
+        className={clsx(styles, "text-white-desc", {
+          "cursor-default bg-background-info": currentPage === totalPages,
+          "hover:bg-purple cursor-pointer": currentPage !== totalPages
+        })}
+      >
+        <BsArrowRight />
+      </button>
+    </nav>
   );
 };
 
 const DefaultPaginationButton: Component<DefaultPaginationButtonProps> = ({ page, handlePageChange, active = false }) => {
   return (
-    <div onClick={() => handlePageChange(page)} className={clsx(styles, "cursor-pointer", {
-      "bg-purple text-white": active,
-      "text-white-desc hover:bg-purple": !active
-    })}>
+    <button
+      aria-label={`page ${page}`}
+      aria-current={active ? "page" : undefined}
+      disabled={active}
+      onClick={() => handlePageChange(page)}
+      className={clsx(styles, "cursor-pointer", {
+        "bg-purple text-white": active,
+        "text-white-desc hover:bg-purple": !active
+      })}
+    >
       {page}
-    </div>
+    </button>
   );
 };
