@@ -1,11 +1,8 @@
-export type PaginationProps = {
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
-};
+import type { SetState } from "#/lib/utils/component";
 
-export type DefaultPaginationButtonProps = {
-  page: number;
-  active?: boolean;
-  handlePageChange: (page: number) => void;
+export type PaginationProps = {
+  pageCount: number;
+
+  currentPage: number;
+  setCurrentPage: SetState<number>;
 };

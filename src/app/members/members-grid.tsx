@@ -1,7 +1,8 @@
 "use client";
 
 import type { Member } from "#/lib/configs/member/member.type";
-import { useState, type ReactElement } from "react";
+import type { ReactElement } from "react";
+import { useState, useEffect } from "react";
 import { MemberCard } from "#/lib/components/atoms/cards/member-card";
 import { members } from "#/lib/configs/member";
 import { Pagination } from "#/lib/components/atoms/pagination/pagination";
@@ -12,10 +13,10 @@ export const MembersGrid = (): ReactElement => {
   const [membersData, setMembersData] = useState<Member[]>(members.slice(0, itemPerPages));
   const [currentPage, setCurrentPage] = useState(1);
 
-  const onPageChange = (page: number): void => {
-    setCurrentPage(page);
-    setMembersData(members.slice((page - 1) * itemPerPages, itemPerPages * page));
-  };
+  useEffect(() => {
+    setCurrentPage(currentPage);
+    setMembersData(members.slice((currentPage - 1) * itemPerPages, itemPerPages * currentPage));
+  }, [currentPage]);
 
   const [search, setSearch] = useState("");
 
@@ -61,7 +62,7 @@ export const MembersGrid = (): ReactElement => {
       </div>
 
       <div className="flex justify-center">
-        <Pagination currentPage={currentPage} totalPages={Math.ceil(members.length / itemPerPages)} onPageChange={onPageChange} />
+        <Pagination pageCount={Math.ceil(members.length / itemPerPages)} currentPage={currentPage} setCurrentPage={setCurrentPage} />
       </div>
     </div>
   );

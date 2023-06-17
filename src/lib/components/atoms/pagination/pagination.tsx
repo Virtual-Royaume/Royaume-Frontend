@@ -1,125 +1,39 @@
 "use client";
 
 import type { Component } from "#/lib/utils/component";
-import type { DefaultPaginationButtonProps, PaginationProps } from "./pagination.type";
-import { useEffect } from "react";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
-import { clsx } from "clsx";
+import type { PaginationProps } from "./pagination.type";
+import type { Page } from "./pagination-item.type";
+import { PaginationItem } from "./pagination-item";
+import { useEffect, useState } from "react";
+import { generatePageList } from "./pagination.util";
 
-const styles = "flex items-center justify-center rounded bg border border-background-info h-10 w-10 selection:select-none";
-
-export const Pagination: Component<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const queryPage = searchParams.get("page");
-
-  // Set page based on url
-  useEffect(() => {
-    if (!queryPage) return;
-    const parsedPage = parseInt(queryPage);
-    if (isNaN(parsedPage)) return;
-
-    onPageChange(parsedPage);
-  }, []);
+export const Pagination: Component<PaginationProps> = ({ pageCount, currentPage, setCurrentPage }) => {
+  const [pages, setPages] = useState<Page[]>(generatePageList(currentPage, pageCount));
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [queryPage]);
+    setPages(generatePageList(currentPage, pageCount));
+  }, [currentPage]);
 
-  const handlePageChange = (page: number): void => {
-    onPageChange(page);
-    router.replace(pathname + "?" + (new URLSearchParams({ page: String(page) }).toString()));
-  };
-
-  const changePage = (page: number): void => {
-    if (page !== currentPage) handlePageChange(page);
-  };
-
-  const handlePreviousPage = (): void => {
-    if (currentPage > 1) handlePageChange(currentPage - 1);
-  };
-
-  const handleNextPage = (): void => {
-    if (currentPage < totalPages) handlePageChange(currentPage + 1);
-  };
-
-  const getPageNumbers = (): number[] => {
-    const pageNumbers: number[] = [];
-
-    // Afficher les boutons pour les pages précédentes
-    for (let i = currentPage - 1; i >= Math.max(currentPage - 2, 1); i--) {
-      pageNumbers.unshift(i);
-    }
-
-    // Afficher le bouton pour la page active
-    pageNumbers.push(currentPage);
-
-    // Afficher les boutons pour les pages suivantes
-    for (let i = currentPage + 1; i <= Math.min(currentPage + 2, totalPages); i++) {
-      pageNumbers.push(i);
-    }
-
-    // Afficher les boutons pour les pages suivantes s'il reste de la place
-    for (let i = currentPage + 3; i <= totalPages && pageNumbers.length < 5; i++) {
-      pageNumbers.push(i);
-    }
-
-    // Ajouter des boutons pour les pages précédentes s'il reste de la place
-    for (let i = currentPage - 3; i >= 1 && pageNumbers.length < 5; i--) {
-      pageNumbers.unshift(i);
-    }
-
-    return pageNumbers;
+  const handlePreviousPage = (): void => setCurrentPage(value => value - 1);
+  const handleNextPage = (): void => setCurrentPage(value => value + 1);
+  const handleSetPage = (page: Page): void => {
+    if (typeof page === "number") setCurrentPage(page);
   };
 
   return (
     <nav aria-label="pagination" className="flex items-center gap-3">
-      <button
-        aria-label="previous page"
-        disabled={currentPage === 1}
-        onClick={handlePreviousPage}
-        className={clsx(styles, "text-white-desc", {
-          "cursor-default bg-background-info": currentPage === 1,
-          "hover:bg-purple cursor-pointer": currentPage !== 1
-        })}
-      >
-        <BsArrowLeft />
-      </button>
+      <PaginationItem page="previous" active={currentPage === 1} handlePageChange={() => handlePreviousPage()} />
 
-      {getPageNumbers().map((pageNumber) => (
-        <DefaultPaginationButton key={pageNumber} page={pageNumber} handlePageChange={changePage} active={currentPage === pageNumber} />
+      {pages.map((pageNumber) => (
+        <PaginationItem
+          key={pageNumber}
+          page={pageNumber}
+          active={currentPage === pageNumber}
+          handlePageChange={page => handleSetPage(page)}
+        />
       ))}
 
-      <button
-        aria-label="next page"
-        disabled={currentPage === totalPages}
-        onClick={handleNextPage}
-        className={clsx(styles, "text-white-desc", {
-          "cursor-default bg-background-info": currentPage === totalPages,
-          "hover:bg-purple cursor-pointer": currentPage !== totalPages
-        })}
-      >
-        <BsArrowRight />
-      </button>
+      <PaginationItem page="next" active={currentPage === pageCount} handlePageChange={() => handleNextPage()} />
     </nav>
-  );
-};
-
-const DefaultPaginationButton: Component<DefaultPaginationButtonProps> = ({ page, handlePageChange, active = false }) => {
-  return (
-    <button
-      aria-label={`page ${page}`}
-      aria-current={active ? "page" : undefined}
-      disabled={active}
-      onClick={() => handlePageChange(page)}
-      className={clsx(styles, "cursor-pointer", {
-        "bg-purple text-white": active,
-        "text-white-desc hover:bg-purple": !active
-      })}
-    >
-      {page}
-    </button>
   );
 };
