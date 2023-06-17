@@ -47,7 +47,7 @@ const BlogPostPage: Component<BlogPostPageProps> = ({ params }) => {
 
         <Heading type="h1" className="uppercase font-medium text-center mt-10 text-3xl lg:text-5xl">{post.title}</Heading>
 
-        <div className="mt-24">
+        <div className="mt-12 lg:mt-24">
           <Markdown source={markdown} />
         </div>
       </div>

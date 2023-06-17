@@ -8,7 +8,7 @@ export const MDHeading: Component<MDHeadingProps> = ({ text, depth }) => {
   if (depth === 1) {
     return <h2 className={clsx(
       styles,
-      "text-2xl mt-8 mb-4",
+      "lg:text-2xl mt-8 mb-4",
       "after:content-[''] after:w-10 after:h-1 after:rounded after:bg-purple after:absolute after:-bottom-1 after:left-0"
     )}>{text}</h2>;
   }
