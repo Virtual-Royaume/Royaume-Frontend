@@ -1,6 +1,6 @@
 import type { Component } from "#/lib/utils/component";
 import type { MemberLayoutProps } from "./layout.type";
-import type { Member } from "#/lib/configs/members/members.type";
+import type { Member } from "#/lib/configs/member/member.type";
 import type { Link } from "#/lib/components/atoms/little-navbar/little-navbar.type";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -9,7 +9,7 @@ import { BsDiscord, BsGithub, BsLink45Deg, BsLinkedin, BsTwitter } from "react-i
 import { dayJS } from "#/lib/utils/day-js";
 import { Heading } from "#/lib/components/atoms/texts/heading";
 import { Text } from "#/lib/components/atoms/texts";
-import { members } from "#/lib/configs/members";
+import { members } from "#/lib/configs/member";
 import { LittleNavbar } from "#/lib/components/atoms/little-navbar";
 import { Button } from "#/lib/components/atoms/button/cta";
 import { MemberProvider } from "./member-provider";

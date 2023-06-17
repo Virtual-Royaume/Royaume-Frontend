@@ -1,9 +1,9 @@
 "use client";
 
-import type { Member } from "#/lib/configs/members/members.type";
+import type { Member } from "#/lib/configs/member/member.type";
 import { useState, type ReactElement } from "react";
 import { MemberCard } from "#/lib/components/atoms/cards/member-card";
-import { members } from "#/lib/configs/members";
+import { members } from "#/lib/configs/member";
 import { Pagination } from "#/lib/components/molecules/pagination/pagination";
 
 export const MembersGrid = (): ReactElement => {
