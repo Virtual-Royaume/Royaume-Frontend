@@ -14,6 +14,18 @@ semper, vulputate felis.
  - Deuxième
  - Troisième
 
+# Blockquote
+> Lorem ipsum
+
+# Links
+[Join the Royaume Discord](https://royaume.world/discord)
+
+# Strong
+This is a **strong** text
+
+# Italic
+This is an *italic* text
+
 # Code
 \`\`\`ts
 import type { Component } from "#/lib/utils/component";
@@ -38,18 +50,6 @@ export const MDHeading: Component<MDHeadingProps> = ({ text, depth }) => {
   return <h4 className={clsx(styles, "mt-2")}>{text}</h4>;
 };
 \`\`\`
-
-# Blockquote
-> Lorem ipsum
-
-# Links
-[Join the Royaume Discord](https://royaume.world/discord)
-
-# Strong
-This is a **strong** text
-
-# Italic
-This is an *italic* text
 
 # Image
 ![Royaume Banner](/images/banner.png)

@@ -39,7 +39,7 @@ const BlogPostPage: Component<BlogPostPageProps> = ({ params }) => {
     .map((title) => title.substring(2));
 
   return (
-    <div className="mt-28 container grid grid-cols-[1fr_18rem] gap-10">
+    <div className="mt-28 container grid lg:grid-cols-[1fr_16rem] xl:grid-cols-[1fr_20rem] gap-10">
       <div>
         <div className="relative mx-auto lg:w-4/6 aspect-video">
           <Image src={post.thumbnail} alt="Post Thumbnail" fill className="object-cover rounded" />
@@ -51,7 +51,7 @@ const BlogPostPage: Component<BlogPostPageProps> = ({ params }) => {
           <Markdown source={markdown} />
         </div>
       </div>
-      <div>
+      <div className="-order-1 lg:order-1">
         <ContentTable items={titles} />
       </div>
     </div>

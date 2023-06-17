@@ -33,7 +33,7 @@ export const MarkdownElement: Component<MarkdownElementProps> = ({ element, pare
       }
 
       if (element.type === "image") {
-        return <img src={element.url} alt={element.alt ?? ""} className="max-w-3xl mx-auto my-10 rounded" />;
+        return <img src={element.url} alt={element.alt ?? ""} className="lg:max-w-3xl mx-auto my-10 rounded" />;
       }
 
       if (element.type === "text") {

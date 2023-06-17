@@ -20,7 +20,7 @@ export const MDCode: Component<MDCodeProps> = ({ lang, value }) => {
 
   return (
     <pre>
-      <code className={styles}>{value}</code>
+      <code className={clsx(styles, "whitespace-pre-wrap")}>{value}</code>
     </pre>
   );
 };

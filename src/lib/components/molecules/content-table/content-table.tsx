@@ -5,8 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import type { ContentTableProps } from "./content-table.type";
 import clsx from "clsx";
 import { findClosestValue } from "#/lib/utils/array";
+import { IoIosArrowUp } from "react-icons/io";
 
 export const ContentTable: Component<ContentTableProps> = ({ items }) => {
+  const [isCtOpen, setIsCtOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(0);
   const itemsContainerRef = useRef<HTMLDivElement | null>(null);
   const linkPointerRef = useRef<HTMLSpanElement | null>(null);
@@ -21,24 +23,24 @@ export const ContentTable: Component<ContentTableProps> = ({ items }) => {
   };
 
   const scrollToTitle = (title: string): void => {
-    const elements = Array.from(document.querySelectorAll("h1, h2"));
+    const elements = Array.from(document.querySelectorAll<HTMLElement>("h1, h2"));
     const match = elements.find((el) => {
-      return el.textContent?.toLowerCase().includes(title.toLowerCase());
+      return  el.textContent?.toLowerCase().includes(title.toLowerCase());
     });
 
     if (!match) return;
 
-    match.scrollIntoView({ block: "center" });
+    window.scroll(0, match.offsetTop - 100);
   };
 
   useEffect(() => {
-    const elements = Array.from(document.querySelectorAll("h1, h2"));
+    const elements = Array.from(document.querySelectorAll<HTMLElement>("h1, h2"));
     const usedElements = elements.filter((el) => {
       return items.some((itemEl) => itemEl.toLowerCase() === el.textContent?.toLowerCase());
-    }) as HTMLElement[];
+    });
 
     const onScroll = (): void => {
-      const closestElement = findClosestValue(usedElements, (window.scrollY + 110));
+      const closestElement = findClosestValue(usedElements, (window.scrollY + 115));
       if (!closestElement) return;
 
       const index = items.findIndex((item) => item.toLowerCase() === closestElement.textContent?.toLowerCase());
@@ -55,11 +57,31 @@ export const ContentTable: Component<ContentTableProps> = ({ items }) => {
   }, []);
 
   return (
-    <div className="relative rounded sticky top-20 py-4 pr-4 pl-8 bg-background-card">
-      <p className="text-white font-medium text-lg">Table des matières</p>
-      <div className="mt-2">
-        <span className="absolute bg-purple rounded-full w-1 h-4 mt-1 transition-transform left-4" ref={linkPointerRef} />
-        <div className="grid gap-1" ref={itemsContainerRef}>
+    <div className="relative rounded sticky top-20 py-4 pr-4 pl-8 bg-background-card scroll-pt-48">
+      <div className="flex items-center justify-between">
+        <p className="text-white font-medium text-lg">Table des matières</p>
+        <IoIosArrowUp className={clsx(
+          "text-white h-5 w-5 lg:hidden transition-transform",
+          {
+            "rotate-180": isCtOpen
+          }
+        )} onClick={() => setIsCtOpen((state) => !state)} />
+      </div>
+      <div className={clsx(
+        "lg:max-h-96 overflow-hidden transition-[max-height]",
+        {
+          "max-h-0": !isCtOpen,
+          "max-h-96": isCtOpen
+        }
+      )}>
+        <span className={clsx(
+          "absolute bg-purple rounded-full w-1 h-4 mt-3 transition-transform left-4 lg:opacity-100 transition-opacity",
+          {
+            "opacity-0": !isCtOpen,
+            "opacity-100": isCtOpen
+          }
+        )} ref={linkPointerRef} />
+        <div className="grid gap-1 pt-2" ref={itemsContainerRef}>
           {items.map((item, i) => (
             <p key={i} onClick={() => handleScrollItem(i, item)}
               className={clsx(
