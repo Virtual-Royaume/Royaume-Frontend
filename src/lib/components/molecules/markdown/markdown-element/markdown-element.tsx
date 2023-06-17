@@ -2,7 +2,9 @@ import { Text } from "#/lib/components/atoms/texts";
 import type { Component } from "#/lib/utils/component";
 import Link from "next/link";
 import type { MarkdownElementProps } from "./markdown-element.type";
-import { MDHeading } from "../elements/md-heading/md-heading";
+import { MDHeading } from "../elements/md-heading";
+import clsx from "clsx";
+import { MDCode } from "../elements/md-code";
 
 export const MarkdownElement: Component<MarkdownElementProps> = ({ element, parent = null }) => {
   if (parent) {
@@ -11,7 +13,10 @@ export const MarkdownElement: Component<MarkdownElementProps> = ({ element, pare
     }
 
     if (parent.type === "blockquote" && element.type === "paragraph" && element.children[0].type === "text") {
-      return <p>{element.children[0].value}</p>;
+      return <Text className={clsx(
+        "relative pl-4 italic my-4",
+        "before:content-[''] before:absolute before:h-full before:w-1 before:bg-purple before:left-0"
+      )}>{element.children[0].value}</Text>;
     }
 
     if (parent.type === "paragraph") {
@@ -55,25 +60,29 @@ export const MarkdownElement: Component<MarkdownElementProps> = ({ element, pare
     }
 
     return <Text>ERROR : Unsupported element</Text>;
-  } else {
-    if (element.type === "thematicBreak") {
-      return <hr />;
-    }
-
-    if (element.type === "heading" || element.type === "blockquote") {
-      return <MarkdownElement parent={element} element={element.children[0]} />;
-    }
-
-    if (element.type === "paragraph") {
-      return (
-        <p className="text-white-desc">
-          {element.children.map((child, i) => (
-            <MarkdownElement key={i} parent={element} element={child} />
-          ))}
-        </p>
-      );
-    }
-
-    return <Text>ERROR : Unsupported element</Text>;
   }
+
+  if (element.type === "thematicBreak") {
+    return <hr />;
+  }
+
+  if (element.type === "heading" || element.type === "blockquote") {
+    return <MarkdownElement parent={element} element={element.children[0]} />;
+  }
+
+  if (element.type === "paragraph") {
+    return (
+      <p className="text-white-desc">
+        {element.children.map((child, i) => (
+          <MarkdownElement key={i} parent={element} element={child} />
+        ))}
+      </p>
+    );
+  }
+
+  if (element.type === "code") {
+    return <MDCode lang={element.lang} value={element.value} />;
+  }
+
+  return <Text>ERROR : Unsupported element</Text>;
 };

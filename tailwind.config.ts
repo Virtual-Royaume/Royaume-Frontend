@@ -7,7 +7,8 @@ export default {
 
   theme: {
     fontFamily: {
-      "sans": ["Inter", "sans-serif"]
+      "sans": ["Inter", "sans-serif"],
+      "code": ["Source Code Pro", "sans-serif"]
     },
 
     colors: {
