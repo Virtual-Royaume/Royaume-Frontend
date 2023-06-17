@@ -85,9 +85,10 @@ export const ContentTable: Component<ContentTableProps> = ({ items }) => {
           {items.map((item, i) => (
             <p key={i} onClick={() => handleScrollItem(i, item)}
               className={clsx(
-                "text-white-desc cursor-pointer hover:text-purple w-fit",
+                "cursor-pointer hover:text-purple w-fit",
                 {
-                  "text-purple": i === activeItem
+                  "text-purple": i === activeItem,
+                  "text-white-desc": i !== activeItem
                 }
               )}>
               {item}
