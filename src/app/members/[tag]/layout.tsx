@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { FaPaperPlane } from "react-icons/fa";
 import { BsDiscord, BsGithub, BsLink45Deg, BsLinkedin, BsTwitter } from "react-icons/bs";
-import { DayJS } from "#/lib/utils/day-js";
+import { dayJS } from "#/lib/utils/day-js";
 import { Heading } from "#/lib/components/atoms/texts/heading";
 import { Text } from "#/lib/components/atoms/texts";
 import { members } from "#/lib/configs/members";
@@ -63,7 +63,7 @@ const MemberLayout: Component<MemberLayoutProps> = ({ params, children }) => {
 
   return (
     <div className="container mt-28">
-      {DayJS(member.birthday).day() === DayJS().day() && DayJS(member.birthday).month() === DayJS().month() && (
+      {dayJS(member.birthday).day() === dayJS().day() && dayJS(member.birthday).month() === dayJS().month() && (
         <div className="absolute left-0 right-0 -top-64 h-[100rem] w-screen opacity-10">
           <Image src="/images/garlands.png" alt="Birthday garlands" fill className="object-contain" />
         </div>
@@ -79,9 +79,9 @@ const MemberLayout: Component<MemberLayoutProps> = ({ params, children }) => {
             <Heading type="h1" className="font-bold">{member.username}</Heading>
             {member.birthday && (
               <div className="flex items-center gap-2 mt-1">
-                <Text>{DayJS().diff(member.birthday, "year", false)} ans</Text>
+                <Text>{dayJS().diff(member.birthday, "year", false)} ans</Text>
                 <Text>·</Text>
-                <Text>{DayJS(member.birthday).format("D MMMM YYYY")}</Text>
+                <Text>{dayJS(member.birthday).format("D MMMM YYYY")}</Text>
               </div>
             )}
           </div>

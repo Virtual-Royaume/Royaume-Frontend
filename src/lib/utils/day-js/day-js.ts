@@ -9,4 +9,5 @@ dayjs.locale(locale);
 
 dayjs.tz.setDefault("Europe/Paris");
 
-export const DayJS = dayjs;
+export const dayJS = dayjs;
+export { Dayjs } from "dayjs";

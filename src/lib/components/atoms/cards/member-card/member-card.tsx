@@ -1,7 +1,7 @@
 import type { Component } from "#/lib/utils/component";
 import type { MemberCardProps } from "./member-card.type";
 import { CiLocationOn } from "react-icons/ci";
-import { DayJS } from "#/lib/utils/day-js";
+import { dayJS } from "#/lib/utils/day-js";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -23,7 +23,7 @@ export const MemberCard: Component<MemberCardProps> = ({ tag, username, profileP
 
           {birthday && (
             <p className="text-white-desc text-xs whitespace-nowrap">
-              {DayJS().diff(birthday, "year", false)} ans
+              {dayJS().diff(birthday, "year", false)} ans
             </p>
           )}
         </div>
