@@ -1,9 +1,10 @@
 import type { Component } from "#/lib/utils/component";
+import type { DropdownProps } from "./dropdown.type";
 import { clsx } from "clsx";
 import { useState } from "react";
-import type { DropdownProps } from "./dropdown.type";
+import Image from "next/image";
 
-export const Dropdown: Component<DropdownProps> = ({ children, items }) => {
+export const Dropdown: Component<DropdownProps> = ({ label, icon, iconSize, children }) => {
   const [toggled, setToggled] = useState(false);
 
   const dropdownButtonClasses = clsx(
@@ -21,21 +22,13 @@ export const Dropdown: Component<DropdownProps> = ({ children, items }) => {
   return (
     <div className="relative inline-block text-left">
       <button type="button" className={dropdownButtonClasses}onClick={() => setToggled(!toggled)}>
-        {children}
+        {icon && <Image src={icon} alt="icon" width={iconSize ?? 32} height={iconSize} />}
+        <span className="text-white-desc">{label}</span>
       </button>
 
       <div className={dropdownMenuClasses}>
         <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-          {items.map((item) => (
-            <a
-              key={item.name}
-              href="https://google.com"
-              className="block px-4 py-2 text-sm text-white-desc hover:bg-background-card-hover hover:text-gray-900"
-              role="menuitem"
-            >
-              {item.name}
-            </a>
-          ))}
+          {children}
         </div>
       </div>
     </div>

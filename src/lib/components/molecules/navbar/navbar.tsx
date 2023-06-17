@@ -11,9 +11,10 @@ import { Hamburger } from "#/lib/components/atoms/hamburger";
 import { links } from "#/lib/configs/navbar";
 import { BsDiscord } from "react-icons/bs";
 import { members } from "#/lib/configs/members";
+import { Dropdown, DropdownButton, DropdownLink, DropdownSeparator } from "#/lib/components/atoms/dropdown/profile";
 import Image from "next/image";
 import Link from "next/link";
-import { Dropdown } from "#/lib/components/atoms/dropdown/profile";
+import { FaSignOutAlt } from "react-icons/fa";
 
 export const Navbar = (): ReactElement => {
   const [isOpen, setIsOpen] = useState(true);
@@ -78,11 +79,16 @@ export const Navbar = (): ReactElement => {
           ))}
 
           {connected ? (
-            <Dropdown items={[
-              { name: "Profil", href: "/profile" }
-            ]}>
-              <Image src={members[0].profilePicture} alt="avatar" width={32} height={32} className="rounded-full" />
-              <span className="text-white">{members[0].username}</span>
+            <Dropdown label={members[0].username} icon={members[0].profilePicture} iconSize={32}>
+              <DropdownLink href="https://royaume.world/discord" className="hover:text-discord">
+                <BsDiscord /> Rejoindre le discord
+              </DropdownLink>
+
+              <DropdownSeparator />
+
+              <DropdownButton className="hover:text-danger">
+                <FaSignOutAlt /> Se déconnecter
+              </DropdownButton>
             </Dropdown>
           ) : (
             <button className="bg-discord rounded px-4 py-2 flex items-center space-x-2 text-white gap-3" onClick={() => setConnected(true)}>

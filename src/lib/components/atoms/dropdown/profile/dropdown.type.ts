@@ -1,19 +1,21 @@
 import type { PropsWithChildren } from "react";
 
-export type DropdownItemLink = {
-  name: string;
-  icon?: string;
+export type DropdownItemLink = PropsWithChildren & {
   href?: string;
+  className?: string;
 };
 
-export type DropdownItemButton = {
-  name: string;
-  icon?: string;
+export type DropdownItemButton = PropsWithChildren & {
+  className?: string;
   onClick?: () => void;
 };
 
-export type Item = DropdownItemLink | DropdownItemButton;
+export type DropdownSeparator = {
+  className?: string;
+};
 
-export type DropdownProps = PropsWithChildren<{
-  items: Item[];
-}>;
+export type DropdownProps = PropsWithChildren & {
+  label: string;
+  icon?: string;
+  iconSize?: number;
+};
