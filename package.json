@@ -12,7 +12,8 @@
     "sb:dev": "storybook dev -p 6006",
     "sb:build": "storybook build",
     "sb:start": "serve storybook-static",
-    "ts:check": "tsc --noEmit"
+    "ts:check": "tsc --noEmit",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.1.1",
