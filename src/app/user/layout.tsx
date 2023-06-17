@@ -47,15 +47,6 @@ const MemberLayout: Component<MemberEditionLayoutProps> = ({ children }) => {
       "2021 à 14h00 à l'ENSIIE de Strasbourg. Répond moi si tu es intéressé."].join(" "), date: 1365003720000 },
     { author: 36, content: [
       "Ceci est un message de test pour voir si le système de message fonctionne correctement.",
-      "Si tu reçois ce message c'est que tout fonctionne correctement."].join(" "), date: 1160667720000 },
-    { author: 1, content: [
-      "Je suis en train de faire une nouvelle fonctionnalité sur le site et j'ai",
-      "besoins d'un développeur talentueux qui pourrait répondre à mon besoin ainsi qu'à mes attentes."].join(" "), date: 1387906920000 },
-    { author: 29, content: [
-      "Salut ceci est une invitation pour intégrer le salon de l'ingénieurie qui ce déroulera le 12 octobre",
-      "2021 à 14h00 à l'ENSIIE de Strasbourg. Répond moi si tu es intéressé."].join(" "), date: 1365003720000 },
-    { author: 36, content: [
-      "Ceci est un message de test pour voir si le système de message fonctionne correctement.",
       "Si tu reçois ce message c'est que tout fonctionne correctement."].join(" "), date: 1160667720000 }
   ];
 
@@ -146,7 +137,7 @@ const MemberLayout: Component<MemberEditionLayoutProps> = ({ children }) => {
                   <p className="text-white-desc">
                     Vous n&apos;avez pas encore de messages dans votre boîte de réception.
                   </p>
-                ) || (lastMessages.slice(0, 3).length - 3) > 0 && (
+                ) || lastMessages.length - 3 > 0 && (
                   <div className={clsx(
                     "flex items-center justify-between text-white-desc opacity-50 hover:opacity-100 hover:bg-background-card-hover rounded p-2"
                   )}>
