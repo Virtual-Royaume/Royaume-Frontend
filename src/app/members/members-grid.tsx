@@ -4,7 +4,7 @@ import type { Member } from "#/lib/configs/member/member.type";
 import { useState, type ReactElement } from "react";
 import { MemberCard } from "#/lib/components/atoms/cards/member-card";
 import { members } from "#/lib/configs/member";
-import { Pagination } from "#/lib/components/molecules/pagination/pagination";
+import { Pagination } from "#/lib/components/atoms/pagination/pagination";
 
 export const MembersGrid = (): ReactElement => {
   const itemPerPages = 12;
