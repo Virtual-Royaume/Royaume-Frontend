@@ -80,13 +80,13 @@ export const Navbar = (): ReactElement => {
 
           {connected ? (
             <Dropdown label={members[0].username} icon={members[0].profilePicture} iconSize={32}>
-              <DropdownLink href="https://royaume.world/discord" className="hover:text-discord">
+              <DropdownLink href="https://royaume.world/discord" className="hover:text-discord" target="_blank">
                 <BsDiscord /> Rejoindre le discord
               </DropdownLink>
 
               <DropdownSeparator />
 
-              <DropdownButton className="hover:text-danger">
+              <DropdownButton className="hover:text-danger" onClick={() => setConnected(false)}>
                 <FaSignOutAlt /> Se déconnecter
               </DropdownButton>
             </Dropdown>

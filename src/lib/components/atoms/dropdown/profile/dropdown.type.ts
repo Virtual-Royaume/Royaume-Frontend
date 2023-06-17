@@ -1,11 +1,11 @@
-import type { PropsWithChildren } from "react";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, PropsWithChildren } from "react";
 
-export type DropdownItemLink = PropsWithChildren & {
-  href?: string;
+export type DropdownItemLink = PropsWithChildren & AnchorHTMLAttributes<HTMLAnchorElement> & {
+  href: string;
   className?: string;
 };
 
-export type DropdownItemButton = PropsWithChildren & {
+export type DropdownItemButton = PropsWithChildren & ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string;
   onClick?: () => void;
 };

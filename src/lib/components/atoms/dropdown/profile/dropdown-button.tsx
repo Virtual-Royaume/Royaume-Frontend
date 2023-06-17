@@ -2,7 +2,7 @@ import type { Component } from "#/lib/utils/component";
 import clsx from "clsx";
 import type { DropdownItemButton } from "./dropdown.type";
 
-export const DropdownButton: Component<DropdownItemButton> = ({ className, children }) => {
+export const DropdownButton: Component<DropdownItemButton> = ({ className, children, ...props }) => {
   return (
     <button
       type="button"
@@ -12,6 +12,7 @@ export const DropdownButton: Component<DropdownItemButton> = ({ className, child
         className ?? ""
       )}
       role="menuitem"
+      {...props}
     >
       {children}
     </button>
