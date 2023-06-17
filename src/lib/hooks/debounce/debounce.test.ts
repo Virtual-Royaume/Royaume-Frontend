@@ -46,12 +46,12 @@ describe("useDebounce", () => {
   });
 });
 
-function mockSetTimeout(): void {
+export const mockSetTimeout = (): void => {
   vitest.useFakeTimers();
   vitest.spyOn(global, "setTimeout");
-}
+};
 
-function mockClearTimeout(): void {
+export const mockClearTimeout = (): void => {
   vitest.useFakeTimers();
   vitest.spyOn(global, "clearTimeout");
-}
+};
