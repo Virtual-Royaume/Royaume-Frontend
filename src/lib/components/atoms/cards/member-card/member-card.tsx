@@ -7,8 +7,12 @@ import Link from "next/link";
 
 export const MemberCard: Component<MemberCardProps> = ({ tag, username, profilePicture, birthday, technologies, location }) => {
   return (
-    <Link href={`/members/${tag}`}
-      className="bg-background-card hover:bg-background-card-hover p-3 rounded w-full flex gap-5 transition-all duration-200">
+    <Link
+      href={`/members/${tag}`}
+      className="bg-background-card hover:bg-background-card-hover p-3 rounded w-full flex gap-5 transition-all duration-200"
+      role="listitem"
+      aria-label={`${username} member`}
+    >
       <div className="relative h-24 aspect-square flex items-center gap-2">
         <Image src={profilePicture} alt="crown" fill className="rounded" />
       </div>
