@@ -1,11 +1,12 @@
 "use client";
 
 import type { Component } from "#/lib/utils/component";
-import { useEffect, useRef, useState } from "react";
 import type { ContentTableProps } from "./content-table.type";
+import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { findClosestValue } from "#/lib/utils/array";
 import { IoIosArrowUp } from "react-icons/io";
+import { ContentTableItem } from "./content-table-item";
 
 export const ContentTable: Component<ContentTableProps> = ({ items }) => {
   const [isCtOpen, setIsCtOpen] = useState(false);
@@ -83,16 +84,11 @@ export const ContentTable: Component<ContentTableProps> = ({ items }) => {
         )} ref={linkPointerRef} />
         <div className="grid gap-1 pt-2" ref={itemsContainerRef}>
           {items.map((item, i) => (
-            <p key={i} onClick={() => handleScrollItem(i, item)}
-              className={clsx(
-                "cursor-pointer hover:text-purple w-fit",
-                {
-                  "text-purple": i === activeItem,
-                  "text-white-desc": i !== activeItem
-                }
-              )}>
-              {item}
-            </p>
+            <ContentTableItem
+              key={i}
+              handleClick={() => handleScrollItem(i, item)}
+              item={item}
+              active={i === activeItem} />
           ))}
         </div>
       </div>

@@ -76,11 +76,11 @@ export const MarkdownElement: Component<MarkdownElementProps> = ({ element, pare
 
   if (element.type === "paragraph") {
     return (
-      <p className="text-white-desc">
+      <Text className="text-white-desc">
         {element.children.map((child, i) => (
           <MarkdownElement key={i} parent={element} element={child} />
         ))}
-      </p>
+      </Text>
     );
   }
 
