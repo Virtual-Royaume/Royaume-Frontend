@@ -34,7 +34,9 @@ export default {
           hover: "#1E1E1F"
         },
         info: "#1E1E1F"
-      }
+      },
+
+      links: "#69B0EB"
     },
 
     borderRadius: {

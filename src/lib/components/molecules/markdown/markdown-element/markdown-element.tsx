@@ -29,7 +29,11 @@ export const MarkdownElement: Component<MarkdownElementProps> = ({ element, pare
       }
 
       if (element.type === "link" && element.children[0].type === "text") {
-        return <Link href={element.url} target="_blank">{element.children[0].value}</Link>;
+        return <Link href={element.url} target="_blank" className="text-links hover:underline">{element.children[0].value}</Link>;
+      }
+
+      if (element.type === "image") {
+        return <img src={element.url} alt={element.alt} className="max-w-3xl mx-auto my-10 rounded" />;
       }
 
       if (element.type === "text") {
@@ -45,9 +49,9 @@ export const MarkdownElement: Component<MarkdownElementProps> = ({ element, pare
           {element.children.map((child, i) => {
             if (child.type === "paragraph") {
               return (
-                <div key={i}>
+                <li key={i}>
                   <MarkdownElement element={child} />
-                </div>
+                </li>
               );
             }
 
@@ -77,6 +81,20 @@ export const MarkdownElement: Component<MarkdownElementProps> = ({ element, pare
           <MarkdownElement key={i} parent={element} element={child} />
         ))}
       </p>
+    );
+  }
+
+  if (element.type === "list") {
+    const listStyle = clsx(" ml-6 text-white-desc", {
+      "list-descimal": element.ordered,
+      "list-disc": !element.ordered
+    });
+    return (
+      <ul className={listStyle}>
+        {element.children.map((child, i) => (
+          <MarkdownElement key={i} parent={element} element={child} />
+        ))}
+      </ul>
     );
   }
 

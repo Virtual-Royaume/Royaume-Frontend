@@ -5,7 +5,7 @@ import { MarkdownElement } from "./markdown-element";
 
 export const Markdown: Component<MarkdownProps> = ({ source }) => {
   const markdownTree = fromMarkdown(source).children;
-
+  console.log(markdownTree);
   return (
     <div>
       {markdownTree.map((element, i) => (
