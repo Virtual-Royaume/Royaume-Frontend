@@ -8,6 +8,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { Markdown } from "#/lib/components/molecules/markdown";
 import { markdown } from "./page.util";
+import { ContentTable } from "#/lib/components/molecules/content-table";
 
 const getPost = (slug: string): BlogPost | null => {
   return posts.find((post) => post.slug === slug) ?? null;
@@ -33,8 +34,12 @@ const BlogPostPage: Component<BlogPostPageProps> = ({ params }) => {
   const post = getPost(params.slug);
   if (!post) notFound();
 
+  const titles = (markdown.match(/#.+/g) ?? [])
+    .filter((title) => title.startsWith("# "))
+    .map((title) => title.substring(2));
+
   return (
-    <div className="mt-28 container grid grid-cols-[1fr_20rem] gap-10">
+    <div className="mt-28 container grid grid-cols-[1fr_18rem] gap-10">
       <div>
         <div className="relative mx-auto lg:w-4/6 aspect-video">
           <Image src={post.thumbnail} alt="Post Thumbnail" fill className="object-cover rounded" />
@@ -47,9 +52,7 @@ const BlogPostPage: Component<BlogPostPageProps> = ({ params }) => {
         </div>
       </div>
       <div>
-        <div className="h-40 bg-background-card rounded p-4 sticky top-20">
-          <p className="text-white font-medium">Table des matières</p>
-        </div>
+        <ContentTable items={titles} />
       </div>
     </div>
   );
