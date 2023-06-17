@@ -1,3 +1,8 @@
-import { classed } from "@tw-classed/react";
+import type { Component } from "#/lib/utils/component";
+import type { TextProps } from "./text.type";
 
-export const Text = classed.p("text-white-desc");
+export const Text: Component<TextProps> = ({ className, children, ...props }) => {
+  return (
+    <p className={className} {...props}>{children}</p>
+  );
+};
