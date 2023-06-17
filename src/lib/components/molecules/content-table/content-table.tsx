@@ -57,7 +57,7 @@ export const ContentTable: Component<ContentTableProps> = ({ items }) => {
   }, []);
 
   return (
-    <div className="relative rounded sticky top-20 py-4 pr-4 pl-8 bg-background-card scroll-pt-48">
+    <div className="relative rounded sticky top-20 py-4 pr-4 pl-8 bg-background-card">
       <div className="flex items-center justify-between">
         <p className="text-white font-medium text-lg">Table des matières</p>
         <IoIosArrowUp className={clsx(
