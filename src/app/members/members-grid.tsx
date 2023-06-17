@@ -54,7 +54,7 @@ export const MembersGrid = (): ReactElement => {
         )}
       </div>
 
-      <div className="grid md:grid-cols-members-cards gap-5 mb-14">
+      <div aria-label="members list" role="list" className="grid md:grid-cols-members-cards gap-5 mb-14">
         {membersData.sort((a, b) => a.username < b.username ? -1 : 1).map((member) => (
           <MemberCard key={member.username} {...member} />
         ))}
