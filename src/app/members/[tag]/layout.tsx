@@ -135,8 +135,13 @@ const MemberLayout: Component<MemberLayoutProps> = ({ params, children }) => {
                 )}
 
                 {member.canBeContacted && (
-                  <div>
-                    <hr className="border-white border-opacity-10 border-t-1" />
+                  <div className="mt-2">
+                    <div className="flex items-center gap-2 text-white-desc">
+                      <hr className="w-full" />
+                      <p>ou</p>
+                      <hr className="w-full" />
+                    </div>
+
                     <div className="mt-3 grid gap-1">
                       <Button className="w-full justify-center">
                         <FaPaperPlane />
