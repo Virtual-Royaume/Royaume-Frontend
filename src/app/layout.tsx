@@ -15,7 +15,7 @@ const RootLayout: Component<PropsWithChildren> = ({ children }) => {
         <Navbar />
         <div className="mt-16">
           {children}
-          <Footer />
+          <Footer className="mt-28" />
         </div>
       </body>
     </html>
