@@ -26,7 +26,7 @@ export const PaginationItem: Component<PaginationItemProps> = ({ page, active, h
   return (
     <button
       aria-label={isArrow ? `${page} page` : `page ${page}`}
-      aria-current={active ? "page" : undefined}
+      aria-current={!isArrow && active ? "page" : undefined}
 
       className={isArrow ? arrowStyles : pageStyles}
 
