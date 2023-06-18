@@ -25,7 +25,7 @@ export const Navbar: Component<NavbarProps> = ({ className }) => {
 
   // Styles:
   const baseStyles = clsx(
-    "fixed top-0 right-0 left-0 z-50 bg-background-header backdrop-blur-2xl",
+    "bg-background-header backdrop-blur-2xl w-screen",
     className
   );
 
