@@ -29,7 +29,7 @@ export const MarkdownElement: Component<MarkdownElementProps> = ({ element, pare
       }
 
       if (element.type === "link" && element.children[0].type === "text") {
-        return <Link href={element.url} target="_blank" className="text-links hover:underline">{element.children[0].value}</Link>;
+        return <Link href={element.url} target="_blank" className="text-link hover:underline">{element.children[0].value}</Link>;
       }
 
       if (element.type === "image") {

@@ -36,7 +36,7 @@ export default {
         info: "#1E1E1F"
       },
 
-      links: "#69B0EB"
+      link: "#69B0EB"
     },
 
     borderRadius: {
