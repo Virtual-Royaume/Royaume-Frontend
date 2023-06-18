@@ -5,10 +5,15 @@ import type { ReactElement } from "react";
 import { useState, useEffect } from "react";
 import { MemberCard } from "#/lib/components/atoms/cards/member-card";
 import { members } from "#/lib/configs/member";
-import { Pagination } from "#/lib/components/atoms/pagination/pagination";
+import { Pagination } from "#/lib/components/atoms/pagination";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 export const MembersGrid = (): ReactElement => {
   const itemPerPages = 12;
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   const [membersData, setMembersData] = useState<Member[]>(members.slice(0, itemPerPages));
   const [currentPage, setCurrentPage] = useState(1);
@@ -16,6 +21,12 @@ export const MembersGrid = (): ReactElement => {
   useEffect(() => {
     setCurrentPage(currentPage);
     setMembersData(members.slice((currentPage - 1) * itemPerPages, itemPerPages * currentPage));
+
+    // Update query param:
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("page", String(currentPage));
+
+    router.push(`${pathname}?${params.toString()}`);
   }, [currentPage]);
 
   const [search, setSearch] = useState("");

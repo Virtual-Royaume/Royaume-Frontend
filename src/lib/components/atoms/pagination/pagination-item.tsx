@@ -31,7 +31,6 @@ export const PaginationItem: Component<PaginationItemProps> = ({ page, active, h
       className={isArrow ? arrowStyles : pageStyles}
 
       onClick={() => handlePageChange(page)}
-      onAuxClick={() => handlePageChange(page)}
 
       disabled={active}
     >
