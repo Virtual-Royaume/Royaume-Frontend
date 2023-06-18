@@ -1,12 +1,12 @@
 import type { Component } from "#/lib/utils/component";
+import { twMerge } from "tailwind-merge";
 import type { HeadingProps } from "./heading.type";
 import { clsx } from "clsx";
 
-export const Heading: Component<HeadingProps> = ({ type, className, children }) => {
+export const Heading: Component<HeadingProps> = ({ type, className, children, ...props }) => {
   const Tag = type;
 
   const styles = clsx(
-    className,
     "text-white",
     {
       "text-5xl": type === "h1",
@@ -14,5 +14,5 @@ export const Heading: Component<HeadingProps> = ({ type, className, children }) 
     }
   );
 
-  return <Tag className={styles}>{children}</Tag>;
+  return <Tag className={twMerge(styles, className)} {...props}>{children}</Tag>;
 };
