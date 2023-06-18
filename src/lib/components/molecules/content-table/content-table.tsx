@@ -2,7 +2,7 @@
 
 import type { Component } from "#/lib/utils/component";
 import type { ContentTableProps } from "./content-table.type";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { IoIosArrowUp } from "react-icons/io";
 import { ContentTableItem } from "./content-table-item";
@@ -31,24 +31,26 @@ export const ContentTable: Component<ContentTableProps> = ({ items }) => {
     window.scroll(0, match.offsetTop - 100);
   };
 
+  const onScroll = useCallback((elements: HTMLElement[]) => {
+    const closestElement = findClosestValue(elements, (window.scrollY + 115));
+    if (!closestElement) return activeItem;
+
+    const index = items.findIndex((item) => item.toLowerCase() === closestElement.textContent?.toLowerCase());
+    if (typeof index !== "number") return activeItem;
+
+    handleScrollItem(index, items[index], false);
+
+    return index;
+  }, [activeItem]);
+
   useEffect(() => {
     const elements = Array.from(document.querySelectorAll<HTMLElement>("h1, h2"));
     const usedElements = elements.filter((el) => items.some((itemEl) => itemEl.toLowerCase() === el.textContent?.toLowerCase()));
 
-    const onScroll = (): void => {
-      const closestElement = findClosestValue(usedElements, (window.scrollY + 115));
-      if (!closestElement) return;
-
-      const index = items.findIndex((item) => item.toLowerCase() === closestElement.textContent?.toLowerCase());
-      if (typeof index !== "number") return;
-
-      handleScrollItem(index, items[index], false);
-    };
-
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", () => onScroll(usedElements));
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", () => onScroll(usedElements));
     };
   }, []);
 
