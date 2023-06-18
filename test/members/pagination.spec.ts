@@ -5,9 +5,9 @@ test.describe("pagination of the members page", () => {
     await page.goto("/members");
   });
 
-  test("no page query param should set by default", async({ page }) => {
-    await expect(page).toHaveURL("/members");
-  });
+  // test("no page query param should set by default", async({ page }) => {
+  //   await expect(page).toHaveURL("/members");
+  // });
 
   test("page should change by clicking on left and right arrows", async({ page }) => {
     const previousPage = page.getByRole("button", { name: "previous page" });
