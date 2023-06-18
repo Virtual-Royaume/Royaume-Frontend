@@ -9,14 +9,20 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { Hamburger } from "#/lib/components/atoms/hamburger";
 import { links } from "#/lib/configs/navbar";
+import { BsDiscord } from "react-icons/bs";
+import { members } from "#/lib/configs/members";
+import { Dropdown, DropdownButton, DropdownLink, DropdownSeparator } from "#/lib/components/atoms/dropdown/profile";
 import Image from "next/image";
 import Link from "next/link";
+import { FaSignOutAlt } from "react-icons/fa";
 
 export const Navbar = (): ReactElement => {
   const [isOpen, setIsOpen] = useState(true);
   const isDomLoaded = useIsDomLoaded();
   const matches = useMediaQuery("(max-width: 1029px)");
   const pathname = usePathname();
+
+  const [connected, setConnected] = useState(false);
 
   // Close mobile navbar on navigation
   useEffect(() => setIsOpen(false), [pathname]);
@@ -66,10 +72,30 @@ export const Navbar = (): ReactElement => {
         <Link href="/">
           <Image src="/images/royaume-logo.png" alt="logo" width={50} height={50} />
         </Link>
-        <ul className="flex gap-10">
+
+        <ul className="flex gap-10 items-center">
           {links.map((link) => (
             <Link key={link.name} href={link.href} className="text-white">{link.name}</Link>
           ))}
+
+          {connected ? (
+            <Dropdown label={members[0].username} icon={members[0].profilePicture} iconSize={32}>
+              <DropdownLink href="https://royaume.world/discord" className="hover:text-discord" target="_blank">
+                <BsDiscord /> Rejoindre le discord
+              </DropdownLink>
+
+              <DropdownSeparator />
+
+              <DropdownButton className="hover:text-danger" onClick={() => setConnected(false)}>
+                <FaSignOutAlt /> Se déconnecter
+              </DropdownButton>
+            </Dropdown>
+          ) : (
+            <button className="bg-discord rounded px-4 py-2 flex items-center space-x-2 text-white gap-3" onClick={() => setConnected(true)}>
+              <BsDiscord />
+              Se connecter
+            </button>
+          )}
         </ul>
       </div>
     </nav>
