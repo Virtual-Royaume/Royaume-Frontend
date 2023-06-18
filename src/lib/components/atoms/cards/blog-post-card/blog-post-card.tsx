@@ -7,14 +7,14 @@ import Link from "next/link";
 
 export const BlogPostCard: Component<BlogPostCardProps> = ({ post }) => {
   return (
-    <div className="relative">
+    <div className="relative" aria-label={`${post.slug}-post`}>
       <div className="relative w-full aspect-video">
         <Image src={post.thumbnail} alt="Blog Post Thumbnail" fill className="object-cover rounded" />
       </div>
 
       <div className="mt-6">
         <div className="mb-2">
-          <Link href={`/blog/${post.slug}`} className="text-white font-medium text-xl">
+          <Link href={`/blog/${post.slug}`} className="text-white font-medium text-xl" aria-label="post-link">
             {post.title}
           </Link>
         </div>

@@ -55,30 +55,36 @@ export const ContentTable: Component<ContentTableProps> = ({ items }) => {
   }, []);
 
   return (
-    <div className="relative rounded sticky top-20 py-4 pr-4 pl-8 bg-background-card">
+    <div
+      aria-label="content-table"
+      className="relative rounded sticky top-20 py-4 pr-4 pl-8 bg-background-card">
       <div className="flex items-center justify-between">
         <p className="text-white font-medium text-lg">Table des matières</p>
-        <IoIosArrowUp className={clsx(
-          "text-white h-5 w-5 lg:hidden transition-transform", {
-            "rotate-180": isCtOpen
-          }
-        )} onClick={() => setIsCtOpen((state) => !state)} />
+        <IoIosArrowUp
+          aria-label="toggle-button"
+          aria-expanded={isCtOpen ? "true" : "false"}
+          className={clsx(
+            "text-white h-5 w-5 lg:hidden transition-transform", {
+              "rotate-180": isCtOpen
+            }
+          )}
+          onClick={() => setIsCtOpen((state) => !state)} />
       </div>
-      <div className={clsx(
-        "lg:max-h-96 overflow-hidden transition-[max-height]", {
-          "max-h-0": !isCtOpen,
-          "max-h-96": isCtOpen
-        }
-      )}>
+      <div
+        aria-label="content-table-items"
+        className={clsx(
+          "lg:max-h-96 overflow-hidden transition-[max-height]", {
+            "max-h-0": !isCtOpen,
+            "max-h-96": isCtOpen
+          }
+        )}>
         <span className={clsx(
           "absolute bg-purple rounded-full w-1 h-4 mt-3 transition-transform left-4 lg:opacity-100 transition-opacity", {
             "opacity-0": !isCtOpen,
             "opacity-100": isCtOpen
           }
         )} ref={linkPointerRef} />
-        <div
-          aria-label="content-table"
-          className="grid gap-1 pt-2" ref={itemsContainerRef}>
+        <div className="grid gap-1 pt-2" ref={itemsContainerRef}>
           {items.map((item, i) => (
             <ContentTableItem
               key={i}
