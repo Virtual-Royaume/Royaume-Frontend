@@ -47,8 +47,9 @@ jobs:
       - name: Run Vitest
         run: pnpm run test:unit
         env: ${{ secrets }}
-  unit-test-react:
-    name: Unit tests React
+  unit-test-ui:
+    name: Unit tests UI
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -56,6 +57,20 @@ jobs:
       - uses: actions/setup-node@v3
       - name: Install dependencies
         run: pnpm install
-      - name: Run Vitest
-        run: pnpm run test:react
+      - name: Install Playwright browsers
+        run: pnpx playwright install --with-deps
+      - name: Run Playwright UI
+        run: pnpm run test:ui
         env: ${{ secrets }}
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+      - uses: actions/configure-pages@v2
+      - uses: actions/upload-pages-artifact@v1
+        with: 
+          path: playwright-report/
+      - uses: actions/deploy-pages@v1
+        id: deployment
