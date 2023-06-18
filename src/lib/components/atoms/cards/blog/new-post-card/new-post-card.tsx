@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { BsPlus } from "react-icons/bs";
+import { BsPencilSquare } from "react-icons/bs";
 import { Text } from "#/lib/components/atoms/texts";
 import { clsx } from "clsx";
 
@@ -13,7 +13,7 @@ export const NewProjectCard = (): ReactElement => {
       <>
         <div className="items-center gap-2">
           <Text className="text-white-desc text-opacity-50 text-center select-none">
-            <BsPlus className="inline-block" /> Ajouter un nouveau projet
+            <BsPencilSquare className="inline-block" /> Écrire un nouvel article
           </Text>
         </div>
       </>

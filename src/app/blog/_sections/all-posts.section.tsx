@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { BlogPostCard } from "#/lib/components/atoms/cards/blog-post-card/blog-post-card";
+import { BlogPostCard } from "#/lib/components/atoms/cards/blog/post-card/blog-post-card";
 import { getOthersPosts } from "#/lib/configs/blog";
 
 export const AllPostsSection = (): ReactElement => {
