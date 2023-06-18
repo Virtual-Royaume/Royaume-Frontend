@@ -6,7 +6,8 @@ export const NewProjectCard = (): ReactElement => {
   return (
     <div className={clsx(
       "bg-background-card hover:bg-background-card-hover p-10",
-      "rounded border-2 border-dashed border-background-card-hover hover:border-background-card transition-all duration-200"
+      "rounded border-2 border-dashed border-background-card-hover hover:border-background-card transition-all duration-200",
+      "cursor-pointer"
     )}>
       <>
         <div className="items-center gap-2">

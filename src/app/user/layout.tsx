@@ -36,18 +36,19 @@ const MemberLayout: Component<MemberEditionLayoutProps> = ({ children }) => {
     author: number;
     content: string;
     date: number;
+    by: "me" | "other";
   }
 
   const lastMessages: Message[] = [
     { author: 1, content: [
       "Je suis en train de faire une nouvelle fonctionnalité sur le site et j'ai",
-      "besoins d'un développeur talentueux qui pourrait répondre à mon besoin ainsi qu'à mes attentes."].join(" "), date: 1387906920000 },
+      "besoins d'un développeur talentueux qui pourrait répondre à mon besoin ainsi qu'à mes attentes."].join(" "), date: 1387906920000, by: "me" },
     { author: 29, content: [
       "Salut ceci est une invitation pour intégrer le salon de l'ingénieurie qui ce déroulera le 12 octobre",
-      "2021 à 14h00 à l'ENSIIE de Strasbourg. Répond moi si tu es intéressé."].join(" "), date: 1365003720000 },
+      "2021 à 14h00 à l'ENSIIE de Strasbourg. Répond moi si tu es intéressé."].join(" "), date: 1365003720000, by: "other" },
     { author: 36, content: [
       "Ceci est un message de test pour voir si le système de message fonctionne correctement.",
-      "Si tu reçois ce message c'est que tout fonctionne correctement."].join(" "), date: 1160667720000 }
+      "Si tu reçois ce message c'est que tout fonctionne correctement."].join(" "), date: 1160667720000, by: "other" }
   ];
 
   return (
@@ -69,7 +70,7 @@ const MemberLayout: Component<MemberEditionLayoutProps> = ({ children }) => {
             {member.birthday && (
               <div className="flex items-center gap-2 mt-1 text-white-desc">
                 <Text>{DayJS().diff(member.birthday, "year", false)} ans</Text>
-                <Text>·</Text>
+                <Text className="select-none">·</Text>
                 <Text>{DayJS(member.birthday).format("D MMMM YYYY")}</Text>
               </div>
             )}
@@ -121,14 +122,21 @@ const MemberLayout: Component<MemberEditionLayoutProps> = ({ children }) => {
                             {DayJS(msg.date).format("DD MMMM")}
                           </Text>
 
-                          {msg.author === 1 && (
-                            <span className="bg-purple text-white text-sm rounded-full flex items-center justify-center p-2 w-4 h-4">
-                              1
-                            </span>
+                          {msg.by === "other" && (
+                            <span className="bg-purple text-white text-sm rounded-full flex items-center justify-center p-2 w-4 h-4">1</span>
                           )}
                         </div>
                       </div>
-                      <p className="text-white-desc -mt-1 line-clamp-1">{msg.content}</p>
+
+                      <div className="flex gap-1">
+                        {msg.by === "me" && (
+                          <Text className="text-white -mt-1 opacity-80">Vous:</Text>
+                        )}
+
+                        <Text className="text-white-desc -mt-1 line-clamp-1">
+                          {msg.content}
+                        </Text>
+                      </div>
                     </div>
                   </div>
                 ))}
