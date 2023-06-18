@@ -1,6 +1,6 @@
 import type { Component } from "#/lib/utils/component";
 import type { ContentTableItemProps } from "./content-table.type";
-import clsx from "clsx";
+import { clsx } from "clsx";
 
 export const ContentTableItem: Component<ContentTableItemProps> = ({ item, active, handleClick }) => {
   return (

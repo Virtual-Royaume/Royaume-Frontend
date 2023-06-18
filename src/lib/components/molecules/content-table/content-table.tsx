@@ -3,7 +3,7 @@
 import type { Component } from "#/lib/utils/component";
 import type { ContentTableProps } from "./content-table.type";
 import { useCallback, useEffect, useRef, useState } from "react";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { IoIosArrowUp } from "react-icons/io";
 import { ContentTableItem } from "./content-table-item";
 import { findClosestValue } from "./content-table.util";

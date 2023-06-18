@@ -6,7 +6,7 @@ import type { Component } from "#/lib/utils/component";
 import type { MDCodeProps } from "./md-code.type";
 import { useEffect } from "react";
 import hljs from "highlight.js";
-import clsx from "clsx";
+import { clsx } from "clsx";
 
 export const MDCode: Component<MDCodeProps> = ({ lang, value }) => {
   useEffect(() => {

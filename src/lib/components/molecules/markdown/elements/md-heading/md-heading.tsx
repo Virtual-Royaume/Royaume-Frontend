@@ -1,5 +1,5 @@
 import type { Component } from "#/lib/utils/component";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import type { MDHeadingProps } from "./md-heading.type";
 
 export const MDHeading: Component<MDHeadingProps> = ({ text, depth }) => {

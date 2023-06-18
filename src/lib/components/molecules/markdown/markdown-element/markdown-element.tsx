@@ -3,7 +3,7 @@ import type { Component } from "#/lib/utils/component";
 import Link from "next/link";
 import type { MarkdownElementProps } from "./markdown-element.type";
 import { MDHeading } from "../elements/md-heading";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { MDCode } from "../elements/md-code";
 
 export const MarkdownElement: Component<MarkdownElementProps> = ({ element, parent = null }) => {
