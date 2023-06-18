@@ -28,6 +28,6 @@
 
   // Vitest:
   "vitest.include": [
-    "**/*.test.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"
+    "**/*.test.{js,mjs,cjs,ts,mts,cts}"
   ]
 }

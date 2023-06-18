@@ -6,11 +6,6 @@ on:
       - main
   pull_request:
     types: [opened, synchronize]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
     
 jobs:
   end-to-end:
@@ -51,4 +46,16 @@ jobs:
         run: pnpm install
       - name: Run Vitest
         run: pnpm run test:unit
+        env: ${{ secrets }}
+  unit-test-react:
+    name: Unit tests React
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v3
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run Vitest
+        run: pnpm run test:react
         env: ${{ secrets }}
