@@ -1,7 +1,7 @@
 import type { Component } from "#/lib/utils/component";
 import type { BlogPostCardProps } from "./blog-post-card.type";
 import { Text } from "../../texts";
-import { DayJS } from "#/lib/utils/day-js";
+import { dayJS } from "#/lib/utils/day-js";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -28,7 +28,7 @@ export const BlogPostCard: Component<BlogPostCardProps> = ({ post }) => {
 
           <div>
             <p className="text-white font-medium">{post.author.username}</p>
-            <p className="text-white-desc text-sm">{DayJS(post.createdAt).format("D MMMM YYYY")}</p>
+            <p className="text-white-desc text-sm">{dayJS(post.createdAt).format("D MMMM YYYY")}</p>
           </div>
         </div>
       </div>

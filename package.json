@@ -1,6 +1,6 @@
 {
   "name": "royaume-frontend",
-  "version": "0.2.0",
+  "version": "0.5.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -12,7 +12,8 @@
     "sb:dev": "storybook dev -p 6006",
     "sb:build": "storybook build",
     "sb:start": "serve storybook-static",
-    "ts:check": "tsc --noEmit"
+    "ts:check": "tsc --noEmit",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.1.1",

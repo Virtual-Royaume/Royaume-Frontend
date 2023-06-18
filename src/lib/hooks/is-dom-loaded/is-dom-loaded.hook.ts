@@ -1,6 +1,7 @@
+import type { UseIsDomLoaded } from "./is-dom-loaded.type";
 import { useEffect, useState } from "react";
 
-export const useIsDomLoaded = (): boolean => {
+export const useIsDomLoaded: UseIsDomLoaded = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {

@@ -2,7 +2,7 @@ import type { ReactElement } from "react";
 import { getLastPost } from "#/lib/configs/blog";
 import { Text } from "#/lib/components/atoms/texts";
 import { BsArrowRight } from "react-icons/bs";
-import { DayJS } from "#/lib/utils/day-js";
+import { dayJS } from "#/lib/utils/day-js";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -40,7 +40,7 @@ export const LastPostSection = (): ReactElement => {
 
             <div>
               <p className="text-white font-medium">{post.author.username}</p>
-              <p className="text-white-desc text-sm">{DayJS(post.createdAt).format("D MMMM YYYY")}</p>
+              <p className="text-white-desc text-sm">{dayJS(post.createdAt).format("D MMMM YYYY")}</p>
             </div>
           </div>
         </div>

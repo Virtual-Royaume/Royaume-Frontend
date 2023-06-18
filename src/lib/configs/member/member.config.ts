@@ -1,4 +1,4 @@
-import type { Member, Techno } from "./members.type";
+import type { Member, Techno } from "./member.type";
 
 const Svelte: Techno = { name: "Svelte", icon: "svelte.png" };
 const React: Techno = { name: "React", icon: "react.png" };
