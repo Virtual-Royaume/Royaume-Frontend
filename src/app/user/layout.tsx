@@ -1,10 +1,10 @@
 import type { Component } from "#/lib/utils/component";
 import type { MemberEditionLayoutProps } from "./layout.type";
 import type { Link } from "#/lib/components/atoms/little-navbar/little-navbar.type";
-import { DayJS } from "#/lib/utils/day-js";
+import { dayJS } from "#/lib/utils/day-js";
 import { Heading } from "#/lib/components/atoms/texts/heading";
 import { Text } from "#/lib/components/atoms/texts";
-import { members } from "#/lib/configs/members";
+import { members } from "#/lib/configs/member";
 import { LittleNavbar } from "#/lib/components/atoms/little-navbar";
 import Image from "next/image";
 import { BsArrowRight } from "react-icons/bs";
@@ -53,7 +53,7 @@ const MemberLayout: Component<MemberEditionLayoutProps> = ({ children }) => {
 
   return (
     <div className="container mt-28">
-      {DayJS(member.birthday).day() === DayJS().day() && DayJS(member.birthday).month() === DayJS().month() && (
+      {dayJS(member.birthday).day() === dayJS().day() && dayJS(member.birthday).month() === dayJS().month() && (
         <div className="absolute left-0 right-0 -top-64 h-[100rem] w-screen opacity-10">
           <Image src="/images/garlands.png" alt="Birthday garlands" fill className="object-contain" />
         </div>
@@ -69,9 +69,9 @@ const MemberLayout: Component<MemberEditionLayoutProps> = ({ children }) => {
             <Heading type="h1" className="font-bold">{member.username}</Heading>
             {member.birthday && (
               <div className="flex items-center gap-2 mt-1 text-white-desc">
-                <Text>{DayJS().diff(member.birthday, "year", false)} ans</Text>
+                <Text>{dayJS().diff(member.birthday, "year", false)} ans</Text>
                 <Text className="select-none">·</Text>
-                <Text>{DayJS(member.birthday).format("D MMMM YYYY")}</Text>
+                <Text>{dayJS(member.birthday).format("D MMMM YYYY")}</Text>
               </div>
             )}
           </div>
@@ -119,7 +119,7 @@ const MemberLayout: Component<MemberEditionLayoutProps> = ({ children }) => {
                           </Text>
 
                           <Text className="text-white-desc text-opacity-50">
-                            {DayJS(msg.date).format("DD MMMM")}
+                            {dayJS(msg.date).format("DD MMMM")}
                           </Text>
 
                           {msg.by === "other" && (

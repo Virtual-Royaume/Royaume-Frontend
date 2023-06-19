@@ -1,14 +1,13 @@
 "use client";
 
-import type { Member } from "#/lib/configs/members/members.type";
 import type { ReactElement } from "react";
 import { Heading } from "#/lib/components/atoms/texts/heading";
-import { members } from "#/lib/configs/members";
-import Image from "next/image";
+import { members } from "#/lib/configs/member";
 import { NewProjectCard } from "#/lib/components/atoms/cards/project-cards/new-project-card";
+import Image from "next/image";
 
 const MemberProjectsPage = (): ReactElement => {
-  const member: Member = members[4];
+  const member = members[4];
 
   return (
     <div>
