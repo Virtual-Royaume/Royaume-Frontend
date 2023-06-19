@@ -8,6 +8,7 @@ test("members list must be updated when the user changes page", async({ page }) 
   const paginationNext = page.getByRole("button", { name: "next page" });
 
   // Get current texts of members list:
+  await membersList.waitFor();
   const texts = await membersList.allTextContents();
 
   // Go to the next page:
