@@ -1,14 +1,20 @@
-import { test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
-test("member list must be updated when the user changes page", async({ page }) => {
+test("members list must be updated when the user changes page", async({ page }) => {
   await page.goto("/members");
 
-  /**
-   * @todo
-   * - save members list
-   * - change the page with the pagination
-   * - members list must be different from the first one
-   *
-   * Before doing this test: we need some SEO/a11y improvement of the members list page
-   */
+  // Locators:
+  const membersList = page.getByRole("list", { name: "members list" });
+  const paginationNext = page.getByRole("button", { name: "next page" });
+
+  // Get current texts of members list:
+  const texts = await membersList.allTextContents();
+  console.log(texts);
+
+  // Go to the next page:
+  await paginationNext.click();
+
+  // The two members lists should be different:
+  await expect(membersList).not.toHaveText(texts);
+  console.log(await membersList.allTextContents());
 });

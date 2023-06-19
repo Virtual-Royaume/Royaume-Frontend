@@ -13,6 +13,9 @@ const config: PlaywrightTestConfig = {
 
   reporter: [["html", { open: "always" }]],
 
+  fullyParallel: true,
+  workers: "50%",
+
   webServer: {
     url: baseURL,
     command: "pnpm run build && pnpm run start",
@@ -27,21 +30,15 @@ const config: PlaywrightTestConfig = {
   projects: [
     {
       name: "chromium",
-      use: {
-        ...devices["Desktop Chrome"]
-      }
+      use: { ...devices["Desktop Chrome"] }
     },
     {
       name: "firefox",
-      use: {
-        ...devices["Desktop Firefox"]
-      }
+      use: { ...devices["Desktop Firefox"] }
     },
     {
       name: "mobile chrome",
-      use: {
-        ...devices["Pixel 5"]
-      }
+      use: { ...devices["Pixel 5"] }
     }
   ]
 };
