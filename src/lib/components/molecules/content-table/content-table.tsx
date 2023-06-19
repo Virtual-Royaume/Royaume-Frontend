@@ -11,7 +11,7 @@ import { findClosestValue } from "./content-table.util";
 export const ContentTable: Component<ContentTableProps> = ({ items }) => {
   const [isCtOpen, setIsCtOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(0);
-  const itemsContainerRef = useRef<HTMLDivElement | null>(null);
+  const itemsContainerRef = useRef<HTMLOListElement | null>(null);
   const linkPointerRef = useRef<HTMLSpanElement | null>(null);
 
   const handleScrollItem = (index: number, title: string, scroll = true): void => {
@@ -55,7 +55,7 @@ export const ContentTable: Component<ContentTableProps> = ({ items }) => {
   }, []);
 
   return (
-    <div
+    <nav
       aria-label="content-table"
       className="relative rounded sticky top-20 py-4 pr-4 pl-8 bg-background-card">
       <div className="flex items-center justify-between">
@@ -84,7 +84,7 @@ export const ContentTable: Component<ContentTableProps> = ({ items }) => {
             "opacity-100": isCtOpen
           }
         )} ref={linkPointerRef} />
-        <div className="grid gap-1 pt-2" ref={itemsContainerRef}>
+        <ol className="grid gap-1 pt-2" ref={itemsContainerRef}>
           {items.map((item, i) => (
             <ContentTableItem
               key={i}
@@ -92,8 +92,8 @@ export const ContentTable: Component<ContentTableProps> = ({ items }) => {
               item={item}
               active={i === activeItem} />
           ))}
-        </div>
+        </ol>
       </div>
-    </div>
+    </nav>
   );
 };
