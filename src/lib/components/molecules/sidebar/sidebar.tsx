@@ -15,7 +15,7 @@ export const Sidebar: Component<SidebarProps> = ({ sections, ...props }) => {
         <p className="uppercase select-none font-bold text-white text-2xl">Profil</p>
       </div>
 
-      <div className="grid gap-8">
+      <div className="grid gap-6">
         {sections.map((section, index) => (
           <SidebarSection section={section} key={index} />
         ))}
