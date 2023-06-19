@@ -3,7 +3,6 @@
 import type { NavbarProps } from "./navbar.type";
 import type { Component } from "#/lib/utils/component";
 import { useState } from "react";
-import { clsx } from "clsx";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { Hamburger } from "#/lib/components/atoms/hamburger";
@@ -15,6 +14,7 @@ import { useMediaQuery } from "#/lib/hooks/media-query";
 import { FaSignOutAlt } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import { s, sm } from "#/lib/utils/style/class";
 
 export const Navbar: Component<NavbarProps> = ({ className }) => {
   // Hooks:
@@ -29,14 +29,14 @@ export const Navbar: Component<NavbarProps> = ({ className }) => {
   useEffect(() => setIsOpen(false), [pathname]);
 
   // Styles:
-  const baseStyles = clsx(
+  const baseStyles = sm(
     "bg-background-header backdrop-blur-2xl w-screen",
     className
   );
 
   // Renders:
   if (media === "loading") return (
-    <nav className={clsx(baseStyles, "h-16 flex items-center")} />
+    <nav className={s(baseStyles, "h-16 flex items-center")} />
   );
 
   if (media === "match") return (
@@ -49,7 +49,7 @@ export const Navbar: Component<NavbarProps> = ({ className }) => {
         <Hamburger open={isOpen} setOpen={setIsOpen} />
       </div>
 
-      <div className={clsx(
+      <div className={s(
         "overflow-y-hidden transition-[max-height] duration-500",
         {
           "max-h-0": !isOpen,
@@ -58,7 +58,7 @@ export const Navbar: Component<NavbarProps> = ({ className }) => {
       )}>
         <ul className="container pb-4 grid gap-2">
           {links.map((link) => (
-            <Link key={link.name} href={link.href} className={clsx(
+            <Link key={link.name} href={link.href} className={s(
               "text-white py-1 px-2 rounded w-full",
               "transition-colors duration-200",
               {
@@ -74,7 +74,7 @@ export const Navbar: Component<NavbarProps> = ({ className }) => {
   );
 
   return (
-    <nav className={clsx("h-16 flex items-center", baseStyles)}>
+    <nav className={s("h-16 flex items-center", baseStyles)}>
       <div className="flex justify-between flex container items-center">
         <Link href="/">
           <Image src="/images/royaume-logo.png" alt="logo" width={50} height={50} />
