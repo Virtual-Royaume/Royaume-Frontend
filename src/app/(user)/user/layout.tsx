@@ -12,7 +12,9 @@ const RootLayout: Component<PropsWithChildren> = ({ children }) => {
   return (
     <div>
       <Sidebar className="fixed top-0 left-0 z-50" sections={links} />
-      {children}
+      <div className="ml-64 absolute top-0 right-0 left-0 z-0">
+        {children}
+      </div>
     </div>
   );
 };

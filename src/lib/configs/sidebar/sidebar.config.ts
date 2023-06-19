@@ -7,6 +7,10 @@ export const links: Section[] = [
       {
         name: "Modifier le profil",
         href: "/user"
+      },
+      {
+        name: "Liens sociaux",
+        href: "/"
       }
     ]
   },
@@ -25,14 +29,31 @@ export const links: Section[] = [
     ]
   },
   {
-    title: "Mes projets",
+    title: "Projets",
     links: [
       {
         name: "Mes projets",
-        href: "/"
+        href: "/user/projects"
       },
       {
         name: "Ajouter un projet",
+        href: "/user/projects/add"
+      }
+    ]
+  },
+  {
+    title: "Messagerie privée",
+    links: [
+      {
+        name: "Mes messages non lus",
+        href: "/"
+      },
+      {
+        name: "Mes messages lus",
+        href: "/"
+      },
+      {
+        name: "Envoyer un message",
         href: "/"
       }
     ]

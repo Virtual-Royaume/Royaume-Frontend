@@ -1,55 +1,52 @@
 "use client";
 
-import type { NavbarProps } from "./navbar.type";
 import type { Component } from "#/lib/utils/component";
+import type { ReactElement } from "react";
+import type { NavbarProps } from "./navbar.type";
 import { useState } from "react";
+import { clsx } from "clsx";
+import { useIsDomLoaded } from "#/lib/hooks/is-dom-loaded";
+import { useMediaQuery } from "usehooks-ts";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { Hamburger } from "#/lib/components/atoms/hamburger";
 import { links } from "#/lib/configs/navbar";
-import { BsDiscord } from "react-icons/bs";
-import { members } from "#/lib/configs/member";
+import { BsDiscord, BsGearFill, BsPencilFill } from "react-icons/bs";
+import { members } from "#/lib/configs/member/member.config";
 import { Dropdown, DropdownButton, DropdownLink, DropdownSeparator } from "#/lib/components/atoms/dropdown/profile";
-import { useMediaQuery } from "#/lib/hooks/media-query";
-import { FaSignOutAlt } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
-import { s, sm } from "#/lib/utils/style/class";
+import { FaPaperPlane, FaSignOutAlt } from "react-icons/fa";
 
-export const Navbar: Component<NavbarProps> = ({ className }) => {
-  // Hooks:
-  const media = useMediaQuery({ type: "max", width: "1029px" });
+export const Navbar: Component<NavbarProps> = (): ReactElement => {
+  const [isOpen, setIsOpen] = useState(true);
+  const isDomLoaded = useIsDomLoaded();
+  const matches = useMediaQuery("(max-width: 1029px)");
   const pathname = usePathname();
 
-  // States:
   const [connected, setConnected] = useState(false);
-  const [isOpen, setIsOpen] = useState(true);
 
-  // Close mobile navbar on navigation:
+  // Close mobile navbar on navigation
   useEffect(() => setIsOpen(false), [pathname]);
 
-  // Styles:
-  const baseStyles = sm(
-    "bg-background-header backdrop-blur-2xl w-screen",
-    className
+  // Base styles :
+  const baseStyles = "fixed top-0 right-0 left-0 z-50 bg-background-header backdrop-blur-2xl h-16 flex items-center";
+
+  if (!isDomLoaded) return (
+    <nav className={baseStyles} />
   );
 
-  // Renders:
-  if (media === "loading") return (
-    <nav className={s(baseStyles, "h-16 flex items-center")} />
-  );
-
-  if (media === "match") return (
-    <nav className={baseStyles}>
+  if (matches) return (
+    <nav className="fixed top-0 right-0 left-0 z-50 bg-background-header backdrop-blur-2xl">
       <div className="container h-16 flex items-center justify-between">
         <Link href="/">
-          <Image src="/images/royaume-logo.png" alt="logo" height={50} width={50} />
+          <Image src="/images/royaume-logo.png" alt="logo" width={50} height={50} />
         </Link>
 
         <Hamburger open={isOpen} setOpen={setIsOpen} />
       </div>
 
-      <div className={s(
+      <div className={clsx(
         "overflow-y-hidden transition-[max-height] duration-500",
         {
           "max-h-0": !isOpen,
@@ -58,15 +55,13 @@ export const Navbar: Component<NavbarProps> = ({ className }) => {
       )}>
         <ul className="container pb-4 grid gap-2">
           {links.map((link) => (
-            <Link key={link.name} href={link.href} className={s(
+            <Link key={link.name} href={link.href} className={clsx(
               "text-white py-1 px-2 rounded w-full",
               "transition-colors duration-200",
               {
                 "bg-purple": pathname === link.href
               }
-            )}>
-              {link.name}
-            </Link>
+            )}>{link.name}</Link>
           ))}
         </ul>
       </div>
@@ -74,7 +69,7 @@ export const Navbar: Component<NavbarProps> = ({ className }) => {
   );
 
   return (
-    <nav className={s("h-16 flex items-center", baseStyles)}>
+    <nav className={baseStyles}>
       <div className="flex justify-between flex container items-center">
         <Link href="/">
           <Image src="/images/royaume-logo.png" alt="logo" width={50} height={50} />
@@ -86,12 +81,25 @@ export const Navbar: Component<NavbarProps> = ({ className }) => {
           ))}
 
           {connected ? (
-            <Dropdown label={members[0].username} icon={members[0].profilePicture} iconSize={32}>
+            <Dropdown label={members[4].username} icon={members[4].profilePicture} iconSize={32}>
+              <DropdownLink href="/user/settings" className="hover:text-white">
+                <BsGearFill /> Paramètres du compte
+              </DropdownLink>
+              <DropdownLink href="/user/articles" className="hover:text-white">
+                <BsPencilFill /> Écrire un nouvel article
+              </DropdownLink>
+
+              {members[4].canBeContacted && (
+                <DropdownLink href="/user/settings" className="hover:text-white">
+                  <FaPaperPlane /> Messagerie (3 non-lus)
+                </DropdownLink>
+              )}
+
+              <DropdownSeparator />
+
               <DropdownLink href="https://royaume.world/discord" className="hover:text-discord" target="_blank">
                 <BsDiscord /> Rejoindre le discord
               </DropdownLink>
-
-              <DropdownSeparator />
 
               <DropdownButton className="hover:text-danger" onClick={() => setConnected(false)}>
                 <FaSignOutAlt /> Se déconnecter
@@ -108,3 +116,5 @@ export const Navbar: Component<NavbarProps> = ({ className }) => {
     </nav>
   );
 };
+
+export default Navbar;

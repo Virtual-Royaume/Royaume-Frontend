@@ -2,7 +2,7 @@ import type { ReactElement } from "react";
 
 const MemberPage = (): ReactElement => {
   return (
-    <div>
+    <div className="container">
     </div>
   );
 };

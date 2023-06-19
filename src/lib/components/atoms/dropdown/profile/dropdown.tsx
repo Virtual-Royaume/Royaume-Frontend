@@ -25,7 +25,7 @@ export const Dropdown: Component<DropdownProps> = ({ label, icon, iconSize, chil
   return (
     <div className="relative inline-block text-left">
       <button type="button" className={dropdownButtonClasses} onClick={() => setToggled(!toggled)}>
-        {icon && <Image src={icon} alt="icon" width={iconSize ?? 32} height={iconSize} />}
+        {icon && <Image src={icon} alt="icon" className="rounded-full" width={iconSize ?? 32} height={iconSize} />}
         <span className="text-white-desc">{label}</span>
       </button>
 
