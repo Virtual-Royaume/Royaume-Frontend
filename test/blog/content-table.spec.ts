@@ -37,8 +37,6 @@ test.describe("blog content table navigation", () => {
 
     const titleSection = page.locator("h1, h2, h3", { hasText: buttonContent });
 
-    console.log(titleSection);
-
     await expect(titleSection).toBeInViewport();
   });
 });
