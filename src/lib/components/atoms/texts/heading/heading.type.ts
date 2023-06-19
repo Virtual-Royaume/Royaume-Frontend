@@ -1,6 +1,5 @@
-import type { PropsWithChildren } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 
-export type HeadingProps = PropsWithChildren & {
+export type HeadingProps = ComponentPropsWithoutRef<"h1"> & {
   type: "h1" | "h2" | "h3" | "h4";
-  className?: string;
 };

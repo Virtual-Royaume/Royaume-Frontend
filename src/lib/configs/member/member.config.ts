@@ -466,10 +466,15 @@ export const members: Member[] = [
   {
     tag: "saku",
     username: "Saku",
+    description: "Actuellement étudiant en tant que développeur web. Je me spécialise dans l'écosystème Javascript. J'utilise React ainsi que Next.",
     profilePicture: "https://cdn.discordapp.com/avatars/264015944580464640/637e9ddc56668737e0813bc2a6559e96.webp",
-    technologies: [],
-    birthday: null,
-    location: "France"
+    technologies: [React, TypeScript],
+    birthday: 1011963600000,
+    location: "France",
+    socials: [
+      { type: "github", username: "Sakoutecher", url: "https://github.com/Sakoutecher" }
+    ],
+    canBeContacted: true
   },
   {
     tag: "warkingqc",
