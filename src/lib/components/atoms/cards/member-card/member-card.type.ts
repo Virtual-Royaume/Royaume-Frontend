@@ -1,3 +1,3 @@
-import type { Member } from "#/lib/configs/members/members.type";
+import type { Member } from "#/lib/configs/member/member.type";
 
 export type MemberCardProps = Member;

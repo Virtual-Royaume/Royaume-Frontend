@@ -2,7 +2,7 @@ import type { ReactElement } from "react";
 import { SpaceCard } from "#/lib/components/atoms/cards/space-card";
 import { Text } from "#/lib/components/atoms/texts";
 import { Heading } from "#/lib/components/atoms/texts/heading";
-import { specialities } from "#/lib/configs/specialities";
+import { specialities } from "#/lib/configs/speciality";
 
 export const SpecialitiesSection = (): ReactElement => {
   return (

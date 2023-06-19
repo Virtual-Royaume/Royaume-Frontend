@@ -14,8 +14,6 @@ jobs:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
       - uses: actions/setup-node@v3
-      - name: Create .env file from GitHub secrets
-        run: echo "$ENV_VARIABLES" > .env
       - name: Install dependencies
         run: pnpm install
       - name: Build NextJS
