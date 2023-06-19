@@ -3,8 +3,8 @@ import type { Component } from "#/lib/utils/component";
 import Link from "next/link";
 import type { MarkdownElementProps } from "./markdown-element.type";
 import { MDHeading } from "../elements/md-heading";
-import { clsx } from "clsx";
 import { MDCode } from "../elements/md-code";
+import { s } from "#/lib/utils/style/class";
 
 export const MarkdownElement: Component<MarkdownElementProps> = ({ element, parent = null }) => {
   if (parent) {
@@ -13,7 +13,7 @@ export const MarkdownElement: Component<MarkdownElementProps> = ({ element, pare
     }
 
     if (parent.type === "blockquote" && element.type === "paragraph" && element.children[0].type === "text") {
-      return <Text className={clsx(
+      return <Text className={s(
         "relative pl-4 italic my-4",
         "before:content-[''] before:absolute before:h-full before:w-1 before:bg-purple before:left-0"
       )}>{element.children[0].value}</Text>;
@@ -85,7 +85,7 @@ export const MarkdownElement: Component<MarkdownElementProps> = ({ element, pare
   }
 
   if (element.type === "list") {
-    const listStyle = clsx(" ml-6 text-white-desc", {
+    const listStyle = s(" ml-6 text-white-desc", {
       "list-descimal": element.ordered,
       "list-disc": !element.ordered
     });

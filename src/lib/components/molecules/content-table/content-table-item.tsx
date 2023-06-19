@@ -1,6 +1,6 @@
 import type { Component } from "#/lib/utils/component";
 import type { ContentTableItemProps } from "./content-table.type";
-import { clsx } from "clsx";
+import { s } from "#/lib/utils/style/class";
 
 export const ContentTableItem: Component<ContentTableItemProps> = ({ item, active, handleClick }) => {
   return (
@@ -10,7 +10,7 @@ export const ContentTableItem: Component<ContentTableItemProps> = ({ item, activ
         aria-current={active ? "true" : undefined}
 
         onClick={() => handleClick()}
-        className={clsx(
+        className={s(
           "cursor-pointer hover:text-purple w-fit appearance-none",
           {
             "text-purple": active,

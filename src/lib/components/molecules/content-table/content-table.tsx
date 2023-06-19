@@ -3,10 +3,10 @@
 import type { Component } from "#/lib/utils/component";
 import type { ContentTableProps } from "./content-table.type";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { clsx } from "clsx";
 import { IoIosArrowUp } from "react-icons/io";
 import { ContentTableItem } from "./content-table-item";
 import { findClosestValue } from "./content-table.util";
+import { s } from "#/lib/utils/style/class";
 
 export const ContentTable: Component<ContentTableProps> = ({ items }) => {
   const [isCtOpen, setIsCtOpen] = useState(false);
@@ -63,7 +63,7 @@ export const ContentTable: Component<ContentTableProps> = ({ items }) => {
         <IoIosArrowUp
           aria-label="toggle-button"
           aria-expanded={isCtOpen ? "true" : "false"}
-          className={clsx(
+          className={s(
             "text-white h-5 w-5 lg:hidden transition-transform", {
               "rotate-180": isCtOpen
             }
@@ -72,13 +72,13 @@ export const ContentTable: Component<ContentTableProps> = ({ items }) => {
       </div>
       <div
         aria-label="content-table-items"
-        className={clsx(
+        className={s(
           "lg:max-h-96 overflow-hidden transition-[max-height]", {
             "max-h-0": !isCtOpen,
             "max-h-96": isCtOpen
           }
         )}>
-        <span className={clsx(
+        <span className={s(
           "absolute bg-purple rounded-full w-1 h-4 mt-3 transition-transform left-4 lg:opacity-100 transition-opacity", {
             "opacity-0": !isCtOpen,
             "opacity-100": isCtOpen
