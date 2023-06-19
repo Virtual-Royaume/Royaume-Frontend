@@ -9,7 +9,6 @@ test("members list must be updated when the user changes page", async({ page }) 
 
   // Get current texts of members list:
   const texts = await membersList.allTextContents();
-  console.log(texts);
 
   // Go to the next page:
   await paginationNext.click();
