@@ -1,7 +1,9 @@
-import type { ComponentPropsWithoutRef } from "react";
+import type { ComponentPropsWithRef } from "react";
 
-export type SelectProps = ComponentPropsWithoutRef<"div"> & {
+export type SelectProps = ComponentPropsWithRef<"div"> & {
   disabled?: boolean;
+  name: string;
+  required?: boolean;
   placeholder?: string;
   items: string[];
 };
