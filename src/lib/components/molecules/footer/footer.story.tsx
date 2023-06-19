@@ -3,7 +3,7 @@ import { Footer } from "./footer";
 
 // Config :
 export default {
-  title: "Layouts/Footer",
+  title: "Molecules/Footer",
   component: Footer,
   parameters: {
     layout: "fullscreen"

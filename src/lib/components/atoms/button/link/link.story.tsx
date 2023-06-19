@@ -3,7 +3,7 @@ import { LinkButton } from "./link";
 
 // Config :
 export default {
-  title: "Buttons/Link",
+  title: "Atoms/Button/Link",
   component: LinkButton
 } satisfies Meta<typeof LinkButton>;
 

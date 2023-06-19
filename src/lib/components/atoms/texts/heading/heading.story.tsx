@@ -3,7 +3,7 @@ import { Heading } from "./heading";
 
 // Config :
 export default {
-  title: "Texts/Heading",
+  title: "Atoms/Texts/Heading",
   component: Heading
 } satisfies Meta<typeof Heading>;
 
