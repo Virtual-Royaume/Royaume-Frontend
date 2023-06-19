@@ -1,5 +1,4 @@
 import type { Component } from "#/lib/utils/component";
-import { twMerge } from "tailwind-merge";
 import type { HeadingProps } from "./heading.type";
 import { sm } from "#/lib/utils/style/class";
 
@@ -15,5 +14,5 @@ export const Heading: Component<HeadingProps> = ({ type, className, children, ..
     className
   );
 
-  return <Tag className={twMerge(styles, className)} {...props}>{children}</Tag>;
+  return <Tag className={styles} {...props}>{children}</Tag>;
 };
