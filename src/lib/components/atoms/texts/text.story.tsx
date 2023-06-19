@@ -3,7 +3,7 @@ import { Text } from "./text";
 
 // Config :
 export default {
-  title: "Texts/Text",
+  title: "Atoms/Texts/Text",
   component: Text
 } satisfies Meta<typeof Text>;
 

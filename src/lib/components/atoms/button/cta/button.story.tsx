@@ -3,7 +3,7 @@ import { Button } from "./button";
 
 // Config :
 export default {
-  title: "Buttons/Cta",
+  title: "Atoms/Button/Cta",
   component: Button
 } satisfies Meta<typeof Button>;
 
