@@ -1,3 +1,3 @@
-import type { ComponentProps, PropsWithChildren } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 
-export type TextProps = ComponentProps<"p"> & PropsWithChildren;
+export type TextProps = ComponentPropsWithoutRef<"p">;
