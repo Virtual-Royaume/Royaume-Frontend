@@ -13,3 +13,6 @@ const Template: StoryFn<typeof Input> = (props) => <Input {...props} />;
 // Stories:
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Disabled = Template.bind({});
+Disabled.args = { disabled: true, value: "Bonjour les amis" };

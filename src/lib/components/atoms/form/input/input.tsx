@@ -5,7 +5,7 @@ import { sm } from "#/lib/utils/style/class";
 import { forwardRef, useContext } from "react";
 import { LabelContext } from "../label/label-provider";
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, ref, ...props }) => {
+export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, disabled, ref, ...props }) => {
   const haveError = useContext(LabelContext);
 
   const styles = sm(
@@ -13,12 +13,14 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, ref,
     "focus:ring-2",
     {
       "border-background-info focus:ring-purple": !haveError,
-      "border-danger focus:ring-danger": haveError
+      "border-danger focus:ring-danger": haveError,
+
+      "brightness-[.7] pointer-events-none": disabled
     },
     className
   );
 
-  return <input className={styles} ref={ref} {...props} />;
+  return <input className={styles} disabled={disabled} ref={ref} {...props} />;
 });
 
 Input.displayName = "Input";
