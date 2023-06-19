@@ -1,10 +1,10 @@
 import { twMerge } from "tailwind-merge";
 import type { ButtonProps } from "./button.type";
-import { clsx } from "clsx";
 import { forwardRef } from "react";
+import { s } from "#/lib/utils/style/class";
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, children, ...props }, ref) => {
-  const styles = clsx(
+  const styles = s(
     "flex items-center gap-2 bg-discord text-white rounded",
     "py-2 px-6 w-fit"
   );
