@@ -1,4 +1,5 @@
 import { defineConfig, devices } from "@playwright/experimental-ct-react";
+import { resolve } from "path";
 import "dotenv/config";
 
 export default defineConfig({
@@ -18,8 +19,8 @@ export default defineConfig({
     ctViteConfig: {
       resolve: {
         alias: {
-          "#/": "./src/",
-          "~/": "./public/"
+          "#": resolve(__dirname, "./src"),
+          "~": resolve(__dirname, "./public")
         }
       }
     }
