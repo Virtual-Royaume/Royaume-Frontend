@@ -1,11 +1,10 @@
 export type UseSidebarState = {
-  states: UseSidebarStates[];
-  setOpened: (name: string) => void;
-  setClosed: (name: string) => void;
+  items: UseSidebarItem[];
+  toggle: (name: string) => void;
   isOpened: (name: string) => boolean;
 };
 
-type UseSidebarStates = {
+export type UseSidebarItem = {
   name: string;
   opened: boolean;
 };

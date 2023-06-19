@@ -4,22 +4,26 @@ import type { Component } from "#/lib/utils/component";
 import type { SidebarSectionProps } from "./sidebar-section.type";
 import { AiOutlineDown } from "react-icons/ai";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 import { s } from "#/lib/utils/style/class";
 import Link from "next/link";
+import { useSidebarStore } from "#/lib/stores/use-sidebar";
+import { useIsDomLoaded } from "#/lib/hooks/is-dom-loaded";
 
 export const SidebarSection: Component<SidebarSectionProps> = ({ section }) => {
-  const [isOpened, setIsOpened] = useState(true);
+  const [toggle, isOpened] = useSidebarStore((state) => [state.toggle, state.isOpened]);
   const pathname = usePathname();
+  const isDomLoaded = useIsDomLoaded();
+
+  if (!isDomLoaded) return <div />;
 
   return (
     <div>
-      <button className="flex justify-between w-full" onClick={() => setIsOpened((state) => !state)}>
+      <button className="flex justify-between w-full" onClick={() => toggle(section.title)}>
         <p className="font-medium text-xs tracking-wider uppercase text-white">{section.title}</p>
         <AiOutlineDown className={s(
           "text-white w-3 h-3 transition-transform",
           {
-            "rotate-180": !isOpened
+            "rotate-180": !isOpened(section.title)
           }
         )} />
       </button>
@@ -27,8 +31,8 @@ export const SidebarSection: Component<SidebarSectionProps> = ({ section }) => {
       <ol className={s(
         "pt-1 grid gap-1 overflow-y-hidden transition-[max-height]",
         {
-          "max-h-0": !isOpened,
-          "max-h-96": isOpened
+          "max-h-0": !isOpened(section.title),
+          "max-h-96": isOpened(section.title)
         }
       )}>
         {section.links.map((link, index) => (
