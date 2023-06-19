@@ -6,7 +6,7 @@ export const links: Section[] = [
     links: [
       {
         name: "Modifier le profil",
-        href: "/"
+        href: "/user"
       }
     ]
   },
