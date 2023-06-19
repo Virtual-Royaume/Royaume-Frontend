@@ -22,7 +22,7 @@
     ".*styles",
   ],
   "tailwindCSS.experimental.classRegex": [
-    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+    ["(?:clsx|s|sm)\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
   "tailwindCSS.lint.cssConflict" : "ignore",
 

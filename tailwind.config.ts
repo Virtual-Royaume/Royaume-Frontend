@@ -7,7 +7,8 @@ export default {
 
   theme: {
     fontFamily: {
-      "sans": ["Inter", "sans-serif"]
+      "sans": ["Inter", "sans-serif"],
+      "code": ["Source Code Pro", "sans-serif"]
     },
 
     colors: {
@@ -33,7 +34,9 @@ export default {
           hover: "#1E1E1F"
         },
         info: "#1E1E1F"
-      }
+      },
+
+      link: "#69B0EB"
     },
 
     borderRadius: {
