@@ -6,16 +6,14 @@ import type { SelectProps } from "./select.type";
 import { forwardRef, useContext, useEffect, useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
 import { SelectItem } from "./select-item";
-import { useController } from "react-hook-form";
 
-export const Select = forwardRef<HTMLDivElement, SelectProps>(({ items, disabled, name, required, placeholder, className, ...props }, ref) => {
+export const Select = forwardRef<HTMLDivElement, SelectProps>(({
+  items, disabled, placeholder, className, ...props
+}, ref) => {
   const haveError = useContext(LabelContext);
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-
-  // Handle ReactHookForm validation :
-  const { field } = useController({ name, rules: { required: !!required } });
 
   // Styles :
   const styles = sm(
@@ -33,14 +31,12 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(({ items, disabled
   const handleClick = (): void => {
     if (disabled) return;
     setIsOpen((state) => !state);
-    field.onBlur();
   };
 
   const handleSelect = (index: number): void => {
     setSelectedIndex(index);
     setActiveIndex(null);
     setIsOpen(false);
-    field.onChange(items[index]);
   };
 
   // Handle arrow navigation :
