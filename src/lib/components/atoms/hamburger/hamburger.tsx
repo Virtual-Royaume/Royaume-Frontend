@@ -1,12 +1,12 @@
 import type { Component } from "#/lib/utils/component";
+import { s } from "#/lib/utils/style/class";
 import type { HamburgerProps } from "./hamburger.type";
 import { FiMenu, FiX } from "react-icons/fi";
-import { clsx } from "clsx";
 
 export const Hamburger: Component<HamburgerProps> = ({ open, setOpen }) => {
   // Styles :
   const styles = "w-10 h-10";
-  const iconStyles = clsx(
+  const iconStyles = s(
     "text-white",
     "absolute right-0 top-0 bottom-0 my-auto",
     "transition-opacity duration-300",
@@ -17,11 +17,11 @@ export const Hamburger: Component<HamburgerProps> = ({ open, setOpen }) => {
   // Render:
   return (
     <button
-      className={clsx("relative appearance-none", styles)}
+      className={s("relative appearance-none", styles)}
       onClick={() => setOpen((state) => !state)}
       aria-label="hamburger"
     >
-      <FiX className={clsx(
+      <FiX className={s(
         iconStyles,
         {
           "opacity-100": open,
@@ -29,7 +29,7 @@ export const Hamburger: Component<HamburgerProps> = ({ open, setOpen }) => {
         }
       )} />
 
-      <FiMenu className={clsx(
+      <FiMenu className={s(
         iconStyles,
         {
           "opacity-0": open,
