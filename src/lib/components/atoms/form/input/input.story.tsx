@@ -3,7 +3,7 @@ import { Input } from "./input";
 
 // Config:
 export default {
-  title: "Form/Input",
+  title: "Atoms/Form/Input",
   component: Input
 } satisfies Meta<typeof Input>;
 
