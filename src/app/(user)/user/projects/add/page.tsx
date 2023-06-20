@@ -5,7 +5,7 @@ import Link from "next/link";
 const MemberPage = (): ReactElement => {
   return (
     <div className="container">
-      <div className="flex justify-between mt-4">
+      <div className="flex justify-between">
         <div>
           <Heading type="h3">Ajouter un nouveau projet</Heading>
         </div>
