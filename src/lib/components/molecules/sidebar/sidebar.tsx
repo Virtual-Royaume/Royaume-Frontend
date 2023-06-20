@@ -2,20 +2,23 @@
 
 import type { SidebarProps } from "./sidebar.type";
 import type { Component } from "#/lib/utils/component";
-import React, { useState } from "react";
+import React from "react";
 import { CgLogOut } from "react-icons/cg";
 import { SidebarSection } from "./sidebar-section";
 import Image from "next/image";
 import clsx from "clsx";
 import { Hamburger } from "../../atoms/hamburger";
+import { useSidebarToggledStore } from "#/lib/stores/use-sidebar/use-sidebar-toggled.store";
+import { useMediaQuery } from "usehooks-ts";
 
 export const Sidebar: Component<SidebarProps> = ({ sections, ...props }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const { toggle, toggled } = useSidebarToggledStore();
+  const matches = useMediaQuery("(max-width: 640px)");
 
   return (
     <div>
       <div className="sm:hidden fixed top-0 left-0 z-50">
-        <Hamburger open={isOpen} setOpen={setIsOpen} />
+        <Hamburger open={toggled} setOpen={toggle} />
       </div>
 
       <nav
@@ -23,7 +26,7 @@ export const Sidebar: Component<SidebarProps> = ({ sections, ...props }) => {
         className={clsx(
           "fixed flex-col w-64 max-h-max h-full px-4 py-8 bg-background-card transition-transform z-40",
           {
-            "-translate-x-96": !isOpen
+            "-translate-x-96": !toggled  && matches
           }
         )}
       >
