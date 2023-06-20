@@ -92,10 +92,14 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(({
         )} />
       </div>
 
-      <div className={s("overflow-y-auto transition-[max-height]", {
-        "max-h-0": !isOpen,
-        "max-h-48": isOpen
-      })}>
+      <div
+        aria-label="select-dropdown"
+        aria-expanded={isOpen}
+
+        className={s("overflow-y-auto transition-[max-height]", {
+          "max-h-0": !isOpen,
+          "max-h-48": isOpen
+        })}>
         <ul className="pt-2 overflow-y-auto">
           {items.map((item, index) => (
             <SelectItem

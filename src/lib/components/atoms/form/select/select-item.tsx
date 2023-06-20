@@ -17,11 +17,16 @@ export const SelectItem: Component<SelectItemProps> = ({ item, active, handleSel
 
   return (
     <li ref={ref}>
-      <button className={s(
-        "w-full text-left py-1 px-2 hover:bg-purple", {
-          "bg-purple": active
-        }
-      )} onClick={() => handleSelect()}>{item}</button>
+      <button
+        aria-label="select-item"
+        aria-current={active}
+
+        className={s(
+          "w-full text-left py-1 px-2 hover:bg-purple", {
+            "bg-purple": active
+          }
+        )}
+        onClick={() => handleSelect()}>{item}</button>
     </li>
   );
 };

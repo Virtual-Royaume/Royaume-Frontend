@@ -10,7 +10,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({ className, di
 
   // Styles :
   const styles = sm(
-    "relative w-11 h-5",
+    "relative w-11 h-5 appearance-none focus:ring-2 focus:ring-purple rounded outline-none",
     {
       "cursor-pointer": !disabled,
       "brightness-[.7]": disabled
@@ -29,8 +29,10 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({ className, di
   };
 
   return (
-    <div className={styles} onClick={handleClick}>
+    <button className={styles} onClick={handleClick}>
       <input
+        aria-checked={isChecked}
+
         ref={ref}
         type="checkbox"
         className="appearance-none opacity-0 outline-none"
@@ -40,7 +42,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({ className, di
         {...props}  />
 
       <span className={s(
-        "absolute top-0 left-0 right-0 bottom-0 transition-all rounded focus:ring-2 focus:ring-purple",
+        "absolute top-0 left-0 right-0 bottom-0 transition-all rounded",
         "before:absolute before:content=[''] before:h-4 before:w-4 before:bg-white before:rounded before:transition-transform",
         "before:top-0.5 before:left-0.5",
         {
@@ -50,7 +52,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({ className, di
           "before:translate-x-6": isChecked
         }
       )}></span>
-    </div>
+    </button>
   );
 });
 

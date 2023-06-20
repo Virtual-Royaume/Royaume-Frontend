@@ -20,7 +20,14 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, disa
     className
   );
 
-  return <input className={styles} disabled={disabled} ref={ref} {...props} />;
+  return <input
+    aria-required={props.required}
+    aria-disabled={disabled}
+
+    ref={ref}
+    className={styles}
+    disabled={disabled}
+    {...props} />;
 });
 
 Input.displayName = "Input";
