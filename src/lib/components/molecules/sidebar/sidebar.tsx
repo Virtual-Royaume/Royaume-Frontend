@@ -10,6 +10,7 @@ import clsx from "clsx";
 import { Hamburger } from "../../atoms/hamburger";
 import { useSidebarToggledStore } from "#/lib/stores/use-sidebar/use-sidebar-toggled.store";
 import { useMediaQuery } from "usehooks-ts";
+import { s } from "#/lib/utils/style/class";
 
 export const Sidebar: Component<SidebarProps> = ({ sections, ...props }) => {
   const { toggle, toggled } = useSidebarToggledStore();
@@ -17,7 +18,13 @@ export const Sidebar: Component<SidebarProps> = ({ sections, ...props }) => {
 
   return (
     <div>
-      <div className="sm:hidden fixed top-0 left-0 z-50">
+      <div className={s(
+        "sm:hidden fixed top-0 left-0 z-50 transition-transform",
+        {
+          "translate-x-64": toggled && matches,
+          "ml-1": !toggled && matches
+        }
+      )}>
         <Hamburger open={toggled} setOpen={toggle} />
       </div>
 
