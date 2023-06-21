@@ -1,10 +1,10 @@
-import { Text } from "#/lib/components/atoms/texts";
 import type { Component } from "#/lib/utils/component";
-import Link from "next/link";
 import type { MarkdownElementProps } from "./markdown-element.type";
+import { Text } from "#/lib/components/atoms/texts";
 import { MDHeading } from "../elements/md-heading";
 import { MDCode } from "../elements/md-code";
 import { s } from "#/lib/utils/style/class";
+import Link from "next/link";
 
 export const MarkdownElement: Component<MarkdownElementProps> = ({ element, parent = null }) => {
   if (parent) {

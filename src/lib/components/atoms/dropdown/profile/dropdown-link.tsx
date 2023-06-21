@@ -1,6 +1,6 @@
 import type { Component } from "#/lib/utils/component";
-import { sm } from "#/lib/utils/style/class";
 import type { DropdownItemLink } from "./dropdown.type";
+import { sm } from "#/lib/utils/style/class";
 import Link from "next/link";
 
 export const DropdownLink: Component<DropdownItemLink> = ({ className, href, children, ...props }) => {

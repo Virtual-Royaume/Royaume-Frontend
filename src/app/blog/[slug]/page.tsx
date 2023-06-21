@@ -1,14 +1,14 @@
 import type { BlogPost } from "#/lib/configs/blog/blog.type";
 import type { Component } from "#/lib/utils/component";
 import type { BlogPostPageProps } from "./page.type";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Heading } from "#/lib/components/atoms/texts/heading";
-import { posts } from "#/lib/configs/blog";
-import Image from "next/image";
-import type { Metadata } from "next";
 import { Markdown } from "#/lib/components/molecules/markdown";
-import { markdown } from "./page.util";
 import { ContentTable } from "#/lib/components/molecules/content-table";
+import { posts } from "#/lib/configs/blog";
+import { markdown } from "./page.util";
+import Image from "next/image";
 
 const getPost = (slug: string): BlogPost | null => {
   return posts.find((post) => post.slug === slug) ?? null;

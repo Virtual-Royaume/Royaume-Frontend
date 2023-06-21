@@ -2,8 +2,8 @@
 
 import type { Member } from "#/lib/configs/member/member.type";
 import type { MemberProviderProps } from "./member-provider.type";
-import { createContext } from "react";
 import type { Component } from "#/lib/utils/component";
+import { createContext } from "react";
 
 export const MemberContext = createContext<Member | null>(null);
 

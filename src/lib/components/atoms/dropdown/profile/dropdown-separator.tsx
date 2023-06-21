@@ -1,6 +1,6 @@
 import type { Component } from "#/lib/utils/component";
-import { sm } from "#/lib/utils/style/class";
 import type { DropdownSeparator as DropdownSeparatorType } from "./dropdown.type";
+import { sm } from "#/lib/utils/style/class";
 
 export const DropdownSeparator: Component<DropdownSeparatorType> = ({ className }) => {
   return (

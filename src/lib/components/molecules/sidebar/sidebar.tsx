@@ -5,12 +5,12 @@ import type { Component } from "#/lib/utils/component";
 import { useEffect } from "react";
 import { CgLogOut } from "react-icons/cg";
 import { SidebarSection } from "./sidebar-section";
-import Image from "next/image";
 import { Hamburger } from "../../atoms/hamburger";
 import { useSidebarToggledStore } from "#/lib/stores/use-sidebar/use-sidebar-toggled.store";
 import { useMediaQuery } from "usehooks-ts";
 import { s, sm } from "#/lib/utils/style/class";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export const Sidebar: Component<SidebarProps> = ({ sections, className, ...props }) => {
   const [toggle, close, toggled] = useSidebarToggledStore((state) => [state.toggle, state.close, state.toggled]);

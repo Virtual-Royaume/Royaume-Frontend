@@ -1,7 +1,7 @@
 import type { Component } from "#/lib/utils/component";
-import { s } from "#/lib/utils/style/class";
 import type { HamburgerProps } from "./hamburger.type";
 import { FiMenu, FiX } from "react-icons/fi";
+import { s } from "#/lib/utils/style/class";
 
 export const Hamburger: Component<HamburgerProps> = ({ open, setOpen }) => {
   // Styles :

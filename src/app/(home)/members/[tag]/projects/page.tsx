@@ -1,6 +1,7 @@
 "use client";
 
-import { useContext, type ReactElement } from "react";
+import type { ReactElement } from "react";
+import { useContext } from "react";
 import { notFound } from "next/navigation";
 import { MemberContext } from "../member-provider";
 import { Heading } from "#/lib/components/atoms/texts/heading";

@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
-import { members } from "../member";
 import type { BlogPost } from "./blog.type";
+import { members } from "../member";
 
 export const getLastPost = (): BlogPost => posts[0];
 

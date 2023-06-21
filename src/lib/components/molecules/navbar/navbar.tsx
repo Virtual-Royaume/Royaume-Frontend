@@ -13,10 +13,10 @@ import { links } from "#/lib/configs/navbar";
 import { BsDiscord, BsGearFill, BsPencilFill } from "react-icons/bs";
 import { members } from "#/lib/configs/member/member.config";
 import { Dropdown, DropdownButton, DropdownLink, DropdownSeparator } from "#/lib/components/atoms/dropdown/profile";
-import Image from "next/image";
-import Link from "next/link";
 import { FaPaperPlane, FaSignOutAlt } from "react-icons/fa";
 import { s } from "#/lib/utils/style/class";
+import Image from "next/image";
+import Link from "next/link";
 
 export const Navbar: Component<NavbarProps> = (): ReactElement => {
   const [isOpen, setIsOpen] = useState(true);

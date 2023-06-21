@@ -1,4 +1,4 @@
-export { Dropdown } from "./dropdown";
-export { DropdownButton } from "./dropdown-button";
-export { DropdownLink } from "./dropdown-link";
-export { DropdownSeparator } from "./dropdown-separator";
+export * from "./dropdown";
+export * from "./dropdown-button";
+export * from "./dropdown-link";
+export * from "./dropdown-separator";

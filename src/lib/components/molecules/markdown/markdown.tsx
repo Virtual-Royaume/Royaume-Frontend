@@ -1,6 +1,6 @@
 import type { Component } from "#/lib/utils/component";
-import { fromMarkdown } from "mdast-util-from-markdown";
 import type { MarkdownProps } from "./markdown.type";
+import { fromMarkdown } from "mdast-util-from-markdown";
 import { MarkdownElement } from "./markdown-element";
 
 export const Markdown: Component<MarkdownProps> = ({ source, ...props }) => {

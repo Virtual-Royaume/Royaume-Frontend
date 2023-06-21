@@ -5,9 +5,9 @@ import type { SidebarSectionProps } from "./sidebar-section.type";
 import { AiOutlineDown } from "react-icons/ai";
 import { usePathname } from "next/navigation";
 import { s } from "#/lib/utils/style/class";
-import Link from "next/link";
 import { useSidebarStore } from "#/lib/stores/use-sidebar";
 import { useIsDomLoaded } from "#/lib/hooks/is-dom-loaded";
+import Link from "next/link";
 
 export const SidebarSection: Component<SidebarSectionProps> = ({ section }) => {
   const [toggle, isOpened] = useSidebarStore((state) => [state.toggle, state.isOpened]);

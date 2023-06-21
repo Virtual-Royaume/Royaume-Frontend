@@ -1,8 +1,8 @@
 import type { Component } from "#/lib/utils/component";
 import type { DropdownProps } from "./dropdown.type";
 import { useState } from "react";
-import Image from "next/image";
 import { s } from "#/lib/utils/style/class";
+import Image from "next/image";
 
 export const Dropdown: Component<DropdownProps> = ({ label, icon, iconSize, children }) => {
   const [toggled, setToggled] = useState(false);

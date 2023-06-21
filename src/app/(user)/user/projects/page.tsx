@@ -1,5 +1,5 @@
-import { Heading } from "#/lib/components/atoms/texts/heading";
 import type { ReactElement } from "react";
+import { Heading } from "#/lib/components/atoms/texts/heading";
 import Link from "next/link";
 
 const MemberPage = (): ReactElement => {

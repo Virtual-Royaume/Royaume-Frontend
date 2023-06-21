@@ -1,6 +1,6 @@
 import type { Component } from "#/lib/utils/component";
-import { s } from "#/lib/utils/style/class";
 import type { PaginationItemProps } from "./pagination-item.type";
+import { s } from "#/lib/utils/style/class";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 export const PaginationItem: Component<PaginationItemProps> = ({ page, active, handlePageChange }) => {
