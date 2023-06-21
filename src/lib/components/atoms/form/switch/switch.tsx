@@ -13,7 +13,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({ className, di
     "relative w-11 h-5 appearance-none focus:ring-2 focus:ring-purple rounded-full outline-none",
     {
       "cursor-pointer": !disabled,
-      "brightness-[.7]": disabled
+      "brightness-75": disabled
     },
     className
   );
