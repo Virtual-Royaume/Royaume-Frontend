@@ -11,21 +11,24 @@ import { useMediaQuery } from "usehooks-ts";
 import { s, sm } from "#/lib/utils/style/class";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { useIsDomLoaded } from "#/lib/hooks/is-dom-loaded";
 
 export const Sidebar: Component<SidebarProps> = ({ sections, className, ...props }) => {
   const [toggle, close, toggled] = useSidebarToggledStore((state) => [state.toggle, state.close, state.toggled]);
   const matches = useMediaQuery("(max-width: 640px)");
+  const isDomLoaded = useIsDomLoaded();
   const pathname = usePathname();
 
   useEffect(() => close(), [pathname]);
 
+  if (!isDomLoaded) return <div />;
+
   return (
     <div>
       <div className={s(
-        "sm:hidden fixed top-0 left-0 z-50 transition-transform",
+        "sm:hidden fixed top-1 left-1 z-50 transition-transform",
         {
-          "translate-x-64": toggled && matches,
-          "ml-1": !toggled && matches
+          "translate-x-64": toggled && matches
         }
       )}>
         <Hamburger open={toggled} setOpen={toggle} />
