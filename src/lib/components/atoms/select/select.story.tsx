@@ -3,7 +3,7 @@ import { Select } from "./select";
 
 // Config:
 export default {
-  title: "Atoms/Form/Select",
+  title: "Atoms/Select",
   component: Select
 } satisfies Meta<typeof Select>;
 

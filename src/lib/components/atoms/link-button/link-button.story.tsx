@@ -1,9 +1,9 @@
 import type { Meta, StoryFn } from "@storybook/react";
-import { LinkButton } from "./link";
+import { LinkButton } from "./link-button";
 
 // Config :
 export default {
-  title: "Atoms/Button/Link",
+  title: "Atoms/Buttons/LinkButton",
   component: LinkButton
 } satisfies Meta<typeof LinkButton>;
 

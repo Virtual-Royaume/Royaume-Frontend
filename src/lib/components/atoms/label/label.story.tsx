@@ -4,7 +4,7 @@ import { Input } from "../input";
 
 // Config:
 export default {
-  title: "Atoms/Form/Label",
+  title: "Atoms/Label",
   component: Label
 } satisfies Meta<typeof Label>;
 

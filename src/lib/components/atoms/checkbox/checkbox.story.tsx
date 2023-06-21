@@ -1,14 +1,14 @@
 import type { Meta, StoryFn } from "@storybook/react";
-import { Switch } from "./switch";
+import { Checkbox } from "./checkbox";
 
 // Config:
 export default {
-  title: "Atoms/Form/Switch",
-  component: Switch
-} satisfies Meta<typeof Switch>;
+  title: "Atoms/Inputs/Checkbox",
+  component: Checkbox
+} satisfies Meta<typeof Checkbox>;
 
 // Template:
-const Template: StoryFn<typeof Switch> = (props) => <Switch {...props} />;
+const Template: StoryFn<typeof Checkbox> = (props) => <Checkbox {...props} />;
 
 // Stories:
 export const Default = Template.bind({});

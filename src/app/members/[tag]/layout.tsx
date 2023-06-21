@@ -11,7 +11,7 @@ import { Heading } from "#/lib/components/atoms/texts/heading";
 import { Text } from "#/lib/components/atoms/texts";
 import { members } from "#/lib/configs/member";
 import { Tabs } from "#/lib/components/atoms/tabs";
-import { Button } from "#/lib/components/atoms/button/cta";
+import { Button } from "#/lib/components/atoms/button/button";
 import { MemberProvider } from "./member-provider";
 import Image from "next/image";
 

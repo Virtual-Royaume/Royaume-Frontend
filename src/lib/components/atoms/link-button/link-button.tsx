@@ -1,4 +1,4 @@
-import type { LinkButtonProps } from "./link.type";
+import type { LinkButtonProps } from "./link-button.type";
 import { forwardRef } from "react";
 import Link from "next/link";
 import { sm } from "#/lib/utils/style/class";
