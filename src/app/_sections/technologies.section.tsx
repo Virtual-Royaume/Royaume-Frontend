@@ -1,10 +1,10 @@
 import type { ReactElement } from "react";
-import { SpaceCard } from "#/lib/components/atoms/cards/space-card";
 import { Text } from "#/lib/components/atoms/texts";
 import { Heading } from "#/lib/components/atoms/texts/heading";
 import { specialities } from "#/lib/configs/speciality";
+import { TechnoCard } from "../_components/techno-card";
 
-export const SpecialitiesSection = (): ReactElement => {
+export const TechnologiesSection = (): ReactElement => {
   return (
     <section className="container mt-44">
       <div className="flex flex-col items-center">
@@ -18,7 +18,7 @@ export const SpecialitiesSection = (): ReactElement => {
       <div className="relative">
         <div className="relative z-10 flex flex-wrap gap-12 justify-center mt-16">
           {specialities.map((speciality) => (
-            <SpaceCard key={speciality.title} {...speciality} />
+            <TechnoCard key={speciality.title} {...speciality} />
           ))}
         </div>
 

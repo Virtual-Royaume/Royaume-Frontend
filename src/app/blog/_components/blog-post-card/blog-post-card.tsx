@@ -1,6 +1,6 @@
 import type { Component } from "#/lib/utils/component";
 import type { BlogPostCardProps } from "./blog-post-card.type";
-import { Text } from "../../texts";
+import { Text } from "../../../../lib/components/atoms/texts";
 import { dayJS } from "#/lib/utils/day-js";
 import Image from "next/image";
 import Link from "next/link";

@@ -3,7 +3,7 @@
 import type { Member } from "#/lib/configs/member/member.type";
 import type { ReactElement } from "react";
 import { useState, useEffect } from "react";
-import { MemberCard } from "#/lib/components/atoms/cards/member-card";
+import { MemberCard } from "#/app/members/_components/member-card";
 import { members } from "#/lib/configs/member";
 import { Pagination } from "#/lib/components/atoms/pagination";
 
