@@ -4,9 +4,9 @@ import type { BlogPostPageProps } from "./page.type";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Heading } from "#/lib/components/atoms/texts/heading";
+import { posts } from "#/lib/configs/blog";
 import { Markdown } from "#/lib/components/molecules/markdown";
 import { ContentTable } from "#/lib/components/molecules/content-table";
-import { posts } from "#/lib/configs/blog";
 import { markdown } from "./page.util";
 import Image from "next/image";
 
