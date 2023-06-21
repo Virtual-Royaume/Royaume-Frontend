@@ -4,7 +4,6 @@ import type { Component } from "#/lib/utils/component";
 import type { ReactElement } from "react";
 import type { NavbarProps } from "./navbar.type";
 import { useState } from "react";
-import { clsx } from "clsx";
 import { useIsDomLoaded } from "#/lib/hooks/is-dom-loaded";
 import { useMediaQuery } from "usehooks-ts";
 import { usePathname } from "next/navigation";
@@ -17,6 +16,7 @@ import { Dropdown, DropdownButton, DropdownLink, DropdownSeparator } from "#/lib
 import Image from "next/image";
 import Link from "next/link";
 import { FaPaperPlane, FaSignOutAlt } from "react-icons/fa";
+import { s } from "#/lib/utils/style/class";
 
 export const Navbar: Component<NavbarProps> = (): ReactElement => {
   const [isOpen, setIsOpen] = useState(true);
@@ -46,7 +46,7 @@ export const Navbar: Component<NavbarProps> = (): ReactElement => {
         <Hamburger open={isOpen} setOpen={setIsOpen} />
       </div>
 
-      <div className={clsx(
+      <div className={s(
         "overflow-y-hidden transition-[max-height] duration-500",
         {
           "max-h-0": !isOpen,
@@ -55,7 +55,7 @@ export const Navbar: Component<NavbarProps> = (): ReactElement => {
       )}>
         <ul className="container pb-4 grid gap-2">
           {links.map((link) => (
-            <Link key={link.name} href={link.href} className={clsx(
+            <Link key={link.name} href={link.href} className={s(
               "text-white py-1 px-2 rounded w-full",
               "transition-colors duration-200",
               {

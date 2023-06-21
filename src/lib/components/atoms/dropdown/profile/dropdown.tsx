@@ -1,13 +1,13 @@
 import type { Component } from "#/lib/utils/component";
 import type { DropdownProps } from "./dropdown.type";
-import { clsx } from "clsx";
 import { useState } from "react";
 import Image from "next/image";
+import { s } from "#/lib/utils/style/class";
 
 export const Dropdown: Component<DropdownProps> = ({ label, icon, iconSize, children }) => {
   const [toggled, setToggled] = useState(false);
 
-  const dropdownButtonClasses = clsx(
+  const dropdownButtonClasses = s(
     "flex items-center gap-2 text-white rounded hover:bg-background-card transition-colors duration-200",
     "py-2 px-3 w-fit",
     {
@@ -15,7 +15,7 @@ export const Dropdown: Component<DropdownProps> = ({ label, icon, iconSize, chil
     }
   );
 
-  const dropdownMenuClasses = clsx(
+  const dropdownMenuClasses = s(
     "absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-background-card focus:outline-none",
     {
       hidden: !toggled
