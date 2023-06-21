@@ -5,6 +5,7 @@ import { MDHeading } from "../elements/md-heading";
 import { MDCode } from "../elements/md-code";
 import { s } from "#/lib/utils/style/class";
 import Link from "next/link";
+import Image from "next/image";
 
 export const MarkdownElement: Component<MarkdownElementProps> = ({ element, parent = null }) => {
   if (parent) {
@@ -33,7 +34,7 @@ export const MarkdownElement: Component<MarkdownElementProps> = ({ element, pare
       }
 
       if (element.type === "image") {
-        return <img src={element.url} alt={element.alt ?? ""} className="lg:max-w-3xl mx-auto my-10 rounded" />;
+        return <Image src={element.url} alt={element.alt ?? ""} className="lg:max-w-3xl mx-auto my-10 rounded" fill />;
       }
 
       if (element.type === "text") {
