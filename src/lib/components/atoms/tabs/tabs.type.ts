@@ -1,4 +1,4 @@
-export type LittleNavbarProps = {
+export type TabsProps = {
   links: Link[];
 };
 
