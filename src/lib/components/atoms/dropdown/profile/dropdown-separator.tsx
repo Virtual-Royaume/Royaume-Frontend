@@ -4,10 +4,10 @@ import { sm } from "#/lib/utils/style/class";
 
 export const DropdownSeparator: Component<DropdownSeparatorType> = ({ className }) => {
   return (
-    <div className="mt-2 mb-2">
+    <div className="my-1">
       <div className="flex justify-center text-white-desc">
         <hr className={sm(
-          "w-4/5 border-t-white-desc border-opacity-10",
+          "w-full border-t-white-desc border-opacity-10",
           className
         )} />
       </div>

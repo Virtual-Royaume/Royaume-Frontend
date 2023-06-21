@@ -10,11 +10,10 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { Hamburger } from "#/lib/components/atoms/hamburger";
 import { links } from "#/lib/configs/navbar";
-import { BsDiscord, BsGearFill, BsPencilFill } from "react-icons/bs";
 import { members } from "#/lib/configs/member/member.config";
-import { Dropdown, DropdownButton, DropdownLink, DropdownSeparator } from "#/lib/components/atoms/dropdown/profile";
-import { FaPaperPlane, FaSignOutAlt } from "react-icons/fa";
 import { s } from "#/lib/utils/style/class";
+import { NavbarDropdown } from "./navbar-dropdown";
+import { BsDiscord } from "react-icons/bs";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -81,30 +80,7 @@ export const Navbar: Component<NavbarProps> = (): ReactElement => {
           ))}
 
           {connected ? (
-            <Dropdown label={members[4].username} icon={members[4].profilePicture} iconSize={32}>
-              <DropdownLink href="/user/settings" className="hover:text-white">
-                <BsGearFill /> Paramètres du compte
-              </DropdownLink>
-              <DropdownLink href="/user/articles" className="hover:text-white">
-                <BsPencilFill /> Écrire un nouvel article
-              </DropdownLink>
-
-              {members[4].canBeContacted && (
-                <DropdownLink href="/user/settings" className="hover:text-white">
-                  <FaPaperPlane /> Messagerie (3 non-lus)
-                </DropdownLink>
-              )}
-
-              <DropdownSeparator />
-
-              <DropdownLink href="https://royaume.world/discord" className="hover:text-discord" target="_blank">
-                <BsDiscord /> Rejoindre le discord
-              </DropdownLink>
-
-              <DropdownButton className="hover:text-danger" onClick={() => setConnected(false)}>
-                <FaSignOutAlt /> Se déconnecter
-              </DropdownButton>
-            </Dropdown>
+            <NavbarDropdown member={members[4]} logout={() => setConnected(false)} />
           ) : (
             <button className="bg-discord rounded px-4 py-2 flex items-center space-x-2 text-white gap-3" onClick={() => setConnected(true)}>
               <BsDiscord />
