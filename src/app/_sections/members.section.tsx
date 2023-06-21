@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import { StatsCard } from "#/lib/components/atoms/cards/stats-card";
-import { MembersGalery } from "#/lib/components/atoms/members-galery";
+import { MembersGalery } from "#/app/_components/members-galery";
 import { Text } from "#/lib/components/atoms/texts";
 import { Heading } from "#/lib/components/atoms/texts/heading";
 import { members } from "#/lib/configs/member";
