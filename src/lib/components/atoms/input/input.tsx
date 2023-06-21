@@ -2,7 +2,7 @@
 
 import type { InputProps } from "./input.type";
 import { sm } from "#/lib/utils/style/class";
-import { forwardRef, useContext, useEffect, useState } from "react";
+import { forwardRef, useContext, useState } from "react";
 import { LabelContext } from "../label/label-provider";
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, disabled, value: valueProps, ...props }, ref) => {
