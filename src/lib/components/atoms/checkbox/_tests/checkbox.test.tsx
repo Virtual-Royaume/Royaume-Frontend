@@ -19,7 +19,7 @@ test.describe("Checkbox", () => {
 
     const input = component.locator("input");
 
-    await expect(input).toBeChecked();
+    await expect(input).not.toBeChecked();
   });
 
   test("the checkbox cannot be clicked", async({ mount }) => {

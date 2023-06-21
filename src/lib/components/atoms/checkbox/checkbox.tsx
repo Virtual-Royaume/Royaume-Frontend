@@ -32,10 +32,11 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ className
   };
 
   return (
-    <div className={styles} onClick={() => handleClick()}>
+    <div
+      className={styles}
+      onClick={() => handleClick()}
+      aria-checked>
       <input
-        aria-checked={isChecked}
-
         ref={ref}
         type="checkbox"
         className="appearance-none opacity-0 rounded focus:ring-2 focus:ring-purple outline-none"
