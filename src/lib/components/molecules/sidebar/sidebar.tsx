@@ -10,9 +10,9 @@ import clsx from "clsx";
 import { Hamburger } from "../../atoms/hamburger";
 import { useSidebarToggledStore } from "#/lib/stores/use-sidebar/use-sidebar-toggled.store";
 import { useMediaQuery } from "usehooks-ts";
-import { s } from "#/lib/utils/style/class";
+import { s, sm } from "#/lib/utils/style/class";
 
-export const Sidebar: Component<SidebarProps> = ({ sections, ...props }) => {
+export const Sidebar: Component<SidebarProps> = ({ sections, className, ...props }) => {
   const { toggle, toggled } = useSidebarToggledStore();
   const matches = useMediaQuery("(max-width: 640px)");
 
@@ -29,13 +29,14 @@ export const Sidebar: Component<SidebarProps> = ({ sections, ...props }) => {
       </div>
 
       <nav
-        {...props}
-        className={clsx(
-          "fixed flex-col w-64 max-h-max h-full px-4 py-8 bg-background-card transition-transform z-40",
+        className={sm(
+          "fixed top-0 flex-col w-64 max-h-max h-full px-4 py-8 bg-background-card transition-transform z-40",
           {
             "-translate-x-96": !toggled  && matches
-          }
+          },
+          className
         )}
+        {...props}
       >
         <div className="flex items-center mb-8 gap-2 justify-center">
           <Image
