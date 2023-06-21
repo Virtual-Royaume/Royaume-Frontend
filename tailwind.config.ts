@@ -21,6 +21,7 @@ export default {
       },
       purple: {
         DEFAULT: "#5339DD",
+        hover: "#5D44E0",
         light: "#9E92DA"
       },
 
