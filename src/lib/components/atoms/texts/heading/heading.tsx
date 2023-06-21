@@ -9,7 +9,9 @@ export const Heading: Component<HeadingProps> = ({ type, className, children, ..
     "text-white",
     {
       "text-5xl": type === "h1",
-      "text-4xl": type === "h2"
+      "text-4xl": type === "h2",
+      "text-3xl": type === "h3",
+      "text-xl": type === "h4"
     },
     className
   );

@@ -3,7 +3,7 @@ import { Navbar } from "./navbar";
 
 // Config:
 export default {
-  title: "Layouts/Navbar",
+  title: "Molecules/Navbar",
   component: Navbar,
   parameters: {
     layout: "fullscreen"
