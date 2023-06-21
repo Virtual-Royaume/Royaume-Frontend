@@ -56,15 +56,15 @@ export const Sidebar: Component<SidebarProps> = ({ sections, className, ...props
         </div>
 
         <div className="fixed w-64 bottom-0 left-0 p-4 bg-background-card  border-t-2 border-purple">
-          <div
+          <button
             className={clsx(
-              "flex items-center p-2 hover:bg-background-info rounded",
+              "appearance-none w-full flex items-center p-2 hover:bg-background-info rounded",
               "cursor-pointer gap-2 text-white hover:text-danger transition-colors"
             )}
           >
             <CgLogOut />
             <p className="text-sm">Déconnexion</p>
-          </div>
+          </button>
         </div>
       </nav>
     </div>
