@@ -2,6 +2,7 @@
 
 import type { Component } from "#/lib/utils/component";
 import type { MembersGaleryProps } from "./members-galery.type";
+import type { Member } from "#/lib/configs/member/member.type";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 
@@ -9,6 +10,17 @@ export const MembersGalery: Component<MembersGaleryProps> = ({ members, orientat
   const containerRef = useRef<HTMLDivElement | null>(null);
   const scrollIntervalRef = useRef<NodeJS.Timer | null>(null);
   let scrollForward = false;
+
+  const shuffle = (array: Member[]): Member[] => {
+    const newArray = [...array];
+
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+
+    return newArray;
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -56,7 +68,7 @@ export const MembersGalery: Component<MembersGaleryProps> = ({ members, orientat
 
   return (
     <div className="flex overflow-x-hidden gap-4 opacity-10" ref={containerRef}>
-      {members.map((member, i) => (
+      {shuffle(members).map((member, i) => (
         <div key={i} className="relative min-w-[3.5rem] min-h-[3.5rem] justify-center gap-1 profile-photo">
           <Image src={member.profilePicture} alt="Member Profile Picture" fill className="rounded-full object-cover rounded-full" />
         </div>
