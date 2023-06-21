@@ -2,19 +2,22 @@
 
 import type { SidebarProps } from "./sidebar.type";
 import type { Component } from "#/lib/utils/component";
-import React from "react";
+import { useEffect } from "react";
 import { CgLogOut } from "react-icons/cg";
 import { SidebarSection } from "./sidebar-section";
 import Image from "next/image";
-import clsx from "clsx";
 import { Hamburger } from "../../atoms/hamburger";
 import { useSidebarToggledStore } from "#/lib/stores/use-sidebar/use-sidebar-toggled.store";
 import { useMediaQuery } from "usehooks-ts";
 import { s, sm } from "#/lib/utils/style/class";
+import { usePathname } from "next/navigation";
 
 export const Sidebar: Component<SidebarProps> = ({ sections, className, ...props }) => {
-  const { toggle, toggled } = useSidebarToggledStore();
+  const [toggle, close, toggled] = useSidebarToggledStore((state) => [state.toggle, state.close, state.toggled]);
   const matches = useMediaQuery("(max-width: 640px)");
+  const pathname = usePathname();
+
+  useEffect(() => close(), [pathname]);
 
   return (
     <div>
@@ -57,7 +60,7 @@ export const Sidebar: Component<SidebarProps> = ({ sections, className, ...props
 
         <div className="fixed w-64 bottom-0 left-0 p-4 bg-background-card  border-t-2 border-purple">
           <button
-            className={clsx(
+            className={s(
               "appearance-none w-full flex items-center p-2 hover:bg-background-info rounded",
               "cursor-pointer gap-2 text-white hover:text-danger transition-colors"
             )}
