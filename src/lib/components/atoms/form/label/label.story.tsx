@@ -11,7 +11,7 @@ export default {
 // Template:
 const Template: StoryFn<typeof Label> = (props) => (
   <Label {...props}>
-    <Input />
+    <Input placeholder="Votre nom d'utilisateur" />
   </Label>
 );
 

@@ -8,11 +8,11 @@ export default {
 } satisfies Meta<typeof Input>;
 
 // Template:
-const Template: StoryFn<typeof Input> = (props) => <Input {...props} />;
+const Template: StoryFn<typeof Input> = (props) => <Input placeholder="Votre nom d'utilisateur" {...props} />;
 
 // Stories:
 export const Default = Template.bind({});
 Default.args = {};
 
 export const Disabled = Template.bind({});
-Disabled.args = { disabled: true, value: "Bonjour les amis" };
+Disabled.args = { disabled: true };
