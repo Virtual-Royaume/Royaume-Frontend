@@ -30,7 +30,7 @@ export const Sidebar: Component<SidebarProps> = ({ sections, className, ...props
 
       <nav
         className={sm(
-          "fixed top-0 flex-col w-64 max-h-max h-full px-4 py-8 bg-background-card transition-transform z-40",
+          "fixed top-0 flex-col w-64 max-h-max h-full px-4 py-8 bg-background-card transition-transform z-40 overflow-y-auto",
           {
             "-translate-x-96": !toggled  && matches
           },
@@ -49,20 +49,22 @@ export const Sidebar: Component<SidebarProps> = ({ sections, className, ...props
           <p className="uppercase select-none font-bold text-white text-2xl">Profil</p>
         </div>
 
-        <div className="grid gap-6">
+        <div className="grid gap-6 pb-8">
           {sections.map((section, index) => (
             <SidebarSection section={section} key={index} />
           ))}
         </div>
 
-        <div
-          className={clsx(
-            "absolute left-2 right-2 bottom-2 flex items-center p-2 hover:bg-background-info rounded",
-            "cursor-pointer gap-2 text-white hover:text-danger transition-colors"
-          )}
-        >
-          <CgLogOut />
-          <p className="text-sm">Déconnexion</p>
+        <div className="fixed w-64 bottom-0 left-0 p-4 bg-background-card  border-t-2 border-purple">
+          <div
+            className={clsx(
+              "flex items-center p-2 hover:bg-background-info rounded",
+              "cursor-pointer gap-2 text-white hover:text-danger transition-colors"
+            )}
+          >
+            <CgLogOut />
+            <p className="text-sm">Déconnexion</p>
+          </div>
         </div>
       </nav>
     </div>
