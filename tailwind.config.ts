@@ -21,7 +21,7 @@ export default {
       },
       purple: {
         DEFAULT: "#5339DD",
-        glow: "rgba(83, 57, 221, .52)"
+        light: "#9E92DA"
       },
 
       discord: "#5865F2",

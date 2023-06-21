@@ -1,18 +1,33 @@
-import type { ReactElement } from "react";
-import type { InputProps } from "./input.type";
-import type { Component } from "#/lib/utils/component";
-import { s } from "#/lib/utils/style/class";
+"use client";
 
-export const Input: Component<InputProps> = ({ disabled, value, ...props }): ReactElement => {
-  return (
-    <input
-      className={s(
-        "appearance-none bg-background-info border-background-card border-2 border-background-header text-white-desc rounded px-3 py-2",
-        "focus:outline-none focus:ring-2 focus:ring-purple focus:border-transparent"
-      )}
-      disabled={disabled}
-      value={value}
-      {...props}
-    />
+import type { InputProps } from "./input.type";
+import { sm } from "#/lib/utils/style/class";
+import { forwardRef, useContext } from "react";
+import { LabelContext } from "../label/label-provider";
+
+export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, disabled, ...props }, ref) => {
+  const haveError = useContext(LabelContext);
+
+  const styles = sm(
+    "outline-none bg-background-card border-2 text-white-desc rounded px-3 py-2 w-full",
+    "focus:ring-2",
+    {
+      "border-background-info focus:ring-purple": !haveError,
+      "border-danger focus:ring-danger": haveError,
+
+      "brightness-[.7]": disabled
+    },
+    className
   );
-};
+
+  return <input
+    aria-required={props.required}
+    aria-disabled={disabled}
+
+    ref={ref}
+    className={styles}
+    disabled={disabled}
+    {...props} />;
+});
+
+Input.displayName = "Input";

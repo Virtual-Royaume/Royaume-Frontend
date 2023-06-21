@@ -48,7 +48,7 @@
     "@storybook/manager-api": "^7.0.22",
     "@storybook/nextjs": "^7.0.22",
     "@storybook/react": "^7.0.22",
-    "@storybook/testing-library": "^0.1.0",
+    "@storybook/testing-library": "^0.2.0",
     "@testing-library/react": "^14.0.0",
     "@vitest/ui": "^0.32.2",
     "autoprefixer": "^10.4.14",
