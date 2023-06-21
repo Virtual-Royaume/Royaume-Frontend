@@ -1,12 +1,12 @@
 "use client";
 
 import type { Component } from "#/lib/utils/component";
-import type { LittleNavbarProps } from "./little-navbar.type";
+import type { TabsProps } from "./tabs.type";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { s } from "#/lib/utils/style/class";
 
-export const LittleNavbar: Component<LittleNavbarProps> = ({ links }) => {
+export const Tabs: Component<TabsProps> = ({ links }) => {
   const pathname = usePathname();
 
   return (
