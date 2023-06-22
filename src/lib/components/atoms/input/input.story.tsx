@@ -1,5 +1,6 @@
 import type { Meta, StoryFn } from "@storybook/react";
 import { Input } from "./input";
+import { IoIosContact } from "react-icons/io";
 
 // Config:
 export default {
@@ -13,6 +14,11 @@ const Template: StoryFn<typeof Input> = (props) => <Input placeholder="Votre nom
 // Stories:
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Icon = Template.bind({});
+Icon.args = {
+  icon: <IoIosContact />
+};
 
 export const Disabled = Template.bind({});
 Disabled.args = { disabled: true };

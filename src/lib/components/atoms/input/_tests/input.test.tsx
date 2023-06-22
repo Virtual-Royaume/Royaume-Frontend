@@ -5,18 +5,24 @@ test.describe("Input", () => {
   test("can write text into the input", async({ mount }) => {
     const component = await mount(<Input />);
 
-    await component.type("hello my friends");
+    const input = component.getByRole("textbox");
 
-    await expect(component).toHaveValue("hello my friends");
+    await input.type("hello my friends");
+
+    await expect(input).toHaveValue("hello my friends");
   });
 
   test("cannot write text into the input when it's disabled", async({ mount }) => {
     const component = await mount(<Input disabled />);
 
-    await expect(component).toBeDisabled();
+    const input = component.getByRole("textbox");
 
-    await component.type("hello my friends");
+    await expect(input).toBeDisabled();
 
-    await expect(component).not.toHaveValue("hello my friends");
+    await input.type("hello my friends");
+
+    await input.type("hello my friends");
+
+    await expect(input).not.toHaveValue("hello my friends");
   });
 });
