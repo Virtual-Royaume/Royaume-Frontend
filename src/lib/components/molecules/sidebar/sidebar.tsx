@@ -11,8 +11,11 @@ import { useMediaQuery } from "usehooks-ts";
 import { s, sm } from "#/lib/utils/style/class";
 import { usePathname } from "next/navigation";
 import { useIsDomLoaded } from "#/lib/hooks/is-dom-loaded";
+import { members } from "#/lib/configs/member";
+import { Text } from "#/lib/components/atoms/texts";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Sidebar: Component<SidebarProps> = ({ sections, className, ...props }) => {
   const [toggle, close, toggled] = useSidebarToggledStore((state) => [state.toggle, state.close, state.toggled]);
@@ -63,6 +66,19 @@ export const Sidebar: Component<SidebarProps> = ({ sections, className, ...props
         </div>
 
         <div className="fixed w-64 bottom-0 left-0 p-4 bg-background-card  border-t-2 border-purple">
+          <Link
+            href={"/members/" + members[4].tag}
+            className={s(
+              "appearance-none w-full flex items-center p-2 hover:bg-background-info rounded",
+              "cursor-pointer gap-2 text-white hover:text-danger transition-colors mb-2"
+            )}
+          >
+            <Image src={members[4].profilePicture} width={24} height={24} alt="Avatar" className="rounded-full" />
+            <div className="flex flex-col gap-1">
+              <Text className="text-white">{members[4].username}</Text>
+            </div>
+          </Link>
+
           <button
             className={s(
               "appearance-none w-full flex items-center p-2 hover:bg-background-info rounded",
