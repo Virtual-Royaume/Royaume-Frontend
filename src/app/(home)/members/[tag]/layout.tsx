@@ -1,8 +1,8 @@
+import type { Metadata } from "next";
 import type { Component } from "#/lib/utils/component";
 import type { MemberLayoutProps } from "./layout.type";
 import type { Member } from "#/lib/configs/member/member.type";
-import type { Link } from "#/lib/components/atoms/little-navbar/little-navbar.type";
-import type { Metadata } from "next";
+import type { Link } from "#/lib/components/atoms/tabs/tabs.type";
 import { notFound } from "next/navigation";
 import { FaPaperPlane } from "react-icons/fa";
 import { BsDiscord, BsGithub, BsLink45Deg, BsLinkedin, BsTwitter } from "react-icons/bs";
@@ -10,8 +10,8 @@ import { dayJS } from "#/lib/utils/day-js";
 import { Heading } from "#/lib/components/atoms/texts/heading";
 import { Text } from "#/lib/components/atoms/texts";
 import { members } from "#/lib/configs/member";
-import { LittleNavbar } from "#/lib/components/atoms/little-navbar";
-import { Button } from "#/lib/components/atoms/button/cta";
+import { Tabs } from "#/lib/components/atoms/tabs";
+import { Button } from "#/lib/components/atoms/button/button";
 import { MemberProvider } from "./member-provider";
 import Image from "next/image";
 
@@ -99,7 +99,7 @@ const MemberLayout: Component<MemberLayoutProps> = ({ params, children }) => {
       </div>
 
       <div className="mt-16">
-        <LittleNavbar links={links} />
+        <Tabs links={links} />
 
         <div className="grid lg:grid-cols-[1fr_20rem] gap-10 mt-4">
           <MemberProvider member={member}>
