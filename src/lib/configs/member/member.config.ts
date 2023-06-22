@@ -6,6 +6,8 @@ const VueJS: Techno = { name: "VueJS", icon: "vuejs.png" };
 const Supabase: Techno = { name: "Supabase", icon: "supabase.png" };
 const TypeScript: Techno = { name: "TypeScript", icon: "typescript.png" };
 
+export const technoList: Techno[] = [Svelte, React, VueJS, Supabase, TypeScript];
+
 export const members: Member[] = [
   {
     tag: "leobdt",
