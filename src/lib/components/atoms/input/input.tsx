@@ -2,9 +2,8 @@
 
 import type { InputProps } from "./input.type";
 import { s, sm } from "#/lib/utils/style/class";
-import { forwardRef, useContext, useState } from "react";
+import { cloneElement, forwardRef, useContext, useState } from "react";
 import { LabelContext } from "../label/label-provider";
-import { IoIosContact } from "react-icons/io";
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, icon, disabled, value: valueProps, ...props }, ref) => {
   const haveError = useContext(LabelContext);
@@ -29,7 +28,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, icon
     <div className={containerStyle}>
       {!!icon && (
         <div className="flex items-center justify-center px-4 bg-background-info">
-          {icon}
+          {cloneElement(icon, { className: "text-white w-5 h-5" })}
         </div>
       )}
       <input
