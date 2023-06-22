@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { shuffle } from "./shuffle";
 
-describe("shuffle", () => {
+describe("shuffle function", () => {
   it("should return a shuffled array", () => {
     const array = [1, 2, 3, 4, 5, 6, 7, 8];
     const shuffled = shuffle(array);
@@ -10,13 +10,11 @@ describe("shuffle", () => {
     expect(shuffled.length).toEqual(array.length);
   });
 
-  it("should empty array give empty array in return", () => {
-    const emptyArray: number[] = [];
-    const shuffled = shuffle(emptyArray);
-    expect(shuffled).toEqual([]);
+  it("should return an empty array when given an empty array", () => {
+    expect(shuffle([])).toEqual([]); // logika
   });
 
-  it("math.random shuffle", () => {
+  it("should shuffle the array using Math.random", () => {
     const array = [1, 2, 3, 4, 5, 6, 7, 8];
     const mockRandom = vi.fn();
     mockRandom.mockReturnValueOnce(0.5);
