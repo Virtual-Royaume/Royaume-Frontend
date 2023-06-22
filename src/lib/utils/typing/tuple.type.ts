@@ -1,1 +1,0 @@
-export type Tuple<A, B> = [A, B];
