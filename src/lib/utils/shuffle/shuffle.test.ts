@@ -5,7 +5,7 @@ describe("shuffle", () => {
   it("should return a shuffled array", () => {
     const array = [1, 2, 3, 4, 5, 6, 7, 8];
     const shuffled = shuffle(array);
-    expect(shuffled).not.toBe(array);
+    expect(shuffled).not.toEqual(array);
     expect(shuffled).toEqual(expect.arrayContaining(array));
     expect(shuffled.length).toEqual(array.length);
   });
@@ -37,7 +37,7 @@ describe("shuffle", () => {
   it("should be immutable", () => {
     const array = [1, 2, 3, 4, 5, 6, 7, 8];
     const shuffled = shuffle(array);
-    expect(shuffled).not.toBe(array);
+    expect(shuffled).not.toEqual(array);
     expect(array).toEqual([1, 2, 3, 4, 5, 6, 7, 8]);
   });
 });
