@@ -46,7 +46,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({ className, di
         "before:absolute before:content=[''] before:h-4 before:w-4 before:bg-white before:rounded-full before:transition-transform",
         "before:top-0.5 before:left-0.5",
         {
-          "bg-purple-light": !isChecked,
+          "bg-background-light": !isChecked,
           "bg-purple": isChecked,
 
           "before:translate-x-6": isChecked
