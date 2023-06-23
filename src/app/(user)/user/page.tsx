@@ -113,7 +113,7 @@ const MemberPage = (): ReactElement => {
                 </div>
               ))}
 
-              {list.length === 0 || list.length < technoList.length && (
+              {list.length !== technoList.length && (
                 <div className="mt-4">
                   {list.length === 0 && (
                     <Text className="mt-2">Vous n&apos;avez pas encore ajouté de technologie, vous pouvez en ajouter une, ci-dessous.</Text>
