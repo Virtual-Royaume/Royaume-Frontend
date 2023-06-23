@@ -5,8 +5,11 @@ const React: Techno = { name: "React", icon: "react.png" };
 const VueJS: Techno = { name: "VueJS", icon: "vuejs.png" };
 const Supabase: Techno = { name: "Supabase", icon: "supabase.png" };
 const TypeScript: Techno = { name: "TypeScript", icon: "typescript.png" };
+const Prisma: Techno = { name: "Prisma", icon: "prisma.png" };
+const TailwindCSS: Techno = { name: "TailwindCSS", icon: "tailwindcss.png" };
+const Rust: Techno = { name: "Rust", icon: "rust.png" };
 
-export const technoList: Techno[] = [Svelte, React, VueJS, Supabase, TypeScript];
+export const technoList: Techno[] = [Svelte, React, VueJS, Supabase, TypeScript, Prisma, TailwindCSS, Rust];
 
 export const members: Member[] = [
   {

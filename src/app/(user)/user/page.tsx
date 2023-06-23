@@ -1,18 +1,39 @@
 "use client";
 
+import type { Techno } from "#/lib/configs/member/member.type";
 import { useState, type ReactElement } from "react";
 import { Heading } from "#/lib/components/atoms/texts/heading";
 import { Text } from "#/lib/components/atoms/texts";
-import { BsArrowDown, BsArrowUp, BsTrash } from "react-icons/bs";
+import { BsArrowDown, BsArrowUp, BsPlus, BsTrash } from "react-icons/bs";
 import Image from "next/image";
 import { technoList } from "#/lib/configs/member";
+import { s } from "#/lib/utils/style/class";
 
 const MemberPage = (): ReactElement => {
-  const [list, setList] = useState(technoList);
+  const [list, setList] = useState(technoList.slice(0, 4));
+  const [findList, setFindList] = useState<Techno[] | []>([]);
+
+  const findTechno = (techno: string): void => {
+    if (!techno || techno.length === 0) {
+      setFindList([]);
+      return;
+    }
+
+    const newList = technoList.filter((item) => item.name.toLocaleLowerCase().includes(techno.toLocaleLowerCase()) && !list.includes(item));
+    setFindList(newList);
+  };
 
   const handleDeleteTechno = (techno: string): void => {
     const newList = list.filter((item) => item.name !== techno);
     setList(newList);
+  };
+
+  const handleAddTechno = (techno: Techno): void => {
+    const newList = [...list, techno];
+    setList(newList);
+
+    const newFindList = findList.filter((item) => item.name !== techno.name);
+    setFindList(newFindList);
   };
 
   const handleMoveTechnoUp = (techno: string): void => {
@@ -48,6 +69,10 @@ const MemberPage = (): ReactElement => {
                   type="text"
                   placeholder="John Doe"
                 />
+              </div>
+
+              <div className="mt-5">
+                <button className="bg-purple hover:bg-purple-hover rounded p-2 text-white">Sauvegarder</button>
               </div>
             </div>
           </div>
@@ -85,21 +110,38 @@ const MemberPage = (): ReactElement => {
                 </div>
               ))}
 
-              {list.length === 0 && (
-                <>
-                  <Text className="mt-2">Vous n&apos;avez pas encore ajouté de technologie, vous pouvez en ajouter une, ci-dessous.</Text>
+              {list.length === 0 || list.length < technoList.length && (
+                <div className="mt-4">
+                  {list.length === 0 && (
+                    <Text className="mt-2">Vous n&apos;avez pas encore ajouté de technologie, vous pouvez en ajouter une, ci-dessous.</Text>
+                  )}
+
                   <div className="flex gap-2 items-center mt-2">
                     <input
-                      className="bg-background-card-hover text-white-desc border-white-desc p-2 rounded cursor-text focus:border-white-desc"
+                      className="bg-background-card-hover text-white-desc border-white-desc p-2 rounded cursor-text outline-none w-full"
                       type="text"
-                      placeholder="Svelte"
+                      placeholder="Chercher une technologie"
+                      onChange={(e) => findTechno(e.target.value)}
                     />
-
-                    <button className="bg-purple hover:bg-purple-hover text-white py-2 px-4 rounded">
-                      Ajouter
-                    </button>
                   </div>
-                </>
+
+                  {findList.length !== 0 && findList.map((techno) => (
+                    <div key={techno.name} className="mt-2 flex justify-between bg-background-card-hover p-2 rounded">
+                      <div className="flex gap-2 items-center">
+                        <Image className="select-none" src={"/images/icons/" + techno.icon} alt={techno.name} width={20} height={20} />
+                        <Text className="select-none">{techno.name}</Text>
+                      </div>
+
+                      <div className="flex gap-2 items-center">
+                        <BsPlus
+                          onClick={() => handleAddTechno(techno)}
+                          className={s(
+                            "select-none cursor-pointer p-1 rounded hover:bg-background-card text-white-desc hover:text-primary h-6 w-6"
+                          )} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
               )}
             </div>
           </div>
