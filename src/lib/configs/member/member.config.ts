@@ -237,9 +237,17 @@ export const members: Member[] = [
     tag: "melvin",
     username: "melvin",
     profilePicture: "https://cdn.discordapp.com/embed/avatars/4.png",
-    technologies: [React],
+    technologies: [],
     birthday: 1042675200000,
     location: "France"
+  },
+  {
+    tag: "melvynx",
+    username: "Melvyn",
+    profilePicture: "https://cdn.discordapp.com/avatars/111448653142515712/d4911b6c2a572e2d858f4682bc1ff077.webp",
+    technologies: [React, TypeScript],
+    birthday: null,
+    location: "Suisse"
   },
   {
     tag: "refaltor",
@@ -284,7 +292,7 @@ export const members: Member[] = [
     tag: "steellgold",
     username: "Gaëtan 🐈",
     description: "Je suis développeur back-end sur TypeScript, ainsi que sur PHP.",
-    profilePicture: "https://cdn.discordapp.com/avatars/504392983244832780/555d2435b8837ecb8d331a7dd049759a.webp",
+    profilePicture: "https://cdn.discordapp.com/avatars/504392983244832780/41b9733a4d04d2957bf85809702d1f9d.webp",
     technologies: [Svelte, Supabase, TypeScript],
     birthday: 1097712000000,
     location: "Kingersheim, France",
@@ -495,7 +503,7 @@ export const members: Member[] = [
   {
     tag: "mala",
     username: "mala",
-    profilePicture: "https://cdn.discordapp.com/avatars/1010262065509838848/669deff433e73103129b1248b6725ba6.webp",
+    profilePicture: "https://cdn.discordapp.com/avatars/1010262065509838848/b416c2d4da1bb391d9910ff664c12a77.webp",
     technologies: [],
     birthday: null,
     location: "France"
@@ -511,7 +519,7 @@ export const members: Member[] = [
   {
     tag: "geotre223",
     username: "!\" geotre223",
-    profilePicture: "https://cdn.discordapp.com/avatars/1098496962799620147/edab3529de5d932b42f2806554af37b1.webp",
+    profilePicture: "https://cdn.discordapp.com/avatars/1098496962799620147/88206cdadaf8e7495fcf687e8c95ef6d.webp",
     technologies: [],
     birthday: null,
     location: "France"
@@ -559,7 +567,7 @@ export const members: Member[] = [
   {
     tag: "ember",
     username: "Ember",
-    profilePicture: "https://cdn.discordapp.com/avatars/815513219120103424/279472f04ee4e8e362e5e6960fdaa815.webp",
+    profilePicture: "https://cdn.discordapp.com/avatars/815513219120103424/77e0a627aef5b297a8021c63edfed64c.webp?size=80",
     technologies: [],
     birthday: null,
     location: "France"
