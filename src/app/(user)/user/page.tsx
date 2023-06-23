@@ -34,6 +34,9 @@ const MemberPage = (): ReactElement => {
 
     const newFindList = findList.filter((item) => item.name !== techno.name);
     setFindList(newFindList);
+
+    const input = document.querySelector<HTMLInputElement>("#techno");
+    if (input) input.value = "";
   };
 
   const handleMoveTechnoUp = (techno: string): void => {
@@ -121,6 +124,7 @@ const MemberPage = (): ReactElement => {
                       className="bg-background-card-hover text-white-desc border-white-desc p-2 rounded cursor-text outline-none w-full"
                       type="text"
                       placeholder="Chercher une technologie"
+                      id="techno"
                       onChange={(e) => findTechno(e.target.value)}
                     />
                   </div>
