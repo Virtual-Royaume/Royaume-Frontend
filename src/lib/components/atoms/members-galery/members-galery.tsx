@@ -3,6 +3,7 @@
 import type { Component } from "#/lib/utils/component";
 import type { MembersGaleryProps } from "./members-galery.type";
 import { useEffect, useRef } from "react";
+import { shuffle } from "#/lib/utils/shuffle";
 import Image from "next/image";
 
 export const MembersGalery: Component<MembersGaleryProps> = ({ members, orientation }) => {
@@ -56,7 +57,7 @@ export const MembersGalery: Component<MembersGaleryProps> = ({ members, orientat
 
   return (
     <div className="flex overflow-x-hidden gap-4 opacity-10" ref={containerRef}>
-      {members.map((member, i) => (
+      {shuffle(members).map((member, i) => (
         <div key={i} className="relative min-w-[3.5rem] min-h-[3.5rem] justify-center gap-1 profile-photo">
           <Image src={member.profilePicture} alt={member.username + " Profile Picture"} fill className="rounded-full object-cover rounded-full" />
         </div>
