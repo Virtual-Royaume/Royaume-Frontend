@@ -1,8 +1,8 @@
+import type { Metadata } from "next";
 import type { Component } from "#/lib/utils/component";
 import type { MemberLayoutProps } from "./layout.type";
 import type { Member } from "#/lib/configs/member/member.type";
 import type { Link } from "#/lib/components/atoms/tabs/tabs.type";
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { FaPaperPlane } from "react-icons/fa";
 import { BsDiscord, BsGithub, BsLink45Deg, BsLinkedin, BsTwitter } from "react-icons/bs";
@@ -11,7 +11,7 @@ import { Heading } from "#/lib/components/atoms/texts/heading";
 import { Text } from "#/lib/components/atoms/texts";
 import { members } from "#/lib/configs/member";
 import { Tabs } from "#/lib/components/atoms/tabs";
-import { Button } from "#/lib/components/atoms/button/cta";
+import { Button } from "#/lib/components/atoms/button/button";
 import { MemberProvider } from "./member-provider";
 import Image from "next/image";
 
