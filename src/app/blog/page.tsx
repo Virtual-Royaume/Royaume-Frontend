@@ -4,7 +4,7 @@ import { Text } from "#/lib/components/atoms/texts";
 import { Heading } from "#/lib/components/atoms/texts/heading";
 import { LastPostSection } from "./_sections/last-post.section";
 import { AllPostsSection } from "./_sections/all-posts.section";
-import Image from "next/image";
+import { Crown } from "../components/crown";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -34,12 +34,7 @@ const HomePage = (): ReactElement => {
           </Text>
         </div>
 
-        <div className="justify-self-start lg:justify-self-end relative">
-          <div className="relative z-20 h-36 w-52 mb-4 lg:mb-0 lg:h-72 lg:w-96 lg:mr-16">
-            <Image alt="crown" src="/images/crown.png" className="relative z-10 object-contain" fill />
-          </div>
-          <span className="absolute -top-32 right-0 h-[35rem] w-[35rem] rounded-full blur-3xl opacity-30 right-0 bg-purple rounded-full" />
-        </div>
+        <Crown />
       </div>
 
       <div className="mt-28">
