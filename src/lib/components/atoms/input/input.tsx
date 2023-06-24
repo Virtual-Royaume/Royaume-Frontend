@@ -12,8 +12,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, icon
   const containerStyle = s(
     "flex bg-background-card border-2 rounded focus-within:ring-2 rounded",
     {
-      "border-background-info focus:ring-purple": !haveError,
-      "border-danger focus:ring-danger": haveError,
+      "border-background-info focus-within:ring-purple": !haveError,
+      "border-danger focus-within:ring-danger": haveError,
 
       "brightness-[.7]": disabled
     }
