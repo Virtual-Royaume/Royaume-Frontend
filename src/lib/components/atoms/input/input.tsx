@@ -2,10 +2,11 @@
 
 import type { InputProps } from "./input.type";
 import { s, sm } from "#/lib/utils/style/class";
+import type { ChangeEvent } from "react";
 import { cloneElement, forwardRef, useContext, useState } from "react";
 import { LabelContext } from "../label/label-provider";
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, icon, disabled, value: valueProps, ...props }, ref) => {
+export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, icon, disabled, value: valueProps, onChange, ...props }, ref) => {
   const haveError = useContext(LabelContext);
   const [value, setValue] = useState(valueProps);
 
@@ -24,6 +25,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, icon
     className
   );
 
+  const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    setValue(event.target.value);
+    if (onChange) onChange(event);
+  };
+
   return (
     <div className={containerStyle}>
       {!!icon && (
@@ -39,7 +45,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, icon
         className={inputStyle}
         disabled={disabled}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={handleChange}
         {...props} />;
     </div>
   );
