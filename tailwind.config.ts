@@ -19,10 +19,10 @@ export default {
         DEFAULT: "#FFFFFF",
         desc: "#AFAFAF"
       },
+
       purple: {
         DEFAULT: "#5339DD",
-        hover: "#5D44E0",
-        light: "#9E92DA"
+        hover: "#5D44E0"
       },
 
       discord: "#5865F2",
@@ -34,10 +34,11 @@ export default {
           DEFAULT: "#131314",
           hover: "#1E1E1F"
         },
-        info: "#1E1E1F"
+        info: "#1E1E1F",
+        light: "#454548"
       },
 
-      link: "#69B0EB"
+      link: "#535357"
     },
 
     borderRadius: {
