@@ -2,7 +2,7 @@ import { Text } from "#/lib/components/atoms/texts";
 import type { Component } from "#/lib/utils/component";
 import Link from "next/link";
 import type { MarkdownElementProps } from "./markdown-element.type";
-import { MDHeading } from "../elements/md-heading";
+import { MDHeading } from "#/lib/components/molecules/markdown/elements/md-heading";
 import { MDCode } from "../elements/md-code";
 import { s } from "#/lib/utils/style/class";
 

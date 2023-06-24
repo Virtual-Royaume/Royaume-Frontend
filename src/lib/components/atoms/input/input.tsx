@@ -3,7 +3,7 @@
 import type { InputProps } from "./input.type";
 import { s, sm } from "#/lib/utils/style/class";
 import { cloneElement, forwardRef, useContext, useState } from "react";
-import { LabelContext } from "../label/label-provider";
+import { LabelContext } from "#/lib/components/atoms/label/label-provider";
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, icon, disabled, value: valueProps, ...props }, ref) => {
   const haveError = useContext(LabelContext);

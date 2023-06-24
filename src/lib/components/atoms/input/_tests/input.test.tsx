@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/experimental-ct-react";
-import { Input } from "../input";
+import { Input } from "#/lib/components/atoms/input/input";
 
 test.describe("Input", () => {
   test("can write text into the input", async({ mount }) => {

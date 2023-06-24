@@ -1,7 +1,7 @@
 "use client";
 
 import { s, sm } from "#/lib/utils/style/class";
-import { LabelContext } from "../label/label-provider";
+import { LabelContext } from "#/lib/components/atoms/label/label-provider";
 import type { SelectProps } from "./select.type";
 import { forwardRef, useContext, useEffect, useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";

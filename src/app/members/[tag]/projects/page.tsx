@@ -2,7 +2,7 @@
 
 import { useContext, type ReactElement } from "react";
 import { notFound } from "next/navigation";
-import { MemberContext } from "../member-provider";
+import { MemberContext } from "#/app/members/[tag]/member-provider";
 import { Heading } from "#/lib/components/atoms/texts/heading";
 import Image from "next/image";
 

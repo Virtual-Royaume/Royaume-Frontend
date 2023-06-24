@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/experimental-ct-react";
-import { Checkbox } from "../checkbox";
+import { Checkbox } from "#/lib/components/atoms/checkbox/checkbox";
 
 test.describe("Checkbox", () => {
   test("the checkbox have to be checked on click", async({ mount }) => {

@@ -2,7 +2,7 @@ import type { ReactElement } from "react";
 import { Text } from "#/lib/components/atoms/texts";
 import { Heading } from "#/lib/components/atoms/texts/heading";
 import { specialities } from "#/lib/configs/speciality";
-import { TechnoCard } from "../_components/techno-card";
+import { TechnoCard } from "#/app/_components/techno-card";
 
 export const TechnologiesSection = (): ReactElement => {
   return (

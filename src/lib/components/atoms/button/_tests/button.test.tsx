@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/experimental-ct-react";
-import { Button } from "../button";
+import { Button } from "#/lib/components/atoms/button/button";
 
 test.describe("Button", () => {
   test("update variable on click", async({ mount }) => {

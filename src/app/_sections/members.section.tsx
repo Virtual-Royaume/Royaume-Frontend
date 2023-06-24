@@ -3,7 +3,7 @@ import { MembersGalery } from "#/app/members/_components/members-galery";
 import { Text } from "#/lib/components/atoms/texts";
 import { Heading } from "#/lib/components/atoms/texts/heading";
 import { members } from "#/lib/configs/member";
-import { StatsCard } from "../_components/stats-card";
+import { StatsCard } from "#/app/_components/stats-card";
 
 export const MembersSection = (): ReactElement => {
   return (

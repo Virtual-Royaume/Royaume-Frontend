@@ -4,7 +4,7 @@ import { Text } from "#/lib/components/atoms/texts";
 import { Heading } from "#/lib/components/atoms/texts/heading";
 import { LastPostSection } from "./_sections/last-post.section";
 import { AllPostsSection } from "./_sections/all-posts.section";
-import { Crown } from "../components/crown";
+import { Crown } from "#/app/components/crown";
 
 export const metadata: Metadata = {
   title: "Blog",

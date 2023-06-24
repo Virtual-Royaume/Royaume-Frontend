@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from "@storybook/react";
 import { Label } from "./label";
-import { Input } from "../input";
+import { Input } from "#/lib/components/atoms/input/input";
 
 // Config:
 export default {
