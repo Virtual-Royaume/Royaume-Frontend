@@ -39,7 +39,7 @@ const HomePage = (): ReactElement => {
 
       <div className="mt-28">
         <LastPostSection />
-        <div className="w-full border-b my-14 lg:my-20 border-background-info" />
+        <div className="w-full border-b my-14 lg:my-20 border-background-gray-700" />
         <AllPostsSection />
       </div>
     </div>

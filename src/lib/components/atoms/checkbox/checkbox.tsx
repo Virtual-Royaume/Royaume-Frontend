@@ -13,7 +13,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ className
 
   // Styles :
   const styles = sm(
-    "relative rounded w-6 h-6 bg-background-card border-2 border-background-info",
+    "relative rounded w-6 h-6 bg-background-gray-800 border-2 border-background-gray-700",
     {
       "cursor-pointer": !disabled,
       "brightness-[.7]": disabled
@@ -39,7 +39,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ className
       <input
         ref={ref}
         type="checkbox"
-        className="appearance-none opacity-0 rounded focus:ring-2 focus:ring-purple outline-none"
+        className="appearance-none opacity-0 rounded focus:ring-2 focus:ring-primary-500 outline-none"
         checked={isChecked}
         disabled={disabled}
         onKeyDown={handleEnter}

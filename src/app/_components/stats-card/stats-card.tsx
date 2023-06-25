@@ -6,7 +6,7 @@ export const StatsCard: Component<StatsCardProps> = ({ title, description }) => 
   return (
     <Card border="t" className="w-72 py-10 flex flex-col items-center">
       <p className="text-white font-bold text-4xl">{title}</p>
-      <p className="text-white-desc">{description}</p>
+      <p className="text-gray-500">{description}</p>
     </Card>
 
   );

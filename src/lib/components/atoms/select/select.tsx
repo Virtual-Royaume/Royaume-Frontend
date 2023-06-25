@@ -17,11 +17,11 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(({
 
   // Styles :
   const styles = sm(
-    "relative outline-none bg-background-card border-2 text-white-desc rounded w-full",
+    "relative outline-none bg-background-gray-800 border-2 text-gray-500 rounded w-full",
     "focus:ring-2",
     {
-      "border-background-info focus:ring-purple": !haveError,
-      "border-danger focus:ring-danger": haveError,
+      "border-background-gray-700 focus:ring-primary-500": !haveError,
+      "border-danger-500 focus:ring-danger-500": haveError,
 
       "brightness-[.7]": disabled
     },
@@ -86,7 +86,7 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(({
           <p>{placeholder ?? "-"}</p>
         )}
         <IoIosArrowUp className={s(
-          "text-white-desc transition-transform", {
+          "text-gray-500 transition-transform", {
             "rotate-180": isOpen
           }
         )} />

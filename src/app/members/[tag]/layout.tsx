@@ -107,14 +107,14 @@ const MemberLayout: Component<MemberLayoutProps> = ({ params, children }) => {
           </MemberProvider>
 
           <div>
-            <div className="bg-background-card p-4 rounded">
+            <div className="bg-background-gray-800 p-4 rounded">
               <p className="text-white font-medium text-lg">Me contacter</p>
-              <div className="h-1 w-8 bg-purple rounded" />
+              <div className="h-1 w-8 bg-primary-500 rounded" />
 
               <div className="mt-3 grid gap-1">
                 {member.socials && member.socials.map((social) => (
                   <div key={social.type}>
-                    <p className="text-white-desc flex items-center gap-2">
+                    <p className="text-gray-500 flex items-center gap-2">
                       {social.type === "discord" && (
                         <BsDiscord />
                       ) || social.type === "twitter" && (
@@ -131,7 +131,7 @@ const MemberLayout: Component<MemberLayoutProps> = ({ params, children }) => {
                     </p>
                   </div>
                 )) || (
-                  <p className="text-white-desc">{member.username} n&apos;a renseigné aucun de ses réseaux sociaux</p>
+                  <p className="text-gray-500">{member.username} n&apos;a renseigné aucun de ses réseaux sociaux</p>
                 )}
 
                 {member.canBeContacted && (

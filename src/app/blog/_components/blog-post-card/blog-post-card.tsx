@@ -28,7 +28,7 @@ export const BlogPostCard: Component<BlogPostCardProps> = ({ post }) => {
 
           <div>
             <p className="text-white font-medium">{post.author.username}</p>
-            <p className="text-white-desc text-sm">{dayJS(post.createdAt).format("D MMMM YYYY")}</p>
+            <p className="text-gray-500 text-sm">{dayJS(post.createdAt).format("D MMMM YYYY")}</p>
           </div>
         </div>
       </div>

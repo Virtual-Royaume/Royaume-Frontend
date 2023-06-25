@@ -57,7 +57,7 @@ export const ContentTable: Component<ContentTableProps> = ({ items }) => {
   return (
     <nav
       aria-label="content-table"
-      className="relative rounded sticky top-20 py-4 pr-4 pl-8 bg-background-card">
+      className="relative rounded sticky top-20 py-4 pr-4 pl-8 bg-background-gray-800">
       <div className="flex items-center justify-between">
         <p className="text-white font-medium text-lg">Table des matières</p>
         <IoIosArrowUp
@@ -79,7 +79,7 @@ export const ContentTable: Component<ContentTableProps> = ({ items }) => {
           }
         )}>
         <span className={s(
-          "absolute bg-purple rounded-full w-1 h-4 mt-3 transition-transform left-4 lg:opacity-100 transition-opacity", {
+          "absolute bg-primary-500 rounded-full w-1 h-4 mt-3 transition-transform left-4 lg:opacity-100 transition-opacity", {
             "opacity-0": !isCtOpen,
             "opacity-100": isCtOpen
           }
