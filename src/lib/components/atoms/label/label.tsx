@@ -14,7 +14,7 @@ export const Label: Component<LabelProps> = ({ className, title, error, required
 
   return (
     <label className={styles} {...props}>
-      <p className="text-white uppercase text-sm font-medium tracking-wide">
+      <p className="text-gray-50 uppercase text-sm font-medium tracking-wide">
         {title}
         {required && <>*</>}
       </p>

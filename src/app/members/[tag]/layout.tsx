@@ -107,8 +107,8 @@ const MemberLayout: Component<MemberLayoutProps> = ({ params, children }) => {
           </MemberProvider>
 
           <div>
-            <div className="bg-background-gray-800 p-4 rounded">
-              <p className="text-white font-medium text-lg">Me contacter</p>
+            <div className="bg-gray-800 p-4 rounded">
+              <p className="text-gray-50 font-medium text-lg">Me contacter</p>
               <div className="h-1 w-8 bg-primary-500 rounded" />
 
               <div className="mt-3 grid gap-1">

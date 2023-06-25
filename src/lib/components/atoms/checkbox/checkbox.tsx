@@ -13,7 +13,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ className
 
   // Styles :
   const styles = sm(
-    "relative rounded w-6 h-6 bg-background-gray-800 border-2 border-background-gray-700",
+    "relative rounded w-6 h-6 bg-gray-800 border-2 border-gray-700",
     {
       "cursor-pointer": !disabled,
       "brightness-[.7]": disabled
@@ -47,7 +47,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ className
       {isChecked && (
         <AiOutlineCheck className={s(
           "absolute left-1/2 right-0 top-1/2 bottom-0 -translate-x-1/2 -translate-y-1/2",
-          "w-3 h-3 text-white pointer-events-none"
+          "w-3 h-3 text-gray-50 pointer-events-none"
         )} />
       )}
     </div>

@@ -54,7 +54,7 @@ export const Navbar: Component<NavbarProps> = ({ className }) => {
         <ul className="container pb-4 grid gap-2">
           {links.map((link) => (
             <Link key={link.name} href={link.href} className={s(
-              "text-white py-1 px-2 rounded w-full",
+              "text-gray-50 py-1 px-2 rounded w-full",
               "transition-colors duration-200",
               {
                 "bg-primary-500": pathname === link.href
@@ -77,7 +77,7 @@ export const Navbar: Component<NavbarProps> = ({ className }) => {
 
         <ul className="flex gap-10">
           {links.map((link) => (
-            <Link key={link.name} href={link.href} className="text-white">{link.name}</Link>
+            <Link key={link.name} href={link.href} className="text-gray-50">{link.name}</Link>
           ))}
         </ul>
       </div>

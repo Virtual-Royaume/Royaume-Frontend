@@ -17,10 +17,10 @@ export const Select = forwardRef<HTMLDivElement, SelectProps>(({
 
   // Styles :
   const styles = sm(
-    "relative outline-none bg-background-gray-800 border-2 text-gray-500 rounded w-full",
+    "relative outline-none bg-gray-800 border-2 text-gray-500 rounded w-full",
     "focus:ring-2",
     {
-      "border-background-gray-700 focus:ring-primary-500": !haveError,
+      "border-gray-700 focus:ring-primary-500": !haveError,
       "border-danger-500 focus:ring-danger-500": haveError,
 
       "brightness-[.7]": disabled

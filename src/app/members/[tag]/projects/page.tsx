@@ -13,12 +13,12 @@ const MemberPage = (): ReactElement => {
   return (
     <div>
       {member.projects && member.projects.length > 0 ? (
-        <div className="bg-background-gray-800 p-4 rounded">
+        <div className="bg-gray-800 p-4 rounded">
           <div className="grid gap-1">
             {member.projects.map((project) => (
               <div key={project.name} className="text-gray-500 items-center gap-2">
                 <div className="flex items-center gap-2">
-                  <Heading type="h4" className="text-white text-lg">{project.name}</Heading>
+                  <Heading type="h4" className="text-gray-50 text-lg">{project.name}</Heading>
                   <div className="px-2 pb-2 rounded bg-[#0c0c0d]">
                     {project.technologies && (
                       <div className="flex gap-2">
