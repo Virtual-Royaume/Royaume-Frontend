@@ -1,9 +1,8 @@
 import type { Config } from "tailwindcss";
-import colors from "tailwindcss/colors";
 
 export default {
   content: [
-    "./src/**/*.tsx"
+    "./src/**/*.{tsx,mdx}"
   ],
 
   theme: {
@@ -17,25 +16,51 @@ export default {
       white: "white",
       black: "black",
 
-      primary: {
-        300: "#93c5fd",
-        400: "#5D44E0",
-        500: "#5339DD"
-      },
-
-      positive: colors.green,
-      danger: colors.red,
-      warning: colors.yellow,
-
       gray: {
+        50: "#F7F7F7",
+        100: "#F0F0F0",
+        200: "#DEDEDE",
+        300: "#CFCFCF",
+        400: "#BFBFBF",
         500: "#AFAFAF",
-        700: "#1E1E1F",
-        800: "#131314",
-        900: "#0c0c0d"
+        600: "#838384",
+        700: "#515152",
+        800: "#1E1E1F",
+        900: "#131314",
+        950: "#0C0C0D"
       },
 
-      external: {
-        discord: "#5865F2"
+      primary: {
+        300: "#818CF8",
+        500: "#6366F1",
+        700: "#4F46E5"
+      },
+
+      positive: {
+        300: "#86EFAC",
+        500: "#22C55E",
+        700: "#15803D"
+      },
+      danger: {
+        300: "#FFBDBD",
+        500: "#FF5555",
+        700: "#FF0F0F"
+      },
+      warning: {
+        300: "#FFD966",
+        500: "#FFC100",
+        700: "#CC9900"
+      },
+
+      media: {
+        twitter: "#1D9BF0",
+        discord: "#5865F2",
+        linkedin: "#0A63BC",
+        twitch: "#A645FF",
+        instagram: "#DB2777",
+        youtube: "#F70000",
+        malt: "#F75954",
+        github: "#000000"
       }
     },
 
