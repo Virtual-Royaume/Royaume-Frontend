@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 export default {
   content: [
@@ -13,32 +14,29 @@ export default {
 
     colors: {
       transparent: "transparent",
+      white: "white",
+      black: "black",
 
-      danger: "#DD4439",
-      white: {
-        DEFAULT: "#FFFFFF",
-        desc: "#AFAFAF"
+      primary: {
+        300: "#93c5fd",
+        400: "#5D44E0",
+        500: "#5339DD"
       },
 
-      purple: {
-        DEFAULT: "#5339DD",
-        hover: "#5D44E0"
+      positive: colors.green,
+      danger: colors.red,
+      warning: colors.yellow,
+
+      gray: {
+        500: "#AFAFAF",
+        700: "#1E1E1F",
+        800: "#131314",
+        900: "#0c0c0d"
       },
 
-      discord: "#5865F2",
-
-      background: {
-        DEFAULT: "#0c0c0d",
-        header: "rgba(12, 12, 13, .5)",
-        card: {
-          DEFAULT: "#131314",
-          hover: "#1E1E1F"
-        },
-        info: "#1E1E1F",
-        light: "#454548"
-      },
-
-      link: "#535357"
+      external: {
+        discord: "#5865F2"
+      }
     },
 
     borderRadius: {
@@ -63,8 +61,8 @@ export default {
 
       gridTemplateColumns: {
         "members": "repeat(auto-fill, minmax(5rem, 1fr))",
-        "members-cards": "repeat(auto-fill, minmax(20rem, 1fr))",
-        "posts-cards": "repeat(auto-fill, minmax(18rem, 1fr))"
+        "members-gray-800s": "repeat(auto-fill, minmax(20rem, 1fr))",
+        "posts-gray-800s": "repeat(auto-fill, minmax(18rem, 1fr))"
       }
     }
   },
