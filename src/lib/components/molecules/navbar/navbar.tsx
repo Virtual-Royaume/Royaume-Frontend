@@ -8,9 +8,10 @@ import { useEffect } from "react";
 import { Hamburger } from "#/lib/components/atoms/hamburger";
 import { links } from "#/lib/configs/navbar";
 import { useMediaQuery } from "#/lib/hooks/media-query";
+import { s, sm } from "#/lib/utils/style/class";
+import royaumeLogo from "~/images/royaume-logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { s, sm } from "#/lib/utils/style/class";
 
 export const Navbar: Component<NavbarProps> = ({ className }) => {
   // Hooks:
@@ -38,7 +39,7 @@ export const Navbar: Component<NavbarProps> = ({ className }) => {
     <nav className={baseStyles}>
       <div className="container h-16 flex items-center justify-between">
         <Link href="/">
-          <Image src="/images/royaume-logo.png" alt="logo" height={50} width={50} />
+          <Image src={royaumeLogo} alt="logo" height={50} width={50} />
         </Link>
 
         <Hamburger open={isOpen} setOpen={setIsOpen} />
