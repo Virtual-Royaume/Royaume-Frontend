@@ -46,7 +46,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, icon
         disabled={disabled}
         value={value}
         onChange={handleChange}
-        {...props} />;
+        {...props} />
     </div>
   );
 });
