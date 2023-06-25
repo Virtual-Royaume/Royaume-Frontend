@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="trace14">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/test-results/navbar-should-navigate-to-the-members-page-chromium/trace.zip!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
