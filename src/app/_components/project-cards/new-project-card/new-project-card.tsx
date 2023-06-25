@@ -5,12 +5,12 @@ import { s } from "#/lib/utils/style/class";
 export const NewProjectCard = (): ReactElement => {
   return (
     <div className={s(
-      "bg-background-card hover:bg-background-card-hover p-10",
-      "rounded border-2 border-dashed border-background-card-hover hover:border-background-card transition-all duration-200"
+      "bg-background-gray-800 hover:bg-background-gray-700 p-10",
+      "rounded border-2 border-dashed border-background-gray-700 hover:border-background-gray-800 transition-all duration-200"
     )}>
       <>
         <div className="items-center gap-2">
-          <p className="text-white-desc text-opacity-50 text-center">
+          <p className="text-gray-500 text-opacity-50 text-center">
             <BsPlus className="inline-block" /> Ajouter un nouveau projet
           </p>
         </div>

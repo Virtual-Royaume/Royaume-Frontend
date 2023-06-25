@@ -22,14 +22,14 @@ export const MemberCard: Component<MemberCardProps> = ({ tag, username, profileP
             <p className="text-white text-lg text-ellipsis overflow-hidden whitespace-nowrap max-w-[70%]">{username}</p>
 
             {birthday && (
-              <p className="text-white-desc text-xs whitespace-nowrap">
+              <p className="text-gray-500 text-xs whitespace-nowrap">
                 {dayJS().diff(birthday, "year", false)} ans
               </p>
             )}
           </div>
 
           {location && (
-            <div className="text-white-desc flex items-center gap-1">
+            <div className="text-gray-500 flex items-center gap-1">
               <CiLocationOn />
               <p className="text-sm">{location}</p>
             </div>

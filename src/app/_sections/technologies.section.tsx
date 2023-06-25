@@ -22,7 +22,7 @@ export const TechnologiesSection = (): ReactElement => {
           ))}
         </div>
 
-        <span className="absolute left-0 top-0 h-96 w-96 max-w-full rounded-full blur-3xl opacity-30 bg-purple rounded-full" />
+        <span className="absolute left-0 top-0 h-96 w-96 max-w-full rounded-full blur-3xl opacity-30 bg-primary-500 rounded-full" />
       </div>
     </section>
   );

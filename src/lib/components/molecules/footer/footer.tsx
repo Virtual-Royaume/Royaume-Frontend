@@ -5,7 +5,7 @@ import { sm } from "#/lib/utils/style/class";
 
 export const Footer: Component<FooterProps> = ({ className }): ReactElement => {
   return (
-    <footer className={sm("h-24 bg-background-card border-t-4 border-t-purple", className)}>
+    <footer className={sm("h-24 bg-background-gray-800 border-t-4 border-t-primary-500", className)}>
 
     </footer>
   );

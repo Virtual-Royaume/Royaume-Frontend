@@ -10,7 +10,7 @@ export const TechnoCard: Component<TechnoProps> = ({ title, description, icon })
         <Image src={`/images/icons/${icon}`} alt={title + " Icon"} fill className="object-contain" />
       </div>
       <p className="text-white text-xl font-medium mb-2">{title}</p>
-      <p className="text-white-desc text-center">{description}</p>
+      <p className="text-gray-500 text-center">{description}</p>
     </Card>
   );
 };

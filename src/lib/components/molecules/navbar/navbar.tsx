@@ -25,7 +25,7 @@ export const Navbar: Component<NavbarProps> = ({ className }) => {
 
   // Styles:
   const baseStyles = sm(
-    "bg-background-header backdrop-blur-2xl w-screen",
+    "bg-gray-900/50 backdrop-blur-2xl w-screen",
     className
   );
 
@@ -57,7 +57,7 @@ export const Navbar: Component<NavbarProps> = ({ className }) => {
               "text-white py-1 px-2 rounded w-full",
               "transition-colors duration-200",
               {
-                "bg-purple": pathname === link.href
+                "bg-primary-500": pathname === link.href
               }
             )}>
               {link.name}

@@ -10,7 +10,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({ className, di
 
   // Styles :
   const styles = sm(
-    "relative w-11 h-5 appearance-none focus:ring-2 focus:ring-purple rounded-full outline-none",
+    "relative w-11 h-5 appearance-none focus:ring-2 focus:ring-primary-500 rounded-full outline-none",
     {
       "cursor-pointer": !disabled,
       "brightness-75": disabled
@@ -46,8 +46,8 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({ className, di
         "before:absolute before:content=[''] before:h-4 before:w-4 before:bg-white before:rounded-full before:transition-transform",
         "before:top-0.5 before:left-0.5",
         {
-          "bg-background-light": !isChecked,
-          "bg-purple": isChecked,
+          "bg-gray-500": !isChecked,
+          "bg-primary-500": isChecked,
 
           "before:translate-x-6": isChecked
         }
