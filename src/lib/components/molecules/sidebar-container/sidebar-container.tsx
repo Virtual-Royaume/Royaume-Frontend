@@ -14,7 +14,7 @@ export const SidebarContainer: Component<PropsWithChildren> = ({ children }) => 
     <div className={s(
       "sm:ml-32 relative transition-all transition-duration-300 ease-in-out mt-16",
       {
-        "blur-sm pointer-events-none select-none": toggled && matches
+        "blur-sm pointer-events-none select-none": toggled && matches == "match"
       }
     )}>
       {children}

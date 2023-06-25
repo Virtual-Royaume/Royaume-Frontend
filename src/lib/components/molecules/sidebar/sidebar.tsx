@@ -32,7 +32,7 @@ export const Sidebar: Component<SidebarProps> = ({ sections, className, ...props
       <div className={s(
         "sm:hidden fixed top-1 left-1 z-50 transition-transform",
         {
-          "translate-x-64": toggled && matches
+          "translate-x-64": toggled && matches == "match"
         }
       )}>
         <Hamburger open={toggled} setOpen={toggle} />
@@ -42,7 +42,7 @@ export const Sidebar: Component<SidebarProps> = ({ sections, className, ...props
         className={sm(
           "fixed top-0 flex-col w-64 max-h-max h-full px-4 py-8 bg-background-card transition-transform z-40 overflow-y-auto",
           {
-            "-translate-x-96": !toggled  && matches
+            "-translate-x-96": !toggled  && matches == "match"
           },
           className
         )}
