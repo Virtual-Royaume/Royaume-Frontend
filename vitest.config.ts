@@ -8,6 +8,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      "tailwind-config": "./tailwind.config.ts",
       "#/": "./src/",
       "~/": "./public/"
     }
