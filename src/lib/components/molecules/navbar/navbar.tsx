@@ -25,7 +25,7 @@ export const Navbar: Component<NavbarProps> = ({ className }) => {
 
   // Styles:
   const baseStyles = sm(
-    "bg-gray-900/50 backdrop-blur-2xl w-screen",
+    "bg-gray-950/50 backdrop-blur-2xl w-screen",
     className
   );
 
