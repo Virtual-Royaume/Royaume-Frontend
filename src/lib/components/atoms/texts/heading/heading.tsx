@@ -6,7 +6,7 @@ export const Heading: Component<HeadingProps> = ({ type, className, children, ..
   const Tag = type;
 
   const styles = sm(
-    "text-white",
+    "text-gray-50",
     {
       "text-5xl": type === "h1",
       "text-4xl": type === "h2",

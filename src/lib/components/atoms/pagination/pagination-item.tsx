@@ -8,18 +8,18 @@ export const PaginationItem: Component<PaginationItemProps> = ({ page, active, h
 
   const styles = s(
     "flex items-center justify-center",
-    "border border-background-gray-700",
+    "border border-gray-800",
     "h-10 w-10 rounded",
     "selection:select-none"
   );
 
   const pageStyles = s(styles, {
-    "bg-primary-500 text-white": active,
+    "bg-primary-500 text-gray-50": active,
     "text-gray-500 hover:bg-primary-500": !active
   });
 
   const arrowStyles = s(styles, "text-gray-500", {
-    "bg-background-gray-700": active,
+    "bg-gray-800": active,
     "hover:bg-primary-500": !active
   });
 

@@ -17,11 +17,11 @@ export const LastPostSection = (): ReactElement => {
 
       <div className="relative">
         <div className="bg-primary-500 w-fit py-1 px-2 rounded mb-4">
-          <p className="text-gray-500 text-sm">Dernière publication</p>
+          <p className="text-gray-50 text-sm">Dernière publication</p>
         </div>
 
         <div className="mb-4">
-          <Link href={`/blog/${post.slug}`} className="text-white font-medium text-2xl xl:text-3xl 2xl:text-4xl">
+          <Link href={`/blog/${post.slug}`} className="text-gray-50 font-medium text-2xl xl:text-3xl 2xl:text-4xl">
             {post.title}
           </Link>
         </div>
@@ -39,7 +39,7 @@ export const LastPostSection = (): ReactElement => {
             <Image src={post.author.profilePicture} alt="Author Profile Picture" width={48} height={448} className="rounded" />
 
             <div>
-              <p className="text-white font-medium">{post.author.username}</p>
+              <p className="text-gray-50 font-medium">{post.author.username}</p>
               <p className="text-gray-500 text-sm">{dayJS(post.createdAt).format("D MMMM YYYY")}</p>
             </div>
           </div>

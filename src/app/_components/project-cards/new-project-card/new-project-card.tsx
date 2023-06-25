@@ -5,8 +5,8 @@ import { s } from "#/lib/utils/style/class";
 export const NewProjectCard = (): ReactElement => {
   return (
     <div className={s(
-      "bg-background-gray-800 hover:bg-background-gray-700 p-10",
-      "rounded border-2 border-dashed border-background-gray-700 hover:border-background-gray-800 transition-all duration-200"
+      "bg-gray-800 hover:bg-gray-700 p-10",
+      "rounded border-2 border-dashed border-gray-700 hover:border-gray-800 transition-all duration-200"
     )}>
       <>
         <div className="items-center gap-2">

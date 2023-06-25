@@ -19,7 +19,7 @@ export const MemberCard: Component<MemberCardProps> = ({ tag, username, profileP
 
         <div className="relative w-full">
           <div className="flex items-center gap-2 items-baseline mb-1">
-            <p className="text-white text-lg text-ellipsis overflow-hidden whitespace-nowrap max-w-[70%]">{username}</p>
+            <p className="text-gray-50 text-lg text-ellipsis overflow-hidden whitespace-nowrap max-w-[70%]">{username}</p>
 
             {birthday && (
               <p className="text-gray-500 text-xs whitespace-nowrap">

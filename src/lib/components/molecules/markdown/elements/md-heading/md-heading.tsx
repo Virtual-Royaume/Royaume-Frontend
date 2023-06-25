@@ -3,7 +3,7 @@ import type { MDHeadingProps } from "./md-heading.type";
 import { sm } from "#/lib/utils/style/class";
 
 export const MDHeading: Component<MDHeadingProps> = ({ text, depth }) => {
-  const styles = "relative text-white font-medium";
+  const styles = "relative text-gray-50 font-medium";
 
   if (depth === 1) {
     return <h2 className={sm(
