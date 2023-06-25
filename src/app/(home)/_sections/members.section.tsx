@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { MembersGalery } from "#/app/members/_components/members-galery";
+import { MembersGalery } from "#/app/(home)/members/_components/members-galery";
 import { Text } from "#/lib/components/atoms/texts";
 import { Heading } from "#/lib/components/atoms/texts/heading";
 import { members } from "#/lib/configs/member";

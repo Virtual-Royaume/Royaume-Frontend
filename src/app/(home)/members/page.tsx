@@ -4,7 +4,7 @@ import type { ReactElement } from "react";
 import { Text } from "#/lib/components/atoms/texts";
 import { Heading } from "#/lib/components/atoms/texts/heading";
 import { MembersGrid } from "./members-grid";
-import { Crown } from "../components/crown";
+import { Crown } from "#/app/(home)/_components/crown";
 
 const MembersPage = (): ReactElement => {
   return (

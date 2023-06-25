@@ -3,9 +3,10 @@
 import type { Member } from "#/lib/configs/member/member.type";
 import type { ReactElement } from "react";
 import { useState, useEffect } from "react";
-import { MemberCard } from "#/app/members/_components/member-card";
+import { MemberCard } from "#/app/(home)/members/_components/member-card";
 import { members } from "#/lib/configs/member";
 import { Pagination } from "#/lib/components/atoms/pagination";
+import { Input } from "#/lib/components/atoms/input";
 
 export const MembersGrid = (): ReactElement => {
   const itemPerPages = 12;
@@ -40,13 +41,15 @@ export const MembersGrid = (): ReactElement => {
   return (
     <div className="mt-10">
       <div className="flex items-center justify-start mb-5">
-        <input
+        {/* <input
           type="text"
           placeholder="Rechercher un membre"
           className="w-96 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
           value={search}
           onChange={handleSearch}
-        />
+        /> */}
+
+        <Input type="text" placeholder="Rechercher un membre" onChange={handleSearch} />
 
         {search !== "" && (
           <span className="ml-4 text-white-desc">

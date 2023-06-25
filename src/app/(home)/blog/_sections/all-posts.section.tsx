@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
-import { BlogPostCard } from "#/app/blog/_components/blog-post-card/blog-post-card";
 import { getOthersPosts } from "#/lib/configs/blog";
+import { BlogPostCard } from "#/app/(home)/blog/_components/blog-post-card";
 
 export const AllPostsSection = (): ReactElement => {
   const posts = getOthersPosts();
