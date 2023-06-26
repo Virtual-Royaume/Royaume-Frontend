@@ -52,13 +52,13 @@ export const MembersGrid = (): ReactElement => {
         <Input type="text" placeholder="Rechercher un membre" onChange={handleSearch} />
 
         {search !== "" && (
-          <span className="ml-4 text-white-desc">
+          <span className="ml-4 text-gray-500">
             {membersData.length} {membersData.length > 1 ? "résultats" : "résultat"}
           </span>
         )}
       </div>
 
-      <div aria-label="members list" role="list" className="grid md:grid-cols-members-cards gap-5 mb-14">
+      <div aria-label="members list" role="list" className="grid md:grid-cols-members-gray-800s gap-5 mb-14">
         {membersData.sort((a, b) => a.username < b.username ? -1 : 1).map((member) => (
           <MemberCard key={member.username} {...member} />
         ))}

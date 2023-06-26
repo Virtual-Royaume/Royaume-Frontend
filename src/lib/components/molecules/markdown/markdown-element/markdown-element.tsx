@@ -15,7 +15,7 @@ export const MarkdownElement: Component<MarkdownElementProps> = ({ element, pare
     if (parent.type === "blockquote" && element.type === "paragraph" && element.children[0].type === "text") {
       return <Text className={s(
         "relative pl-4 italic my-4",
-        "before:content-[''] before:absolute before:h-full before:w-1 before:bg-purple before:left-0"
+        "before:content-[''] before:absolute before:h-full before:w-1 before:bg-primary-500 before:left-0"
       )}>{element.children[0].value}</Text>;
     }
 
@@ -29,7 +29,7 @@ export const MarkdownElement: Component<MarkdownElementProps> = ({ element, pare
       }
 
       if (element.type === "link" && element.children[0].type === "text") {
-        return <Link href={element.url} target="_blank" className="text-link hover:underline">{element.children[0].value}</Link>;
+        return <Link href={element.url} target="_blank" className="text-primary-300 hover:underline">{element.children[0].value}</Link>;
       }
 
       if (element.type === "image") {
@@ -76,7 +76,7 @@ export const MarkdownElement: Component<MarkdownElementProps> = ({ element, pare
 
   if (element.type === "paragraph") {
     return (
-      <Text className="text-white-desc">
+      <Text className="text-gray-500">
         {element.children.map((child, i) => (
           <MarkdownElement key={i} parent={element} element={child} />
         ))}
@@ -85,7 +85,7 @@ export const MarkdownElement: Component<MarkdownElementProps> = ({ element, pare
   }
 
   if (element.type === "list") {
-    const listStyle = s(" ml-6 text-white-desc", {
+    const listStyle = s(" ml-6 text-gray-500", {
       "list-descimal": element.ordered,
       "list-disc": !element.ordered
     });

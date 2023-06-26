@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="trace10">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/test-results/navbar-should-navigate-to-the-blog-page-chromium/trace.zip!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

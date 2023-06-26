@@ -57,14 +57,14 @@ export const ContentTable: Component<ContentTableProps> = ({ items }) => {
   return (
     <nav
       aria-label="content-table"
-      className="relative rounded sticky top-20 py-4 pr-4 pl-8 bg-background-card">
+      className="relative rounded sticky top-20 py-4 pr-4 pl-8 bg-gray-900">
       <div className="flex items-center justify-between">
-        <p className="text-white font-medium text-lg">Table des matières</p>
+        <p className="text-gray-50 font-medium text-lg">Table des matières</p>
         <IoIosArrowUp
           aria-label="toggle-button"
           aria-expanded={isCtOpen ? "true" : "false"}
           className={s(
-            "text-white h-5 w-5 lg:hidden transition-transform", {
+            "text-gray-50 h-5 w-5 lg:hidden transition-transform", {
               "rotate-180": isCtOpen
             }
           )}
@@ -79,7 +79,7 @@ export const ContentTable: Component<ContentTableProps> = ({ items }) => {
           }
         )}>
         <span className={s(
-          "absolute bg-purple rounded-full w-1 h-4 mt-3 transition-transform left-4 lg:opacity-100 transition-opacity", {
+          "absolute bg-primary-500 rounded-full w-1 h-4 mt-3 transition-transform left-4 lg:opacity-100 transition-opacity", {
             "opacity-0": !isCtOpen,
             "opacity-100": isCtOpen
           }

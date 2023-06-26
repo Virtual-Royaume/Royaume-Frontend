@@ -3,13 +3,13 @@ import type { MDHeadingProps } from "./md-heading.type";
 import { sm } from "#/lib/utils/style/class";
 
 export const MDHeading: Component<MDHeadingProps> = ({ text, depth }) => {
-  const styles = "relative text-white font-medium";
+  const styles = "relative text-gray-50 font-medium";
 
   if (depth === 1) {
     return <h2 className={sm(
       styles,
       "text-2xl mt-8 mb-4",
-      "after:content-[''] after:w-10 after:h-1 after:rounded after:bg-purple after:absolute after:-bottom-1 after:left-0"
+      "after:content-[''] after:w-10 after:h-1 after:rounded after:bg-primary-500 after:absolute after:-bottom-1 after:left-0"
     )}>{text}</h2>;
   }
 

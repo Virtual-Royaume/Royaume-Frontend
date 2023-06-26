@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 
 export default {
   content: [
-    "./src/**/*.tsx"
+    "./src/**/*.{tsx,mdx}"
   ],
 
   theme: {
@@ -13,32 +13,55 @@ export default {
 
     colors: {
       transparent: "transparent",
+      white: "white",
+      black: "black",
 
-      danger: "#DD4439",
-      white: {
-        DEFAULT: "#FFFFFF",
-        desc: "#AFAFAF"
+      gray: {
+        50: "#F7F7F7",
+        100: "#F0F0F0",
+        200: "#DEDEDE",
+        300: "#CFCFCF",
+        400: "#BFBFBF",
+        500: "#AFAFAF",
+        600: "#838384",
+        700: "#515152",
+        800: "#1E1E1F",
+        900: "#131314",
+        950: "#0C0C0D"
       },
 
-      purple: {
-        DEFAULT: "#5339DD",
-        hover: "#5D44E0"
+      primary: {
+        300: "#818CF8",
+        500: "#6366F1",
+        700: "#4F46E5"
       },
 
-      discord: "#5865F2",
-
-      background: {
-        DEFAULT: "#0c0c0d",
-        header: "rgba(12, 12, 13, .5)",
-        card: {
-          DEFAULT: "#131314",
-          hover: "#1E1E1F"
-        },
-        info: "#1E1E1F",
-        light: "#454548"
+      positive: {
+        300: "#86EFAC",
+        500: "#22C55E",
+        700: "#15803D"
+      },
+      danger: {
+        300: "#FFBDBD",
+        500: "#FF5555",
+        700: "#FF0F0F"
+      },
+      warning: {
+        300: "#FFD966",
+        500: "#FFC100",
+        700: "#CC9900"
       },
 
-      link: "#535357"
+      media: {
+        twitter: "#1D9BF0",
+        discord: "#5865F2",
+        linkedin: "#0A63BC",
+        twitch: "#A645FF",
+        instagram: "#DB2777",
+        youtube: "#F70000",
+        malt: "#F75954",
+        github: "#000000"
+      }
     },
 
     borderRadius: {
@@ -63,8 +86,8 @@ export default {
 
       gridTemplateColumns: {
         "members": "repeat(auto-fill, minmax(5rem, 1fr))",
-        "members-cards": "repeat(auto-fill, minmax(20rem, 1fr))",
-        "posts-cards": "repeat(auto-fill, minmax(18rem, 1fr))"
+        "members-gray-800s": "repeat(auto-fill, minmax(20rem, 1fr))",
+        "posts-gray-800s": "repeat(auto-fill, minmax(18rem, 1fr))"
       }
     }
   },

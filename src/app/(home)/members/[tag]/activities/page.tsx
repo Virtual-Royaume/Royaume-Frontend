@@ -10,7 +10,7 @@ const MemberPage = (): ReactElement => {
 
   return (
     <div className="grid lg:grid-cols-[1fr_20rem] gap-10">
-      <p className="text-white-desc text-opacity-50">
+      <p className="text-gray-500 text-opacity-50">
         Cette page n&apos;est pas encore implémentée.
       </p>
     </div>

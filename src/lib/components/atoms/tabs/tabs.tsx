@@ -14,9 +14,9 @@ export const Tabs: Component<TabsProps> = ({ links }) => {
       <ul className="flex gap-2">
         {links.map((link) => (
           <Link key={link.name} href={link.href} className={s(
-            "px-3 py-2 rounded text-white-desc hover:bg-background-info transition-colors",
+            "px-3 py-2 rounded text-gray-500 hover:bg-gray-700 transition-colors",
             {
-              "bg-background-info": link.href === pathname
+              "bg-gray-700": link.href === pathname
             }
           )}>
             {link.name}

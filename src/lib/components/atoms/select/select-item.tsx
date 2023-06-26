@@ -22,8 +22,8 @@ export const SelectItem: Component<SelectItemProps> = ({ item, active, handleSel
         aria-current={active}
 
         className={s(
-          "w-full text-left py-1 px-2 hover:bg-purple", {
-            "bg-purple": active
+          "w-full text-left py-1 px-2 hover:bg-primary-500", {
+            "bg-primary-500": active
           }
         )}
         onClick={() => handleSelect()}>{item}</button>

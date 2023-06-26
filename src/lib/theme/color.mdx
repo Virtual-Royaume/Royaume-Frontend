@@ -1,0 +1,52 @@
+import { Meta, Story, Canvas, Title, ColorPalette, ColorItem } from "@storybook/blocks";
+import tailwind from "tailwind-config"
+ 
+<Meta title="Theme/Colors" />
+
+<ColorPalette>
+  <ColorItem
+    title="Base"
+    subtitle="Du blanc, du noir et du transparent, le kit minimum de survie."
+    colors={{ 
+      "black": tailwind.theme.colors.black,
+      "white": tailwind.theme.colors.white,
+      "transparent": tailwind.theme.colors.transparent
+    }}
+  />
+
+  <ColorItem
+    title="Gray"
+    subtitle="Une palette de gris pour tous les usages, par exemple : arrière-plan, textes, cartes, délimitations, etc."
+    colors={tailwind.theme.colors.gray}
+  />
+
+  <ColorItem
+    title="Primary"
+    subtitle="Notre couleur primaire avec ses différentes teintes."
+    colors={tailwind.theme.colors.primary}
+  />
+
+  <ColorItem
+    title="Positive"
+    subtitle="Couleurs d'accentuation pour les actions ou informations positives."
+    colors={tailwind.theme.colors.positive}
+  />
+
+  <ColorItem
+    title="Danger"
+    subtitle="Couleurs d'accentuation pour les actions ou informations dangereuses."
+    colors={tailwind.theme.colors.danger}
+  />
+
+  <ColorItem
+    title="Warning"
+    subtitle="Couleurs d'accentuation pour les informations importantes."
+    colors={tailwind.theme.colors.warning}
+  />
+
+  <ColorItem
+    title="Média"
+    subtitle="Les couleurs primaires des réseaux sociaux, utilisez pour les liens vers ceux-ci."
+    colors={tailwind.theme.colors.media}
+  />
+</ColorPalette>

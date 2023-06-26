@@ -7,7 +7,7 @@ export const Hamburger: Component<HamburgerProps> = ({ open, setOpen }) => {
   // Styles :
   const styles = "w-10 h-10";
   const iconStyles = s(
-    "text-white",
+    "text-gray-50",
     "absolute right-0 top-0 bottom-0 my-auto",
     "transition-opacity duration-300",
     "cursor-pointer",

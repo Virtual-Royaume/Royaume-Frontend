@@ -25,16 +25,6 @@ const preview: Preview = {
           value: "#FFFFFF",
         }
       ],
-    },
-
-    /**
-     * @see https://storybook.js.org/blog/integrate-nextjs-and-storybook-automatically/#routing
-     */
-    nextjs: {
-      appDirectory: true,
-      navigation: {
-        pathname: "/"
-      }
     }
   }
 }

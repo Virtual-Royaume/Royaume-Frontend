@@ -11,10 +11,10 @@ export const ContentTableItem: Component<ContentTableItemProps> = ({ item, activ
 
         onClick={() => handleClick()}
         className={s(
-          "cursor-pointer hover:text-purple w-fit appearance-none",
+          "cursor-pointer hover:text-primary-500 w-fit appearance-none",
           {
-            "text-purple": active,
-            "text-white-desc": !active
+            "text-primary-500": active,
+            "text-gray-500": !active
           }
         )}>
         {item}

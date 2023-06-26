@@ -7,14 +7,14 @@ export const Label: Component<LabelProps> = ({ className, title, error, required
   const styles = sm(
     "grid gap-1",
     {
-      "border-danger": !!error
+      "border-danger-500": !!error
     },
     className
   );
 
   return (
     <label className={styles} {...props}>
-      <p className="text-white uppercase text-sm font-medium tracking-wide">
+      <p className="text-gray-50 uppercase text-sm font-medium tracking-wide">
         {title}
         {required && <>*</>}
       </p>
@@ -22,7 +22,7 @@ export const Label: Component<LabelProps> = ({ className, title, error, required
         {children}
       </LabelProvider>
       {!!error && (
-        <p className="text-danger text-sm">{error}</p>
+        <p className="text-danger-500 text-sm">{error}</p>
       )}
     </label>
   );
