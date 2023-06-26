@@ -8,6 +8,10 @@ import { BsArrowDown, BsArrowUp, BsPlus, BsTrash } from "react-icons/bs";
 import Image from "next/image";
 import { technoList } from "#/lib/configs/member";
 import { s } from "#/lib/utils/style/class";
+import { Input } from "#/lib/components/atoms/input";
+import { Switch } from "#/lib/components/atoms/switch";
+import { Label } from "#/lib/components/atoms/label";
+import { Button } from "#/lib/components/atoms/button";
 
 const MemberPage = (): ReactElement => {
   const [list, setList] = useState(technoList.slice(0, 4));
@@ -66,23 +70,51 @@ const MemberPage = (): ReactElement => {
           <div className="bg-background-card mt-5 rounded">
             <div className="p-5">
               <div>
-                <Text className="font-bold">Nom d&apos;utilisateur</Text>
-                <input
-                  className="mt-2 w-full bg-background-card-hover text-white-desc border-white-desc p-2 rounded cursor-text focus:border-white-desc"
-                  type="text"
-                  placeholder="John Doe"
-                />
+                <Label title="Nom d'utilisateur">
+                  <Input
+                    className="w-full"
+                    placeholder="John Doe"
+                  />
+                </Label>
+
+                <div className="mt-2">
+                  <Label title="Apparaitre dans la liste des membres">
+                    <Switch />
+                  </Label>
+                </div>
               </div>
 
-              <div className="mt-5">
-                <button className="bg-purple hover:bg-purple-hover rounded p-2 text-white">Sauvegarder</button>
-              </div>
+              <Button className="mt-5">
+                Sauvegarder
+              </Button>
             </div>
           </div>
         </div>
 
         <div>
           <div className="bg-background-card mt-5 rounded">
+            <div className="p-5">
+              <div>
+                <Label title="Décrivez-vous">
+                  <textarea
+                    className={s(
+                      "flex bg-background-card border-2 rounded focus-within:ring-2 rounded",
+                      "outline-none bg-background-card text-white-desc rounded px-3 py-2 w-full",
+                      "border-background-info focus-within:ring-purple"
+                    )}
+                    placeholder="Décrivez-vous en quelques mots..." />
+                </Label>
+              </div>
+
+              <Button className="mt-5">
+                Sauvegarder
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div className="bg-background-card rounded">
             <div className="p-5">
               <Text className="font-bold">Vos technologies</Text>
 
