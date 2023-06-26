@@ -38,10 +38,10 @@ export const SidebarSection: Component<SidebarSectionProps> = ({ section }) => {
         {section.links.map((link, index) => (
           <li key={index}>
             <Link className={s(
-              "flex gap-2 py-2 text-sm text-white-desc hover:text-primary",
-              "p-2 rounded hover:bg-background-info hover:text-white transition-colors",
+              "flex gap-2 py-2 text-sm text-gray-500 hover:text-primary",
+              "p-2 rounded hover:text-gray-700 hover:text-white transition-colors",
               {
-                "bg-background-info": link.href === pathname
+                "text-gray-700": link.href === pathname
               }
             )} href={link.href}>
               {link.name}

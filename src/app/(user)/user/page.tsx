@@ -67,7 +67,7 @@ const MemberPage = (): ReactElement => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         <div>
-          <div className="bg-background-card mt-5 rounded">
+          <div className="bg-gray-800 mt-5 rounded">
             <div className="p-5">
               <div>
                 <Label title="Nom d'utilisateur">
@@ -92,14 +92,14 @@ const MemberPage = (): ReactElement => {
         </div>
 
         <div>
-          <div className="bg-background-card mt-5 rounded">
+          <div className="bg-gray-800 mt-5 rounded">
             <div className="p-5">
               <div>
                 <Label title="Décrivez-vous">
                   <textarea
                     className={s(
-                      "flex bg-background-card border-2 rounded focus-within:ring-2 rounded",
-                      "outline-none bg-background-card text-white-desc rounded px-3 py-2 w-full",
+                      "flex bg-gray-800 border-2 rounded focus-within:ring-2 rounded",
+                      "outline-none bg-gray-800 text-gray-500 rounded px-3 py-2 w-full",
                       "border-background-info focus-within:ring-purple"
                     )}
                     placeholder="Décrivez-vous en quelques mots..." />
@@ -114,12 +114,12 @@ const MemberPage = (): ReactElement => {
         </div>
 
         <div>
-          <div className="bg-background-card rounded">
+          <div className="bg-gray-800 rounded">
             <div className="p-5">
               <Text className="font-bold">Vos technologies</Text>
 
               {list.map((techno) => (
-                <div key={techno.name} className="mt-2 flex justify-between bg-background-card-hover p-2 rounded">
+                <div key={techno.name} className="mt-2 flex justify-between bg-gray-800-hover p-2 rounded">
                   <div className="flex gap-2 items-center">
                     <Image className="select-none" src={"/images/icons/" + techno.icon} alt={techno.name} width={20} height={20} />
                     <Text className="select-none">{techno.name}</Text>
@@ -129,18 +129,18 @@ const MemberPage = (): ReactElement => {
                     {list.indexOf(techno) !== list.length - 1 && (
                       <BsArrowDown
                         onClick={() => handleMoveTechnoDown(techno.name)}
-                        className="select-none cursor-pointer p-1 rounded hover:bg-background-card text-white-desc hover:text-primary h-6 w-6" />
+                        className="select-none cursor-pointer p-1 rounded hover:bg-gray-800 text-gray-500 hover:text-primary h-6 w-6" />
                     )}
 
                     {list.indexOf(techno) !== 0 && (
                       <BsArrowUp
                         onClick={() => handleMoveTechnoUp(techno.name)}
-                        className="select-none cursor-pointer p-1 rounded hover:bg-background-card text-white-desc hover:text-primary h-6 w-6" />
+                        className="select-none cursor-pointer p-1 rounded hover:bg-gray-800 text-gray-500 hover:text-primary h-6 w-6" />
                     )}
 
                     <BsTrash
                       onClick={() => handleDeleteTechno(techno.name)}
-                      className="select-none p-1 rounded h-6 w-6 hover:bg-background-card text-white-desc hover:text-danger"  />
+                      className="select-none p-1 rounded h-6 w-6 hover:bg-gray-800 text-gray-500 hover:text-danger"  />
                   </div>
                 </div>
               ))}
@@ -153,7 +153,7 @@ const MemberPage = (): ReactElement => {
 
                   <div className="flex gap-2 items-center mt-2">
                     <input
-                      className="bg-background-card-hover text-white-desc border-white-desc p-2 rounded cursor-text outline-none w-full"
+                      className="bg-gray-800-hover text-gray-500 border-white-desc p-2 rounded cursor-text outline-none w-full"
                       type="text"
                       placeholder="Chercher une technologie"
                       id="techno"
@@ -162,7 +162,7 @@ const MemberPage = (): ReactElement => {
                   </div>
 
                   {findList.length !== 0 && findList.map((techno) => (
-                    <div key={techno.name} className="mt-2 flex justify-between bg-background-card-hover p-2 rounded">
+                    <div key={techno.name} className="mt-2 flex justify-between bg-gray-800-hover p-2 rounded">
                       <div className="flex gap-2 items-center">
                         <Image className="select-none" src={"/images/icons/" + techno.icon} alt={techno.name} width={20} height={20} />
                         <Text className="select-none">{techno.name}</Text>
@@ -172,7 +172,7 @@ const MemberPage = (): ReactElement => {
                         <BsPlus
                           onClick={() => handleAddTechno(techno)}
                           className={s(
-                            "select-none cursor-pointer p-1 rounded hover:bg-background-card text-white-desc hover:text-primary h-6 w-6"
+                            "select-none cursor-pointer p-1 rounded hover:bg-gray-800 text-gray-500 hover:text-primary h-6 w-6"
                           )} />
                       </div>
                     </div>

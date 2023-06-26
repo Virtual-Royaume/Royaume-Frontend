@@ -40,7 +40,7 @@ export const Sidebar: Component<SidebarProps> = ({ sections, className, ...props
 
       <nav
         className={sm(
-          "fixed top-0 flex-col w-64 max-h-max h-full px-4 py-8 bg-background-card transition-transform z-40 overflow-y-auto",
+          "fixed top-0 flex-col w-64 max-h-max h-full px-4 py-8 bg-gray-800 transition-transform z-40 overflow-y-auto",
           {
             "-translate-x-96": !toggled  && matches == "match"
           },
@@ -65,11 +65,11 @@ export const Sidebar: Component<SidebarProps> = ({ sections, className, ...props
           ))}
         </div>
 
-        <div className="fixed w-64 bottom-0 left-0 p-4 bg-background-card  border-t-2 border-purple">
+        <div className="fixed w-64 bottom-0 left-0 p-4 bg-gray-800  border-t-2 border-purple">
           <Link
             href={"/members/" + members[4].tag}
             className={s(
-              "appearance-none w-full flex items-center p-2 hover:bg-background-info rounded",
+              "appearance-none w-full flex items-center p-2 hover:text-gray-700 rounded",
               "cursor-pointer gap-2 text-white hover:text-danger transition-colors mb-2"
             )}
           >
@@ -81,7 +81,7 @@ export const Sidebar: Component<SidebarProps> = ({ sections, className, ...props
 
           <button
             className={s(
-              "appearance-none w-full flex items-center p-2 hover:bg-background-info rounded",
+              "appearance-none w-full flex items-center p-2 hover:text-gray-700 rounded",
               "cursor-pointer gap-2 text-white hover:text-danger transition-colors"
             )}
           >

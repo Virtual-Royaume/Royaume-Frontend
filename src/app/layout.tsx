@@ -9,7 +9,7 @@ export { metadata } from "#/lib/configs/metadata";
 const RootLayout: Component<PropsWithChildren> = ({ children }) => {
   return (
     <html>
-      <body className="bg-background overflow-x-hidden scroll-smooth">
+      <body className="bg-gray-950 overflow-x-hidden scroll-smooth">
         {children}
       </body>
     </html>
