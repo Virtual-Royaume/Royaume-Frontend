@@ -41,14 +41,6 @@ export const MembersGrid = (): ReactElement => {
   return (
     <div className="mt-10">
       <div className="flex items-center justify-start mb-5">
-        {/* <input
-          type="text"
-          placeholder="Rechercher un membre"
-          className="w-96 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-          value={search}
-          onChange={handleSearch}
-        /> */}
-
         <Input type="text" placeholder="Rechercher un membre" onChange={handleSearch} />
 
         {search !== "" && (
