@@ -9,7 +9,7 @@ const TypeScript: Techno = { name: "TypeScript", icon: "typescript.png" };
 export const members: Member[] = [
   {
     tag: "leobdt",
-    username: "léo",
+    username: "Léo",
     profilePicture: "https://cdn.discordapp.com/avatars/161097653214511104/6225c92c6c8f404a1d5dfae3c5695139.webp",
     technologies: [],
     birthday: 1032912000000,
