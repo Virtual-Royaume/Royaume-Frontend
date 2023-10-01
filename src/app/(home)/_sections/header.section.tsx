@@ -3,7 +3,7 @@ import { BsDiscord } from "react-icons/bs";
 import { LinkButton } from "#/lib/components/atoms/link-button";
 import { Text } from "#/lib/components/atoms/texts";
 import { Heading } from "#/lib/components/atoms/texts/heading";
-import { Crown } from "#/app/components/crown";
+import { Crown } from "#/app/(home)/_components/crown";
 
 export const HeaderSection = (): ReactElement => {
   return (
